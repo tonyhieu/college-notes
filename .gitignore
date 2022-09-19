@@ -12,3 +12,6 @@ _notebooks/.ipynb_checkpoints
 .netlify
 .tweet-cache
 __pycache__
+
+# Recreated Notebooks
+_posts/2020-02-20-test.md
