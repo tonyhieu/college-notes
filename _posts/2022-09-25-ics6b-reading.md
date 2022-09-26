@@ -21,6 +21,7 @@ title: ICS 6B Sections 1.1-1.5
         - Truth Table: ![Screen Shot 2022-09-25 at 1 41 58 PM](https://user-images.githubusercontent.com/54915685/192164678-3dd82aed-cba3-423f-b7af-d6fa8ba5ecb5.png)
     
     - In English, "or" is typically used to represent "either/or", or <u>exclusive or</u> (represented by ⊕), where both conditions cannot be true at the same time (She is eating or running)
+        - Only difference is that T ⊕ T == F while T ∨ T == T
         - ∨ represents <u>inclusive or</u> where both conditions CAN be true at the same time
 
     - **¬** represents <u>negation</u>, or NOT; ¬True == False and ¬False == True
