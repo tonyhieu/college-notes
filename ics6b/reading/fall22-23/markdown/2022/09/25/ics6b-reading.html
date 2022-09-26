@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ICS 6B Sections 1.1-1.5 | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="ICS 6B Sections 1.1-1.5" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ICS 6B Reading Notes" />
+<meta property="og:description" content="ICS 6B Reading Notes" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/09/25/ics6b-reading.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/09/25/ics6b-reading.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-25T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ICS 6B Sections 1.1-1.5" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-25T00:00:00-05:00","datePublished":"2022-09-25T00:00:00-05:00","description":"ICS 6B Reading Notes","headline":"ICS 6B Sections 1.1-1.5","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/09/25/ics6b-reading.html"},"url":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/09/25/ics6b-reading.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ICS 6B Sections 1.1-1.5</h1><p class="page-description">ICS 6B Reading Notes</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-25T00:00:00-05:00" itemprop="datePublished">
+        Sep 25, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#ics6b">ics6b</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall22-23">fall22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="11-propositions-and-logical-operations">1.1: Propositions and logical operations</h2>
+
+<ul>
+  <li><strong>Proposition</strong>: A statement that is either true or false
+    <ul>
+      <li>Does not include commands (Shut the door!) or questions (What time is it?)</li>
+      <li>Propositions have a <strong>truth value</strong>, can be either: true, false, unknown, or a matter of opinion</li>
+    </ul>
+  </li>
+  <li>A <strong>compound proposition</strong> is the combination of propositions using a <strong>logical operator</strong>
+    <ul>
+      <li><strong>∧</strong> represents “and”; p ∧ q is true if both p and q are true
+        <ul>
+          <li>AKA <u>conjunction operator</u></li>
+          <li>Truth table: <img src="https://user-images.githubusercontent.com/54915685/192164581-8aba8598-5a40-40e3-b29a-991c2360ddc9.png" alt="Screen Shot 2022-09-25 at 1 38 32 PM" /></li>
+        </ul>
+      </li>
+      <li><strong>∨</strong> represents “or”; p ∨ q is true if either p or q are true
+        <ul>
+          <li>AKA <u>disjunction operator</u></li>
+          <li>Truth Table: <img src="https://user-images.githubusercontent.com/54915685/192164678-3dd82aed-cba3-423f-b7af-d6fa8ba5ecb5.png" alt="Screen Shot 2022-09-25 at 1 41 58 PM" /></li>
+        </ul>
+      </li>
+      <li>In English, “or” is typically used to represent “either/or”, or <u>exclusive or</u> (represented by ⊕), where both conditions cannot be true at the same time (She is eating or running)
+        <ul>
+          <li>∨ represents <u>inclusive or</u> where both conditions CAN be true at the same time</li>
+        </ul>
+      </li>
+      <li><strong>¬</strong> represents <u>negation</u>, or NOT; ¬True == False and ¬False == True</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="12-evaluating-compound-propositions">1.2 Evaluating compound propositions</h2>
+
+<ul>
+  <li>Compound propositions can have more than one operation
+    <ul>
+      <li>Order of operations w/o parantheses: ¬ (not), ∧ (and), ∨ (or)</li>
+      <li>Good practice to use parantheses</li>
+    </ul>
+  </li>
+  <li><img src="https://user-images.githubusercontent.com/54915685/192165376-5f776dde-786b-42c5-95ec-0d0331e5bd87.png" alt="Screen Shot 2022-09-25 at 1 58 38 PM" />
+    <ul>
+      <li>Truth tables will contain 2<sup>n</sup> rows for n variables(2 options for each variable)</li>
+      <li>Rightmost variable is filled in with TFTF…, leftmost is filled in with TTFF…; T and F alternates based on column number where rightmost column = 1</li>
+    </ul>
+  </li>
+  <li>Example of a truth table with intermediate steps: <img src="https://user-images.githubusercontent.com/54915685/192165478-8ccceeaf-9062-4ea6-bee1-c0e8754272ce.png" alt="Screen Shot 2022-09-25 at 2 01 01 PM" /></li>
+</ul>
+
+<h2 id="13-conditional-statements">1.3 Conditional statements</h2>
+
+<ul>
+  <li><strong>Conditional operations</strong> are represented with the symbol →
+    <ul>
+      <li>p → q is read as “if p then q”</li>
+      <li>Truth table: <img src="https://user-images.githubusercontent.com/54915685/192196624-382641a9-8e18-4d3f-a201-a828ea5475ad.png" alt="Screen Shot 2022-09-25 at 9 54 46 PM" /></li>
+      <li>Think of it as a contract; if condition one is fulfilled, then the second condition <u>HAS</u> to be fulfilled, but if condition one is not fulfilled, then the second condition can either be fulfilled or not.</li>
+      <li>Different ways to express conditional operations: <img src="https://user-images.githubusercontent.com/54915685/192197279-6f537ba4-337b-4137-bfdb-b18617de2cda.png" alt="Screen Shot 2022-09-25 at 10 01 31 PM" /></li>
+      <li>p only if q is also p → q; most confusing one</li>
+    </ul>
+  </li>
+  <li>Related conditional statements include the contrapositive, converse, and inverse
+    <ul>
+      <li>The <strong>converse</strong> of  p → q is q → p</li>
+      <li>The <strong>contrapositive</strong> of p → q is ¬q → ¬p</li>
+      <li>The <strong>inverse</strong> of p → q is ¬p → ¬q
+<img src="https://user-images.githubusercontent.com/54915685/192197923-e9d272ae-0ed0-4c83-b7b6-2e8307b18485.png" alt="Screen Shot 2022-09-25 at 10 07 44 PM" /></li>
+    </ul>
+  </li>
+  <li><strong>Biconditional operations</strong> are represented with ↔
+    <ul>
+      <li>p ↔ q stands for “p if and only if q” - AKA true if p == q and false if not</li>
+      <li>If and only if can be represented with <u>iff</u></li>
+    </ul>
+  </li>
+  <li>Conditional and biconditional operations can be used in conjunction with other operations
+    <ul>
+      <li>∧, ∨, and ¬ takes precedence before → or ↔</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="14-logical-equivalence">1.4 Logical equivalence</h2>
+
+<ul>
+  <li>A <strong>tautology</strong> is a compound proposition that is always true, while a <strong>contradiction</strong> is a compound proposition that is always false
+    <ul>
+      <li>p ∨ ¬p is a tautology, while p ∧ ¬p is a contradiction</li>
+    </ul>
+  </li>
+  <li><strong>Logical equivalence</strong></li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/ics6b/reading/fall22-23/markdown/2022/09/25/ics6b-reading.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/tonyhieu" target="_blank" title="tonyhieu"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

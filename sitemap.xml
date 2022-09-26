@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://tonyhieu.github.io/college-notes/markdown/2020/01/14/test-markdown-post.html</loc>
-<lastmod>2020-01-14T00:00:00-06:00</lastmod>
+<loc>https://tonyhieu.github.io/college-notes/humcore/discussion/seminar/fall22-23/markdown/2022/09/22/humcore-seminar.html</loc>
+<lastmod>2022-09-22T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://tonyhieu.github.io/college-notes/jupyter/2020/02/20/test.html</loc>
-<lastmod>2020-02-20T00:00:00-06:00</lastmod>
+<loc>https://tonyhieu.github.io/college-notes/ics32a/lecture/fall22-23/markdown/2022/09/22/ics32a-lecture.html</loc>
+<lastmod>2022-09-22T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://tonyhieu.github.io/college-notes/ics6b/lecture/fall22-23/markdown/2022/09/23/ics6b-lecture.html</loc>
+<lastmod>2022-09-23T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/09/25/ics6b-reading.html</loc>
+<lastmod>2022-09-25T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://tonyhieu.github.io/college-notes/schedule/</loc>
