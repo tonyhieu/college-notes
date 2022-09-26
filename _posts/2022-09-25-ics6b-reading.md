@@ -33,7 +33,7 @@ title: ICS 6B Sections 1.1-1.5
 
 - ![Screen Shot 2022-09-25 at 1 58 38 PM](https://user-images.githubusercontent.com/54915685/192165376-5f776dde-786b-42c5-95ec-0d0331e5bd87.png)
     - Truth tables will contain 2<sup>n</sup> rows for n variables(2 options for each variable)
-    - Rightmost variable is filled in with TFTF..., leftmost is filled in with TTFF...; T and F alternates based on column number where rightmost column = 1
+    - Rightmost variable is filled in with TFTF..., leftmost is filled in with TTFF...; T and F alternates based on 2<sup>column number</sup> where rightmost column = 1
 
 - Example of a truth table with intermediate steps: ![Screen Shot 2022-09-25 at 2 01 01 PM](https://user-images.githubusercontent.com/54915685/192165478-8ccceeaf-9062-4ea6-bee1-c0e8754272ce.png)
 
@@ -64,4 +64,21 @@ title: ICS 6B Sections 1.1-1.5
 - A **tautology** is a compound proposition that is always true, while a **contradiction** is a compound proposition that is always false
     - p ∨ ¬p is a tautology, while p ∧ ¬p is a contradiction
 
-- **Logical equivalence** 
+- **Logical equivalence** means that two compound propositions always return the same value
+    - ≡ is used to denote logical equivalence
+    - If s ≡ r, then s ↔ r is a tautology, and s ≡ r if and only if r ≡ s
+![Screen Shot 2022-09-25 at 11 56 32 PM](https://user-images.githubusercontent.com/54915685/192212413-dc1f1874-9a32-4a19-b59d-1620cd1211f0.png)
+
+- **De Morgan's Laws** are laws that use logical equivalences to show how to distribute negation, or NOT, operations
+    - First version of the law: ¬(p ∨ q) ≡ (¬p ∧ ¬q) or !(p or q) == !p and !q
+    - Second version of the law: ¬(p ∧ q) ≡ (¬p ∨ ¬q) or !(p and q) == !p or !q
+
+**NOTE TO SELF:** Challenge activity 1.4.1 is a great capstone activity for practice
+
+## 1.5 Laws of propositional logic
+
+- You can substitute a proposition in for another one if both propositions are logically equivalent
+    - ex: Because p → q ≡ ¬p ∨ q, (p ∨ r) ∧ **(¬p ∨ q)** ≡ (p ∨ r) ∧ **(p → q)**
+    - Useful laws for logical equivalence: ![Screen Shot 2022-09-26 at 12 23 56 AM](https://user-images.githubusercontent.com/54915685/192217023-af49871d-8b47-40c3-8c56-5292817297a2.png)
+
+**NOTE TO SELF:** Challenge activities 1.5.1-1.5.3 are great practice activities
