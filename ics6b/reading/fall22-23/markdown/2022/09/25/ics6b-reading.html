@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -149,7 +149,7 @@ window.onload = wrap_img;
   <li><img src="https://user-images.githubusercontent.com/54915685/192165376-5f776dde-786b-42c5-95ec-0d0331e5bd87.png" alt="Screen Shot 2022-09-25 at 1 58 38 PM" />
     <ul>
       <li>Truth tables will contain 2<sup>n</sup> rows for n variables(2 options for each variable)</li>
-      <li>Rightmost variable is filled in with TFTF…, leftmost is filled in with TTFF…; T and F alternates based on column number where rightmost column = 1</li>
+      <li>Rightmost variable is filled in with TFTF…, leftmost is filled in with TTFF…; T and F alternates based on 2<sup>column number</sup> where rightmost column = 1</li>
     </ul>
   </li>
   <li>Example of a truth table with intermediate steps: <img src="https://user-images.githubusercontent.com/54915685/192165478-8ccceeaf-9062-4ea6-bee1-c0e8754272ce.png" alt="Screen Shot 2022-09-25 at 2 01 01 PM" /></li>
@@ -196,8 +196,35 @@ window.onload = wrap_img;
       <li>p ∨ ¬p is a tautology, while p ∧ ¬p is a contradiction</li>
     </ul>
   </li>
-  <li><strong>Logical equivalence</strong></li>
+  <li><strong>Logical equivalence</strong> means that two compound propositions always return the same value
+    <ul>
+      <li>≡ is used to denote logical equivalence</li>
+      <li>If s ≡ r, then s ↔ r is a tautology, and s ≡ r if and only if r ≡ s
+<img src="https://user-images.githubusercontent.com/54915685/192212413-dc1f1874-9a32-4a19-b59d-1620cd1211f0.png" alt="Screen Shot 2022-09-25 at 11 56 32 PM" /></li>
+    </ul>
+  </li>
+  <li><strong>De Morgan’s Laws</strong> are laws that use logical equivalences to show how to distribute negation, or NOT, operations
+    <ul>
+      <li>First version of the law: ¬(p ∨ q) ≡ (¬p ∧ ¬q) or !(p or q) == !p and !q</li>
+      <li>Second version of the law: ¬(p ∧ q) ≡ (¬p ∨ ¬q) or !(p and q) == !p or !q</li>
+    </ul>
+  </li>
 </ul>
+
+<p><strong>NOTE TO SELF:</strong> Challenge activity 1.4.1 is a great capstone activity for practice</p>
+
+<h2 id="15-laws-of-propositional-logic">1.5 Laws of propositional logic</h2>
+
+<ul>
+  <li>You can substitute a proposition in for another one if both propositions are logically equivalent
+    <ul>
+      <li>ex: Because p → q ≡ ¬p ∨ q, (p ∨ r) ∧ <strong>(¬p ∨ q)</strong> ≡ (p ∨ r) ∧ <strong>(p → q)</strong></li>
+      <li>Useful laws for logical equivalence: <img src="https://user-images.githubusercontent.com/54915685/192217023-af49871d-8b47-40c3-8c56-5292817297a2.png" alt="Screen Shot 2022-09-26 at 12 23 56 AM" /></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>NOTE TO SELF:</strong> Challenge activities 1.5.1-1.5.3 are great practice activities</p>
 
   </div><a class="u-url" href="/college-notes/ics6b/reading/fall22-23/markdown/2022/09/25/ics6b-reading.html" hidden></a>
 </article>
