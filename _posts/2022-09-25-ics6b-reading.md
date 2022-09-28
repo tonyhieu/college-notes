@@ -1,4 +1,5 @@
 ---
+toc: true
 layout: post
 description: ICS 6B Reading Notes
 categories: [ics6b, reading, fall22-23, markdown]
@@ -26,6 +27,8 @@ title: ICS 6B Sections 1.1-1.5
 
     - **¬** represents <u>negation</u>, or NOT; ¬True == False and ¬False == True
 
+<hr />
+
 ## 1.2 Evaluating compound propositions
 
 - Compound propositions can have more than one operation
@@ -37,6 +40,8 @@ title: ICS 6B Sections 1.1-1.5
     - Rightmost variable is filled in with TFTF..., leftmost is filled in with TTFF...; T and F alternates based on 2<sup>column number</sup> where rightmost column = 1
 
 - Example of a truth table with intermediate steps: ![Screen Shot 2022-09-25 at 2 01 01 PM](https://user-images.githubusercontent.com/54915685/192165478-8ccceeaf-9062-4ea6-bee1-c0e8754272ce.png)
+
+<hr />
 
 ## 1.3 Conditional statements
 
@@ -60,6 +65,8 @@ title: ICS 6B Sections 1.1-1.5
 - Conditional and biconditional operations can be used in conjunction with other operations
     - ∧, ∨, and ¬ takes precedence before → or ↔
 
+<hr />
+
 ## 1.4 Logical equivalence
 
 - A **tautology** is a compound proposition that is always true, while a **contradiction** is a compound proposition that is always false
@@ -75,6 +82,8 @@ title: ICS 6B Sections 1.1-1.5
     - Second version of the law: ¬(p ∧ q) ≡ (¬p ∨ ¬q) or !(p and q) == !p or !q
 
 **NOTE TO SELF:** Challenge activity 1.4.1 is a great capstone activity for practice
+
+<hr />
 
 ## 1.5 Laws of propositional logic
 

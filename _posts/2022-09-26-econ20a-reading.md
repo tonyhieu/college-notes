@@ -1,5 +1,6 @@
 ---
 layout: post
+toc: true
 description: Econ 20A Reading Notes
 categories: [econ20a, reading, fall22-23, markdown]
 title: Principles of Economics Ch. 1-3
@@ -89,6 +90,8 @@ title: Principles of Economics Ch. 1-3
     - Leads to **business cycles**: large, irregular, and unpredictable changes in economic activity
     - Government spending, printing, and taxing can all affect inflation, productivity, and more - it's up for debate how much (if at all) the government should do
 
+<hr />
+
 ## Chapter 2: Thinking Like an Economist
 
 ### 2-1: The Economist as Scientist
@@ -169,6 +172,8 @@ title: Principles of Economics Ch. 1-3
 ![Screen Shot 2022-09-27 at 1 54 25 AM](https://user-images.githubusercontent.com/54915685/192480951-ab3b698e-8ed5-4502-a8b8-8932ea162ca4.png)
     - Despite the fact that economists agree, if politicans were to implement such policies (like rent control), they might not get reelected/lose popularity, thus causing contradictions between public policy and agreed upon propositions
 
+<hr />
+
 ## Chapter 3: Interdependence and the Gains from Trade
 
 ### 3-1: A Parable for the Modern Economy
@@ -218,7 +223,7 @@ title: Principles of Economics Ch. 1-3
 
 ### 3-3: Applications of Comparative Advantage
 
-**Should LeBron James Mow His Own Lawn**
+**Should LeBron James Mow His Own Lawn?**
 - James is a great athlete, but the time he wastes on mowing his lawn could be used on other things such as recording a commercial or otherwise
     - Regular people have a *comparative advantage* over James, so James should hire people to mow his lawn for him (and compensate them at a price that is higher than their opportunity cost)
 
