@@ -168,3 +168,61 @@ title: Principles of Economics Ch. 1-3
 - Economists agree on many propositions that may be more controversial to the public, such as rent control and enforcing tariffs
 ![Screen Shot 2022-09-27 at 1 54 25 AM](https://user-images.githubusercontent.com/54915685/192480951-ab3b698e-8ed5-4502-a8b8-8932ea162ca4.png)
     - Despite the fact that economists agree, if politicans were to implement such policies (like rent control), they might not get reelected/lose popularity, thus causing contradictions between public policy and agreed upon propositions
+
+## Chapter 3: Interdependence and the Gains from Trade
+
+### 3-1: A Parable for the Modern Economy
+
+- Scenario: Let's say there are two people, Ruby and Frank, and two goods, beef and potatoes
+    - Ruby can only produce beef and Frank can only produce potatoes
+    - Both parties would benefit from trading with each other, as they would have more variety in their diets (beef + potatoes vs. only beef or only potatoes)
+    - Can also trade other things; if Ruby can't farm potatoes well and Frank can't raise cattle, then they could trade farms
+- <u>Guiding Question: What if one person is better at producing every good?</u>
+
+**Production Possibilities**
+- Assuming that Frank and Ruby could work 8 hours a day, they can only devote so much time to raising cattle or growing potatoes
+- Production possibilities frontier for both farmers: ![Screen Shot 2022-09-27 at 4 42 26 PM](https://user-images.githubusercontent.com/54915685/192656423-53cac430-e939-4f84-8ab7-074f39df4eb7.png)
+    - These frontiers are not curved (or "bowed-out") because each farmer's efficiency remains the same regardless the amount of time spent on either task
+- The frontiers show us what would happen if both farmers were self sufficient and are good at displaying the trade-offs they make, but aren't effective at showing what decisions they would make
+
+**Specialization and Trade**
+- Ruby tells Frank to spend all of his time farming potatoes (which he is more efficient at)
+- Ruby spends more of her time farming cattle (which she is better at than Frank) and some of her time growing potatoes
+- By specializing and trading their specialized goods, both farmers benefit and consume more of both foods
+![Screen Shot 2022-09-27 at 4 47 32 PM](https://user-images.githubusercontent.com/54915685/192656907-81636ea9-42dd-47d5-9370-d9ab9756a1b7.png)
+
+### 3-2: Comparative Advantage: The Driving Force of Specialization**
+
+**Absolute Advantage**
+- **Absolute advantage** is used to compare two firms, countries, people, etc.; one group has an absolute advantage if they use <u>less inputs</u> for the same output
+    - Ruby takes 20 minutes to make an ounce of meat and 10 minutes to make an ounce of potatoes, while Frank takes 60 and 15 minutes, respectively; Ruby has an absolute advantage over Frank
+
+**Opportunity Cost and Comparative Advantage**
+- In this scenario, opportunity cost represents the trade-off in time between producing meat and potatoes
+    - Ruby can make 2 ounces of potatoes in the time it takes to make 1 ounce of meat; <u>her opportunity cost for 1 ounce of potatoes is 1/2 ounce of meat</u>
+    - Frank can make 4 ounces of potatoes in the time it takes to make 1 ounce of meat; <u>his opportunity cost for 1 ounce of potatoes is 1/4 ounce of meat</u>
+- **Comparative advantage**: Having a lower opportunity cost to produce a good compared to another producer
+    - Despite Frank being worse at producing both goods, he has a comparative advantage over Ruby because 1/4 < 1/2
+    - One person cannot have a comparative advantage in both goods because the comparative advantages are inverse; if you have a low opportunity cost for one good, it'll be higher for the other good
+![Screen Shot 2022-09-27 at 4 59 38 PM](https://user-images.githubusercontent.com/54915685/192658006-56c3e797-a450-4e3a-a818-97e676d6fe85.png)
+
+**Comparative Advantage and Trade**
+- When people specialize in producing a good that they have a comparative advantage in, the total production of the economy rises, making everyone better off
+- By trading, people can obtain goods at a lower opportunity cost and therefore get more net goods
+
+**The Price of Trade**
+- To determine the price at which parties trade at, a general rule can be applied: <u>For both parties to gain from trade, the price at which they trade must lie between their opportunity costs</u>
+    - Frank and Ruby trade at a price of 3 ounces of potatoes for 1 ounce of meat; Ruby's opportunity cost is 2 ounces of potatoes for 1 ounce of meat and Frank's is 4 ounces of potatoes for 1 ounce of meat
+    - Any price between 2 and 4 would benefit both parties
+        - If below 2, then both parties would want to buy meat because it's cheaper than their opportunity cost; if above 4, then both parties would want to sell meat because the price is higher than their opportunity cost
+
+### 3-3: Applications of Comparative Advantage
+
+**Should LeBron James Mow His Own Lawn**
+- James is a great athlete, but the time he wastes on mowing his lawn could be used on other things such as recording a commercial or otherwise
+    - Regular people have a *comparative advantage* over James, so James should hire people to mow his lawn for him (and compensate them at a price that is higher than their opportunity cost)
+
+**Should the United States Trade with Other Countries?**
+- Goods bought from abroad are called **imports** and goods sold to other countries are **exports**
+- If one country is more adept at producing a certain good compared to another country, then they should export that good while importing a good that said other country has a comparative advantage in
+- Trade can benefit both parties, but it may hurt individuals; importing cars and exporting farmed goods affects autoworkers and farmers differently
