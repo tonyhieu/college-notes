@@ -16,6 +16,8 @@ title: Principles of Economics Ch. 1-3
 
 ### 1-1: How People Make Decisions
 
+<mark>Summary:</mark> People make decisions based on what they have to give (opportunity cost) and comparing it to what they get. Rational people try to get the best outcome possible and use marginal changes to get the most out of their resources. Rational people also consider the costs and benefits of a purchase/behaving a certain way.
+
 **Principle 1: People Face Trade-Offs**
 - Most decisions require trade-offs; give something you like to get something you like
 - Types of trade-offs in society
@@ -46,6 +48,8 @@ title: Principles of Economics Ch. 1-3
 
 ### 1-2: How People Interact
 
+<mark>Summary:</mark> People trade in order to maximize their production, as trade allows for specialization. Markets facilitate trade, and governments often step in to ensure that the market runs smoothly.
+
 **Principle 5: Trade Can Make Everyone Better Off**
 - Competition and trading can benefit all parties
     - Each person trades goods (work, most commonly) for other goods (food, homes, cars, etc.); competitive pricing forces goods to have low prices, benefiting consumers
@@ -56,7 +60,7 @@ title: Principles of Economics Ch. 1-3
 - Communism was founded on principle that the government should control the economy (central planning)
     - Most countries that had central planning stopped using it in favor of a market economy
 - **Market Economy**: an economy that is based on the decisions of individual households, companies, firms, etc. to exchange goods and services; decisions are made based on whatever is the most profitable/whatever provides the best outcome
-    - Can seem dangerous (no governing authority to ensure equality), but people make decisions as if guided by "an invisible hand) (Adam Smith)
+    - Can seem dangerous (no governing authority to ensure equality), but people make decisions as if guided by "an invisible hand (Adam Smith)
     - Prices are the main way the economy is controlled; determines the demand from buyers and the supply from sellers, thus displaying the value of a product to society
     - When a government interrupts the forces of natural supply and demand, the decisions of individuals don't follow the invisible hand as much
         - Shows why communism failed: prices didn't change to reflect the true values of products
@@ -73,6 +77,8 @@ title: Principles of Economics Ch. 1-3
 - Public policy not always perfect; can be corrupted or abused
 
 ### 1-3: How the Economy as a Whole Works
+
+<mark>Summary:</mark> Countries that are able to produce more goods and services have a higher standard of living. Printing can stimulate an economy, leading to the hiring of more workers, but it can also lead to higher inflation. Often, printing money (or the lack thereof) causes random business cycles.
 
 **Principle 8: A Country’s Standard of Living Depends on Its Ability to Produce Goods and Services**
 - Different countries have different qualities of life and average incomes; higher income == higher quality of life

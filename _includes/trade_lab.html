@@ -1,0 +1,161 @@
+<style>
+
+.main-content {
+    /* display: flex;
+    justify-content: center; */
+}
+
+.graph-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+canvas {
+    width: 20rem;
+    height: 20rem;
+    background-color: black;
+    object-fit: contain;
+}
+
+</style>
+
+<div class="main-content">
+    <div class="graph-container">
+        <canvas style="grid-column: 2 / span 1;" id="canvas1"></canvas>
+        <canvas style="grid-column: 7 / span 1;" id="canvas2"></canvas>
+    </div>
+
+    <div style="clear: both; margin-top: 3vh; text-align: center">
+        <table style="text-align: center">
+            <tr>
+                <th></th>
+                <th>Maximum Output of Good 1</th>
+                <th>Maximum Output of Good 2</th>
+                <th>Opportunity Cost of Good 1</th>
+                <th>Opportunity Cost of Good 2</th>
+                <th>Maximum Output if Independent</th>
+            </tr>
+    
+            <tr>
+                <td>Person A</td>
+                <td id="maxOutputOneA">test</td>
+                <td id="maxOutputTwoA">test</td>
+                <td id="oppCostOneA">test</td>
+                <td id="oppCostTwoA">test</td>
+                <td id="independentA"></td>
+            </tr>
+    
+            <tr>
+                <td>Person B</td>
+                <td id="maxOutputOneB">test</td>
+                <td id="maxOutputTwoB">test</td>
+                <td id="oppCostOneB">test</td>
+                <td id="oppCostTwoB">test</td>
+                <td id="independentB"></td>
+            </tr>
+        </table>
+
+        <p>The optimal price to trade Good 1 and Good 2 would be:</p>
+    </div>
+</div>
+
+<script>
+
+const canvasOne = document.getElementById("canvas1");
+const canvasTwo = document.getElementById("canvas2");
+
+canvasOne.height = canvasOne.width;
+canvasTwo.height = canvasTwo.width;
+
+const TOTAL_WIDTH = canvasOne.width;
+const TOTAL_HEIGHT = canvasOne.height;
+const GRAPH_WIDTH = TOTAL_WIDTH * 0.9;
+const GRAPH_HEIGHT = TOTAL_HEIGHT * 0.9;
+
+let nameOne = "Person A";
+let nameTwo = "Person B";
+let goodOne = "Good 1";
+let goodTwo = "Good 2";
+
+let personOneMax = [50, 100];
+let personTwoMax = [40, 20];
+let graphMax = 200;
+
+function initGraph(canvas, name) {
+    const ctx = canvas.getContext("2d");
+    // ctx.scale(1, 1);
+
+    // ctx.fillStyle = "white";
+    // ctx.fillRect(0, 0, TOTAL_WIDTH, TOTAL_HEIGHT);
+
+    ctx.strokeStyle = "white";
+    ctx.lineWIDTH = 2;
+
+    ctx.moveTo(TOTAL_WIDTH - GRAPH_WIDTH, TOTAL_HEIGHT - GRAPH_HEIGHT);
+    ctx.lineTo(TOTAL_WIDTH - GRAPH_WIDTH, GRAPH_HEIGHT);
+    ctx.stroke();
+
+    ctx.lineTo(GRAPH_WIDTH, GRAPH_HEIGHT);
+    ctx.stroke();
+
+    ctx.fillStyle = "white";
+    ctx.font = "1rem Comic Sans MS";
+
+    ctx.fillText(name, TOTAL_WIDTH / 2 - TOTAL_WIDTH * 0.1, 20);
+
+    ctx.font = "0.5rem Comic Sans MS";
+    ctx.fillText(goodOne, TOTAL_WIDTH / 2 - TOTAL_WIDTH * 0.02, TOTAL_HEIGHT - 10);
+
+    ctx.fillText(goodTwo, TOTAL_WIDTH - GRAPH_WIDTH - 10, TOTAL_HEIGHT - GRAPH_HEIGHT - 5);
+}
+
+function clearGraph (canvas) {
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, TOTAL_WIDTH, TOTAL_HEIGHT);
+}
+
+function drawFrontier(canvas, maximums) {
+    const ctx = canvas.getContext("2d");
+    
+    const startingYPosition = [TOTAL_WIDTH - GRAPH_WIDTH, GRAPH_HEIGHT];
+    const startingXPosition = [TOTAL_WIDTH - GRAPH_WIDTH, GRAPH_HEIGHT];
+
+    ctx.strokeStyle = "white";
+    ctx.lineWIDTH = 2;
+
+    ctx.moveTo(startingYPosition[0], startingYPosition[1] - GRAPH_HEIGHT * maximums[1] / graphMax);
+    ctx.lineTo(startingXPosition[0] + GRAPH_WIDTH * maximums[0] / graphMax, startingXPosition[1]);
+    ctx.stroke();
+
+    ctx.font = "0.5rem Comic Sans MS";
+    ctx.fillText(maximums[0], startingXPosition[0] + GRAPH_WIDTH * maximums[0] / graphMax - 5, startingXPosition[1] + 10);
+    ctx.fillText(maximums[1], startingYPosition[0] - 18, startingYPosition[1] - GRAPH_HEIGHT * maximums[1] / graphMax + 5);
+}
+
+function calculateCostsAndDisplay () {
+    document.getElementById("maxOutputOneA").innerHTML = personOneMax[0];
+    document.getElementById("maxOutputTwoA").innerHTML = personOneMax[1];
+    document.getElementById("maxOutputOneB").innerHTML = personTwoMax[0];
+    document.getElementById("maxOutputTwoB").innerHTML = personTwoMax[1];
+
+    opportunityCostsOne = [personOneMax[1]/personOneMax[0], personOneMax[0]/personOneMax[1]];
+    opportunityCostsTwo = [personTwoMax[1]/personTwoMax[0], personTwoMax[0]/personTwoMax[1]];
+
+    document.getElementById("oppCostOneA").innerHTML = opportunityCostsOne[0];
+    document.getElementById("oppCostTwoA").innerHTML = opportunityCostsOne[1];
+    document.getElementById("oppCostOneB").innerHTML = opportunityCostsTwo[0];
+    document.getElementById("oppCostTwoB").innerHTML = opportunityCostsTwo[1];
+
+    document.getElementById("independentA").innerHTML = (personOneMax[0] / 2) + ", " + (personOneMax[1] / 2);
+    document.getElementById("independentB").innerHTML = (personTwoMax[0] / 2) + ", " + (personTwoMax[1] / 2);
+}
+
+initGraph(canvasOne, nameOne);
+initGraph(canvasTwo, nameTwo);
+
+drawFrontier(canvasOne, personOneMax);
+drawFrontier(canvasTwo, personTwoMax);
+
+calculateCostsAndDisplay();
+
+</script>

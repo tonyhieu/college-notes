@@ -23,6 +23,7 @@ Goal of lecture: identify questions being asked
     - Originated in Ancient Rome as a way to gain power in a democratic government
     - Key to effective communication
 
+
 - **Aesthetic (Education)**: The idea that everyone should be generally educated so they can move between careers/jobs
     - Created in order to have more educated, well-informed students
     - Gen ed classes are based off of aesthetic education
