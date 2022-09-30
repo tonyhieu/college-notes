@@ -64,6 +64,7 @@ title: Principles of Economics Ch. 1-3
     - Prices are the main way the economy is controlled; determines the demand from buyers and the supply from sellers, thus displaying the value of a product to society
     - When a government interrupts the forces of natural supply and demand, the decisions of individuals don't follow the invisible hand as much
         - Shows why communism failed: prices didn't change to reflect the true values of products
+        - Leads to excesses and shortages because the government doesn't know how much demand there is
     - Products such as Uber show the inner workings of market economies
 
 **Principle 7: Governments Can Sometimes Improve Market Outcomes**
@@ -101,6 +102,8 @@ title: Principles of Economics Ch. 1-3
 ## Chapter 2: Thinking Like an Economist
 
 ### 2-1: The Economist as Scientist
+
+<mark>Summary:</mark> Economists can act as a scientist in the sense that they create hypotheses in order to understand more about the field. They must make assumptions in order to form these hypotheses/conclusions. There are many models to represent an economy. There are two studies of economics: micro and macro.
 
 **The Scientific Method: Observation, Theory, and More Observation**
 - Newton first observed an apple fall, created a theory about gravity, and observed to see if his theory was correct; this method can be applied to economics
@@ -151,6 +154,8 @@ title: Principles of Economics Ch. 1-3
 
 ### 2-2: The Economist as Policy Advisor
 
+<mark>Summary:</mark> Economists can make either positive or normative statements. Policymakers listen to these statements and form laws based on the advice, though economists are not always listened to.
+
 **Positive versus Normative Analysis**
 - A **positive statement** is objective and makes a statement about how the world *is*
 - A **normative statement** is subjective and makes a statement about how the world *should be*
@@ -165,6 +170,8 @@ title: Principles of Economics Ch. 1-3
 - Lawmakers must appeal to the masses (as well as Congress) and change portions of suggested economic policy in order to do so
 
 ### 2-3: Why Economists Disagree
+
+<mark>Summary:</mark> Economists disagree on issues because they have different values and may interpret data differently. However, there are many "controversial" issues that economists typically agree on.
 
 **Differences in Scientific Judgments**
 - Economists are always trying to understand world economies, so they might disagree if they interpret certain discoveries differently
@@ -183,6 +190,8 @@ title: Principles of Economics Ch. 1-3
 ## Chapter 3: Interdependence and the Gains from Trade
 
 ### 3-1: A Parable for the Modern Economy
+
+<mark>Summary:</mark> Trade can benefit both parties even if one party is absolutely better than the other at producing a certain good. Trade allows for specialization.
 
 - Scenario: Let's say there are two people, Ruby and Frank, and two goods, beef and potatoes
     - Ruby can only produce beef and Frank can only produce potatoes
@@ -203,6 +212,8 @@ title: Principles of Economics Ch. 1-3
 ![Screen Shot 2022-09-27 at 4 47 32 PM](https://user-images.githubusercontent.com/54915685/192656907-81636ea9-42dd-47d5-9370-d9ab9756a1b7.png)
 
 ### 3-2: Comparative Advantage: The Driving Force of Specialization**
+
+<mark>Summary:</mark> Comparative advantage determines how trade is conducted; if both parties have a comparative advantage over one another, then they can export the good that they are more efficient in producing. For both parties to benefit, the price of trade should be between their opportunity costs.
 
 **Absolute Advantage**
 - **Absolute advantage** is used to compare two firms, countries, people, etc.; one group has an absolute advantage if they use <u>less inputs</u> for the same output
@@ -228,6 +239,8 @@ title: Principles of Economics Ch. 1-3
         - If below 2, then both parties would want to buy meat because it's cheaper than their opportunity cost; if above 4, then both parties would want to sell meat because the price is higher than their opportunity cost
 
 ### 3-3: Applications of Comparative Advantage
+
+<mark>Summary:</mark> Examples of how comparative advantages apply to the real world.
 
 **Should LeBron James Mow His Own Lawn?**
 - James is a great athlete, but the time he wastes on mowing his lawn could be used on other things such as recording a commercial or otherwise
