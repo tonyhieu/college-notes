@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ICS 6B Sections 1.6-1.11 | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="ICS 6B Sections 1.6-1.11" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ICS 6B Reading Notes" />
+<meta property="og:description" content="ICS 6B Reading Notes" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/02/ics6b-reading.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/02/ics6b-reading.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-02T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ICS 6B Sections 1.6-1.11" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-02T00:00:00-05:00","datePublished":"2022-10-02T00:00:00-05:00","description":"ICS 6B Reading Notes","headline":"ICS 6B Sections 1.6-1.11","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/02/ics6b-reading.html"},"url":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/02/ics6b-reading.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ICS 6B Sections 1.6-1.11</h1><p class="page-description">ICS 6B Reading Notes</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-02T00:00:00-05:00" itemprop="datePublished">
+        Oct 2, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#ics6b">ics6b</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall22-23">fall22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#16-predicates-and-quantifiers">1.6: Predicates and quantifiers</a></li>
+<li class="toc-entry toc-h2"><a href="#17-quantified-statements">1.7: Quantified statements</a></li>
+<li class="toc-entry toc-h2"><a href="#18-de-morgans-law-for-quantified-statements">1.8: De Morgan’s law for quantified statements</a></li>
+<li class="toc-entry toc-h2"><a href="#19-nested-quantifiers">1.9: Nested quantifiers</a></li>
+<li class="toc-entry toc-h2"><a href="#110-more-nested-quantified-statements">1.10: More nested quantified statements</a></li>
+<li class="toc-entry toc-h2"><a href="#111-logical-reasoning">1.11: Logical reasoning</a></li>
+</ul><h2 id="16-predicates-and-quantifiers">
+<a class="anchor" href="#16-predicates-and-quantifiers" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.6: Predicates and quantifiers</h2>
+
+<ul>
+  <li>
+<strong>Predicate</strong>: A statement whose truth value depends on one or more variables, even if the outcome is predetermined
+    <ul>
+      <li>Represented as a function; “P of x”</li>
+      <li>Ex: “x is an even number” would be true if x = 4, but not if x = 5</li>
+      <li>
+<strong>Domain</strong>: All of the possible values of x for a predicate
+        <ul>
+          <li>“x is an even number” would have a domain of all natural numbers</li>
+          <li>If not apparent from context, should be defined in the predicate</li>
+        </ul>
+      </li>
+      <li>Predicates do not have to be strictly mathematical; general statements can be turned into predicates as well</li>
+    </ul>
+  </li>
+  <li>
+<strong>Universal quantifier</strong>: A way to turn a predicate into a proposition; denoted by ∀ which reads as “for all”
+    <ul>
+      <li>∀x P(x) reads as “for every x, P(x)” and is a proposition that only returns true if every x in the domain is true
+        <ul>
+          <li>∀x P(x) is a <strong>universally quantified statement</strong>
+  <img src="https://user-images.githubusercontent.com/54915685/193474892-483d8db0-1ceb-4329-86f7-3b6758bb99cc.png" alt="image">
+</li>
+        </ul>
+      </li>
+      <li>
+        <p>Proof showing that a universally quantified statement is true: <img src="https://user-images.githubusercontent.com/54915685/193476215-4460f7a4-b1c3-455e-8a81-ec744c477d1e.png" alt="image"></p>
+      </li>
+      <li>
+<strong>Counterexample</strong>: An element in the domain of a universally quantified statement that is false; used to prove that a statement is false</li>
+    </ul>
+  </li>
+  <li>
+<strong>Existensial equantifier</strong>: A way to turn a predicate into a proposition; denoted by ∃ which reads as “there exists”
+    <ul>
+      <li>∃x P(x) reads as “there exists an x, such that P(x)” and is a proposition that returns true if <em>any</em> x in the domain is true
+        <ul>
+          <li>∃x P(x) is an <strong>existentially quantified statement</strong>
+</li>
+        </ul>
+      </li>
+      <li>
+<strong>Example</strong>: An element in the domain of a existentially quantified statement that is true; used to prove that a statement is true</li>
+      <li>Proof showing that an existentially quantified statement is false: <img src="https://user-images.githubusercontent.com/54915685/193476249-850607f3-5d88-4c34-9739-25d085cece65.png" alt="image">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="17-quantified-statements">
+<a class="anchor" href="#17-quantified-statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.7: Quantified statements</h2>
+
+<ul>
+  <li>Can combine <strong>quantifiers</strong> and logical expressions to create <strong>quantified statements</strong>
+    <ul>
+      <li>Example: Let P(x) = x is prime and O(x) = x is odd; ∃x (P(x) ∧ ¬O(x)) states that there exists a positive number that is prime and not odd</li>
+    </ul>
+  </li>
+  <li>A <strong>free variable</strong> is defined as a variable that can be any value in the domain, while a <strong>bound variable</strong> is defined as a variable that is bound to a quantifier
+    <ul>
+      <li>x in P(x) is a free variable, while x in ∃x P(x) is a bound variable</li>
+      <li>A statement is a proposition if it contains no free variables</li>
+    </ul>
+  </li>
+  <li>Can express quantified statements in English
+    <ul>
+      <li>Let P(x) = x came to the party and S(x) = x was sick</li>
+      <li>∃x (S(x) ∨ P(x)) is true because Joe satisfies the proposition: S(Joe) ∨ P(Joe) == True</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>S(x)</th>
+      <th>P(x)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Joe</td>
+      <td>F</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>Theodore</td>
+      <td>T</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td>Gertrude</td>
+      <td>F</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>Samuel</td>
+      <td>F</td>
+      <td>F</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 id="18-de-morgans-law-for-quantified-statements">
+<a class="anchor" href="#18-de-morgans-law-for-quantified-statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.8: De Morgan’s law for quantified statements</h2>
+
+<ul>
+  <li>¬∀x F(x) can be rewritten as ∃x ¬F(x); AKA <u>¬∀x F(x) ≡ ∃x ¬F(x)</u>
+    <ul>
+      <li>Ex: “Not every bird can fly” == “There exists a bird that cannot fly”</li>
+    </ul>
+  </li>
+  <li>Likewise, ¬∃x F(x) can be rewritten as ∀x ¬F(x); AKA <u>¬∃x F(x) ≡ ∀x ¬F(x)</u>
+    <ul>
+      <li>Ex: “There does not exist a bird that can fly” == “Every bird cannot fly”</li>
+    </ul>
+  </li>
+  <li>When simplifying a quantifier, make sure to use a double negation on it
+    <ul>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/193478430-82c5024c-1a34-45ca-beee-bac230a574ed.png" alt="image">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="19-nested-quantifiers">
+<a class="anchor" href="#19-nested-quantifiers" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.9: Nested quantifiers</h2>
+
+<ul>
+  <li>When there are multiple variables in a predicate, you must use multiple, <strong>nested quantifiers</strong>
+    <ul>
+      <li>Examples of nested quantifiers: <img src="https://user-images.githubusercontent.com/54915685/193478540-d8315487-41c7-40ac-a48d-4f29a2695ed5.png" alt="image">
+</li>
+    </ul>
+  </li>
+  <li>Propositions with multiple variables can be thought of as pairs
+    <ul>
+      <li>Take ∀x ∀y M(x, y); this proposition is false if there is ANY pair of x, y that does not satisfy M(x, y) (including if x and y are the same)</li>
+      <li>For ∃x ∃y M(x, y), the proposition is false if ALL pairs of x, y are not true for M(x, y) (also including if x and y are the same)</li>
+    </ul>
+  </li>
+  <li>If a quantified statement has two quantifiers (one existential (∃) and one universal (∀)), it’s effective to think of the statement as a <strong>two player game</strong>
+    <ul>
+      <li>The existential player (variable) tries to make the expression true, while the universal player (variable) tries to make the expression false</li>
+      <li>The player (variable) on the left goes first, and the next player (variable) tries their best to succeed in their goal</li>
+      <li>Ex: In ∀x ∃y (x + y = 0), x goes first and chooses a random value; y tries its best to set x + y = 0 and is successful because it can always become -x</li>
+    </ul>
+  </li>
+  <li>DeMorgan’s can be applied to nested quantifiers as well; it switches the signs of the quantifier to its opposite</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/54915685/193479323-38ec0980-5fc9-4e2b-af05-2d0ef69ac869.png" alt="image"></p>
+
+<hr>
+
+<h2 id="110-more-nested-quantified-statements">
+<a class="anchor" href="#110-more-nested-quantified-statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.10: More nested quantified statements</h2>
+
+<ul>
+  <li>If you want to express ∀x ∀y without including situations where x == y, then you can write the proposition as ∀x ∀y ((x ≠ y) → M(x, y))
+    <ul>
+      <li>If x == y, then x, y cannot be used as a counter example because it’s not false</li>
+    </ul>
+  </li>
+  <li>To express uniqueness, you can use a combination of nested quantifiers and conditionals</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/54915685/193479698-b47e7ba3-a4eb-46ad-af84-6fe90f4ee520.png" alt="image"></p>
+
+<ul>
+  <li>You can also move the quantifiers depending on where it is located in the statement</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/54915685/193480097-a6623048-3678-48d3-b42b-b76b49cf396e.png" alt="image"></p>
+
+<p><strong>NOTE TO SELF:</strong> Challenge activity 1.10.1 is good practice</p>
+
+<hr>
+
+<h2 id="111-logical-reasoning">
+<a class="anchor" href="#111-logical-reasoning" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.11: Logical reasoning</h2>
+
+<ul>
+  <li>
+<strong>Argument</strong>: A sequence of propsitions (AKA <strong>hypotheses</strong>) that is followed by a final proposition (AKA <strong>conclusion</strong>)
+    <ul>
+      <li>
+<strong>Valid</strong> arguments have true conclusions when all hypotheses are true; <strong>invalid</strong> otherwise</li>
+      <li>∴ symbol denotes “therefore”</li>
+      <li>
+        <p>Commutative law allows hypotheses to be in any order</p>
+      </li>
+      <li>Ex: These two arguments are the same <img src="https://user-images.githubusercontent.com/54915685/193480793-1d2467fd-8552-431d-a961-5be478c2bd5e.png" alt="image">
+</li>
+      <li>
+        <p>Proving an arguments validity via truth table: <img src="https://user-images.githubusercontent.com/54915685/193480861-ab48d867-f833-47ab-b4ca-e016baf8b797.png" alt="image"></p>
+      </li>
+      <li>You can prove that an argument is invalid by showing an example where the hypotheses are true but the conclusion is not</li>
+    </ul>
+  </li>
+  <li>An argument’s <strong>form</strong> is found by replacing propositions with variables
+    <ul>
+      <li>Ex: “It is raining today. + If it is raining today, I will not ride my bike to school. ∴ I will not ride my bike to school.” can be replaced with “p + (p –&gt; q) ∴ q”</li>
+      <li>Forms can be useful because it can invalidate an argument with known truth values
+        <ul>
+          <li>Ex: <img src="https://user-images.githubusercontent.com/54915685/193481034-8ad0d20f-2c38-493b-9d3a-aef98d0a3082.png" alt="image">
+</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>If an argument does not have an assignment where the hypotheses are true, then the argument is valid</li>
+</ul>
+
+<p><strong>NOTE TO SELF:</strong> Challenge activity 1.11.1 is good practice</p>
+
+<p>Questions:</p>
+
+<p>What is the difference between (x != y) -&gt; and (x != y) ^? Is it because ^ is for existentials and -&gt; is for universals?</p>
+
+  </div><a class="u-url" href="/college-notes/ics6b/reading/fall22-23/markdown/2022/10/02/ics6b-reading.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/tonyhieu" target="_blank" title="tonyhieu"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
