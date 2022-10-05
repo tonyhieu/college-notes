@@ -49,6 +49,8 @@ title: ICS 6B Sections 1.6-1.11
 | Gertrude | F | T |
 | Samuel | F | F |
 
+- <u>If there are no values in the domain/set, then a universally quantified statement is vacuously true and a existentially quantified statement is false</u>
+
 <hr />
 
 ## 1.8: De Morgan's law for quantified statements

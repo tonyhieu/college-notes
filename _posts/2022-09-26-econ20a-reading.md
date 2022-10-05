@@ -58,7 +58,9 @@ title: Principles of Economics Ch. 1-3
 
 **Principle 6: Markets Are Usually a Good Way to Organize Economic Activity**
 - Communism was founded on principle that the government should control the economy (central planning)
+    - AKA Command Economy
     - Most countries that had central planning stopped using it in favor of a market economy
+    - Government decides on the producers, the level of output, the consumers; pretty much everything
 - **Market Economy**: an economy that is based on the decisions of individual households, companies, firms, etc. to exchange goods and services; decisions are made based on whatever is the most profitable/whatever provides the best outcome
     - Can seem dangerous (no governing authority to ensure equality), but people make decisions as if guided by "an invisible hand (Adam Smith)
     - Prices are the main way the economy is controlled; determines the demand from buyers and the supply from sellers, thus displaying the value of a product to society
@@ -73,7 +75,12 @@ title: Principles of Economics Ch. 1-3
 - Governments also choose whether or not to promote efficiency or equality
     - Occasionally,  a **market failure** occurs where a free market is inefficient in its distribution of resources; government must step in to make it efficient
         - Can be caused by **externality**: the actions of one affects the health/well-being of another (such as pollution)
+            - Can negatively or positively affect consumption and production
+            - Examples include smoking cigarettes, pollution, education, or a bee farm next to an orange orchard
         - Can also be caused by **market power**: one (or a few) person(s) or group(s) control a resource and can unnaturally change its price due to its necessity
+        - **Asymmetric Information**: one party has more information than another; can lie and be dishonest with a price
+            - *Adverse Selection*: Market failure where products of lower quality are sold at the same price as those of higher quality; too many low quality products are sold
+            - *Moral Hazard*: When a party can change their behavior without taking on risk, typically in the form of insurance
     - Free markets can cause large wealth disparities and inequalities; government can step in and provide basic goods + welfare for those at the bottom of the economic ladder
 - Public policy not always perfect; can be corrupted or abused
 
@@ -129,6 +136,7 @@ title: Principles of Economics Ch. 1-3
 - Inner loop represents the flow of inputs (labor, land, capital) and outputs (goods and services)
 - Outer loop represents the flow of dollars/money; paying wages, buying goods, etc.
 - Circular-flow diagram is good to understand how different parts of the economy interact
+- Assumed that there is no government intervention, foreign trade
 
 **Our Second Model: The Production Possibilities Frontier**
 - Most economic models are built using mathematics
