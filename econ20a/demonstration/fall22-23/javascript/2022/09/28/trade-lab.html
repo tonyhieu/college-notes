@@ -127,7 +127,7 @@ canvas {
             </tr>
         </table>
 
-        <p>The optimal price to trade Good 1 and Good 2 would be:</p>
+        <p id="optimalPrice">The optimal price to trade Good 1 and Good 2 would be any price </p>
     </div>
 </div>
 
@@ -149,9 +149,12 @@ let nameTwo = "Person B";
 let goodOne = "Good 1";
 let goodTwo = "Good 2";
 
-let personOneMax = [50, 100];
-let personTwoMax = [40, 20];
+let personOneMax = [40, 100];
+let personTwoMax = [40, 80];
 let graphMax = 200;
+
+let opportunityCostsOne = [];
+let opportunityCostsTwo = [];
 
 function initGraph(canvas, name) {
     const ctx = canvas.getContext("2d");
@@ -222,6 +225,18 @@ function calculateCostsAndDisplay () {
     document.getElementById("independentB").innerHTML = (personTwoMax[0] / 2) + ", " + (personTwoMax[1] / 2);
 }
 
+function calculatePrice() {
+    let personOneCosts = [Math.min(opportunityCostsOne[0], opportunityCostsOne[1]), Math.max(opportunityCostsOne[0], opportunityCostsOne[1])];
+    let personTwoCosts = [Math.min(opportunityCostsTwo[0], opportunityCostsTwo[1]), Math.max(opportunityCostsTwo[0], opportunityCostsTwo[1])];
+
+    let floor = Math.max(personOneCosts[0], personTwoCosts[0]);
+    let ceiling = Math.min(personOneCosts[1], personTwoCosts[1]);
+
+    let output = "greater than " + floor + " and less than " + ceiling;
+
+    document.getElementById("optimalPrice").innerHTML = "The optimal price to trade Good 1 and Good 2 would be any price " + output;
+}
+
 initGraph(canvasOne, nameOne);
 initGraph(canvasTwo, nameTwo);
 
@@ -229,6 +244,7 @@ drawFrontier(canvasOne, personOneMax);
 drawFrontier(canvasTwo, personTwoMax);
 
 calculateCostsAndDisplay();
+calculatePrice();
 
 </script>
 
