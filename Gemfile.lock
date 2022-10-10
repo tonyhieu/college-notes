@@ -132,6 +132,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  execjs
   faraday (< 1.0)
   jekyll (~> 4.1.0)
   jekyll-feed (~> 0.12)
@@ -145,6 +146,7 @@ DEPENDENCIES
   jekyll-toc
   jekyll-twitter-plugin
   jemoji
+  katex
   kramdown-math-katex
   minima
   tzinfo (~> 1.2)
