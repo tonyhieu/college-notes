@@ -1,0 +1,73 @@
+---
+layout: post
+description: Un/Plugging the Matrix
+categories: [humcore, lecture, fall22-23, markdown]
+title: October 13 Humcore Lecture
+---
+
+- The Matrix: etymology of "matrix" and the film in a nutshell
+    - Etymology
+        - Comes from the word "womb" in Latin, also "source, origin" from word mater in Late Latin
+        - Gained its meaning from the womb enclosing and giving origin (birth) to something
+        - Developed its modern meaning by the 1640s
+    - Themes of reality/non-reality, deception, enslavement, good/evil
+        - Virtual reality is the matrix, 1999 simulation, while actual reality is a post-apocalyptic world near 2199
+        - Machines enslave and farm humans for power
+        - Humans are deceived and brought into a false reality so they relax and can provide energy for the machines
+        - The good human rebellion attempts to take down the evil machinery
+- The look of The Matrix
+    - Focuses on time; real world is set in the 22nd century while it represents the 1990s thoughts on virtual reality/AI
+    - Inside the matrix, there are many green hues in highlights, shadows to represent computer text
+    - Outside the matrix, the Earth is razed, and the movie uses more blue colors (cold desolation)
+    - THe loading program is filled with white, represents a medium that isn't affected by the matrix or reality
+    - The Matrix also uses some colors to "pull you out" (such as the woman in red)
+- The Matrix as a philosophical and genre patchwork
+    - Philosophical references
+        - Plato and the Cave; "know thyself"
+        - Rene Descartes - how do you know that you're awake rather than dreaming? 
+        - George Berkeley and immaterialism - the world is made up from your mind; all reality is immaterial
+            - Relates to scene with the spoon
+        - Immanuel Kant - Freedom is necessary for happiness
+        - Jean Baudrillard
+    - Genre references
+        - Comics, cyberpunk, Japanese manga + anime (Ghost in the Shell), Hong Kong action + martial arts movies (Hard-Boiled), video games
+- Do you want to know what the Matrix is?
+    - Morpheus poses question to Neo, asks if he really wants to know what the Matrix is because Neo might not be able handle the truth (that he is enslaved)
+- Bluepill or redpill?
+    - Scene with Neo taking the redpill from Morpheus' hand, reflected in glasses
+    - Bluepill = stay in world of beliefs, dreams; redpill = *knowledge*, know what the world around you is
+- Plato's Cave and The Matrix: similarities and differences
+    - Agents turning into code at end of film; represents enlightenment, shows understanding of distinction between reality and non-reality (Forms vs. particulars)
+    - Cypher represents a "released prisoner" who *chooses* to come back to the Cave
+    - Plato's Cave is continuous; the real world is outside of the cave, while imitations of the real world are inside of the cave
+        - The Matrix's two worlds are discontinuous; the matrix is simulated and takes place in 1999, while the real world is set in 2199 and is completely destroyed
+    - Knowledge of the Good vs. Self-Knowledge
+        - Released prisoner must understand the Forms and the Good; abstract knowledge
+        - Neo must understand knowledge about himself; the truth is within him and around him
+    - Senses and vision
+        - Both Neo and the released prisoner find that their senses aren't adequate and easily deceived
+        - Both need to learn to see ("Why do my eyes hurt?" - Neo)
+- Jean Baudrillard: Simulacra and Simulation
+    - Simulacra are copies of things that EITHER had no originals to begin with OR no longer have originals
+    - Copies which take on their own reality, the "hyperreal"
+    - "Welcome to the desert of the real"
+- Two Qs from the Cave, two As from the Matrix
+    - Questions
+        - Who are the puppeteers and why are they carrying the artifacts?
+        - What/who starts the process of enlightenment?
+    - Answers
+        - The agents and the machines use humans as a power source
+            - Implies that the puppeteers might be political oppressors who want to keep humans chained and enslaved by shadows of the real
+        - Morpheus and Trinity free Neo because he is the One
+            - Implies that the liberator in the cave might be a teacher, similar to Morpheus or Socrates
+                - Cypher complains about having no freedom, as Morpheus tells him what to do (compulsion)
+            - Socrates notes that someone/something forces the prisoner to stand up, but WE compel the prisoner (second person, includes Socrates)
+
+- Let's have fun with names again!
+    - Morpheus - he who forms/shapes, also the Greek god of sleep (sleep, wake, dream)
+    - Neo - anagram of One and prefix meaning "new", also refers to a club that housed the goth subculture of the 80s and 90s
+        - Anderson: son of Andrew, Greek word Andreas means "man"
+    - Trinity - refers to the Father, the Son, and the Holy Ghost
+    - Cypher - alternate spelling of Cipher, 0s and 1s in computer code, decoder in cryptology
+- Qs for further thought
+    - 

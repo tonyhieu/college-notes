@@ -86,6 +86,7 @@ use-math: true
     - Advancements in technology increases the quantity supplied because it becomes cheaper/faster to produce
 - Expectations
     - A firm that expects the popularity of a good/service to rise may produce more of it, and vice versa
+    - If the price is expected to decrease, firms will supply more
 - Number of sellers
     - More sellers = more quantity supplied, and vice versa
 
@@ -146,3 +147,7 @@ use-math: true
         - Unit elastic is when your elasticity is equal to 1; over 1 is elastic, and under 1 is inelastic
         - Goods with substitutes are usually elastic, while necessities are inelastic
         - Decrease in price of an elastic good will increase revenue, while a decrease in price of an inelastic good will decrease revenue
+
+- Lecture Notes:
+    - Supply curves should start above (0, 0) because companies need to cover fixed costs
+    - Regular equations for curves start with Q (Q = mP + b), but if P is on the left, then it is called *inverse demand/supply*

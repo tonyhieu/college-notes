@@ -66,6 +66,7 @@ use-math: true
     - Formula: ![Screen Shot 2022-10-10 at 12 08 24 AM](https://user-images.githubusercontent.com/54915685/194813993-ef0f32fb-91b4-4659-a2ea-619877f5de68.png)
     - Normal goods have positive income elasticities while inferior goods have negative ones
     - *Engel's Law* stipulates: As a family’s income rises, the percent of its income spent on food declines, indicating an income elasticity less than one. By contrast, luxuries such as jewelry and recreational goods tend to have large income elasticities because consumers feel that they can do without these goods altogether if their incomes are too low.
+    - In other words, if an item makes up a small part of your income, the item is more inelastic because you can afford to pay the difference in price
 - The **cross-price elasticity of demand** is the measure of how the quantity demanded changes based on price changes of another good
     - Formula: ![Screen Shot 2022-10-10 at 12 10 47 AM](https://user-images.githubusercontent.com/54915685/194814310-18336ba1-b3c5-441f-9257-155ec2711a34.png)
     - Substitute goods have positive cross-price elasticities while complement goods have negative ones
@@ -125,3 +126,72 @@ use-math: true
 - Some argue that enforcing drug laws could be more beneficial to stopping drug crimes in the long run than in the short run, as goods become more elastic over time
 
 ![Screen Shot 2022-10-10 at 12 46 19 AM](https://user-images.githubusercontent.com/54915685/194819389-e1c381e2-47f9-46b2-8acc-e15a6b649184.png)
+
+## Chapter 6: Supply, Demand, and Government Policies
+
+### 6-1: Controls on Prices
+
+- Different groups may want the equilibrium price of a good to go up or down based on their interests, and will lobby legislators to change the price
+    - Legislators can create a **price ceiling** (price maximum, favored by buyers) or **price floor** (price minimum, favored by suppliers) to make it so that the price can't go beyond a certain range
+
+**How Price Ceilings Affect Market Outcomes**
+- A price ceiling above the equilibrium price is *not binding* and has no effect on the price or quantity of ice cream
+- A price ceiling below the equilibrium price is a *binding constraint* and affects the good
+    - Leads to a shortage because there is too much demand but not enough supply
+    - Due to the shortage of the good, sellers must ration their supply to buyers
+        - Includes imposing long lines or selling to favored groups (family, friends, racial/ethnic groups, etc.)
+    - General rule: *When the government imposes a binding price ceiling on a competitive market, a shortage of the good arises, and sellers must ration the scarce goods among the large number of potential buyers*
+    - Binding constraints are undesirable because discrimination by seller bias is both inefficient and unfair
+
+![Screen Shot 2022-10-11 at 12 31 10 PM](https://user-images.githubusercontent.com/54915685/195181873-d6d43681-2040-4823-b0d5-c873e205066a.png)
+
+**How Price Floors Affect Market Outcomes**
+- Binding price floors create a surplus of supply because the demand is too low for the supply
+    - Surplus of supply leads to further biases on the buyers' side
+        - "Rationing" from buyers could include buying from sellers who are friends, family, of a certain race, etc.
+- Example: Increasing the minimum wage increases the supply of labor but decreases the demand for it, leading to more unemployment
+    
+![Screen Shot 2022-10-11 at 12 31 26 PM](https://user-images.githubusercontent.com/54915685/195181912-1392dcdd-481d-472e-a9be-ce0f299c3145.png)
+
+**Evaluating Price Controls**
+- Economists dislike price controls because free markets tend to be the best way to organize economic activity
+    - Prices are the evolution of millions of decisions and settle at optimal values
+- The government can help to improve an economy, but setting price controls might hurt a group that they want to help
+    - A suggestion is to pay rent subsidies rather than create price controls
+
+## 6-2: Taxes
+- **Tax incidence**: How taxes are distributed throughout a market
+
+**How Taxes on Sellers Affect Market Outcomes**
+- Suppose a 50 cent tax was levied on sellers for each sale of an ice cream cone
+- *Step One*
+    - Since the tax is levied on sellers, the supply curve is affected
+- *Step Two*
+    - Since the input price is higher, the supply curve shifts to the left (specifically, the curve shifts upward by 50 cents)
+- *Step Three*
+    - The supply curve shifting to the left means that the price of ice cream went up and the supply of ice cream went down, thus reducing the size of the market
+- *Implications*
+    - The tax makes buyers worse off because they have to pay more for ice cream
+    - The tax makes sellers worse off because, despite the increase in price, they lose 50 cents every sale
+- Taxes discourage market activity, decreasing the quantity sold of a good
+- Buyers and sellers both share the burden of taxes
+- Graph: ![Screen Shot 2022-10-11 at 1 01 55 PM](https://user-images.githubusercontent.com/54915685/195187421-6ca24e42-bbba-4769-a18a-570939cebce5.png)
+
+**How Taxes on Buyers Affect Market Outcomes**
+- Suppose a 50 cent tax was levied on sellers on each purchase of an ice cream cone
+- *Step One*
+    - Since the tax is levied on buyers, the demand curve is affected
+- *Step Two*
+    - Since the price is higher, the demand curve shifts to the left (specifically, the curve shifts downward by 50 cents)
+- *Step Three*
+    - The demand curve shifting to the left means that the price of ice cream went up (after adding the 50 cent tax) and the supply of ice cream went down, thus reducing the size of the market
+- *Implications*
+    - The effect of a tax on buyers and sellers are the same; the sellers sell for $2.80 and the buyers buy for $3.30, thus reducing the market for ice cream
+    - 50 cents always goes to the government which is the reason for the similarity
+- Graph: ![Screen Shot 2022-10-11 at 1 17 08 PM](https://user-images.githubusercontent.com/54915685/195189963-f5b65f04-bdca-4553-8092-98a68a1946c3.png)
+
+**Elasticity and Tax Incidence**
+- Depending on elasticity, the tax incidence can vary greatly
+- Graph: ![Screen Shot 2022-10-11 at 1 28 00 PM](https://user-images.githubusercontent.com/54915685/195191953-75e7754d-fdae-4305-af4b-d69b61c6f712.png)
+- The more inelastic of supply/demand is the one who has the heavier tax burden ("A tax burden falls more heavily on the side of the market that is less elastic")
+    - This is due to the ability/willingness of buyers/sellers to change the quantity demanded/supplied of a good
