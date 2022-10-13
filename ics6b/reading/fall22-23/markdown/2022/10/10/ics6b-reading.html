@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ICS 6B Sections 1.12, 1.13, and all of 2 | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="ICS 6B Sections 1.12, 1.13, and all of 2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ICS 6B Reading Notes" />
+<meta property="og:description" content="ICS 6B Reading Notes" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/10/ics6b-reading.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/10/ics6b-reading.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-10T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ICS 6B Sections 1.12, 1.13, and all of 2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-10T00:00:00-05:00","datePublished":"2022-10-10T00:00:00-05:00","description":"ICS 6B Reading Notes","headline":"ICS 6B Sections 1.12, 1.13, and all of 2","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/10/ics6b-reading.html"},"url":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/10/ics6b-reading.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ICS 6B Sections 1.12, 1.13, and all of 2</h1><p class="page-description">ICS 6B Reading Notes</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-10T00:00:00-05:00" itemprop="datePublished">
+        Oct 10, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#ics6b">ics6b</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall22-23">fall22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#112-rules-of-inference-with-propositions">1.12: Rules of inference with propositions</a></li>
+<li class="toc-entry toc-h2"><a href="#113-rules-of-inference-with-quantifiers">1.13: Rules of inference with quantifiers</a></li>
+<li class="toc-entry toc-h2"><a href="#21-mathematical-definitions">2.1: Mathematical definitions</a></li>
+<li class="toc-entry toc-h2"><a href="#22-introduction-to-proofs">2.2: Introduction to proofs</a></li>
+<li class="toc-entry toc-h2"><a href="#23-best-practices-and-common-errors-in-proofs">2.3: Best practices and common errors in proofs</a></li>
+<li class="toc-entry toc-h2"><a href="#24-writing-direct-proofs">2.4: Writing direct proofs</a></li>
+<li class="toc-entry toc-h2"><a href="#25-proof-by-contrapositive">2.5: Proof by contrapositive</a></li>
+<li class="toc-entry toc-h2"><a href="#26-proof-by-contradiction">2.6: Proof by contradiction</a></li>
+<li class="toc-entry toc-h2"><a href="#27-proof-by-cases">2.7: Proof by cases</a></li>
+</ul><h2 id="112-rules-of-inference-with-propositions">
+<a class="anchor" href="#112-rules-of-inference-with-propositions" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.12: Rules of inference with propositions</h2>
+
+<ul>
+  <li>There are rules of inference that can be generally applied to arguments to know if they are valid
+    <ul>
+      <li>List of rules: <img src="https://user-images.githubusercontent.com/54915685/194972318-9a0f142d-502b-4239-a018-0cf43c82e862.png" alt="Screen Shot 2022-10-10 at 5 32 22 PM">
+</li>
+    </ul>
+  </li>
+  <li>Proving the validity of an argument using the rules of inference and laws of propositions is called a <strong>logical proof</strong>
+    <ul>
+      <li>Each step has different justifications; providing a hypothesis is calleda “hypothesis”, and you must state the law/rule if not</li>
+      <li>Example of a logical proof: <img src="https://user-images.githubusercontent.com/54915685/194972710-2c6d8378-bae6-4d92-8143-6f39dcf754ab.png" alt="Screen Shot 2022-10-10 at 5 37 07 PM">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p><mark>STUDY THIS SECTION, Challenge Activity 1.12.1 part 4 is good</mark></p>
+
+<h2 id="113-rules-of-inference-with-quantifiers">
+<a class="anchor" href="#113-rules-of-inference-with-quantifiers" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.13: Rules of inference with quantifiers</h2>
+
+<ul>
+  <li>To apply a rule of inference to a quantified statement, you must use an <strong>element</strong> in the domain of the statement
+    <ul>
+      <li>Elements can be defined in the hypotheses, example below: <img src="https://user-images.githubusercontent.com/54915685/194973459-0ecf42a3-8b2c-44f6-8249-88fbe4bf3f84.png" alt="Screen Shot 2022-10-10 at 5 46 50 PM">
+</li>
+      <li>Can use one of two elements in a logical proof
+        <ul>
+          <li>
+<strong>Arbitrary</strong> elements have no special properties other than the fact that they are in the domain</li>
+          <li>
+<strong>Particular</strong> elements can have properties that aren’t shared by others in the domain</li>
+        </ul>
+      </li>
+      <li>An element defined in a hypothesis is particular by default and must be labeled as “Hypothesis”, while an element defined in the proof is labeled “Element definition”</li>
+    </ul>
+  </li>
+  <li>
+    <p>Table of rules of inference for quantified statements: <img src="https://user-images.githubusercontent.com/54915685/194973808-9eb8bcf3-559c-4bd2-bd4d-04fbe6b01a1d.png" alt="Screen Shot 2022-10-10 at 5 50 34 PM"></p>
+  </li>
+  <li>A common error is defining the same variable for two different instances of existential instantiation; make sure to mark one variable as C and one as D</li>
+</ul>
+
+<p><mark>STUDY THIS SECTION, Challenge Activity is good</mark></p>
+
+<h2 id="21-mathematical-definitions">
+<a class="anchor" href="#21-mathematical-definitions" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.1: Mathematical definitions</h2>
+
+<ul>
+  <li>Even integers can be written as 2k; odd ones are written as 2k + 1 (also known as <strong>parity</strong>)</li>
+  <li>
+<strong>Same parity</strong> is if two numbers are both odd or even; if not, they are of <strong>opposite parity</strong>
+</li>
+  <li>Rational numbers are ones where there exists integers x, where y!= 0 and r = x/y</li>
+  <li>A number (x) that <strong>divides</strong> another number (y) is one where y % x == 0
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Denoted as x</td>
+              <td>y (x divides y); x is a multiple of y if it divides it</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Numbers that don’t divide are denoted as so: <img src="https://user-images.githubusercontent.com/54915685/194996330-5c29427c-87fa-4503-babf-24e2d790f8e3.png" alt="Screen Shot 2022-10-10 at 9 20 20 PM">
+</li>
+      <li>A number that divides another is called a multiple</li>
+    </ul>
+  </li>
+  <li>Prime numbers and composite numbers (if you don’t know this shit ur dumb)</li>
+  <li>Inequalities: &lt;, &gt;, =, etc.</li>
+</ul>
+
+<h2 id="22-introduction-to-proofs">
+<a class="anchor" href="#22-introduction-to-proofs" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.2: Introduction to proofs</h2>
+<ul>
+  <li>
+<strong>Theorem</strong>: A statement that can be proven to be true via a <strong>proof</strong>
+    <ul>
+      <li>Proofs might use <strong>axioms</strong> which are statements assumed to be true</li>
+    </ul>
+  </li>
+  <li>Theorems are often rewritten as universally or existentially quantified statements</li>
+  <li>
+<strong>Proof of exhaustion</strong>: A proof that is done by examining every element in a domain</li>
+  <li>Proofs involving <strong>universal generalizations</strong> uses a statement to define an arbitrary element</li>
+  <li>
+<strong>Counterexample</strong>: definition of one element in a domain that makes the statement false</li>
+  <li>
+<strong>Existence proofs</strong> show that existential statements are true
+    <ul>
+      <li>
+<strong>Constructive proofs of existence</strong> are the most common, and they provide a specific example in the domain that satisfies the statement</li>
+      <li>
+<strong>Nonconstructive proofs of existence</strong> provide an example with certain properties that satisfies the statement</li>
+      <li>Disproving existential statements requies DeMorgan’s Law and a proof that a negated statement is true
+        <ul>
+          <li>Example: <img src="https://user-images.githubusercontent.com/54915685/194998828-ad544fce-3aef-4ecf-858b-41b81d2dce92.png" alt="Screen Shot 2022-10-10 at 9 42 13 PM">
+</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="23-best-practices-and-common-errors-in-proofs">
+<a class="anchor" href="#23-best-practices-and-common-errors-in-proofs" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.3: Best practices and common errors in proofs</h2>
+
+<p>Section includes various important factoids to know</p>
+
+<p><img src="https://user-images.githubusercontent.com/54915685/194999403-8d11fd69-b124-4609-84d5-985d6f183a20.png" alt="Screen Shot 2022-10-10 at 9 46 21 PM"></p>
+
+<p><img src="https://user-images.githubusercontent.com/54915685/194999453-19e5de57-f118-43e0-a333-f0024ec9fe66.png" alt="Screen Shot 2022-10-10 at 9 46 49 PM"></p>
+
+<p><img src="https://user-images.githubusercontent.com/54915685/194999502-26651742-00fe-4c88-8844-4e5800668873.png" alt="Screen Shot 2022-10-10 at 9 47 13 PM"></p>
+
+<h2 id="24-writing-direct-proofs">
+<a class="anchor" href="#24-writing-direct-proofs" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.4: Writing direct proofs</h2>
+
+<ul>
+  <li>
+<strong>Direct proofs</strong>: A hypothesis, p, is assumed to be true and the conclusion, c, is proven due to that assumption (p -&gt; c)</li>
+</ul>
+
+<h2 id="25-proof-by-contrapositive">
+<a class="anchor" href="#25-proof-by-contrapositive" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.5: Proof by contrapositive</h2>
+<ul>
+  <li>
+<strong>Proof by contrapositive</strong>: A proof of a conditional theorem of the form (p -&gt; c) by proving (!c -&gt; !p)
+    <ul>
+      <li>Example of what to do with multiple hypotheses: <img src="https://user-images.githubusercontent.com/54915685/195002409-f4216656-60b3-43e4-9952-a845c779254b.png" alt="Screen Shot 2022-10-10 at 10 13 06 PM">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="26-proof-by-contradiction">
+<a class="anchor" href="#26-proof-by-contradiction" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.6: Proof by contradiction</h2>
+<ul>
+  <li>
+<strong>Proof by contradiction</strong> assumes that the theorem is false and shows a logical inconsistency with such assumption; also called an <strong>indirect proof</strong>
+    <ul>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/195003266-474bf9e1-9a14-4e0b-8eae-1a6a2375ab0d.png" alt="Screen Shot 2022-10-10 at 10 19 55 PM">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="27-proof-by-cases">
+<a class="anchor" href="#27-proof-by-cases" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.7: Proof by cases</h2>
+<ul>
+  <li>
+<strong>Proof by cases</strong>: Separates the domain into separate classes (<strong>cases</strong>) and proves that each class is true
+    <ul>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/195004117-21074b57-85b0-4f3f-8ede-9663dd5bce0c.png" alt="Screen Shot 2022-10-10 at 10 27 40 PM">
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Without loss of generality</strong> is written to show that one case can apply to all cases
+    <ul>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/195004644-754087d7-0272-46a7-87ba-f128c0ea7288.png" alt="Screen Shot 2022-10-10 at 10 31 44 PM">
+</li>
+    </ul>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/ics6b/reading/fall22-23/markdown/2022/10/10/ics6b-reading.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/tonyhieu" target="_blank" title="tonyhieu"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
