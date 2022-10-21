@@ -62,6 +62,13 @@ use-math: true
 - Number of Buyers
     - Adding buyers increases demand and lowering buyers decreases demand
 
+**Additional Notes**
+- The relationship between demand and quantity demanded is negative for two reasons
+    - *Substitution effect*: When the price of a good goes up, consumers substitute it by buying similar products instead
+    - *Income effect*: When the price of a good goes up, consumers' purchasing power goes down, and the consumer buys less of the good but more of other goods
+- **Law of Diminishing Marginal Utility**: The idea that each additional unit of a good that you receive becomes lower in value (or utility) as you receive more
+    - **Indifference Curve**: A curve showing the relationship between two goods that a consumer needs/likes; takes the shape of 1/x and is convex
+
 ### 4-3: Supply
 
 **The Supply Curve: The Relationship between Price and Quantity Supplied**

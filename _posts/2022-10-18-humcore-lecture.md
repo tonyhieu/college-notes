@@ -1,0 +1,62 @@
+---
+layout: post
+description: Timing Politics, Roman Imperialism
+categories: [humcore, lecture, fall22-23, markdown]
+title: October 18 Humcore Lecture
+---
+
+- Vergil and the Eclogues
+    - Lived 70-19 BCE, lived in the Augustan period (when Caesar Augustus ruled)
+    - Composed the three most famous poems in Latin literature: Eclogues (Bucolics), Georgics, and Aeneid
+    - Influnced Dante's Divine Comedy
+    - The Eclogues (Greek for "the selections") are a group of 10 poems that discuss classical utopianism
+- Themes of the Eclogues
+    - Land confiscation, effects on Italy
+    - Homosexual love, attraction to anyone regardless of gender
+    - A heated poetic contest
+- Historical Context of Eclogue 4
+    - Created after the Pact of Brundism, forged between Mark Antony (general under Caesar) and future emperor Augustus/Octavian, in 40 BCE
+    - Pollio (referred to in Eclogue 4) was the governor of Cisalpine Gaul + supporter of Mark Antony and helped negotiate the Pact
+    - Eclogue 4 represents Vergil's wish to stop civil wars; greed, violence, etc.
+    - Octavian and Antony eventually fought, and Antony was killed in the battle of Actium, ending the civil wars and Roman Republic
+    - Octavian became the sole ruler of Rome
+- Roman Empire at its Height
+    - Roman Republic was thought of as one of the best governments, utopian almost
+    - Vergil wants to portray it as a timeless, great society
+- Eclogue 4: bird's eye view
+    - **Pastoral poetry**: Poetry that depicts a very idealized view of life, uses imagery of nature + shepherds to show the innocence of life, emphasis on simplicity
+        - Eclogues are very rooted in reality, though
+    - Main theme: *the real world is about to change for the better by resembling the glorious past*
+        - Prophecizes this Golden age using three traditional Roman temporalities: the old prophecies of the Sibyl of Cumae, the departure of Justice after the world becomes wicked, and the Roman legend of the rule of Saturn during the original happy period
+- Cumaean Sibyl
+    - A priestess and prophet of Apollo's oracle at the Greek colony Cumae
+    - Famously authored nine prophetic books which clarified divine events or ordered sacrifices to prevent disaster
+- Saturn
+    - Roman equivalent of Cronus; god of time, generation, dissolution, abundance, wealth, agriculture, renewal + liberation and reigned over a Golden Age of abundance and peace
+- The Golden Age
+    - The idea that there was an earlier time where humans lived peaceful and untroubled lives (such as Cyclopses in the Odyssey)
+    - Two forms of human evolution: **historical**, where savage humans evolved into happier ones, and **anti-historical**, where humans look back to a better Golden Age
+    - Golden Age is brought up in different sources: Hesiod, Plato, Horace, etc.
+    - Political theorists have come up with many different versions of the Golden Age in the ancient world
+    - Nostalgic and Golden Age politics state that looking back to the past can help address the inefficiencies of the present
+- The Child in Eclogue 4
+    - Thought to be Pollio's son or the child of Antony and Octavia, this child (who is implied to be divine) will bring about the Golden Age
+        - Also considered to be Christ
+- Time in Eclogue 4
+    - Different periods are shown
+        - Prophetic time: Sibyl of Cumae and the Fates
+        - Astral time: rule of Saturn
+        - Mythological time: Achilles, Argo, Golden Age
+        - Human birth: serves as a metaphor of the Golden Age
+        - Linear development of human life represents the three stages of the Golden Age
+    - Vergil conflates different times with each other, combines Past and Present/Future and Present
+- The Three Stages of the Child's Growth
+    - Infancy - the Earth will become better, and nature will become more hospitable
+    - Boyhood - the boy will know what virtue is, nature will grow, and another war will take place
+    - Manhood - nature will prevail and humans will entire a Golden Age
+    - Will be able to control all time and all space
+- Modern Receptions of Eclogue 4
+    - The Hapsburg emperors and Queen Elizabeth I were all thought to bring in a new Golden Age
+    - Eclogue 4 is used to celebrate various leaders
+    - References in the Bible
+    - Dante's Divine Comedy references Eclogue 4 as a nod to Christianity
