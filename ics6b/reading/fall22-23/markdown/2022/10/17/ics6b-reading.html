@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ICS 6B Chapter 3 | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="ICS 6B Chapter 3" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ICS 6B Reading Notes" />
+<meta property="og:description" content="ICS 6B Reading Notes" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/17/ics6b-reading.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/17/ics6b-reading.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-17T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ICS 6B Chapter 3" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-17T00:00:00-05:00","datePublished":"2022-10-17T00:00:00-05:00","description":"ICS 6B Reading Notes","headline":"ICS 6B Chapter 3","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/17/ics6b-reading.html"},"url":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/17/ics6b-reading.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ICS 6B Chapter 3</h1><p class="page-description">ICS 6B Reading Notes</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-17T00:00:00-05:00" itemprop="datePublished">
+        Oct 17, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#ics6b">ics6b</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall22-23">fall22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#31-sets-and-subsets">3.1: Sets and subsets</a></li>
+<li class="toc-entry toc-h2"><a href="#32-sets-of-sets">3.2: Sets of sets</a></li>
+<li class="toc-entry toc-h2"><a href="#33-union-and-intersection">3.3: Union and intersection</a></li>
+<li class="toc-entry toc-h2"><a href="#34-more-set-operations">3.4: More set operations</a></li>
+<li class="toc-entry toc-h2"><a href="#35-set-identities">3.5: Set identities</a></li>
+<li class="toc-entry toc-h2"><a href="#36-cartesian-products">3.6: Cartesian products</a></li>
+<li class="toc-entry toc-h2"><a href="#37-partitions">3.7: Partitions</a></li>
+</ul><h2 id="31-sets-and-subsets">
+<a class="anchor" href="#31-sets-and-subsets" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.1: Sets and subsets</h2>
+
+<ul>
+  <li>
+<strong>Set</strong>: A collection of objects (or <strong>elements</strong>); may contain different types of objects (animal, number, book, etc.)
+    <ul>
+      <li>
+<strong>Roster notation</strong>: Directly listing all of the elements in a set using curly braces
+        <ul>
+          <li>Order is unimportant, and repeating an element doesn’t change the set</li>
+          <li>{ 1, 2, 3, 4 }, { 4, 2, 3, 1 }, and { 1, 1, 2, 3, 4 } are all the same</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>∈ is used to show that an element is in a set (2 ∈ A), while ∉ shows that an element is <em>not</em> in a set (5 ∉ A)</li>
+  <li>
+<strong>Empty set or null set</strong>: The set with no elements, represented by ∅; can be denoted as {}
+    <ul>
+      <li>For any element a, a ∉ ∅ is true</li>
+    </ul>
+  </li>
+  <li>
+<strong>Finite set</strong>: A set that is empty or whose elements can be numbered from 1 to some integer n
+    <ul>
+      <li>
+<strong>Cardinality</strong>: The number of distinct elements in a set, denoted by ||
+        <ul>
+          <li>|A| reads as “the cardinality of A”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>Infinite set</strong>: A set that is not finite; unlimited number of elements</li>
+  <li>Can denote a set using ellipses (…)
+    <ul>
+      <li>B = { 1, 3, 5, … , 99 } is a set of odd numbers between 1 and 100, inclusive</li>
+      <li>C = { 3, 6, 9, 12, … } is a set of all multiples of 3</li>
+    </ul>
+  </li>
+  <li>Two sets are equal if they have the same elements; if, for any element a, a ∈ D if and only if a ∈ E</li>
+  <li>Common sets
+    <ul>
+      <li>N: the set of all natural numbers (integers greater than or equal to 0)</li>
+      <li>Z: the set of all integers</li>
+      <li>Q: the set of all rational numbers</li>
+      <li>R: the set of all real numbers</li>
+      <li>A + or - in the superscript changes it to all positive or negative elements in the set
+        <ul>
+          <li>Positive is &gt; 0, negative is &lt; 0, and non-negative is &gt;= 0</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>Set builder notation</strong> specifies a set from an existing set
+    <ul>
+      <li>Colon is used to represent “such that” (similar to how colon works as an if statement)</li>
+      <li>Ex: C = { x ∈ Z : 0 &lt; x &lt; 100 and x is prime} means that C is the set of all prime numbers between 0 and 100, exclusive</li>
+    </ul>
+  </li>
+  <li>
+<strong>Universal set</strong>: Set containing all elements in a particular context
+    <ul>
+      <li>Sets may be depicted using <strong>venn diagrams</strong>
+</li>
+    </ul>
+  </li>
+  <li>A set is a <strong>subset</strong> of another set if every one of its elements is contained in the other set
+    <ul>
+      <li>Denoted by ⊆; ⊈ is used if a set is not a subset of another</li>
+      <li>{ 1, 2, 3, 4 } is a subset of { 1, 2, 3, 4, 5 }</li>
+      <li>Two sets are equal if they are both subsets of each other</li>
+    </ul>
+  </li>
+  <li>A <strong>proper subset</strong> of another set means that the larger set contains elements that the subset doesn’t
+    <ul>
+      <li>Denoted with ⊂</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="32-sets-of-sets">
+<a class="anchor" href="#32-sets-of-sets" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.2: Sets of sets</h2>
+<ul>
+  <li>A set can contain multiple sets within it; think of it as nested lists
+    <ul>
+      <li>If x ∈ set A, then { x } ∈ set A</li>
+    </ul>
+  </li>
+  <li>A <strong>power set (P(x))</strong> contains all subsets in another set
+    <ul>
+      <li>If A = { 1, 2, 3 }, then P(A) = { ∅, { 1 }, { 2 }, { 3 }, { 1, 2 }, { 1, 3 }, { 2, 3 }, { 1, 2, 3 } }</li>
+      <li>The cardinality of a power set is 2 to the power of the cardinality of the original set</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="33-union-and-intersection">
+<a class="anchor" href="#33-union-and-intersection" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.3: Union and intersection</h2>
+<ul>
+  <li>The <strong>intersection</strong> of two sets (denoted by ∩) is a set containing all elements shared by both sets</li>
+  <li>The <strong>union</strong> of two sets (denoted by ∪) is a set containing all elements in both sets</li>
+</ul>
+
+<h2 id="34-more-set-operations">
+<a class="anchor" href="#34-more-set-operations" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.4: More set operations</h2>
+<ul>
+  <li>The <strong>difference</strong> of two sets (denoted by -) is the set of elements in one set but not the other (asymmetric)
+    <ul>
+      <li>Ex: A - B is the set of elements in A but not B</li>
+    </ul>
+  </li>
+  <li>The <strong>symmetric difference</strong> of two sets (denoted by ⊕) is the set of elements in one set but not the other (symmetric)
+    <ul>
+      <li>Ex: A ⊕ B is the set of elements in A and B but not each other</li>
+    </ul>
+  </li>
+  <li>The <strong>complement</strong> of two sets (denoted by an over bar) is the set of elements in the universal set but not in the given set
+    <ul>
+      <li>If U = Z and A = { x ∈ Z: x is odd }, then the complement is all even integers</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/54915685/196336415-2a78dea5-5551-4a5a-a592-b8f5a5db2a8e.png" alt="image"></p>
+
+<h2 id="35-set-identities">
+<a class="anchor" href="#35-set-identities" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.5: Set identities</h2>
+<ul>
+  <li>A <strong>set identity</strong> is a equation that is true regardless of the elements in a set</li>
+  <li>SImilar to other identities</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/54915685/196338152-9497dc6d-f7ac-43a2-9b78-b86811cee67e.png" alt="Screen Shot 2022-10-17 at 9 50 00 PM"></p>
+
+<h2 id="36-cartesian-products">
+<a class="anchor" href="#36-cartesian-products" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.6: Cartesian products</h2>
+<ul>
+  <li>
+<strong>Ordered pair</strong>: written (x, y) and contains two <strong>entries</strong>; the parantheses means that order matters</li>
+  <li>The <strong>Cartesian product</strong> (denoted by X) of two sets is the set of all ordered pairs where the first entry is equal to elements in the first set and the second entry is equal to elements in the second set
+    <ul>
+      <li>Ex: <img src="https://user-images.githubusercontent.com/54915685/196339067-c7167ab2-2aba-465b-bdec-34c07e58aa37.png" alt="Screen Shot 2022-10-17 at 9 57 27 PM">
+</li>
+    </ul>
+  </li>
+  <li>An <strong>ordered triple</strong> is an ordered list of three items, and an <strong>ordered n-tuple</strong> is an ordered list of n items</li>
+  <li>A superscript denotes all ordered tuples in a set; R<sup>2</sup> denotes all ordered pairs in the set of real numbers</li>
+  <li>
+<strong>Strings</strong>, or ordered tuples with letters, can be written without parantheses or commas
+    <ul>
+      <li>Ex: if A = {x, y}, the set A<sup>2</sup> would be { xx, xy, yx, yy }</li>
+    </ul>
+  </li>
+  <li>A <strong>binary string</strong> is a string with letters taken from { 0, 1 }, and a <strong>bit</strong> is one character
+    <ul>
+      <li>A string of length n is called an <strong>n-bit string</strong>
+</li>
+    </ul>
+  </li>
+  <li>An <strong>empty string</strong> (denoted by λ) has a length of 0</li>
+  <li>
+<strong>Concatenation</strong> of two strings is adding them together</li>
+</ul>
+
+<h2 id="37-partitions">
+<a class="anchor" href="#37-partitions" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.7: Partitions</h2>
+
+<ul>
+  <li>Two sets are <strong>disjoint</strong> if they share no comment elements (or if A ∩ B = ∅)
+    <ul>
+      <li>A sequence of sets is <strong>pairwise disjoint</strong> if every set in the sequence is disjoint to each other</li>
+    </ul>
+  </li>
+  <li>A <strong>partition</strong> of a set is a collection of subsets that create a pairwise disjoint sequence of sets
+    <ul>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/196341532-0c308220-c311-4fa5-aee4-1777538ad47d.png" alt="Screen Shot 2022-10-17 at 10 16 56 PM">
+</li>
+    </ul>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/ics6b/reading/fall22-23/markdown/2022/10/17/ics6b-reading.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/tonyhieu" target="_blank" title="tonyhieu"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
