@@ -38,7 +38,7 @@ title: ICS 6B Sections 1.12, 1.13, and all of 2
 - **Same parity** is if two numbers are both odd or even; if not, they are of **opposite parity**
 - Rational numbers are ones where there exists integers x, where y!= 0 and r = x/y
 - A number (x) that **divides** another number (y) is one where y % x == 0
-    - Denoted as x|y (x divides y); x is a multiple of y if it divides it
+    - Denoted as x\|y (x divides y); x is a multiple of y if it divides it
     - Numbers that don't divide are denoted as so: ![Screen Shot 2022-10-10 at 9 20 20 PM](https://user-images.githubusercontent.com/54915685/194996330-5c29427c-87fa-4503-babf-24e2d790f8e3.png)
     - A number that divides another is called a multiple
 - Prime numbers and composite numbers (if you don't know this shit ur dumb)
