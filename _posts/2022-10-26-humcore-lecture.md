@@ -1,0 +1,94 @@
+---
+layout: post
+description: Getting Physical... and Spiritual in Bocaccio's Decameron Day 3
+categories: [humcore, lecture, fall22-23, markdown]
+title: October 26 Humcore Lecture
+---
+
+- Reflections on the brigata's interruption of their routine
+    - On day 3, the daily queen is Neifile, theme is people who have gained/recovered things from their own resourcefulness
+    - Neifile insists that the group stops storytelling over the weekend so they can reflect on spiritual matters, restart on Sunday
+        - On Friday, they would meditate on Christ's crucifixion, and on Saturday, they would pay respect to the Virgin Mary
+    - Ladies will wash their hair over the weekend, important detail of personal hygiene such as when they washed their hands on Day One
+- Change of Location
+    - The brigata moves to a different palace with a large, enclosed garden in order to ensure that no one else will come
+    - The new palace's garden is much bigger than the old one's, and it combines nature with civilization (marble, mills, channels, water, plants, animals, etc.)
+    - Garden resembles a typical Mediterranean or Italian garden
+        - Group decides to eat there, with the tables arranged around the fountain
+        - Spend time reading romances, playing chess (which was previously not allowed), throwing dice (gambling), and napping
+            - Interesting that they allow for more "competitive" activities like chess and gambling
+        - Stands as stark contrast to the urban, plagued Florence
+        - Enclosed garden implies safety
+- theology vs. eroticism on day 3
+    - Day 3 seems to be surrounded with theology; a two day break for prayer, and then the stories are told in a garden which resembles the Garden of Eden
+    - The stories told on the day contrast with this theological background, and they mix the secular and sacred in unique ways
+    - The stories focus on erotic instinct and female sexuality as well as class concerns
+- Tale of Masetto III.1
+    - Denies the claim that nuns have no sexual desire due to religion or fatigue
+    - The tale stages a complicity between Masetto and the nuns to address a common desire
+        - Starts out as equals, but eventually Masetto is on the losing side as there are too many women to satisfy
+        - Claims that a woman's sexual capacity is higher than a man
+    - The theme of muteness has already been touched upon in II.7 and it returns here as a catalyst for seduction
+    - The garden in the story is enclosed, as is the brigata's
+    - Interpretations
+        - Condemn the story for its amorality
+        - Celebrate it for its insistence on "natural" sexual instincts
+        - Has ties between the Garden of Eden (no desires before sin) and the human world that resulted from leaving the Garden
+            - Bocaccio writes about the loss of harmony that resulted from leaving the Garden, and one of the side effects is the lovesickness that the Author writes about
+    - Nuns traditionally became brides of Christ and forewent physical desire in favor of spiritual satisfaction
+        - In medieval and Renaissance, many men and women entered religious life out of economic necessity instead of free will
+        - Bocaccio doesn't question those who are honest in their intentions, but acknowledges that they are often in a state of unfulfillment much of the time
+            - Refuses to condemn them for acting on their desires
+    - Bocaccio mocks the thought of theologians and doctors
+        - Many want to think that nuns leave their sexual instinct behind when they enter religious life
+        - The Greek theory of humors thought of women as lesser creatures than humans who needed to be controlled, leading to their isolation
+    - Use of many double entendres, such as "I'm going to work your garden for you better than it's ever been worked before"
+        - Never uses explicit profanity, never names body parts
+        - Juxtaposed with the last tale of day 2, in which a man doesn't have sex with his wife and she leaves him
+    - Boccaccio encourages the reader to compare the brigata's garden (recently spiritualized) with the nun's garden (defiled)
+    - Joke of the story relies on the tradition that nuns are "brides of Christ"
+    - Masetto is rewarded with many children and believes that "this was the way, he maintained, that Christ treated anyone who set a pair of cuckold’s horns on His crown”
+        - The cuckold is someone whose partner is sleeping with someone's else, and they often wear horns
+        - The joke is that Christ approves when Masetto sleeps with the nuns
+        - In II.10, the neighboring women make the gesture of the cuckold when the wife has sex with her lover
+    - By pretending to be deaf and mute, Masetto induces situational irony when the nuns talk about sex in front of him; also lays the groundwork for his "miraculous recovery"
+        - The miracle of regaining hearing is not because he actually regained it, but because the nuns had been using him for their sexual desire
+        - Ideas of miracles have prevailed in other stories; Ser Ciappelletto was miraculously saved
+        - Miracles are a handy way of excusing human behavior
+- Tale of Alibech III.10
+    - Illicit story, ignored by critics until 1929
+    - In D.H. Lawrence's book *Pornography and Obscenity*, Lawrence argues that such stories should be shared in order to have a more open discussion about sex
+        - The story is also seen as extremely obscene and misogynistic
+    - Boccaccio is offering a parody of the "monk going out to the desert to become spiritually enlightened" trope (Journey to the West)
+        - *The Life of Maria the Harlot* in particular was a very similar story that followed a young girl who lived in the desert as a hermit
+            - Maria becomes seduced by a monk after she lives there for 18 years
+            - Maria turns to prostitution because she is ashamed, and her uncle visits her (pretending to be a customer) and tells her that she should not be ashamed
+            - Maria dies a saint in the desert
+    - Comparisons between Maria and Alibech
+        - Maria's uncle exhibits paternal love and responsibility while Rustico acts as a father figure and seduces/rapes her
+        - Both are seduced by a monk in the desert, but Maria is ashamed while Alibech is not
+        - Maria willingly leaves the city to return to the desert while Alibech is reluctant to leave the desert and go to the city
+        - Maria experiences trauma from her sexual experience while Alibech does not and wears out Rustico instead
+    - Boccaccio argues that sex is human behavior and a necessary evil
+        - Both Rustico and Alibech fall victim to their sexual desires
+        - Alibech thinks of her sexual experience as a one-time thing while Rustico knows that he is sinning
+        - Rustico acts in bad faith but Alibech does not
+        - Alibech represents innocence
+    - Alibech lives in a sinless world; she doesn't feel guilt because she believes her motives are pure
+        - Women tell her that her new husband will help with those motives
+        - Alibech represents a "pure" sexual drive, while Rustico represents a sinful one
+    - Rustico's sins
+        - First sin was pride, believed that he could resist the temptations of Alibech's young body but failed
+        - Second sin was lust, could not recognize the control lust had over him
+        - Alibech commits neither of those sins, and her sexual drive is approved in this story through marriage and bearing children
+    - Alibech's blameless behavior
+        - Boccaccio believes that if one has pure intentions, then they will earn God's grace
+    - Keep III.10 in mind while reading IV.1
+        - Boccaccio achieves a comic effect through merging eroticism and asceticism
+        - Alibech's experience is predicated on her innocence, and she has to face the city and face its social constructs after leaving the desert
+        - How is this similar to what the brigata memebers must do after they leave the palace?
+- Brief thoughts on Bocaccio's "On Poetry" and the defense of figurative thinking
+    - Excerpt from a larger work where Bocaccio discusses the family histories of pagan Greco-Roman gods
+    - Boccaccio defends literary writing and poetry which is the main idea of the Decameron
+    - Insists that writing often has "hidden" meanings which is the main benefit of poetry
+    - Boccaccio argues for studying texts and finding deeper meaning; refers to Biblical texts, such as when Jessu spoke in parables

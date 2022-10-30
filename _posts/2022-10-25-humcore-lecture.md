@@ -1,0 +1,73 @@
+---
+layout: post
+description: In Praise of Cleverness
+categories: [humcore, lecture, fall22-23, markdown]
+title: October 25 Humcore Lecture
+---
+
+- Barolini's Essay - the wheel of the *Decameron*
+    - Two part structure in the introduction: damaged, plague city of Florence and the rebirth of intelligence in the countryside
+- Day 1 Story 1
+    - Told by Panfilo (all loving)
+    - Has a lengthy preamble about religion and if prayers are truly efficient
+    - Argues that God can hear all sincere prayers through insincere ones; they always arrive at their destination
+    - Ser Cepparello is an awful person (symbolic of a chaotic world) who is able to be seen as a great person (stable unity of God)
+        - Cepparello is described as one of the worst types of people ever
+    - Ceparello is a merchant, a job which is often praised in the *Decameron*
+        - Currently unemployed, was a notary (legal accountant), cheats and murders
+        - The French call him Ciappelletto which is indicative of the human tendency to distory reality
+    - Story acts as a parody of different literary traditions, such as confessional and the hagiographic
+        - False confessions have comedic timing with Ceparello lying in his answers while the reader knows its the opposite
+    - Different "circles" of listeners
+        - Priest: believes all of Ciappelletto's words, criticizes his parishioners for not being like him
+        - Usurers/Loaners: eavesdroppers, laugh at the lies
+        - The Faithful: believe the priest and believe that many miracles have been done through his body
+        - Brigata Listeners (real world): No way to know if Ciappelletto truly repented, but Panfilo suggests that as long as your faith is true, you will be accepted
+        - Us (the reader): Bocaccio argues that wicked things may provide beneficial truths, even if those truths are naturally ambiguous
+    - Why make this the first tale?
+        - Ciappelletto is the first "model" storyteller
+        - The rest of the stories fall under Ciappelletto's; signifies following stories will be raunchy but attempt to appeal to God
+    - Day 1
+        - Tales 2, 3, and 4 relate to religion
+        - 2 talks about a Jewish merchant who notices that the Church is corrupt but is prospering because of it, making Christianity favorable; merchant's reasoning
+        - 3 has a "wise" Jew tell a tale within the tale about how it's impossible to know which of the major religions was valid; uses metaphor of three brothers with three rings with none of them knowing which ring is real
+        - 4 shows a monk exposing the hypocrisy of his Abbot by playing a trick on him even though the Abbot planned to expose the monk's trick
+    - Bocaccio intends to show that religious officials are not above "regular" humans and are not in a position to judge
+        - Also argues that all faiths are similar
+        - Uses merchants to show that you need to work together to prosper
+
+
+- Day 2's theme is "reversals of bad to good fortune"
+- Continues general theme of intelligence
+- Merchants become frequent protagonists
+- Day 2 Story 5 takes the form of a folk/fairy tale and shows the romances of education
+    - Starts as a typical exposition of a folk tale; Andreuccio hears of Naples and brings 500 gold to make his fortune there
+    - Switch in perspective from Andreuccio to the Sicilian woman
+    - **Situational irony**: Andreuccio has no knowledge of his situation, but the reader/other characters in the story do
+    - Perugia stands for the land of innocence while Naples stands for the land of cunning and trickery
+    - Story takes place as a series of journeys
+        - Perugia to Naples
+        - The journey inside of Naples: inn, market, Malportugia, church/tomb, well
+        - Parody of the "journey to the underworld"
+    - **Trebling**: patterns of three
+        - Bocaccio uses trebling to show Andreuccio's education
+        - Andreuccio falls three times, and each time, he goes into darkness and gains a little bit more insight
+            - Fall 1: Falls into the toilet, realizes that he's been tricked, leaves while naked and covered in sewage
+            - Fall 2: Meets two men who *inform* him that he would have been killed had he not fallen
+                - Is lowered into a well in order to clean up, but the two thieves leave him while guards come
+                - Develops suspicion but still doesn't know where he's going
+            - Fall 3: Goes into the tomb and grabs the jewelry off of the Archbishop's finger
+                - Understands that the two thieves are trying to trick him, takes the ring and lies to the thieves
+                - Left for dead inside of the tomb, faints and is described as looking like a corpse
+            - Andreuccio is able to free himself from the last fall by grabbing the leg of another thief
+                - "Resurrected" as a new man who is no longer innocence
+    - Perspective changes throughout the story
+        - We are never "with" Andreuccio until when he is in the tomb; always above/below/removed from him
+        - Signals that the listener's should have empathy only when Andreuccio is in the tomb, as we gain information from him
+    - Each fall is a mock version of different moments on a spiritual journey as told on the Christian calendar
+        - Fall 1: fall into filth and sin, leaving Eden and going to the real world
+        - Fall 2: Baptism, cleansing of sin
+        - Fall 3: sacrament of Confirmation; Confirmation shows proof that one is Christian, an adolescent kisses the ring on a bishop's finger
+            - Entry into the "light" of Christian knowledge, symbolized by the theives' lantern
+            - Andreuccio literally steals the ring
+        - Has references to Dante, especially in Dante's books and worlds (Inferno, Purgatory, and Paradise)
