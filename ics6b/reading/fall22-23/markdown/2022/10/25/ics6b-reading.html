@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ICS 6B Chapter 4 | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="ICS 6B Chapter 4" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ICS 6B Reading Notes" />
+<meta property="og:description" content="ICS 6B Reading Notes" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/25/ics6b-reading.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/25/ics6b-reading.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-25T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ICS 6B Chapter 4" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-25T00:00:00-05:00","datePublished":"2022-10-25T00:00:00-05:00","description":"ICS 6B Reading Notes","headline":"ICS 6B Chapter 4","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/25/ics6b-reading.html"},"url":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/25/ics6b-reading.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ICS 6B Chapter 4</h1><p class="page-description">ICS 6B Reading Notes</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-25T00:00:00-05:00" itemprop="datePublished">
+        Oct 25, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#ics6b">ics6b</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall22-23">fall22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#41-definition-of-functions">4.1: Definition of functions</a></li>
+<li class="toc-entry toc-h2"><a href="#42-floor-and-ceiling-functions">4.2: Floor and ceiling functions</a></li>
+<li class="toc-entry toc-h2"><a href="#43-properties-of-functions">4.3: Properties of functions</a></li>
+<li class="toc-entry toc-h2"><a href="#44-the-inverse-of-a-function">4.4: The inverse of a function</a></li>
+<li class="toc-entry toc-h2"><a href="#45-composition-of-functions">4.5: Composition of functions</a></li>
+<li class="toc-entry toc-h2"><a href="#46-logarithms-and-exponents">4.6: Logarithms and exponents</a></li>
+</ul><h2 id="41-definition-of-functions">
+<a class="anchor" href="#41-definition-of-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1: Definition of functions</h2>
+
+<ul>
+  <li>
+<strong>Function</strong>: Maps elements from one set to another using some sort of operation
+    <ul>
+      <li>Can be represented as a set and as a subset of X × Y such that for every x ∈ X, there is exactly one y ∈ Y for which (x, y) ∈ f</li>
+      <li>f: X -&gt; Y is used to show that f is the function that maps set X to Y</li>
+      <li>Set X is the <strong>domain</strong> of the function while set Y is the <strong>target</strong> or <strong>co-domain</strong> of the function</li>
+      <li>“f maps x to y” can be written as (x, y) ∈ f and can also be denoted as f(x) = y</li>
+      <li>If a function maps an element of the domain to either 0 elements or &gt;1 element, then it is not <strong>well-defined</strong>
+</li>
+      <li>An element is in the <strong>range</strong> of f if there is an x ∈ X such that (x, y) ∈ f
+        <ul>
+          <li>Alternate definition: Range of f = { y: (x, y) ∈ f, for some x ∈ X }</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>A function that has a finite domain can be shown graphically as an <strong>arrow diagram</strong>
+    <ul>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/197897879-b2182fed-b7b2-42f6-863c-d80bf727897c.png" alt="Screen Shot 2022-10-25 at 4 00 56 PM">
+</li>
+      <li>Non well-defined function example: <img src="https://user-images.githubusercontent.com/54915685/197898062-06a073e5-2aff-4926-b3b4-cfdb1bfd6c3d.png" alt="Screen Shot 2022-10-25 at 4 02 34 PM">
+</li>
+    </ul>
+  </li>
+  <li>A function definition is incomplete without specifying the domain and target
+    <ul>
+      <li>
+<em>Correct</em>: g: R → R, where g(x) = |x|</li>
+      <li>
+<em>Incorrect</em>: g(x) = |x|</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="42-floor-and-ceiling-functions">
+<a class="anchor" href="#42-floor-and-ceiling-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.2: Floor and ceiling functions</h2>
+
+<ul>
+  <li>
+<strong>Floor function</strong>: Function that maps a real number to its closest integer, rounded down
+    <ul>
+      <li>Definition: floor: R → Z, where floor(x) = the largest integer y such that y ≤ x.</li>
+      <li>Notated as such: <img src="https://user-images.githubusercontent.com/54915685/197898927-7aee5430-d4e5-4e26-9059-d1844d45c189.png" alt="Screen Shot 2022-10-25 at 4 10 47 PM">
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Ceiling function</strong>: Function that maps a real number to its closest integer, rounded down
+    <ul>
+      <li>Definition: ceiling: R → Z, where ceiling(x) = the smallest integer y such that x ≤ y.</li>
+      <li>Notated as such: <img src="https://user-images.githubusercontent.com/54915685/197899023-e8533cdb-3d46-4db3-91e5-692461d46b17.png" alt="Screen Shot 2022-10-25 at 4 11 44 PM">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="43-properties-of-functions">
+<a class="anchor" href="#43-properties-of-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.3: Properties of functions</h2>
+<ul>
+  <li>A function is <strong>one-to-one</strong> or <strong>injective</strong> if each value of x maps to a unique value of y
+    <ul>
+      <li>x<sub>1</sub> ≠ x<sub>2</sub> implies that f(x<sub>1</sub>) ≠ f(x<sub>2</sub>)</li>
+    </ul>
+  </li>
+  <li>A function is <strong>onto</strong> or <strong>surjective</strong> if the range of f is equal to its target
+    <ul>
+      <li>For every y ∈ Y, there is an x ∈ X such that f(x) = y</li>
+    </ul>
+  </li>
+  <li>A function is <strong>bijective</strong> if it is both onto and one-to-one
+    <ul>
+      <li>Such functions are called <strong>bijections</strong> or <strong>one-to-one correspondences</strong>
+</li>
+    </ul>
+  </li>
+  <li>Can infer the sizes, or cardinality, of the domain and target sets depending on the function’s properties
+    <ul>
+      <li>If f: D → T is onto, then for every element in the target, there is at least one element in the domain: |D| ≥ |T|.</li>
+      <li>If f: D → T is one-to-one, then every element in the domain maps to a unique element in the target: |D| ≤ |T|.</li>
+      <li>If f: D → T is a bijection, then f is one-to-one and onto: |D| ≤ |T| and |D| ≥ |T|, which implies that |D| = |T|.</li>
+      <li>Visual: <img src="https://user-images.githubusercontent.com/54915685/197899886-226a035c-9126-4be7-a483-715f7eb76e61.png" alt="Screen Shot 2022-10-25 at 4 20 03 PM">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p><mark>Challenge Activity is good to practice onto vs. one-to-one</mark></p>
+
+<h2 id="44-the-inverse-of-a-function">
+<a class="anchor" href="#44-the-inverse-of-a-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.4: The inverse of a function</h2>
+
+<ul>
+  <li>The <strong>inverse</strong> of a function is found by reversing the order of its tuples; that is, f-1 = { (y, x) : (x, y) ∈ f }.
+    <ul>
+      <li>Inverses may not be well-defined, so some functions don’t have inverses</li>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/197900491-362b3bbe-0a31-49b6-9832-2ba400ea9285.png" alt="Screen Shot 2022-10-25 at 4 26 16 PM">
+</li>
+      <li><u>A function has an inverse if and only if it is a bijection</u></li>
+      <li>Analytically solving for the inverse of a function with an infinite domain: <img src="https://user-images.githubusercontent.com/54915685/197900836-a9e1e365-78c7-4211-bdf7-ca722dd33be7.png" alt="Screen Shot 2022-10-25 at 4 29 49 PM">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="45-composition-of-functions">
+<a class="anchor" href="#45-composition-of-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.5: Composition of functions</h2>
+<ul>
+  <li>A <strong>composition</strong> of functions is when a function is applied to another function
+    <ul>
+      <li>Example: f(g(x)), or (f ο g)(x)</li>
+      <li>Visual example: <img src="https://user-images.githubusercontent.com/54915685/197901233-91861044-5f53-4953-aca3-3b5bca309b86.png" alt="Screen Shot 2022-10-25 at 4 33 41 PM">
+</li>
+    </ul>
+  </li>
+  <li>The <strong>identity function</strong> (denoted by I) takes a set and maps each of its elements onto itself
+    <ul>
+      <li>If a function f has an inverse, then f composed with its inverse is an identity function</li>
+      <li>Mathematical definitions:
+        <ul>
+          <li>(f o f<sup>-1</sup>)(x) = I<sub>f</sub>
+</li>
+          <li>Let f: A → B be a bijection. Then f<sup>-1</sup> ο f = I<sub>A</sub> and f ο f<sup>-1</sup> = I<sub>B</sub>.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="46-logarithms-and-exponents">
+<a class="anchor" href="#46-logarithms-and-exponents" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.6: Logarithms and exponents</h2>
+<ul>
+  <li>
+<strong>Exponential</strong> function and <strong>logarithmic</strong> function are featured
+    <ul>
+      <li>Properties of exponents: <img src="https://user-images.githubusercontent.com/54915685/197902019-7e50bfa6-b032-4156-9b1c-d820a62eae26.png" alt="Screen Shot 2022-10-25 at 4 41 48 PM">
+</li>
+      <li>Properties of logarithms: <img src="https://user-images.githubusercontent.com/54915685/197902168-3a731f71-fa21-41f9-8a88-9fbd2f5c77c0.png" alt="Screen Shot 2022-10-25 at 4 43 16 PM">
+</li>
+    </ul>
+  </li>
+  <li>A function is <strong>strictly increasing</strong> if, for each increasing value of x, f(x) is bigger than the last
+    <ul>
+      <li>if whenever x<sub>1</sub> &lt; x<sub>2</sub>, then f(x<sub>1</sub>) &lt; f(x<sub>2</sub>)</li>
+    </ul>
+  </li>
+  <li>A function is <strong>strictly decreasing</strong> if, for each increasing value of x, f(x) is smaller than the last
+    <ul>
+      <li>if whenever x<sub>1</sub> &lt; x<sub>2</sub>, then f(x<sub>1</sub>) &gt; f(x<sub>2</sub>)</li>
+    </ul>
+  </li>
+  <li>Logarithmic function is strictly increasing</li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/ics6b/reading/fall22-23/markdown/2022/10/25/ics6b-reading.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/tonyhieu" target="_blank" title="tonyhieu"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
