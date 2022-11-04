@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ICS 6B Chapter 5 | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="ICS 6B Chapter 5" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ICS 6B Reading Notes" />
+<meta property="og:description" content="ICS 6B Reading Notes" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/31/ics6b-reading.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/31/ics6b-reading.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-31T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ICS 6B Chapter 5" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-31T00:00:00-05:00","datePublished":"2022-10-31T00:00:00-05:00","description":"ICS 6B Reading Notes","headline":"ICS 6B Chapter 5","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/31/ics6b-reading.html"},"url":"https://tonyhieu.github.io/college-notes/ics6b/reading/fall22-23/markdown/2022/10/31/ics6b-reading.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ICS 6B Chapter 5</h1><p class="page-description">ICS 6B Reading Notes</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-31T00:00:00-05:00" itemprop="datePublished">
+        Oct 31, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#ics6b">ics6b</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall22-23">fall22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#51-an-introduction-to-boolean-algebra">5.1: An introduction to Boolean algebra</a></li>
+<li class="toc-entry toc-h2"><a href="#52-boolean-functions">5.2: Boolean functions</a></li>
+<li class="toc-entry toc-h2"><a href="#53-disjunctive-and-conjunctive-normal-form">5.3: Disjunctive and conjunctive normal form</a></li>
+<li class="toc-entry toc-h2"><a href="#54-functional-completeness">5.4: Functional completeness</a></li>
+<li class="toc-entry toc-h2"><a href="#55-boolean-satisfiability">5.5: Boolean satisfiability</a></li>
+<li class="toc-entry toc-h2"><a href="#56-gates-and-circuits">5.6: Gates and circuits</a></li>
+</ul><h2 id="51-an-introduction-to-boolean-algebra">
+<a class="anchor" href="#51-an-introduction-to-boolean-algebra" aria-hidden="true"><span class="octicon octicon-link"></span></a>5.1: An introduction to Boolean algebra</h2>
+<ul>
+  <li>
+<strong>Boolean algebra</strong>: a set of rules and operations for working with variables with values of 0 or 1; similar to propositional logic
+    <ul>
+      <li>
+<strong>Boolean multiplication</strong>: Denoted by • and works the same as regular multiplication, logically the same as ∧
+        <ul>
+          <li>Table: <img width="187" alt="Screen Shot 2022-10-31 at 8 13 12 AM" src="https://user-images.githubusercontent.com/54915685/199042277-268c2dfb-8382-42e8-94a8-4c3cd3e862ef.png">
+</li>
+        </ul>
+      </li>
+      <li>
+<strong>Boolean addition</strong>: Denoted by + and works the same as regular addition except 1 + 1 = 1, logically the same as ∨
+        <ul>
+          <li>Table: <img width="187" alt="Screen Shot 2022-10-31 at 8 14 51 AM" src="https://user-images.githubusercontent.com/54915685/199042640-f04d0afa-fb2e-46f4-9e00-bd00687c2e60.png">
+</li>
+        </ul>
+      </li>
+      <li>
+<strong>Complement</strong>: Denoted by an over bar, works the same as the ¬ operator: 0 becomes 1 and 1 becomes 0</li>
+    </ul>
+  </li>
+  <li>Relates to <strong>digital logic</strong> which is used to create computers</li>
+  <li>Variables that have a value of 1 or 0 are called <strong>Boolean variables</strong>, and <strong>Boolean expressions</strong> can be created by using Boolean operations on Boolean variables</li>
+  <li>Rules of precedence for boolean operations:
+    <ul>
+      <li>Boolean multiplication takes precedence over Boolean addition.</li>
+      <li>The complement operation is applied as soon as the entire expression under the bar is evaluated.</li>
+      <li>Parentheses can be used to override the precedence rules.</li>
+    </ul>
+  </li>
+  <li>Two Boolean expressions are <strong>equivalent</strong> if, for any combination of values of its variables, they have the same value
+    <ul>
+      <li>Laws of Boolean algebra: <img width="445" alt="Screen Shot 2022-10-31 at 8 23 59 AM" src="https://user-images.githubusercontent.com/54915685/199044823-91b1360f-d81d-4f7a-853d-09f878427447.png">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="52-boolean-functions">
+<a class="anchor" href="#52-boolean-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>5.2: Boolean functions</h2>
+<ul>
+  <li>Boolean functions map multiple Boolean input values to the set {0, 1}
+    <ul>
+      <li>Can be represented by an <strong>input/output table</strong> (similar to a truth table) but is not feasible for larger numbers of inputs, as the outputs are equal to 2<sup>k</sup> where k = the number of inputs</li>
+      <li>Can express functions using Boolean expressions</li>
+    </ul>
+  </li>
+  <li>Steps to derive a Boolean function via table: <img width="691" alt="Screen Shot 2022-10-31 at 8 32 16 AM" src="https://user-images.githubusercontent.com/54915685/199046727-ba31c7c0-4136-4ac2-84e3-9f0d183fee46.png">
+    <ul>
+      <li>
+<strong>Literal</strong>: One expression that either equals a variable or a variable’s complement</li>
+      <li>Must take the <strong>minterm</strong> (a group of literals that make each variable equal 1) of each row that equals 1</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="53-disjunctive-and-conjunctive-normal-form">
+<a class="anchor" href="#53-disjunctive-and-conjunctive-normal-form" aria-hidden="true"><span class="octicon octicon-link"></span></a>5.3: Disjunctive and conjunctive normal form</h2>
+<ul>
+  <li>The <strong>disjunctive normal form (DNF)</strong> is a Boolean expression that is the sum of products of literals
+    <ul>
+      <li>Example: <img width="465" alt="Screen Shot 2022-10-31 at 8 41 07 AM" src="https://user-images.githubusercontent.com/54915685/199048748-cf88568c-0ab6-4ec0-8612-5271cf89ec12.png">
+</li>
+    </ul>
+  </li>
+  <li>The <strong>conjunctive normal form (DNF)</strong> is a Boolean expression that is the sum of sums of literals
+    <ul>
+      <li>Example: <img width="484" alt="Screen Shot 2022-10-31 at 8 42 23 AM" src="https://user-images.githubusercontent.com/54915685/199049022-6153c76c-7c84-4e77-a804-2e553cbd5900.png">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="54-functional-completeness">
+<a class="anchor" href="#54-functional-completeness" aria-hidden="true"><span class="octicon octicon-link"></span></a>5.4: Functional completeness</h2>
+<ul>
+  <li>A set of operations is <strong>functionally complete</strong> if any Boolean expression can be rewritten using the set
+    <ul>
+      <li>{addition, multiplication, complement} is functionally complete</li>
+      <li>{multiplication, complement} is also functionally complete because addition can be rewritten with multiplication: <img src="https://user-images.githubusercontent.com/54915685/199105617-5eb13a1e-4958-4e14-9a38-b272c073b9c8.png" alt="Screen Shot 2022-10-31 at 1 37 27 PM">
+</li>
+      <li>{addition, complement} is also functionally complete because multiplication can be rewritten as addition: <img src="https://user-images.githubusercontent.com/54915685/199105808-475dc6ed-d99e-4f40-a4dd-7e9a059c510a.png" alt="Screen Shot 2022-10-31 at 1 38 23 PM">
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>NAND</strong> operation is denoted by ↑ and returns the complement of Boolean multiplication</li>
+  <li>
+<strong>NOR</strong> operation is denoted by ↓ and returns the complement of Boolean addition
+    <ul>
+      <li>Tables for NAND and NOR: <img src="https://user-images.githubusercontent.com/54915685/199106889-21388c0a-fda6-44c8-aeaf-ce0af267ee15.png" alt="Screen Shot 2022-10-31 at 1 44 26 PM">
+</li>
+    </ul>
+  </li>
+  <li>One way to test functional completeness is to start with a known set and try replacing one of the operations with another</li>
+</ul>
+
+<h2 id="55-boolean-satisfiability">
+<a class="anchor" href="#55-boolean-satisfiability" aria-hidden="true"><span class="octicon octicon-link"></span></a>5.5: Boolean satisfiability</h2>
+<ul>
+  <li>The <strong>Boolean satisfiability (SAT)</strong> problem asks if a Boolean expression can possibly evaluate to 1
+    <ul>
+      <li>If you can set it equal to 1, then it is <strong>satisfiable</strong>; if not, it is <strong>unsatisfiable</strong>
+</li>
+      <li>A particular set of values <strong>satisfies</strong> a Boolean expression if it makes it equal to 1</li>
+      <li>There is no sufficient, fast method to solve SAT, as you have to check each input</li>
+    </ul>
+  </li>
+  <li>If an expression is in DNF form, then it is easy to check if the expression is satisfiable
+    <ul>
+      <li>Check if one of the literals does NOT contain a variable and its complement</li>
+    </ul>
+  </li>
+  <li>In the CNF form, it is harder to check if the expression is satisfiable; you must check if each of the constraints equals 1 given a set of input values</li>
+</ul>
+
+<h2 id="56-gates-and-circuits">
+<a class="anchor" href="#56-gates-and-circuits" aria-hidden="true"><span class="octicon octicon-link"></span></a>5.6: Gates and circuits</h2>
+<ul>
+  <li>Boolean algebra is used to create circuits an electronic devices
+    <ul>
+      <li>A circuit built from electrical devices is called a <strong>gate</strong>, and a gate receives an input of Boolean values and returns an output</li>
+      <li>
+<strong>AND</strong> gates represent Boolean multiplication, <strong>OR</strong> gates represent Boolean addition, and the <strong>inverter</strong> represents the complement <img src="https://user-images.githubusercontent.com/54915685/199112051-00eda08d-0db3-46d3-a3d5-5be1b8b6e545.png" alt="Screen Shot 2022-10-31 at 2 15 26 PM">
+</li>
+      <li>Can combine gates together to create complex functions</li>
+    </ul>
+  </li>
+  <li>This class will focus only on <strong>combinatorial circuits</strong> which do not store variables or loop
+    <ul>
+      <li>Combinatorial circuits compute a Boolean function</li>
+      <li>Finding a Boolean function from a circuit: <img src="https://user-images.githubusercontent.com/54915685/199112560-5ac7e369-3bba-4d4c-acab-96c1c5d5d7dc.png" alt="Screen Shot 2022-10-31 at 2 18 48 PM">
+</li>
+    </ul>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/ics6b/reading/fall22-23/markdown/2022/10/31/ics6b-reading.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/tonyhieu" target="_blank" title="tonyhieu"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
