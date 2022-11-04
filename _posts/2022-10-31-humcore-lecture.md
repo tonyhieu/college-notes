@@ -1,0 +1,65 @@
+---
+layout: post
+description: Downtime and Recuperation? 
+categories: [humcore, lecture, fall22-23, markdown]
+title: October 31 Humcore Lecture
+---
+
+- Filostrato's theme for the day: a violation of the group’s decorum
+    - Filostrato, the one who is "overcome" by love (incorrect meaning of the name, but believed by Bocaccio), is given the crown
+    - Chooses the theme of loves that end unhappily
+    - Group agreed on Day One that the stories and behavior would have no sadness, only happiness
+        - Banned bad news from being told by servants after they go to Florence
+    - Filostrato therefore alters the group dynamics because of his own unhappiness; forces unhappiness because of personal experience
+    - Other odd dynamics in the group
+        - The ladies laugh at the story of Rustico and Alibech, joking that Filostrato is a wolf and they are sheep
+        - Nefile states that if the brigata men tried to teach the women "how to put the devil back in hell", then the women would have taught the same lesson that Masetto learned (i.e. they would be exhausted from sex)
+        - Women go back to hunting for animals in the garden
+        - Is the idyllic, marry world deteriorating?
+- Author’s Introduction to Day Four
+    - Responds to criticism
+    - Extends the argument that amorous desire is undefeatable 
+    - Calls critics "envious"
+    - Criticisms include:
+        - Spending too much time with/discussing women
+        - He's too old to write these stories
+        - Should hang out with Muses rather than women
+        - He ought to make a living rather than writing frivolous stories
+        - The stories are untrue
+    - The Author jests back at the criticisms, joking and talking about how he loves women
+    - The Author then offers a half-story to explain himself, the only story not to be told by brigata members
+        - The story deals with a man who lost his wife and reacted in an extreme way
+        - The tale does deal with grief and somewhat follows the theme of Day Four
+- His ”half-story” and its function in the Decameron
+    - The story is aimed at the critics, and it makes an argument about culture vs. nature of humans
+        - Humans naturally lust and desire love, no matter what culture they've lived in
+        - Religion and morals take a back seat to natural longings
+        - Desire and love don't go away when prohibited
+    - Morals
+        - It doesn't matter what you call things, they are what they are
+        - Language cannot overcome the realities of human nature
+    - In the context of post-plague Florence, love is necessary because it's imperative for humans to multiply
+- Tale IV.1 Tale of Tancredi and Ghismunda
+    - Fiammetta criticizes the theme before telling the story, trying to explain that Filostrato is perhaps trying to temper dowm the gaiety of the previous days
+    - Some of the stories parody the theme, creates conflict 
+        - Filostrato tells a gruesome story in response to these parodies
+    - In the tale, Ghismunda chooses a man who is not born from nobility but who, she believes, has noble virtues
+        - Relates to the common thought of the poets of Dante's generation; nobility should not be definted by birth, but by personal qualities
+    - The couple meet in a grotto
+        - The cave is well descripted, and there are many connections between the cave and Ghismunda's body
+            - Has an air shaft but is covered by vines and plants, representative of a body which has been neglected
+            - Has a door which is strong and hard to open; Ghismunda requires several days to open it, representative of paternal prohibition
+            - Perhaps acts as a foil to the cave that Filippo Balducci's son (from the Day 4 Introduction) lived in; used as a catalyst for love instead of a prison away from it
+    - Twist of the cliche where children would see their parents have sex ("primal scene"), as Tancredi watches his daughter have sex
+    - Part of Tancredi's dismay is about class
+    - Ghismunda's speech to Tancredi delivers a defnse to one of the *Decameron*'s core values
+        - Imagery of a strong woman, philogyny
+        - Discusses the necessity of young women (and men) to love
+        - Argues that nobility comes not from birth but from virtue
+    - The brigata's reactions to IV.1
+        - The ladies have tears in their eyes
+        - Filostrato is unpleased with the story, stating that he would be content with the little joy Ghismunda had before her death   
+            - Shows selfishness on Filostrato's part
+        - Pampinea decides to make a lighter story that parodies the theme rather than adhere to it
+- Dialogic relations among the brigata storytellers
+    - Consider how the brigata reacts to each of the stories or themes

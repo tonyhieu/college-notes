@@ -150,3 +150,5 @@ use-math: true
 - **Ricardian Trade Model**: Gains in trade are due to differences in opportunity costs (AKA comparative advantage)
 - **Quota**: A limit on the quantity of imports
     - Same effect as a tariff, but there is no tax revenue, so the decrease in total surplus is even greater
+- Collective Protection Problem
+    - Few producers vs. many consumers, easier to organize
