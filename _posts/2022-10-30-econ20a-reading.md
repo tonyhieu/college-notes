@@ -3,7 +3,7 @@ layout: post
 toc: true
 description: Econ 20A Reading Notes
 categories: [econ20a, reading, fall22-23, markdown]
-title: Principles of Economics Ch. 10
+title: Principles of Economics Ch. 10 + 11
 use-math: true
 ---
 
