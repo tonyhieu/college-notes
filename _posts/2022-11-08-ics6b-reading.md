@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: ICS 6B Chapter 5
+description: ICS 6B Chapter 6.1-6.5
 categories: [ics6b, reading, fall22-23, markdown]
 title: Binary Relations
 ---

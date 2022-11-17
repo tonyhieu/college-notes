@@ -84,6 +84,14 @@ Consider a coffee shop with the following data: ![Screen Shot 2022-11-06 at 10 4
     - The **marginal cost (MC)** shows the change in cost when adding 1 unit of output; shown in column 8
 - Equations to represent the two costs: ![Screen Shot 2022-11-06 at 10 58 34 PM](https://user-images.githubusercontent.com/54915685/200244779-ef59c67b-355d-4410-8755-536ca0383845.png)
 
+**Lecture Notes**
+
+- In the short term, the total cost is equal to the hourly wage * labor, as the only thing you can do is add more workers
+- AVC = (Wages * Labor) / Quantity = Wages / (Quantity / Labor) = Wages / Average Product of Labor (AP<sub>L</sub>)
+    - AVC and AP<sub>L</sub> are inverse
+- MC = Wages * deltaLabor / deltaQuantity = Wages / (deltaQuantity / deltaLabor) = Wages / Marginal Product
+    - Marginal Cost and Marginal Product are inverse
+
 **Cost Curves and Their Shapes**
 
 - The graphs of ATC, AFC, AVC, and MC all follow different shapes: ![Screen Shot 2022-11-06 at 11 00 35 PM](https://user-images.githubusercontent.com/54915685/200245108-e94863f1-84db-4ef7-a69d-66d9805baeb6.png)
@@ -108,3 +116,22 @@ Consider a coffee shop with the following data: ![Screen Shot 2022-11-06 at 10 4
     - Marginal cost eventually rises with the quantity of output
     - The average total cost curve is U-shaped
     - The intersection of the marginal cost and average total cost curves represents the minimum average total cost
+
+### 13-4: Costs in the Short Run and in the Long Run
+
+**The Relationship between Short-Run and Long-Run Average Total Cost**
+
+- In the short term, a factory owner cannot immediately create a new factory or new facility to increase production
+    - Factories are a fixed cost in the short term but a variable cost in the long term
+- In the long run, a company can afford to hire more workers and factories to reduce the average total cost back down
+- Graph: <img width="692" alt="image" src="https://user-images.githubusercontent.com/54915685/202232923-578fa72d-ff7f-46e9-99b0-386e50784ea4.png">
+
+**Economies and Diseconomies of Scale**
+
+- When the average total cost continues to go down as the output increases, then there is an **economy of scale**
+- When the average total cost continues to go up as the output increases, then there is an **diseconomy of scale**
+- When the average total cost remains constant as output increases, then there are **constant returns to scale**
+- Can be explained by specialization
+    - When there are few workers and factories, then the average total cost is high
+    - As you add more workers and factories, the cost goes down further because production becomes more efficient
+    - If you add too many workers, then the gains of specialization have already been realized, and you have to hire less efficient workers
