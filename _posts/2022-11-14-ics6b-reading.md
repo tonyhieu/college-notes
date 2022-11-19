@@ -34,3 +34,30 @@ title: Matrices and More on Relations
         - Equations: ![image](https://user-images.githubusercontent.com/54915685/201822468-d87e5b27-f031-43fa-8a4b-1737ee7b1930.png)
 
 ## 6.7: Partial orders
+
+- A **partial order** must satisfy three conditions
+    - Transitive
+    - Reflexive
+    - Anti-Symmetric
+- Example: ![image](https://user-images.githubusercontent.com/54915685/202606531-14c9507f-e29f-4d36-8168-e328fea6caad.png)
+- Partial orders are similar to <= in the sense that certain elements can be "less than" another element by being the the tail of an edge
+- Two elements are **comparable** if they have an edge between them and **incomparable** if not
+    - To represent the relation, a ⪯ b is used instead of aRb (note the curved part of the < sign)
+    - A partial order is a **total order** if all elements are comparable with each other
+- A **minimal element** is one with no elements pointing into it, while a **maximal element** is one with no edges pointing out of it
+- A **Hasse diagram** represents a partial order on a finite domain
+    - Drawn by putting lower elements below higher ones
+    - Example: ![image](https://user-images.githubusercontent.com/54915685/202605597-1244b764-6d55-41be-b79d-99ef859096e9.png)
+
+## 6.8: Strict orders and directed acyclic graphs
+
+- A **strict order** is similar to a partial order, must satisfy two conditions
+    - Transitive
+    - Anti-Reflexive
+    - Based on the above two properties, a strict order is also anti-symmetric
+- Example: ![image](https://user-images.githubusercontent.com/54915685/202606631-eb5f079c-8ba6-4be8-bf79-ac366d2d254a.png)
+
+- Strict orders are analagous to < because you cannot be "equal" to yourself (anti-reflexive)
+- Strict orders are closely related to **directed acyclic graphs (DAG)** which are directed graphs with no cycles
+    - A directed graph, G, has no cycles if and only if G<sup>+</sup> is a strict order
+- A **topological sort** is taken by starting with the minimal element(s), putting them into a list, and then removing them from the graph to get the new minimal element(s)
