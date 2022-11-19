@@ -22,6 +22,22 @@
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
 
 <script>
 function wrap_img(fn) {
@@ -79,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -107,6 +123,7 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#66-matrix-multiplication-and-graph-powers">6.6: Matrix multiplication and graph powers</a></li>
 <li class="toc-entry toc-h2"><a href="#67-partial-orders">6.7: Partial orders</a></li>
+<li class="toc-entry toc-h2"><a href="#68-strict-orders-and-directed-acyclic-graphs">6.8: Strict orders and directed acyclic graphs</a></li>
 </ul><h2 id="66-matrix-multiplication-and-graph-powers">
 <a class="anchor" href="#66-matrix-multiplication-and-graph-powers" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.6: Matrix multiplication and graph powers</h2>
 
@@ -175,6 +192,56 @@ window.onload = wrap_img;
 
 <h2 id="67-partial-orders">
 <a class="anchor" href="#67-partial-orders" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.7: Partial orders</h2>
+
+<ul>
+  <li>A <strong>partial order</strong> must satisfy three conditions
+    <ul>
+      <li>Transitive</li>
+      <li>Reflexive</li>
+      <li>Anti-Symmetric</li>
+    </ul>
+  </li>
+  <li>Example: <img src="https://user-images.githubusercontent.com/54915685/202606531-14c9507f-e29f-4d36-8168-e328fea6caad.png" alt="image">
+</li>
+  <li>Partial orders are similar to &lt;= in the sense that certain elements can be “less than” another element by being the the tail of an edge</li>
+  <li>Two elements are <strong>comparable</strong> if they have an edge between them and <strong>incomparable</strong> if not
+    <ul>
+      <li>To represent the relation, a ⪯ b is used instead of aRb (note the curved part of the &lt; sign)</li>
+      <li>A partial order is a <strong>total order</strong> if all elements are comparable with each other</li>
+    </ul>
+  </li>
+  <li>A <strong>minimal element</strong> is one with no elements pointing into it, while a <strong>maximal element</strong> is one with no edges pointing out of it</li>
+  <li>A <strong>Hasse diagram</strong> represents a partial order on a finite domain
+    <ul>
+      <li>Drawn by putting lower elements below higher ones</li>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/202605597-1244b764-6d55-41be-b79d-99ef859096e9.png" alt="image">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="68-strict-orders-and-directed-acyclic-graphs">
+<a class="anchor" href="#68-strict-orders-and-directed-acyclic-graphs" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.8: Strict orders and directed acyclic graphs</h2>
+
+<ul>
+  <li>A <strong>strict order</strong> is similar to a partial order, must satisfy two conditions
+    <ul>
+      <li>Transitive</li>
+      <li>Anti-Reflexive</li>
+      <li>Based on the above two properties, a strict order is also anti-symmetric</li>
+    </ul>
+  </li>
+  <li>
+    <p>Example: <img src="https://user-images.githubusercontent.com/54915685/202606631-eb5f079c-8ba6-4be8-bf79-ac366d2d254a.png" alt="image"></p>
+  </li>
+  <li>Strict orders are analagous to &lt; because you cannot be “equal” to yourself (anti-reflexive)</li>
+  <li>Strict orders are closely related to <strong>directed acyclic graphs (DAG)</strong> which are directed graphs with no cycles
+    <ul>
+      <li>A directed graph, G, has no cycles if and only if G<sup>+</sup> is a strict order</li>
+    </ul>
+  </li>
+  <li>A <strong>topological sort</strong> is taken by starting with the minimal element(s), putting them into a list, and then removing them from the graph to get the new minimal element(s)</li>
+</ul>
 
   </div><a class="u-url" href="/college-notes/ics6b/reading/fall22-23/markdown/2022/11/14/ics6b-reading.html" hidden></a>
 </article>
