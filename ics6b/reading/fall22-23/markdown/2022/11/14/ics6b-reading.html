@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -124,6 +124,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#66-matrix-multiplication-and-graph-powers">6.6: Matrix multiplication and graph powers</a></li>
 <li class="toc-entry toc-h2"><a href="#67-partial-orders">6.7: Partial orders</a></li>
 <li class="toc-entry toc-h2"><a href="#68-strict-orders-and-directed-acyclic-graphs">6.8: Strict orders and directed acyclic graphs</a></li>
+<li class="toc-entry toc-h2"><a href="#69-equivalence-relations">6.9: Equivalence relations</a></li>
+<li class="toc-entry toc-h2"><a href="#610-n-ary-relations-and-relational-databases">6.10: N-ary relations and relational databases</a></li>
 </ul><h2 id="66-matrix-multiplication-and-graph-powers">
 <a class="anchor" href="#66-matrix-multiplication-and-graph-powers" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.6: Matrix multiplication and graph powers</h2>
 
@@ -241,6 +243,63 @@ window.onload = wrap_img;
     </ul>
   </li>
   <li>A <strong>topological sort</strong> is taken by starting with the minimal element(s), putting them into a list, and then removing them from the graph to get the new minimal element(s)</li>
+</ul>
+
+<h2 id="69-equivalence-relations">
+<a class="anchor" href="#69-equivalence-relations" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.9: Equivalence relations</h2>
+
+<ul>
+  <li>An <strong>equivalence relation</strong> (represented by a ~) must satisfy three conditions
+    <ul>
+      <li>Transitive</li>
+      <li>Reflexive</li>
+      <li>Symmetric</li>
+    </ul>
+  </li>
+  <li>Example: <img src="https://user-images.githubusercontent.com/54915685/203151144-24bf4efd-99d0-4ba2-8a76-f2ca9aea5366.png" alt="image">
+</li>
+  <li>An <strong>equivalence class</strong> is a subset of the domain that that contains a certain kind of element
+    <ul>
+      <li>Represented by [a] where a represents the properties of that class</li>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/203151773-eb0ebf74-737e-47a9-bf5c-f3af790c78c8.png" alt="image">
+</li>
+      <li>Two different equivalence classes can either be identical or completely disjoint</li>
+    </ul>
+  </li>
+  <li>A <strong>partition</strong> of set A is a set of non-empty subsets of A that are pairwise disjoint and whose union is A
+    <ul>
+      <li>The union of all equivalence classes will create a partition</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="610-n-ary-relations-and-relational-databases">
+<a class="anchor" href="#610-n-ary-relations-and-relational-databases" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.10: N-ary relations and relational databases</h2>
+<ul>
+  <li>An <strong>n-ary relation</strong> is a relation on multiple sets A<sub>1</sub>, A<sub>2</sub>, … , A<sub>n</sub> which is a subset of A<sub>1</sub> x A<sub>2</sub> x … x A<sub>n</sub>
+</li>
+  <li>A <strong>database</strong> is a collection of records, and the <strong>relational database model</strong> stores data records as relations
+    <ul>
+      <li>The type of data stored in each entry of the record, represented by an n-tuple, is called an <strong>attribute</strong>
+</li>
+      <li>A <strong>query</strong> to a database requests for a particular set of data</li>
+      <li>A <strong>key</strong> is one or more attributes that uniquely identifies each n-tuple in the database</li>
+    </ul>
+  </li>
+  <li>
+<strong>Selection</strong> chooses n-tuples based on their attributes
+    <ul>
+      <li>Examples: <img src="https://user-images.githubusercontent.com/54915685/203152996-18fe95b2-a9ec-46dc-b80b-e44cbfcc8b76.png" alt="image">
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Projection</strong> removes all attributes that are not specified in the projection
+    <ul>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/203153243-bd156fab-c494-4551-8cb1-4f1797712cde.png" alt="image">
+</li>
+    </ul>
+  </li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/ics6b/reading/fall22-23/markdown/2022/11/14/ics6b-reading.html" hidden></a>
