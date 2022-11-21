@@ -61,3 +61,28 @@ title: Matrices and More on Relations
 - Strict orders are closely related to **directed acyclic graphs (DAG)** which are directed graphs with no cycles
     - A directed graph, G, has no cycles if and only if G<sup>+</sup> is a strict order
 - A **topological sort** is taken by starting with the minimal element(s), putting them into a list, and then removing them from the graph to get the new minimal element(s)
+
+## 6.9: Equivalence relations
+
+- An **equivalence relation** (represented by a ~) must satisfy three conditions
+    - Transitive
+    - Reflexive
+    - Symmetric
+- Example: ![image](https://user-images.githubusercontent.com/54915685/203151144-24bf4efd-99d0-4ba2-8a76-f2ca9aea5366.png)
+- An **equivalence class** is a subset of the domain that that contains a certain kind of element
+    - Represented by \[a\] where a represents the properties of that class
+    - Example: ![image](https://user-images.githubusercontent.com/54915685/203151773-eb0ebf74-737e-47a9-bf5c-f3af790c78c8.png)
+    - Two different equivalence classes can either be identical or completely disjoint
+- A **partition** of set A is a set of non-empty subsets of A that are pairwise disjoint and whose union is A
+    - The union of all equivalence classes will create a partition
+
+## 6.10: N-ary relations and relational databases
+- An **n-ary relation** is a relation on multiple sets A<sub>1</sub>, A<sub>2</sub>, ... , A<sub>n</sub> which is a subset of A<sub>1</sub> x A<sub>2</sub> x ... x A<sub>n</sub>
+- A **database** is a collection of records, and the **relational database model** stores data records as relations
+    - The type of data stored in each entry of the record, represented by an n-tuple, is called an **attribute**
+    - A **query** to a database requests for a particular set of data
+    - A **key** is one or more attributes that uniquely identifies each n-tuple in the database
+- **Selection** chooses n-tuples based on their attributes
+    - Examples: ![image](https://user-images.githubusercontent.com/54915685/203152996-18fe95b2-a9ec-46dc-b80b-e44cbfcc8b76.png)
+- **Projection** removes all attributes that are not specified in the projection
+    - Example: ![image](https://user-images.githubusercontent.com/54915685/203153243-bd156fab-c494-4551-8cb1-4f1797712cde.png)
