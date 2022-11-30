@@ -1,7 +1,7 @@
 ---
 layout: post
 toc: true
-description: Principles of Economics Ch. 13
+description: Principles of Economics Ch. 14
 categories: [econ20a, reading, fall22-23, markdown]
 title: Competitive Markets
 use-math: true
