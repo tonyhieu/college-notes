@@ -9,7 +9,7 @@ use-math: true
 
 ## Chapter 15: Monopoly
 
-### 14-1: Why Monopolies Arise
+### 15-1: Why Monopolies Arise
 
 - **Monopoly**: A firm that is the sole seller of its product which has no close substitutes
     - Caused by a *barrier to entry*; other firms cannot enter the market and compete
