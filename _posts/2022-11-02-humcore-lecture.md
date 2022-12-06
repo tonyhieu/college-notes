@@ -1,8 +1,8 @@
 ---
 layout: post
-description: Smooth Talkers and Their Targets
+description: November 2 Humcore Lecture
 categories: [humcore, lecture, fall22-23, markdown]
-title: November 2 Humcore Lecture
+title: Smooth Talkers and Their Targets
 ---
 
 - Day 6

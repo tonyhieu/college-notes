@@ -1,8 +1,8 @@
 ---
 layout: post
-description: The *Decameron*'s World in a Frame
+description: October 20 Humcore Lecture
 categories: [humcore, lecture, fall22-23, markdown]
-title: October 20 Humcore Lecture
+title: The Decameron's World in a Frame
 ---
 
 - Decameron was one of the first pieces of Italian literature

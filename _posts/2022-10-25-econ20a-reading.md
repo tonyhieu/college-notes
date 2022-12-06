@@ -1,10 +1,9 @@
 ---
 layout: post
 toc: true
-description: Econ 20A Reading Notes
+description: Principles of Economics Ch. 8 and 9
 categories: [econ20a, reading, fall22-23, markdown]
-title: Principles of Economics Ch. 8 and 9
-use-math: true
+title: The Costs of Taxation and International Trade
 ---
 
 ## Chapter 8: Application: The Costs of Taxation

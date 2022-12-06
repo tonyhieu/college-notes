@@ -1,8 +1,8 @@
 ---
 layout: post
-description: Downtime and Recuperation? 
+description: October 31 Humcore Lecture
 categories: [humcore, lecture, fall22-23, markdown]
-title: October 31 Humcore Lecture
+title: Downtime and Recuperation?
 ---
 
 - Filostrato's theme for the day: a violation of the group’s decorum

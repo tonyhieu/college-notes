@@ -1,8 +1,8 @@
 ---
 layout: post
-description: In Praise of Cleverness
+description: October 25 Humcore Lecture
 categories: [humcore, lecture, fall22-23, markdown]
-title: October 25 Humcore Lecture
+title: In Praise of Cleverness
 ---
 
 - Barolini's Essay - the wheel of the *Decameron*

@@ -1,8 +1,8 @@
 ---
 layout: post
-description: Getting Physical... and Spiritual in Bocaccio's Decameron Day 3
+description: October 26 Humcore Lecture
 categories: [humcore, lecture, fall22-23, markdown]
-title: October 26 Humcore Lecture
+title: Getting Physical... and Spiritual in Bocaccio's Decameron Day 3
 ---
 
 - Reflections on the brigata's interruption of their routine
