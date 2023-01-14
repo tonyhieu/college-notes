@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Sequences and Induction Proofs | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Sequences and Induction Proofs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ICS 6B Chapter 8.1-8.4" />
+<meta property="og:description" content="ICS 6B Chapter 8.1-8.4" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/ics6b/reading/winter22-23/markdown/2023/01/13/ics6d-reading.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/ics6b/reading/winter22-23/markdown/2023/01/13/ics6d-reading.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-13T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Sequences and Induction Proofs" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-13T00:00:00-06:00","datePublished":"2023-01-13T00:00:00-06:00","description":"ICS 6B Chapter 8.1-8.4","headline":"Sequences and Induction Proofs","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/ics6b/reading/winter22-23/markdown/2023/01/13/ics6d-reading.html"},"url":"https://tonyhieu.github.io/college-notes/ics6b/reading/winter22-23/markdown/2023/01/13/ics6d-reading.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Sequences and Induction Proofs</h1><p class="page-description">ICS 6B Chapter 8.1-8.4</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-01-13T00:00:00-06:00" itemprop="datePublished">
+        Jan 13, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#ics6b">ics6b</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#winter22-23">winter22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#81-sequences">8.1: Sequences</a></li>
+<li class="toc-entry toc-h2"><a href="#82-recurrence-relations">8.2: Recurrence relations</a></li>
+<li class="toc-entry toc-h2"><a href="#83-summations">8.3: Summations</a></li>
+<li class="toc-entry toc-h2"><a href="#84-mathematical-induction">8.4: Mathematical Induction</a></li>
+</ul><h2 id="81-sequences">
+<a class="anchor" href="#81-sequences" aria-hidden="true"><span class="octicon octicon-link"></span></a>8.1: Sequences</h2>
+
+<ul>
+  <li>
+<strong>Sequences</strong> are a type of function where the domain is a set of consecutive integers (such as 1, 2, 3, 4)
+    <ul>
+      <li>A value in a sequence is called a <strong>term</strong>, and its corresponding integer is its <strong>index</strong>
+</li>
+    </ul>
+  </li>
+  <li>Sequences with a finite domain are called <strong>finite sequences</strong>, and they have an <strong>initial index</strong> and a <strong>final index</strong> whos corresponding terms are the <strong>initial term</strong> and the <strong>final term</strong>
+</li>
+  <li>
+<strong>Infinite sequences</strong> have an infinite domain</li>
+  <li>Sequences can be specified via an <strong>explicit formula</strong> which shows the value of the term a<sub>k</sub> depending on the value of k</li>
+  <li>
+<strong>Increasing</strong> sequences are ones where consecutive terms increase in value</li>
+  <li>
+<strong>Non-decreasing</strong> sequences are ones where consecutive terms either increase in value or remain the same</li>
+  <li>
+<strong>Decreasing</strong> sequences are ones where consecutive terms decrease in value</li>
+  <li>
+<strong>Non-increasing</strong> sequences are ones where consecutive terms either decrease in value or remain the same</li>
+  <li>
+<strong>Geometric sequences</strong> are sequences where each term after the initial one is found by multiplying the previous term by a fixed, <strong>common ratio</strong>
+</li>
+  <li>
+<strong>Arithmetic sequences</strong> are sequences where each term after the initial one is found by adding to the previous term by a fixed, <strong>common difference</strong>
+</li>
+</ul>
+
+<h2 id="82-recurrence-relations">
+<a class="anchor" href="#82-recurrence-relations" aria-hidden="true"><span class="octicon octicon-link"></span></a>8.2: Recurrence relations</h2>
+<ul>
+  <li>A sequence whos rule defines its terms as a function of previous terms is called a <strong>recurrence relation</strong>
+    <ul>
+      <li>Recurrence relations can be used to define both arithmetic or geometric sequences (a<sub>n</sub> = a<sub>n-1</sub> + d or * r)</li>
+      <li>The <strong>Fibonacci sequence</strong> is a famous sequence that attempts to predict the number of rabbits after a number of months</li>
+    </ul>
+  </li>
+  <li>
+<strong>Dynamical systems</strong> are systems that change over time, and they can often be represented by recurrence relations due to the current state of the system being determined by previous states
+    <ul>
+      <li>
+<strong>Discrete time dynamical systems</strong> are ones where time is divided into time intervals and the state of the system remains the same inside of each interval</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="83-summations">
+<a class="anchor" href="#83-summations" aria-hidden="true"><span class="octicon octicon-link"></span></a>8.3: Summations</h2>
+
+<ul>
+  <li>
+<strong>Summation notation</strong> is used to represent the sum of terms in a sequence
+    <ul>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/212458612-2f501a14-bf53-4614-b1dd-c0455e66fb64.png" alt="image">
+</li>
+    </ul>
+  </li>
+  <li>i represents the <strong>index</strong>, s is the <strong>lower limit</strong>, t is the <strong>upper limit</strong>
+</li>
+  <li>The left side of the equation is the <strong>summation form</strong> and the right side of the equation is the <strong>expanded form</strong>
+</li>
+  <li>Can pull out the last term of a summation by subtracting one from the upper limit and adding it on to the end
+    <ul>
+      <li>Example: <img src="https://user-images.githubusercontent.com/54915685/212458714-422011eb-1a40-4a52-9068-288f41d7e885.png" alt="image">
+</li>
+    </ul>
+  </li>
+  <li>Guide on how to change variables in summations: <img src="https://user-images.githubusercontent.com/54915685/212458812-ca4a940b-973c-4c05-bfd7-d91ad7616150.png" alt="image">
+</li>
+  <li>A <strong>closed form</strong> for a sum is a mathematical expression/formula that represents the sum of a summation notation
+    <ul>
+      <li>Arithmetic: <img src="https://user-images.githubusercontent.com/54915685/212458839-6b3530b7-ef49-4aba-b5b9-ef42b60abe32.png" alt="image">
+</li>
+      <li>Geometric: <img src="https://user-images.githubusercontent.com/54915685/212458850-83f82d2e-4375-48ce-92c7-ee44406b6354.png" alt="image">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="84-mathematical-induction">
+<a class="anchor" href="#84-mathematical-induction" aria-hidden="true"><span class="octicon octicon-link"></span></a>8.4: Mathematical Induction</h2>
+
+<ul>
+  <li>Steps to an inductive proof:
+    <ul>
+      <li>
+<strong>Base case</strong>: Prove that the smallest integer/initial term is valid</li>
+      <li>
+<strong>Inductive step</strong>: prove that if the theorem is true for an element in the domian k, then the theorem holds for k + 1</li>
+    </ul>
+  </li>
+  <li>The <strong>principle of mathematical induction</strong> states that if the base case (for n = 1) is true and inductive step is true, then the theorem holds for all positive integers.</li>
+  <li>In the inductive step, in the statement that “if S(k) then S(k+1)”, the assumption that S(k) is true is the <strong>inductive hypothesis</strong>
+</li>
+  <li>Examples:
+<img src="https://user-images.githubusercontent.com/54915685/212458975-4818d57a-c503-4e40-a9f2-3f54d56d2577.png" alt="image">
+<img src="https://user-images.githubusercontent.com/54915685/212458983-8f865911-e9f4-422a-86f0-d4e2b845a7c2.png" alt="image">
+</li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/ics6b/reading/winter22-23/markdown/2023/01/13/ics6d-reading.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tonyhieu.github.io/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/tonyhieu" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

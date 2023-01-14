@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Measuring a Nation’s Income | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Measuring a Nation’s Income" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Principles of Economics Ch. 23" />
+<meta property="og:description" content="Principles of Economics Ch. 23" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/01/10/econ20b-reading.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/01/10/econ20b-reading.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-10T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Measuring a Nation’s Income" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-10T00:00:00-06:00","datePublished":"2023-01-10T00:00:00-06:00","description":"Principles of Economics Ch. 23","headline":"Measuring a Nation’s Income","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/01/10/econ20b-reading.html"},"url":"https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/01/10/econ20b-reading.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Measuring a Nation&#39;s Income</h1><p class="page-description">Principles of Economics Ch. 23</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-01-10T00:00:00-06:00" itemprop="datePublished">
+        Jan 10, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#econ20b">econ20b</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#winter22-23">winter22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#chapter-23-measuring-a-nations-income">Chapter 23: Measuring a Nation’s Income</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#23-1-the-economys-income-and-expenditure">23-1: The Economy’s Income and Expenditure</a></li>
+<li class="toc-entry toc-h3"><a href="#23-2-the-measurement-of-gdp">23-2: The Measurement of GDP</a></li>
+<li class="toc-entry toc-h3"><a href="#23-3-the-components-of-gdp">23-3: The Components of GDP</a></li>
+<li class="toc-entry toc-h3"><a href="#23-4-real-versus-nominal-gdp">23-4: Real versus Nominal GDP</a></li>
+<li class="toc-entry toc-h3"><a href="#23-5-is-gdp-a-good-measure-of-economic-well-being">23-5: Is GDP a Good Measure of Economic Well-Being?</a></li>
+</ul>
+</li>
+</ul><h2 id="chapter-23-measuring-a-nations-income">
+<a class="anchor" href="#chapter-23-measuring-a-nations-income" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chapter 23: Measuring a Nation’s Income</h2>
+
+<ul>
+  <li>
+<strong>Macroeconomics</strong>: the study of the economy as a whole; includes factors such as inflation, unemployment, etc.</li>
+  <li>
+<strong>Microeconomics</strong>: the study of how individual firms and households interact with each other in a free market</li>
+  <li>Following chapters will focus on macroeconomics and statistics that provide information about the well-being of the entire economy</li>
+</ul>
+
+<h3 id="23-1-the-economys-income-and-expenditure">
+<a class="anchor" href="#23-1-the-economys-income-and-expenditure" aria-hidden="true"><span class="octicon octicon-link"></span></a>23-1: The Economy’s Income and Expenditure</h3>
+
+<ul>
+  <li>Can judge how a nation (or person) is doing based on the income of the people in that economy</li>
+  <li>Gross domestic product (GDP) allows economists to measure income; tracks the total income and total expenditure of an economy
+    <ul>
+      <li>Note that <em>for an economy as a whole, income must equal expenditure</em>
+</li>
+      <li>If someone pays $100 for a service, then one party gains $100 and one party spends $100; GDP raises by $100 as a whole</li>
+    </ul>
+  </li>
+  <li>The circular flow diagram is a good representation of GDP
+    <ul>
+      <li>All of the green arrows in the figure below represent money and, therefore, changes in GDP</li>
+      <li>Diagram: <img src="https://user-images.githubusercontent.com/54915685/212273014-d45e3fe0-349f-429d-90fb-f6f03f5c8f47.png" alt="image">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="23-2-the-measurement-of-gdp">
+<a class="anchor" href="#23-2-the-measurement-of-gdp" aria-hidden="true"><span class="octicon octicon-link"></span></a>23-2: The Measurement of GDP</h3>
+
+<ul>
+  <li>
+<strong>Gross domestic product (GDP)</strong>: the market value of all final goods and services produced within a country in a given period of time
+    <ul>
+      <li>Definition has many aspects</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>“GDP is the market value…“</strong></p>
+
+<ul>
+  <li>The GDP measures market prices to reflect the value of goods sold and purchased</li>
+</ul>
+
+<p><strong>“…of all…“</strong></p>
+
+<ul>
+  <li>The GDP attempts to measure the market value of every single good sold or purchased in an economy
+    <ul>
+      <li>Housing is measured by the rental price of the home or, if the house is not being rented, the estimated rental price of the home</li>
+    </ul>
+  </li>
+  <li>The GDP does not measure illegal products, such as drugs, or products manufactured and consumed in homes, such as a backyard tomato garden
+    <ul>
+      <li>This can lead to situations where a marriage can lower a GDP if a consumer and producer get married</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>“…final…“</strong></p>
+
+<ul>
+  <li>Goods can either be intermediate or final
+    <ul>
+      <li>
+<em>Intermediate goods</em> are used in the process of making a final good; think the corn used in making a tortilla</li>
+      <li>
+<em>Final goods</em> are the end product of a production process; the tortilla</li>
+      <li>GDP only measures the value of final, not intermediate goods</li>
+    </ul>
+  </li>
+  <li>The GDP does measure intermediate goods if it is added to an inventory for use at a later time
+    <ul>
+      <li>Essentially, additions to an inventory add to the GDP, and when those additions are used at a later time, they are subtracted from the GDP</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>“…goods and services…“</strong></p>
+
+<ul>
+  <li>Both goods (food, books, video games, etc) and services (haircuts, car wash, concerts, etc.) are included in a GDP</li>
+</ul>
+
+<p><strong>“…produced…“</strong></p>
+
+<ul>
+  <li>GDP only includes goods and services <em>currently</em> produced, not ones produced in the past
+    <ul>
+      <li>If a car manufacturer creates a car, the value of that car is added to the GDP</li>
+      <li>If someone sells an old car to someone else, the valur of that car is not added to the GDP</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>“…within a country…“</strong></p>
+
+<ul>
+  <li>The GDP measures the production inside of the geographical boundaries of a country, regardless of the citizenship or nationality of the producer</li>
+</ul>
+
+<p><strong>“…in a given period of time.”</strong></p>
+
+<ul>
+  <li>The GDP measures the value of production in an interval of time, which is typically either a financial quarter or year
+    <ul>
+      <li>Reporting for a GDP for a quarter is typically multiplied by 4 to represent an “annual rate”</li>
+      <li>Quarterly GDP data is typically adjusted in order to account for seasonal changes, such as shopping sprees in December</li>
+    </ul>
+  </li>
+  <li>With these clarifications, the definition of GDP has multiple layers
+    <ul>
+      <li>Theoretically, the GDP should be equal to the gross domestic income (GDI), but the difference in GDP and GDI can be chalked up to a <em>statistical discrepancy</em>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="23-3-the-components-of-gdp">
+<a class="anchor" href="#23-3-the-components-of-gdp" aria-hidden="true"><span class="octicon octicon-link"></span></a>23-3: The Components of GDP</h3>
+
+<ul>
+  <li>The GDP can be understood as a sum of four different types of spending</li>
+  <li>Y = C + I + G + NX
+    <ul>
+      <li>Y represents GDP</li>
+      <li>C represents consumption</li>
+      <li>I represents investment</li>
+      <li>G represents government purchases</li>
+      <li>NX represents net exports</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Consumption</strong></p>
+
+<ul>
+  <li>
+<strong>Consumption</strong> is spending by households (aka citizens/regular people) on goods and services
+    <ul>
+      <li>Does not include housing purchases, as those count as an investment</li>
+      <li>Services include haircuts and medical care, and goods include food, clothing, appliances, etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Investment</strong></p>
+
+<ul>
+  <li>
+<strong>Investment</strong> includes the purchase of goods (known as <em>capital goods</em>) that will be used in the future to produce more goods and services</li>
+  <li>Includes business capital, residential capital, and inventories/stock
+    <ul>
+      <li>Business capital: business structures (like factories), equipment, and intellectual property products (software or recipes)</li>
+      <li>Residential capital: buildings for rent, personal residences</li>
+      <li>Inventory: components, ingredients, intermediate goods</li>
+    </ul>
+  </li>
+  <li>Investment, in this case, does not refer to financial investments such as stocks and bonds; it refers to goods that will be used in the future to create more goods and services</li>
+</ul>
+
+<p><strong>Government Purchases</strong></p>
+
+<ul>
+  <li>
+<strong>Government purchases</strong> includes spending on goods and services by all types of governments
+    <ul>
+      <li>Includes salaries of government workers and expenditure on public works</li>
+      <li>Known officially as <em>government consumption expenditure and gross investment</em> but known traditionally as <em>government purchases</em>
+</li>
+    </ul>
+  </li>
+  <li>Social Security benefits or unemployment is not considered part of government purchases; they are instead defined as <em>transfer payments</em>
+    <ul>
+      <li>These are not specified as expenditures because no value is being extracted from the production of goods or services; thus, they are not part of the GDP</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Net Exports</strong></p>
+
+<ul>
+  <li>
+<strong>Net exports</strong> = exports - imports</li>
+  <li>Net refers to the subtraction of imports from exports in order to show the amount exported
+    <ul>
+      <li>Selling a domestic product to a foreign buyer increases GDP, while purchasing a foreign product domestically decreases it</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="23-4-real-versus-nominal-gdp">
+<a class="anchor" href="#23-4-real-versus-nominal-gdp" aria-hidden="true"><span class="octicon octicon-link"></span></a>23-4: Real versus Nominal GDP</h3>
+
+<ul>
+  <li>If total spending rises from year to year, either a) more goods and services were produced or b) the price of goods increased
+    <ul>
+      <li>To measure quantity of goods instead of a change in price, economists use <em>real GDP</em> which uses a market price baseline of a set year</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>A Numerical Example</strong></p>
+
+<ul>
+  <li>Example table of an economy which produces hot dogs and hamburgers: <img src="https://user-images.githubusercontent.com/54915685/212288137-0f759446-6639-45b1-816d-4bbe325e0be3.png" alt="image">
+</li>
+  <li>The total expenditure can be simply found by multiplying the current market price by the current quantity of goods sold
+    <ul>
+      <li>The production of goods and services valued at current prices is called the <strong>nominal GDP</strong>
+</li>
+      <li>In the table, the nominal GDP for hot dogs and hamburgers continually increases, but this increase can be attributed ot both the increase in price and the increase in production</li>
+    </ul>
+  </li>
+  <li>
+<strong>Real GDP</strong> removes the issue of price changes by valuing goods and services at a set price based on a previous year
+    <ul>
+      <li>Using 2019 as the base year, we can calculate the value of goods and services using the 2019 market price in order to account for any changes in price</li>
+      <li>For the base year, the real GDP will always equal the nominal GDP</li>
+    </ul>
+  </li>
+  <li><em>Nominal GDP uses current prices to value the economy’s production of goods and services. Real GDP uses constant base-year prices to value the economy’s production of goods and services.</em></li>
+  <li>Real GDP is a better measurement of economic well-being because it consistently tracks the level of production between years; real GDP is used to determine economy growth</li>
+</ul>
+
+<p><strong>The GDP Deflator</strong></p>
+
+<ul>
+  <li>The GDP Deflator is calculated as follows:
+    <ul>
+      <li>
+        <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">∣</mi><mrow><mi>G</mi><mi>D</mi><mi>P</mi><mi>D</mi><mi>e</mi><mi>f</mi><mi>l</mi><mi>a</mi><mi>t</mi><mi>o</mi><mi>r</mi><mo>=</mo><mfrac><mrow><mi>N</mi><mi>o</mi><mi>m</mi><mi>i</mi><mi>n</mi><mi>a</mi><mi>l</mi><mi>G</mi><mi>D</mi><mi>P</mi></mrow><mrow><mi>R</mi><mi>e</mi><mi>a</mi><mi>l</mi><mi>G</mi><mi>D</mi><mi>P</mi></mrow></mfrac><mo>∗</mo><mn>100</mn></mrow><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">| { GDP Deflator = {Nominal GDP \over Real GDP} * 100 } |</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathnormal">G</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">De</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.02778em;">or</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal">e</span><span class="mord mathnormal">a</span><span class="mord mathnormal">lG</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal">o</span><span class="mord mathnormal">mina</span><span class="mord mathnormal">lG</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">100</span></span><span class="mord">∣</span></span></span></span></span>
+      </li>
+    </ul>
+  </li>
+  <li>This equation allows us to see how the prices of goods and services have changed compared to the base year
+    <ul>
+      <li>If the prices remain the same from the base to current year, then the GDP deflator remains constant</li>
+      <li>If the prices increase or decrease from the base year, then the GDP deflator will also increase or decrease accordingly</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="23-5-is-gdp-a-good-measure-of-economic-well-being">
+<a class="anchor" href="#23-5-is-gdp-a-good-measure-of-economic-well-being" aria-hidden="true"><span class="octicon octicon-link"></span></a>23-5: Is GDP a Good Measure of Economic Well-Being?</h3>
+
+<ul>
+  <li>GDP tells us the income and expenditure of the average person in the economy, and in most cases, this tells us about the economic well-being of the average person (more expenditure = more money = happier)</li>
+  <li>Some disagree that GDP is a good measure of economic well-being, as it does not measure any intangibles such as happiness, bravery, creativity, etc.
+    <ul>
+      <li>GDP, though not directly connected, can indirectly measure these traits</li>
+      <li>More GDP = more education, better nutrition, more specialization for a country</li>
+    </ul>
+  </li>
+  <li>GDP is not a perfect measure of well-being
+    <ul>
+      <li>Production can unnaturally increase (everyone begins working every day of the week), thus increasing GDP but decreasing well-being</li>
+      <li>Does not include goods and services produced at home, such as a chef’s home-cooked meals, volunteer work, or the work of stay-at-home parents</li>
+      <li>Does not measure environmental factors, such as pollution</li>
+      <li>Does not measure distribution of income; a nation with 100 people making $50k has the same GDP as a nation with 1 person making $5 million and 99 people making $0</li>
+    </ul>
+  </li>
+  <li>In general, GDP is a good measure of well-being for most, but not all, purposes</li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/econ20b/reading/winter22-23/markdown/2023/01/10/econ20b-reading.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tonyhieu.github.io/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/tonyhieu" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
