@@ -18,7 +18,7 @@ use-math: true
 - Can judge how a nation (or person) is doing based on the income of the people in that economy
 - Gross domestic product (GDP) allows economists to measure income; tracks the total income and total expenditure of an economy
     - Note that *for an economy as a whole, income must equal expenditure*
-    - If someone pays $100 for a service, then one party gains $100 and one party spends $100; GDP raises by $100 as a whole
+    - If someone pays \$100 for a service, then one party gains \$100 and one party spends \$100; GDP raises by \$100 as a whole
 - The circular flow diagram is a good representation of GDP
     - All of the green arrows in the figure below represent money and, therefore, changes in GDP
     - Diagram: ![image](https://user-images.githubusercontent.com/54915685/212273014-d45e3fe0-349f-429d-90fb-f6f03f5c8f47.png)
@@ -144,5 +144,5 @@ use-math: true
     - Production can unnaturally increase (everyone begins working every day of the week), thus increasing GDP but decreasing well-being
     - Does not include goods and services produced at home, such as a chef's home-cooked meals, volunteer work, or the work of stay-at-home parents
     - Does not measure environmental factors, such as pollution
-    - Does not measure distribution of income; a nation with 100 people making $50k has the same GDP as a nation with 1 person making $5 million and 99 people making $0
+    - Does not measure distribution of income; a nation with 100 people making \$50k has the same GDP as a nation with 1 person making \$5 million and 99 people making \$0
 - In general, GDP is a good measure of well-being for most, but not all, purposes
