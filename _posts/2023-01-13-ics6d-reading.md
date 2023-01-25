@@ -1,8 +1,8 @@
 ---
 toc: true
 layout: post
-description: ICS 6B Chapter 8.1-8.4
-categories: [ics6b, reading, winter22-23, markdown]
+description: ICS 6D Chapter 8.1-8.4
+categories: [ics6d, reading, winter22-23, markdown]
 title: Sequences and Induction Proofs
 ---
 

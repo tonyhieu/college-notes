@@ -63,7 +63,7 @@ use-math: true
 
 **Dollar Figures from Different Times**
 - You can calculate the value of a dollar using the following formula
-    - $$ | { \text{Amount in today's dollars} = \text{Amount in year T dollars} * {\text{Price level today} \over \text{Price level in year T}} } | $$
+    - $$ { \text{Amount in today's dollars} = \text{Amount in year T dollars} * {\text{Price level today} \over \text{Price level in year T}} } $$
 
 **Indexation**
 - A price that is corrected to reflect inflation is said to be **indexed**, and indexation is typically done through a law or a contract
