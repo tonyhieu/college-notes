@@ -2,7 +2,7 @@
 layout: post
 description: February 2 Humcore Lecture
 categories: [humcore, lecture, winter22-23, markdown]
-title: Introduction: Worlds of Communism
+title: Introduction, Worlds of Communism
 ---
 
 - Paul Robeson - American singer who converted to Communism after realizing its ability to free African-Americans
