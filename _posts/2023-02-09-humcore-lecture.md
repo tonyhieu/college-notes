@@ -1,0 +1,52 @@
+---
+layout: post
+description: February 9 Humcore Lecture
+categories: [humcore, lecture, winter22-23, markdown]
+title: Salaria Kea, Fighting Jim Crow in Spain
+---
+
+- Salaria Kea
+    - Orphaned at a young age, studied to be a nurse in Harlem and becomes involved in anti-fascist movements
+        - Joins the Communist Party of the United States of America (CPUSA) while there
+        - Harlem Renaissance blossomed while Kea was there, emphasized Black creativity and political organization
+        - CPUSA worked in Harlem against evictions and police brutality
+        - *Garveyism*: pan-African nationalism, supported unity of all African peoples
+        - CPUSA opposed Garveyism for proomoting unity between the Black proletariat and bourgeoisie, Garveyism opposed CPUSA for promoting class war between Black people
+    - Especially concerned with the Italian invasion of Ethiopia, one of the few independent African states
+        - Organizes fundraising campaigns, speechs, etc. in support
+    - Travels to Spain in order to help the Republican cause against the fascists, only Black woman to do so
+    - Kea's Travels: <img width="1049" alt="image" src="https://user-images.githubusercontent.com/54915685/217894186-dcb03cf1-2e69-4e3d-8cad-12371229c558.png">
+    - Spain is in a state of turmoil
+        - The Popular Front (left-wing groups like communistts, socialists, etc) narrowly win elections in Spain
+        - Right-wing general Francisco Franco starts a coup against the new government, starts a civil war
+            - Government organizes workers to fight for them, Franco controls the military
+            - Italy and Germany support Franco, Russia supports the Republican government
+            - Republicans have the support of 35,000 foreign volunteers, many of them communist, and becomes a global symbol of fighting against fascism
+    - Kea supports the Republican cause and travels to Spain to work on the front lines
+- Communism and Black Radicalism (in the US)
+    - The African Blood Brotherhood was a black Marxist party founded by Caribbean and African-American activists, supported communism as a means to fight against racism
+        - Participated in the Comintern's 4th Congress, emphasized the interweaving of communism with anti-racism
+        - Criticized the CPUSA for not addressing the racial question because they should attempt to unite black workers for more power
+    - Bolshevik revolution provided minorities with cultural freedom, allowed them to have schools in their own language and practice their own traditions
+- CPUSA and the Great Depression
+    - CPUSA membership grows during the depression, as the economic crisis seems to confirm capitalism as unviable
+        - At that point, there are no economic safety nets like unemployment or Social Security, so many feel the effects of the crisis
+    - 1931-1940 unemployment is always above 14%, peaks at 24.5% in 1933
+    - Governments take a laissez faire approach and do nothing to let the markets sort themselves out
+        - Breeds radicalism because moderate politicians who do nothing don't get votes
+    - Communists create solutions, such as unemployment councils to pressure the government to help and tenant associations to prevent evictions
+    - *Dual Unionism*: The CPUSA separated from traditional trade unions and created its own more militant unions
+        - Many US unions were corrupt, racially segregated, and ignored poorer workers
+        - Communist unions organize the lowest paid, most exploited workers together which means that workers from racial minority groups often join
+        - Extremely effective in California where a variety of migrant and seasonal workers were present
+        - In Alabama, the communists organize black sharecroppers to fight against exploitation and debt bondage
+    - The CPUSA begins taking the issue of racism more seriously after organizing such unions
+        - CPUSA creates movements for Black people such as the Scottsboro boys
+    - Believed that racism was key to dividing and weakening the US working class, thus allowing for the exploitation of racial minorities
+    - NAACP and CPUSA join forces to further both causes
+    - Langston Hughes creates propaganda about the benefits of communism, and many African Americans begin supporting the CPUSA
+- Kea's Life Applied to Communism as a Whole: Three Worlds
+    - <u>Global Horizon</u>The struggle against fascism in Spain is akin to the struggle against racism in the US; fight against authoritarianism (and capitalism)
+        - Victory for fascism in Spain appears to reinforce global racial hierarchies and authoritarian policies
+    - <u>International networks</u> of communist movement allow Kea to travel from Harlem to Spain and back again
+    - The <u>communist life world</u> leads Kea to marry a Irish man while in Spain

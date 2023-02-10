@@ -51,7 +51,9 @@ use-math: true
 
 - **Financial intermediaries** are institutions in which savers indirectly provide money to borrowers
     - Two main types: banks and mutual funds
+
 *Banks*
+
 - Banks use deposits from people who wants to save and uses it to finance loans from borrowers
 - Banks are profitable because the interest rates on their loans are higher than the interest rates they pay back on deposits
 - Banks also provide a *medium of exchange* in the form of credit/debit cards which allow people to easily make transactions

@@ -1,0 +1,58 @@
+---
+layout: post
+description: February 7 Humcore Lecture
+categories: [humcore, lecture, winter22-23, markdown]
+title: Tan Malaka, Pan-Islamism and the Comintern
+---
+
+- The Russian Revolution and the Comintern
+    - The Russian Revolution started in 1917, intitiated by the Bolsheviks + Vladimir Lenin and established a communist state
+    - Despite Russia being a non-developed, the revolution was justified by arguing that Russia would be the first state to set off a spark of communist sentiment
+        - Supported by workers, soldiers
+        - Faced opposition from other European forces and pro-tsar Russians
+        - Starts with wanting a democratic form of government, but transitions to an autocratic one due to the state of constant war
+    - The Russian proletariat was extremely small while agricultural workers were the majority; key disconnect between Marx and Engels' idea of communism being born from a capitalist state
+    - The Comintern was created to unite communists worldwide in order to develop communism in Western Europe
+    - By 1920, the Bolsheviks are isolated both politically and geographically
+- Communism in the East
+    - The Soviets turn to Asia and support anti-colonist struggles in Asia to spread communism
+    - The Comintern held a meeting in Azerbaijan with representatives from various movements throughout Asia
+        - Grigory Zinoviev, the leader of the Comintern, calls for an alliance between the western proletariat and the peasantry of Asia
+    - By creating a common enemy in Western Europe (colonizers), the Soviets create an alliance with Asian states
+    - The idea of anti-colonialism contradicted with classic communism, as anti-colonialists were often wealthy and part of the native bourgeoisie
+        - The native bourgeoisie did not want to become communist; they simply wanted more power and were thus more conservative than revolutionary
+        - The Comintern debated over this contradiction, as there was a lot of contention over the issue of hypocrisy
+    - Before the Russian Revolution, much of Southeast Asia was colonized by Europeans
+- Communism and Pan-Islamism in the Dutch East Indies
+    - The Indonesian Communist Party (PKI) was founded in 1920 and was initially dominated by Dutch activists
+    - The Islamic Union (SI) was a pan-Islamist organization that was anti-coonial
+        - Thought it was originally formed to protect Indonesian merchants, it expanded to recruiting poor peasants and working class
+    - Many members of the PKI joined the SI and shared the same anti-colonist views, but they maintained their own separate identities
+        - Used the Comintern's "bloc within" strategy where communists joined anti-colonial organizations to further their cause but maintained separation
+- Tan Malaka
+    - Indonesian (known then as the Dutch East Indies) communist, born in Java
+    - Map of his travels: <img width="1064" alt="image" src="https://user-images.githubusercontent.com/54915685/217321336-c59d77c8-528f-4571-89c9-2c78ceff6b4e.png">
+    - Born into an aristocratic family and learned Dutch, different European languages
+    - Becomes interested in communsim after studying in Netherlands, joins socialist teachers' union
+    - When returning to the Dutch East Indies, he joins the PKI and is active in gaining support for it within the SI
+    - 1921: Elected chairman of the PKI, arrested and exiled a year later
+        - Extremely popular in the Netherlands, almost wins an election and gains support inside of the Comintern
+    - Advocated for the marriage of Pan-Islamism and communism in order to further their cause, especially in Asia, in a speech to the Comintern
+        - Communist propaganda typically were anti-Islamic, Malaka wants them to ally with them
+        - Defends "bloc within" strategy and criticizes the Comintern's judgemental attitude towards Islam
+        - Argues that Islam is a historically progressive religion and aligns with Christianity as an Abrahamic religion
+            - Communism could extend Islam's progressive legacy in East Asia
+    - Comintern is impressed with Malaka, appoints him as their representative in Indonesia
+    - 1923: Malaka goes to Guangzhou, China to organize communist activities throughout Southeast Asia
+    - 1925-1927: relocates to Manila, Philipines
+    - Two brutal events in 1927
+        - Comintern support a PKI uprising against the Dutch to which Malaka disapproves; the uprising fails and the party effectively dies for 7 years
+        - Chinese communists are killed by the native bourgeoisie and flee to the countryside to avoid death
+    - Malaka breaks off with the Comintern due to his belief that it had become a vehicle for Russian foreign policy
+    - 1927-1941: Malaka attempts to found communist parties throughout SE Asia before returning to Indonesia during Japan's occupation during WWII
+    - 1945-1949: Japanese are defeated, and the Dutch attempt to reestablish authority which causes a war between Indonesian nationalists and the Dutch
+        - Malaka creates a left-wing faction within the independence movement, in direct conflict with right-wing revolutionaries and is executed by Indonesian authorities in 1949
+- Main Points
+    - The Russian Revolution created the first communist state which was meant to act as a spark for the rest of the world
+    - Failure of revolution in Europe caused the Comintern to look towards anti-colonial struggles in Asia
+    - Communism in Asia transforms the idea of communism, causes Malaka to use Islam to support the cause
