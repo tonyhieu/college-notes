@@ -1,0 +1,54 @@
+---
+layout: post
+description: February 16 Humcore Lecture
+categories: [humcore, lecture, winter22-23, markdown]
+title: Zhou Enlai, Afro-Asian Friendship
+---
+
+- Zhou Enlai
+    - Big figure in the Chinese Communist Party (CCP), was the first Premier of the People's Republic of China and eventually became Foreign Minister
+    - Headed China's diplomatic strategy, especially with Africa (Afro-Asian Friendship) during the 1950s-1960s
+    - His life is representative of the role of Third World countries in international politics and international relations between such countries
+- Zhou's Early Life
+    - Lived in northeast China during his early life and traveled to Japan in 1917 for his studies; learned English there
+    - 1919 - Moves back to China and joins nationalist + leftist student groups after mass protests occur due to growing European influence
+    - 1920 - Zhou studies in France and joins the CCP, creates a link between the Chinese diaspora in Europe and the mainland Chinese party (CCP)
+    - 1924 - Returns to China to build revolution
+    - Very similar to Tan Malaka in the sense that both men became communist after studying abroad (in Europe)
+- The Chinese Path to Communism
+    - In the 1920s, China was considered one state but was controlled by different forces (middle of China controlled by warlords while foreign powers controlled the coast)
+        - The Guomindang (Chinese Nationalist Party, or KMT) formed to unify China by expelling foreign powers and forming a strong central government; supported by the Soviet Union
+    - 1923-1927 - CCP allies with the Guomindang, similar to "bloc within" strategy where CCP members were encouraged to join the Guomindang
+    - Guomindang splits into a right and left wing faction, with the left wing being closer to the CCP and the Soviet Union
+    - 1927 - The right wing faction take over the Guomindang and kill the communists
+        - The Soviet Union demands that the CCP remain loyal to the Guomindang, creates tension between the Chinese and Soviet parties, disillusions many Chinese communists with the Comintern
+        - Mao Zedong ignores Soviet advice; CCP must abandon cities, relocate to countryside, unite with the peasantry, and create areas in the countryside to use as bases to fight the Guomindang with guerilla warfare
+    - Maoism becomes a separate part of communism (a brand of Chinese communism) because of his new strategy of working with the "common man" to defeat the Guomindang (control the countryside to cut off the cities)
+        - Mao gains power within the CCP and the CCP pursue his strategies throughout the 1930s and 1940s
+- Sino-Soviet Split
+    - 1949-1958 - China is closely allied with the Soviet Union and is reliant on Soviet military aid and loans; Zhou Enlai, as premier and foreign minister, negotiates with Moscow
+    - Tension rises because Soviet and Chinese communism differs, especially with regards to peasantry
+        - Soviets argue for collectivization, government takes control of the peasantry + agriculture to drive profits and create industry
+        - Chinese wants to work with the peasantry instead of "extracting profits" from them; use loans instead of countryside to industrialize and build infrastructure
+    - Stalin dies in 1953, and in 1956, the new Soviet leader, Khrushchev, denounces Stalin as a tyrant who murdered his people and distorted the message of communism
+        - Khrushchev creates a more liberal period of Soviet politics with less authoritarianism; calls for policy of "peaceful coexistence" with the West
+        - Mao believes that Khrushchev is selling out to the West and that his criticism of Stalin will weaken his power in China
+    - 1958-1960 - Sino-Soviet Split, China and Soviet tensions become public and the two countries sever ties as they vie for world power
+- Afro-Asian Friendship
+    - Throughout the 1950s and the 1960s, Zhou creates a new strategy of international diplomacy between China and the newly independent states of Asia and Africa
+        - China wanted to be a nation that was equally unaligned with the Soviet Union and US, a sort of intermediary, that allied with other nations that wanted to remain neutral
+    - 1955 - Bandung Conference, gathered Asian and African leaders and called for a policy of "non-alignment" in the Cold War
+        - Zhou presents China as an ally of anti-imperilaism and a defender of national independence for Third World countries
+        - Focuses more on anti-imperialism instead of communism in order to quell fears of Soviet or Chinese invasion of the Third World
+    - 1963-1964 - Zhou Enlai travels throughout Africa on a publicized trip as a diplomat
+        - Worked with Nkrumah, the president of Ghana, who used some communist policies but was not communist
+        - Nkrumah supported Pan-Africanism; wanted unity and cooperation throughout all of Africa
+        - Zhou and Nkrumah's meeting detailed the alliance of Third World countries to break away from dependence on First World countries
+        - Focused on international institutions (such as the United Nations) as a way to pursue Third World interests
+    - China's closest African ally is Tanzania 
+        - 1965 - Tanzanian president Julius Nyerere visits China and likes the idea of Maoism being applied to his own country
+        - China supports Tanzania, trains their people to engage in guerilla warfare
+- The Cultural Revolution
+    - 1966-1976 - Great Proletarian Cultural Revolution, started by Mao to get rid of his opponents and connect with the new, young generation
+    - Young people took up Mao's cause, Mao's opponents were often subject to torture and death
+    - Zhou was seen as a moderate alternative to Mao but remained an ally to Mao; died after diagnosed with bladder cancer with Mao refusing him medical treatment

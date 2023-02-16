@@ -1,0 +1,62 @@
+---
+layout: post
+description: February 14 Humcore Lecture
+categories: [humcore, lecture, winter22-23, markdown]
+title: Tania, From Havana, with Love
+---
+
+- Tamara "Tania" Bunke
+    - Born in Argentina to German parents
+    - Parents were communist, Tamara lived in a communist life world where she was surrounded by them
+- Building German Communism
+    - Bunke's parents fled to Argentina after the Nazis seized power - mother was Jewish, and both were anti-fascist activists
+    - After Tamara comes back, Germany is very different
+        - Split into West Germany (supported by the West, such as the US, and promoted capitalism) and East Germany (supported by the East and the communists, promoted communist ideals such as command economy, nationalization of property, and outlawing of anti-government sentiment)
+    - Bunkes move to East Germany and begin to again build communism: join trade unions, clubs, political parties, etc.
+        - Tamara joins the Free Germany Youth (FDJ) movement which is tied to the communist ruling party
+        - Travels across the world for meetings
+- The Cuban Revolution, 1956-1959
+    - Fidel Castro leads an uprising against the authoritarian regime of Fulgencio Batista who was supported by the US
+    - The uprising fails and the rebels retreat to the mountains to participate in guerilla warfare against the government
+    - Doesn't start out as communist, more focused on national sovereignty and independence
+        - Many leaders were not communist, most notably Fidel Castro
+        - Causes division in the leadership
+            - Liberal leaders distrust the communists and want to communicate with the US
+            - Che Guevara and Raul Castro reject the US and want to communicate with Cuban communists
+        - Communist party in Cuba dismisses the revolution and works with the Batista regime to stop the revolution
+    - 1958 - Batista crushes the urban uprising and attempts to drive the rebels out of the mountains, but the rebels hold out
+        - In 1958, popular support in Cuba begins to align with Castro after doubts about Batista's character come into view
+            - Cuban communists finally back the rebels
+    - Early 1959 - Castro's forces take over Cuba, Batista flees to Spain with Cuba's gold reserves
+    - The new government create a socialist law code to strengthen Cuban sovereignty and developed the economy
+        - Expanded public health programs and broadened services to poorer provinces
+        - Brothels and casinos (owned by US) were closed, gets rid of some US influence
+        - Housing program created to lower rent and mortgages, prevent evictions, and force landlords to rent out properties
+        - Employed price controls on electricity and phone companies (US-owned)
+    - The US is upset with the new laws, leading to Cuba allying with the Soviet Union
+        - July 1960 - Eisenhower cuts sugar imports from Cuba which cripples the Cuban Economy
+        - April 1961 - Bay of Pigs Invasion, CIA attempts to oust the Cuban government which fails; continues assassination attempts against the government
+        - Cuba creates agreements with the USSR, USSR agrees to purchase Cuban sugar and provide military + infrastructure support
+        - 1962: Cuban Missile Crisis, US and USSR agree to deescalate nuclear warfare by taking nukes out of Cuba
+            - Cubans upset, feel like more of a tool for the USSR to use rather than an equal partner
+- The Fantasy of Cuba in Eastern Europe
+    - *Soy Cuba* was directed by Mikhail Kalatozov, a Soviet Georgian director, who won the Palm d'Or award at the Cannes Film Festival
+    - Was commissioned as a form of propaganda
+    - Critics disliked it; Soviet critics believed it portrayed the bourgeoisie in too favorable a light, while Cuban critics believed it relied too much on stereotypes and cliches
+        - Not taken seriously by international audiences until it was rediscovered by US critics in the 1990s
+- Tamara's Cuba
+    - December 1960 - Tamara assigned to translate for the Cuban trade delegation, headed by Che Guevara, in East Germany
+        - Tamara and Che befriend each other
+    - 1961 - Tamara travels to Cuba and helps build schools + teach Spanish
+    - Joins the Federacion de Mujeres Cubanas to help teach Spanish to rural women and children as a part of their literacy program
+    - Meets people from around the world that sympathize with the communist cause
+- From Comrade Tamara to Agent Tania
+    - 1963 - Recruited by the Cuban Intelligence Directorate (likely recommended by Che) and assigned to a secret mission
+    - 1964-1965 - Trains in counter-intelligence, espionage, and military training in both Cuba and Czechoslovakia
+    - Operacion Fantasma - Che's plan to spark communist revolution throughout South America by training young communists in guerilla combat and parachute them into a chosen destination
+        - Tamara helps the operation to set up the underground infrastructure for the communist movement
+    - 1966 - Tania goes to La Paz, Bolivia to support Guevara's Operacion Fantasma by making contact with the elite and give information to Guevara's guerillas
+        - Calls herself an Argentinian scholar of Latin American folk traditions as a cover
+        - Befriends Bolivian president, goes on holiday with them
+        - 1967 - Bolivian communist is captured and blows Tania's cover, forced to escape
+    - 1967 - Killed by the Bolivian military after her escape, buried in an unmarked grave
