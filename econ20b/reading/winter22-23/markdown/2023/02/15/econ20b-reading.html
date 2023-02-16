@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Measuring the Time Value of Money, and Unemployment | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Measuring the Time Value of Money, and Unemployment" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Principles of Economics Ch. 27.1 + 28" />
+<meta property="og:description" content="Principles of Economics Ch. 27.1 + 28" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/02/15/econ20b-reading.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/02/15/econ20b-reading.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-15T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Measuring the Time Value of Money, and Unemployment" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-15T00:00:00-06:00","datePublished":"2023-02-15T00:00:00-06:00","description":"Principles of Economics Ch. 27.1 + 28","headline":"Measuring the Time Value of Money, and Unemployment","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/02/15/econ20b-reading.html"},"url":"https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/02/15/econ20b-reading.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Measuring the Time Value of Money, and Unemployment</h1><p class="page-description">Principles of Economics Ch. 27.1 + 28</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-02-15T00:00:00-06:00" itemprop="datePublished">
+        Feb 15, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      9 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#econ20b">econ20b</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#winter22-23">winter22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#chapter-27-the-basic-tools-of-finance">Chapter 27: The Basic Tools of Finance</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#271-present-value-measuring-the-time-value-of-money">27.1: Present Value: Measuring the Time Value of Money</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#chapter-28-unemployment">Chapter 28: Unemployment</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#28-1-identifying-unemployment">28-1: Identifying Unemployment</a></li>
+<li class="toc-entry toc-h3"><a href="#28-2-job-search">28-2: Job Search</a></li>
+<li class="toc-entry toc-h3"><a href="#28-3-minimum-wage-laws">28-3: Minimum-Wage Laws</a></li>
+<li class="toc-entry toc-h3"><a href="#28-4-unions-and-collective-bargaining">28-4: Unions and Collective Bargaining</a></li>
+<li class="toc-entry toc-h3"><a href="#28-5-the-theory-of-efficiency-wages">28-5: The Theory of Efficiency Wages</a></li>
+</ul>
+</li>
+</ul><h2 id="chapter-27-the-basic-tools-of-finance">
+<a class="anchor" href="#chapter-27-the-basic-tools-of-finance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chapter 27: The Basic Tools of Finance</h2>
+
+<h3 id="271-present-value-measuring-the-time-value-of-money">
+<a class="anchor" href="#271-present-value-measuring-the-time-value-of-money" aria-hidden="true"><span class="octicon octicon-link"></span></a>27.1: Present Value: Measuring the Time Value of Money</h3>
+
+<ul>
+  <li>The <strong>present value</strong> of a future sum of money is the amount of money that would need to be saved today in order to reach that future sum via interest rates</li>
+  <li>The <strong>future value</strong> of a current sum of money is the amount of money that it would be worth after a number of years due to interest rates</li>
+  <li>Typically, the present and future values of money are calculated assuming that interest is <strong>compounded</strong>
+    <ul>
+      <li>After n years and an interest rate of r, $100 becomes 100 * (1 + r)<sup>n</sup> dollars</li>
+      <li>The opposite is also true; if you receive 100 dollars n years from now, then the present value of that 100 becomes 100/(1 + r)<sup>n</sup>
+</li>
+    </ul>
+  </li>
+  <li>The present and future value of money can be applied to many things, such as investments or receivement of payments</li>
+</ul>
+
+<h2 id="chapter-28-unemployment">
+<a class="anchor" href="#chapter-28-unemployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chapter 28: Unemployment</h2>
+
+<h3 id="28-1-identifying-unemployment">
+<a class="anchor" href="#28-1-identifying-unemployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>28-1: Identifying Unemployment</h3>
+
+<p><strong>How Is Unemployment Measured?</strong></p>
+
+<ul>
+  <li>Adults (defined as people aged 16 or older) are placed into one of three categories when considering unemployment
+    <ul>
+      <li>
+<em>Employed</em> - Anyone working, whether full-time or part-time, or those taking a temporary absence such as vacation, sickness, etc.</li>
+      <li>
+<em>Unemployed</em> - Anyone not employed, currently available for work, and trying to find employment for the past 4 weeks; also includes those who were laid off but are still working for the company</li>
+      <li>
+<em>Not in the labor force</em> - Anyone not in the above two categories, such as students, retirees, or homemakers</li>
+    </ul>
+  </li>
+  <li>The Bureau of Labor Statistics (BLS) defines the <strong>labor force</strong> as the sum of the employed and the unemployed
+    <ul>
+      <li>Labor force = Number of employed + Number of unemployed</li>
+    </ul>
+  </li>
+  <li>The <strong>unemployment rate</strong> is the number of unemployed people divided by the size of the labor force
+    <ul>
+      <li>Unemployment rate = Number of unemployed / Labor force * 100</li>
+    </ul>
+  </li>
+  <li>The <strong>labor-force participation rate</strong> measures the proportion of adults working in the labor force
+    <ul>
+      <li>Labor-force participation rate = Labor force / Adult population * 100</li>
+    </ul>
+  </li>
+  <li>Between different groups of people, the unemployment rate and labor-force participation rate differ</li>
+  <li>The unemployment rate typically fluctuates
+    <ul>
+      <li>The rate at which the unemployment rate hovers is called the <strong>natural rate of unemployment</strong>, while the deviations from the natural unemployment rate are called <strong>cyclical unemployment</strong>
+</li>
+      <li>Graph: <img src="https://user-images.githubusercontent.com/54915685/219270994-f5d48b55-bf06-4692-ab34-e316efb8e508.png" alt="image">
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Does the Unemployment Rate Measure What We Want It to Measure?</strong></p>
+
+<ul>
+  <li>Measuring unemployment is not straightforward, as movement into and out of the labor force is common
+    <ul>
+      <li>1/3 of the unemployed are recent entrants into the labor force, such as young workers who are looking for their first jobs or old workers who want to reenter</li>
+      <li>Almost half of all unemployments end when the unemployed person leaves the labor force</li>
+      <li>Some who say they’re unemployed might be doing so in order to get unbemployment benefits</li>
+      <li>Some who leave the labor force are <strong>discouraged workers</strong>, or people who tried hard to get a job and failed</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>How Long Are the Unemployed without Work?</strong></p>
+<ul>
+  <li>Unemployment can be considered as follows: <em>Most spells of unemployment are short, but most unemployment observed at any given time is long-term.</em>
+</li>
+  <li>This means that there are people who are chronically unemployed that make up a majority of the unemployed, but most people who are unemployed regain jobs quickly and don’t affect the unemployment rate over time</li>
+</ul>
+
+<p><strong>Why Are There Always Some People Unemployed?</strong></p>
+
+<ul>
+  <li>There is always unemployment because there is always a surplus of labor; four reasons for this</li>
+  <li>
+<strong>Frictional unemployment</strong> explains shorter spells of unemployment that occur due to the delay of matching workers to jobs</li>
+  <li>
+<strong>Structural unemployment</strong> explains longer spells of unemployment that occur because the wages are set above the value defined by the labor-wage equilibrium
+    <ul>
+      <li>This chapter will explore three types: minimum-wage laws, unions, and efficiency wages</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="28-2-job-search">
+<a class="anchor" href="#28-2-job-search" aria-hidden="true"><span class="octicon octicon-link"></span></a>28-2: Job Search</h3>
+
+<ul>
+  <li>
+<strong>Job search</strong> is defined as the processs of matching workers with appropriate jobs
+    <ul>
+      <li>Not an instantaneous process which is why unemployment occurs</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Why Some Frictional Unemployment Is Inevitable</strong></p>
+
+<ul>
+  <li>Fricional unemployment occurs due to changes in demand of labor among different firms
+    <ul>
+      <li>If Firm A increases in popularity and its competitor Firm B does not, then Firm B will lay off workers and Firm A will hire workers, causing a period of unemployment</li>
+      <li>If one industry experiences an increase in demands while another one experiences a decrease, then workers from the declining industry must search for jobs in the new one
+        <ul>
+          <li>This is known as a <em>sectoral shift</em> and causes periods of unemplopyment due to the time it takes to find new jobs</li>
+        </ul>
+      </li>
+      <li>In general, changes in demand between different industries and companies inevitably creates frictional unemployment</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Public Policy and Job Search</strong></p>
+
+<ul>
+  <li>Though frictional unemployment is inevitable, how much it happens is not; the internet and faster flow of information can decrease frictional unemployment
+    <ul>
+      <li>The government has tried to facilitate job search in many ways, such as government run agencies and public training programs (which trains workers in failing industries to get jobs in better ones)</li>
+      <li>Advocates claim that these programs help because it expands the labor force and reduces unemployment, while critics claim that the private market can do a better job than the government (such as through advertising or private education)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Unemployment Insurance</strong></p>
+
+<ul>
+  <li>
+<strong>Unemployment Insurance</strong> is the practice of giving workers protection against job loss; only given to those who were laid off and cannot find new jobs</li>
+  <li>Causes frictional unemployment because those who are unemployed are less inclined to find a new job if they know they can get money for doing nothing
+    <ul>
+      <li>There are benefits: workers are less likely to take less lucrative job offers, thus increasing the quality of jobs, and workers find better matching jobs for their tastes</li>
+    </ul>
+  </li>
+  <li>Point of much contention; economists are unsure of whether or not removing unemployment insurance would boost or diminish economic well-being</li>
+</ul>
+
+<h3 id="28-3-minimum-wage-laws">
+<a class="anchor" href="#28-3-minimum-wage-laws" aria-hidden="true"><span class="octicon octicon-link"></span></a>28-3: Minimum-Wage Laws</h3>
+
+<ul>
+  <li>Minimumm wage laws cause unemployment because it forces wages to be above the equilibrium level, causing a surplus of jobs and unemployment
+    <ul>
+      <li>Graph: <img src="https://user-images.githubusercontent.com/54915685/219281932-4aceb758-e0fb-4aa9-b2bc-ba33c40d99d4.png" alt="Screen Shot 2023-02-15 at 10 04 06 PM">
+</li>
+    </ul>
+  </li>
+  <li>Though minimum wage laws do cause unemployment, they do not affect most people, as a majority of workers make well above the minimum wage
+    <ul>
+      <li>Minimum wage affects the “marginal worker”, or those who have the least experience and the least skill</li>
+    </ul>
+  </li>
+  <li>The graph shows an important conclusion: <em>If the wage is kept above the equilibrium level for any reason, the result is unemployment.</em>
+</li>
+  <li>Note that minimum wage is very different from job search; while those searching for jobs are simply finding the best jobs to suit their tastes, those affected by a surplus of labor are <u>waiting for jobs to open up</u> because there is too much labor</li>
+</ul>
+
+<h3 id="28-4-unions-and-collective-bargaining">
+<a class="anchor" href="#28-4-unions-and-collective-bargaining" aria-hidden="true"><span class="octicon octicon-link"></span></a>28-4: Unions and Collective Bargaining</h3>
+
+<ul>
+  <li>
+<strong>Unions</strong> are groups of workers who bargain with employers over wages, benefits, and working conditions
+    <ul>
+      <li>Less prevalent in the US today, but still very active in Europe</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>The Economics of Unions</strong></p>
+
+<ul>
+  <li>Unions can be thought of as cartels but for labor
+    <ul>
+      <li>Cartels are groups of sellers who join together to fix prices and exert market power; unions do the same but instead of selling goods they sell labor</li>
+      <li>The process of unions and firms agreeing on terms of employment is called <strong>collective bargaining</strong>
+</li>
+    </ul>
+  </li>
+  <li>The bargaining power of unions largely comes in the form of <strong>strikes</strong> where all of the workers of a union stop working
+    <ul>
+      <li>Because firms don’t want to lose profit, they will often strike agreements with unions to prevent strikes</li>
+    </ul>
+  </li>
+  <li>The actions of unions raise the wage above the equilibrium level, resulting in a surplus of labor and unemployment
+    <ul>
+      <li>Workers who are employed at the higher wage are better off, but those who were employed and got laid off are worse off</li>
+      <li>Those who maintain employment are called <em>insiders</em> and those who did not get the union jobs are called <em>outsiders</em>
+</li>
+      <li>Outsiders can either remain unemployed and try to get inside jobs or find jobs in other firms that are not unionized
+        <ul>
+          <li>Because more workers look for jobs in un-unionized firms, the wages of such firms decreases; thus, unions increase wages in some parts of an industry while lowering it in others</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Public policy allows for unions to exist, though the existence of unions is often debated politically</li>
+</ul>
+
+<p><strong>Are Unions Good or Bad for the Economy?</strong></p>
+
+<ul>
+  <li>Critics of unions argue that unions are cartels, and by exerting their power, unions raise wagees too high and cause workers to be unemployed
+    <ul>
+      <li>This causes an inefficient allocation of resources because higher wages reduces employment down to an inefficient level</li>
+      <li>Also inequitable; some workers benefit from the existence of unions while others do not</li>
+    </ul>
+  </li>
+  <li>Advocates for unions argue that workers need market power of their own to combat the market power of firms, such as when firms create company towns or have overwhelming market presence otherwise
+    <ul>
+      <li>Unions also help firms efficiently address workers’ concerns because they act as a means of communication between the two, leading to a happier and more productive workforce</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="28-5-the-theory-of-efficiency-wages">
+<a class="anchor" href="#28-5-the-theory-of-efficiency-wages" aria-hidden="true"><span class="octicon octicon-link"></span></a>28-5: The Theory of Efficiency Wages</h3>
+
+<ul>
+  <li>
+<strong>Efficiency wages</strong> represent the idea of keeping wages above equilibrium to increase efficiency in various ways</li>
+</ul>
+
+<p><strong>Worker Health</strong></p>
+
+<ul>
+  <li>Workers who are paid more have a better diet, can afford health services, etc. which boosts their productivity
+    <ul>
+      <li>Especially prevalent in poorer countries where firms are concerned that cutting wages too low will cause bodily harm to their workers</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Worker Turnover</strong></p>
+
+<ul>
+  <li>Workers have incentives to quit their jobs, such as moving, finding a new job, leaving the labor force, etc.</li>
+  <li>By having higher wages, the firms encourage workers to stay and reduce turnover
+    <ul>
+      <li>Turnover is detrimental for many reasons; have to train new workers, have to spend resources to hire new workers, etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Worker Quality</strong></p>
+
+<ul>
+  <li>The most talented, experienced workers want wages that are high to compensate, so companies will pay higher wages in order to weed out workers who might not be the most skilled for the job and only receive highly skilled applicants</li>
+</ul>
+
+<p><strong>Worker Effort</strong></p>
+
+<ul>
+  <li>Often, workers have the ability to determine how hard they work, and firms have a hard time figuring out whether or not a worker is shirking or not</li>
+  <li>Higher wages thus incentivize workers to stay on tasks in order to maintain their job and</li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/econ20b/reading/winter22-23/markdown/2023/02/15/econ20b-reading.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tonyhieu.github.io/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/tonyhieu" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
