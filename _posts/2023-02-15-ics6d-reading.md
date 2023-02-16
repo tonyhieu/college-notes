@@ -15,8 +15,8 @@ use-math: true
 
 - From a set of size 5, if you want to choose 3 elements, there are 5!/2! ways to do so
     - We don't care about order, so we must divide 5!/2! by 3! in order to get rid of duplicate subsets
-    - Thus, the choose notation is created: $$ {{n \choose r} = {{n!} \over {r!(n-r)!}} } $$
-    - Additionally, $$ {{n \choose r} = {n \choose n - r} } $$
+    - Thus, the choose notation is created: $$ { {n \choose r} = { {n!} \over {r!(n-r)!} } } $$
+    - Additionally, $$ { {n \choose r} = {n \choose n - r} } $$
 - Example of using choose notation to count paths on a grid: ![image](https://user-images.githubusercontent.com/54915685/219250800-4c4ae318-dc86-4d53-a69a-dadacdc67679.png)
 
 ## 10.6: Subset and permutation examples
@@ -41,9 +41,9 @@ use-math: true
     - {1, 2, 3} is a set and a multiset, while {1, 2, 2, 3} is a multiset only
 - Can use a strategy involving code words to count multisets
     - Suppose that we want to count the number of ways to select 12 cookies from 4 types; the following shows a bijection between a multiset and its corresponding code word: ![image](https://user-images.githubusercontent.com/54915685/219252432-d15d2364-b447-49eb-a9c1-948a35d278cb.png)
-    - Thus, the number of ways to select cookies is $$ {{n + m - 1} \choose {m-1}} $$
+    - Thus, the number of ways to select cookies is $$ { {n + m - 1} \choose {m-1} } $$
     - Table representing the values to what they are in the code word: ![image](https://user-images.githubusercontent.com/54915685/219252538-aa49f8d7-c62a-4a31-b9ac-94db0e1aeb26.png)
-- In general, the way to select n objects from m varieties can be represented by $$ {{n + m - 1} \choose {m-1}} $$
+- In general, the way to select n objects from m varieties can be represented by $$ { {n + m - 1} \choose {m-1} } $$
     - This applies to many problems, including ones where *indistinguishable objects* (such as balls) are distributed amongst *distinguishable objects* (bins)
 
 ## 10.10: Assignment problems: Balls in bins
