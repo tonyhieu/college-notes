@@ -1,0 +1,77 @@
+---
+layout: post
+description: February 23 Humcore Lecture
+categories: [humcore, lecture, winter22-23, markdown]
+title: Angela Davis, Black Liberation, Then and Now
+---
+
+- Angela Davis
+    - Philosopher of race and gender who was influenced by Marxist ideologies and pro-black movements in the mid-twentieth century
+    - Prominent figure of the black power movement in the late-60s to early 70s
+    - Member of the CPUSA
+    - Tried for murder and attempted kidnapping in 1971 for her involvement in a prison escape attempt
+    - Her biography explores the rise of communist ideas during the 1960s and the decline of the communist world over the 1980s and 1990s
+- Early Life
+    - Born in 1944 in Brimingham, Alabama to a middle class family
+        - Birmingham was the hotspot for civil rights movements
+    - Graduated high school at a desegregated school in New York, active in CPUSA youth organizations but not yet a member
+    - Studied at Brandeis with Herbet Marcuse, a Marxist philosopher who encouraged tying Marxism with youth, racial, and anti-imperialist movements
+    - Studied in Paris and Frankfurt with Marcuse's colleagues before returning to the US; moves to San Diego to complete her education with Marcuse and becomes active in SoCal balck power movements
+- New Left, Third Worldism, Black Power
+    - The 1960s saw the revival of communist ideas in the West through the New Left
+    - Causes included:
+        - More diversity in higher education; students are more involved in movements for social change
+        - Anti-Vietnam War sentiment; more critique of capitalism and US imperialism
+        - The Rise of the Third World as a geopolitical force; support for anti-imperialism grows
+        - Black Power movement; Black Panther Party generalizes the black movement to the world, envisioning a struggle against imperialism and capitalism
+        - Global Maoism; the new communist, anti-hierarichal China becomes a role model for youth movements, reflects demands of the youth
+- Davis in the 1960s-1970s
+    - Davis is close to both the CPUSA and the Black Panther Party (BPP) but both organizations have differences
+        - BPP is inspired by China and the Cuban Revolution, aims to gain power through inner-city neighborhoods and insurgency
+        - CPUSA is inspired by Soviet Union and Eastern Europe, emphasizes a mass struggle of a multi-racial working class and is suspicious of the BPP's "adventurism"
+    - Davis joines the CPUSA because of the Che-Lumumba (Che Guevara and Patrice Lumumba) club which relates more to the black power movement
+    - 1969 - hired as professor of philosophy at UCLA, conservative media is infuriated and Governor Ronald Reagan has her fired
+    - Davis hires bodyguards after receiving death threats
+    - August 1970 - one of Davis' bodyguard attempts to free his brother from prison using a weapon registered to Davis
+        - Police charge Davis with murder and attempted kidnapping which could lead to capital punishment
+        - Davis goes into hiding but is arrested in New York by the FBI after several months of hiding
+        - Stands trial in 1971 and is found innocent in 1972 by an all-white jury
+- International Solidarity
+    - National United Committee to Free Angela Davis (NUCFAD) was a campaign led by communist and black power activists to raise awareness of Davis' case and demand her release
+    - 200+ US organizations and 60+ international organizations were founded around the world in support of her
+    - Communist states especially support her to present themselves as in touch with the youth
+        - Russia, Cuba, Ecuador, etc. create posters in support of her
+    - As a member of the CPUSA, Davis is shown as a martyr and a poster-child for communism
+    - After her aciquittal, Davis tours various communist states where she is greeted by tens of thousands of young people
+        - Speaks alongisde various government officials; thanks people of the communist world for their support and struggle agaisnt imperialism and racism
+    - Thought of as hypocritical, as she advocated for the abolition of prison but traveled to communist states that supported the imprisonment of minorities
+- Crisis and Decline of the Communist World
+    - 1970s transforms the global economy and destabilizes the communist world
+        - 1973 - OPEC raises oil prices which leads to global inflation but no economic growth, also known as stagflation
+        - 1979 - Volcker Shock: The Fed raises interest rates to 12% which destabilizes US dollar loans; causes countries to enter a debt crisis in the 1980s which forces them to cut social spending and sell state assets
+    - Communist and Third World states are forced to borrow heavily from international banks to cover costs during this decade, and the Volcker Shock makes their debt worse
+        - Destroys the Third World as a geopolitical force and undermines the social contract of communist states (restricted in goods and freedoms but employment and basic needs are guaranteed)
+        - Life becomes harder for the population due to cuts in social spending; unable to function
+    - 1985 - Gorbachev tries to liberalize the political and economic system but makes clear that the Soviet Union will not help to protect from internal opposition
+    - 1989 - Eastern Europe states are forced to relinquish power and open to the East
+        - 1991 - The Soviet Union falls and the Berlin Wall is taken down
+    - 1972 - China allies with the US against the Soviet Union, leads to capitalist reforms in 1976 led by Deng Xiaoping to reinvent their economic system
+    - Revolutionary groups like BPP and SNCC are repressed by the FBI and IRS investigations, forced to declare bankruptcy
+        - By the late 1970s, most revolutionary groups in the US are extinguished and major leaders are arrested, dead, in exile, or disillusioned
+- Communist Response to Decline of Communism
+    - Violence: in the 1970s, small revolutions occur across the globe (Red Armies, Black Liberation Army, etc) but fail to take hold
+    - New religious movements: radical countercultures turn into movements for internal spiritual renewal
+    - Domestication: communist parties dissolve and turn into green parties or moderate-left parties, abandons visions of global change
+    - Academia: attempt to teach the youth about communism to create generational change but is less practical than real change
+- What is Left of the Communist World
+    - Eastern Europe states join the EU and transitioned into global capitalism
+    - Soviet Union became capitalist and created an oligarch class due to the transfer of public wealth to private hands
+    - China is now an integral part of global apitalism
+    - Cuba, North Korea, Venezuela are crippled by US sanctions and embargoes which makes it hard to create communist world-building projects
+    - All communist states have greater social inequality as a result of communism
+    - Those who lived under communism do not wish to return to it
+- Davis' Biography
+    - Reflects the decline of the communist world
+        - Leaves the CPUSA in 1991 after the decline of the Soviet Union and turns to academia at UCSC
+    - Davis' work has inspired BLM movements
+    - Communism impacts the revolutionary ideas behind modern liberatory politics
