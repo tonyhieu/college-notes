@@ -1,0 +1,166 @@
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Integer Division and Finding Factors/Multiplies</h1><p class="page-description">ICS 6D Chapter 9.1-9.5</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-02-22T00:00:00-06:00" itemprop="datePublished">
+        Feb 22, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#ics6d">ics6d</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#winter22-23">winter22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#91-the-division-algorithm">9.1: The Division Algorithm</a></li>
+<li class="toc-entry toc-h2"><a href="#92-modular-arithmetic">9.2: Modular arithmetic</a></li>
+<li class="toc-entry toc-h2"><a href="#93-prime-factorizations">9.3: Prime factorizations</a></li>
+<li class="toc-entry toc-h2"><a href="#94-factoring-and-primality-testing">9.4: Factoring and primality testing</a></li>
+<li class="toc-entry toc-h2"><a href="#95-greatest-common-divisor-and-euclids-algorithm">9.5: Greatest common divisor and Euclid’s algorithm</a></li>
+</ul><h2 id="91-the-division-algorithm">
+<a class="anchor" href="#91-the-division-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>9.1: The Division Algorithm</h2>
+
+<ul>
+  <li>
+<strong>Integer division</strong> is division where the input and output must always be integers
+    <ul>
+      <li>9 / 4 returns 2 remainder 1 instead of 2.25</li>
+      <li>Definition of division: <img src="https://user-images.githubusercontent.com/54915685/220762070-53fd66ec-5da6-4be9-ab14-8f8bc6e89df1.png" alt="image">
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Linear combination</strong>: The sum of the multiples of two numbers
+    <ul>
+      <li>If a number x can divide two numbers y and z, then x can divide any linear combination of y and z</li>
+    </ul>
+  </li>
+  <li>
+<strong>The Division Algorithm</strong> defines division and remainders
+    <ul>
+      <li>Theorem: <img src="https://user-images.githubusercontent.com/54915685/220762493-9967b5fd-7c8a-473b-b6db-0aef2f777af9.png" alt="image">
+</li>
+      <li>Definitions derived: <img src="https://user-images.githubusercontent.com/54915685/220762552-5d2812a8-5bfc-4fa8-ad7f-c2b5bfe27787.png" alt="image">
+</li>
+      <li>Note that the Division Algorithm states that applying the modulo operator on negative numbers will never return a negative number; -7 % 4 = 1, not -3</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="92-modular-arithmetic">
+<a class="anchor" href="#92-modular-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>9.2: Modular arithmetic</h2>
+
+<ul>
+  <li>Mod m can be seen as a function that maps an integer to the target {0, 1, 2, …, m-1}
+    <ul>
+      <li>If we want addition and multiplication functions to return integers in a certain set, then we can use <strong>addition mod m</strong> and <strong>multiplication mod m</strong> (adding and multiplying then applying mod m, respectively) in order to do so</li>
+      <li>The set {0, 1, 2, …, m-1} along with addition mod m and multiplication mod m creates a closed mathematical system called a <strong>ring</strong>, denoted by Z<sub>m</sub>
+</li>
+      <li>Z<sub>5</sub> multiplication and addition tables: <img src="https://user-images.githubusercontent.com/54915685/220764218-c6cc46c1-3c93-4ff0-8746-dd56b9ab16e8.png" alt="image">
+</li>
+    </ul>
+  </li>
+  <li>For a fixed m, two integers x and y are <strong>congruent</strong> if x mod m = y mod m
+    <ul>
+      <li>This is denoted as <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≡</mo><mi>y</mi><mtext> (mod m)</mtext></mrow><annotation encoding="application/x-tex">{x \equiv y \text{ (mod m)}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord text"><span class="mord"> (mod m)</span></span></span></span></span></span>
+</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Can also be defined as m</td>
+              <td>(x - y), or m evenly divides x - y</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>The mod operation has the same precedence as multiplication or division, so 6 * 2 mod 7 = 12 mod 7 = 5</li>
+  <li>To compute other arithmetic operations mod m, we can use the following definitions: <img src="https://user-images.githubusercontent.com/54915685/220765979-04af28bf-f400-4a42-ab6a-ad275d4ec868.png" alt="image">
+</li>
+</ul>
+
+<h2 id="93-prime-factorizations">
+<a class="anchor" href="#93-prime-factorizations" aria-hidden="true"><span class="octicon octicon-link"></span></a>9.3: Prime factorizations</h2>
+
+<ul>
+  <li>
+<strong>The Fundamental Theorem of Arithmetic</strong> states that every positive integer (besides 1) can be uniquely expressed as a product of prime numbers
+    <ul>
+      <li>The multiplicity of a prime number in a prime factorization is the number of times p appears in the factorization
+        <ul>
+          <li>For example, in 12, 2 has a multiplicity of 2 and 3 has a multiplicity of 1</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>The <strong>greatest common divisor (gcd)</strong> of two integers is the greatest integer that divides both of them</li>
+  <li>The <strong>least common multiple (lcm)</strong> of two inegers is the smallest positive integer that is a multiple of them</li>
+  <li>Two numbers are <strong>relatively prime</strong> if their gcd is 1</li>
+  <li>Formulas for finding the GCD and LCM of two integers with known prime factorizations: <img src="https://user-images.githubusercontent.com/54915685/220769856-46bc2d4f-b6f8-4b39-a6c1-5b4d666db756.png" alt="image">
+</li>
+</ul>
+
+<h2 id="94-factoring-and-primality-testing">
+<a class="anchor" href="#94-factoring-and-primality-testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>9.4: Factoring and primality testing</h2>
+
+<ul>
+  <li>Many ways to find if a number is prime
+    <ul>
+      <li>A <strong>brute force algorithm</strong> solves a problem by trying all possible inputs and outputs</li>
+    </ul>
+  </li>
+  <li>There are an infinite amount of primes, with proof: <img src="https://user-images.githubusercontent.com/54915685/220770379-eae880a1-3178-47cb-b616-59b5df80a0ae.png" alt="image">
+    <ul>
+      <li>
+<strong>The Prime Number Theorem</strong> stipulates how dense prime numbers are packed among integers: <img src="https://user-images.githubusercontent.com/54915685/220770544-5e6f9f43-801e-41e9-9a39-bc318ad64d5c.png" alt="image">
+</li>
+      <li>This theorem can be interpreted as follows: If a random number is randomly selected from 2 to x, then the chance that the number is prime is approximately 1/ln(x)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="95-greatest-common-divisor-and-euclids-algorithm">
+<a class="anchor" href="#95-greatest-common-divisor-and-euclids-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>9.5: Greatest common divisor and Euclid’s algorithm</h2>
+
+<ul>
+  <li>Euclid’s algorithm gives a way to recursively calculate the GCD of any two integers
+    <ul>
+      <li>Algorithm: gcd(x, y) = gcd(y mod x, x)</li>
+      <li>Written out in code: <img src="https://user-images.githubusercontent.com/54915685/220770981-bdd05d6f-143b-4dae-b773-3036b7c6960a.png" alt="image">
+</li>
+    </ul>
+  </li>
+  <li>The <strong>Extended Euclidean Algorithm</strong> states that gcd(x, y) = sx + ty</li>
+  <li>The <strong>multiplicative inverse mod n (AKA inverse mod n)</strong> of an integer x is an integer s such that sx mod n = 1
+    <ul>
+      <li>For example, 3 is the inverse of 7 mod 10 because 3 * 7 mod 10 = 21 mod 10 = 1</li>
+    </ul>
+  </li>
+  <li>This section is something you need to practice; can’t really understand off of notes</li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/ics6d/reading/winter22-23/markdown/2023/02/22/ics6d-reading.html" hidden></a>
+</article>
