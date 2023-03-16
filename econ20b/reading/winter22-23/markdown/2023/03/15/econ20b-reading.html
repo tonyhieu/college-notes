@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Aggregate Demand and Aggregate Supply | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Aggregate Demand and Aggregate Supply" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Principles of Economics Ch. 33" />
+<meta property="og:description" content="Principles of Economics Ch. 33" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/03/15/econ20b-reading.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/03/15/econ20b-reading.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-15T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Aggregate Demand and Aggregate Supply" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-15T00:00:00-05:00","datePublished":"2023-03-15T00:00:00-05:00","description":"Principles of Economics Ch. 33","headline":"Aggregate Demand and Aggregate Supply","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/03/15/econ20b-reading.html"},"url":"https://tonyhieu.github.io/college-notes/econ20b/reading/winter22-23/markdown/2023/03/15/econ20b-reading.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Aggregate Demand and Aggregate Supply</h1><p class="page-description">Principles of Economics Ch. 33</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-15T00:00:00-05:00" itemprop="datePublished">
+        Mar 15, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      14 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#econ20b">econ20b</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#reading">reading</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#winter22-23">winter22-23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#chapter-33-aggregate-demand-and-aggregate-supply">Chapter 33: Aggregate Demand and Aggregate Supply</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#33-1-three-key-facts-about-economic-fluctuations">33-1: Three Key Facts about Economic Fluctuations</a></li>
+<li class="toc-entry toc-h3"><a href="#33-2-explaining-short-run-economic-fluctuations">33-2: Explaining Short-Run Economic Fluctuations</a></li>
+<li class="toc-entry toc-h3"><a href="#33-3-the-aggregate-demand-curve">33-3: The Aggregate-Demand Curve</a></li>
+<li class="toc-entry toc-h3"><a href="#33-4-the-aggregate-supply-curve">33-4: The Aggregate-Supply Curve</a></li>
+<li class="toc-entry toc-h3"><a href="#33-5-two-causes-of-economic-fluctuations">33-5: Two Causes of Economic Fluctuations</a></li>
+</ul>
+</li>
+</ul><h2 id="chapter-33-aggregate-demand-and-aggregate-supply">
+<a class="anchor" href="#chapter-33-aggregate-demand-and-aggregate-supply" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chapter 33: Aggregate Demand and Aggregate Supply</h2>
+
+<ul>
+  <li>The economy has some years in which activity increases and others where activity decreases
+    <ul>
+      <li>A period of contraction is called a <em>recession</em> if it is mild and a <em>depression</em> if it is severe</li>
+    </ul>
+  </li>
+  <li>The <em>model of aggregate demand and aggregate supply</em> can help explain how short-run fluctuations occur and are caused</li>
+</ul>
+
+<h3 id="33-1-three-key-facts-about-economic-fluctuations">
+<a class="anchor" href="#33-1-three-key-facts-about-economic-fluctuations" aria-hidden="true"><span class="octicon octicon-link"></span></a>33-1: Three Key Facts about Economic Fluctuations</h3>
+
+<p><strong>Fact 1: Economic Fluctuations Are Irregular and Unpredictable</strong></p>
+
+<ul>
+  <li>Fluctuations are often referred to as the <em>business cycle</em> in which business is good during times of growth and business is bad during times of contraction
+    <ul>
+      <li>The term cycle is misleading, as the fluctuations do not follow a set pattern, and the economy can expand or contract seemingly randomly</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Fact 2: Most Macroeconomic Quantities Fluctuate Together</strong></p>
+
+<ul>
+  <li>Quantities such as real GDP, income, profits, spending, etc. decrease when the economy contracts and increase when it expands
+    <ul>
+      <li>Move in same direction but by different amounts</li>
+      <li>Contraction is mostly caused by reduced spending on new factories, housing, and investments</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Fact 3: As Output Falls, Unemployment Rises</strong></p>
+
+<ul>
+  <li>If a firm decides to produce fewer goods, then they need to employ less people, so recessions often raise the unemployment rate</li>
+</ul>
+
+<h3 id="33-2-explaining-short-run-economic-fluctuations">
+<a class="anchor" href="#33-2-explaining-short-run-economic-fluctuations" aria-hidden="true"><span class="octicon octicon-link"></span></a>33-2: Explaining Short-Run Economic Fluctuations</h3>
+
+<p><strong>The Assumptions of Classical Economics</strong></p>
+
+<ul>
+  <li>Classical economics assumes that the amount of money and price levels does nothing to affect the economy; at the end of the day, the demand for jobs, food, etc. remains the same
+    <ul>
+      <li>Thus, any changes in money are <em>nominal</em>, or insignificant, over time</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>The Reality of Short-Run Fluctuations</strong></p>
+
+<ul>
+  <li>Most economists believe that the classical economic theory applies to the world in the long run but not in the short run</li>
+  <li>In the short run, real and nominal variables affect each other and affect real GDP</li>
+  <li>Thus, to analyze economics in the short run, we must use a new model</li>
+</ul>
+
+<p><strong>The Model of Aggregate Demand and Aggregate Supply</strong></p>
+
+<ul>
+  <li>This new model of economic fluctuations focuses on two variables: the output of goods and services (represented by real GDP) and the average level of prices (represented by the CPI or GDP deflator)
+    <ul>
+      <li>The model is called the <strong>model of aggregate demand and aggregate supply</strong> which places the price level on the vertical axis and the output level on the horizontal axis <img src="https://user-images.githubusercontent.com/54915685/225470431-f6dd1f48-8d9f-45ff-9898-927f2a95e105.png" alt="image">
+</li>
+      <li>The <strong>aggregate-demand curve</strong> shows the quantity of goods demanded at each price level while the <strong>aggregate-supply curve</strong> shows the quantity of goods sold at each price level</li>
+    </ul>
+  </li>
+  <li>This model differs from the simple supply-demand curves because it covers multiple markets and products, not just one microeconomic market</li>
+</ul>
+
+<h3 id="33-3-the-aggregate-demand-curve">
+<a class="anchor" href="#33-3-the-aggregate-demand-curve" aria-hidden="true"><span class="octicon octicon-link"></span></a>33-3: The Aggregate-Demand Curve</h3>
+
+<p><strong>Why the Aggregate-Demand Curve Slopes Downward</strong></p>
+<ul>
+  <li>Model of the curve: <img src="https://user-images.githubusercontent.com/54915685/225470571-7954e832-77b7-474b-a92f-4a6383c7e42d.png" alt="image">
+</li>
+  <li>Recall that the GDP can be represented using the following equation: Y = C + I + G + NX
+    <ul>
+      <li>These variables all affect the aggregate-demand curve</li>
+      <li>Assuming that government spending is constant, we must exmaine how the price level affects the demand of goods and services for each of the variables</li>
+    </ul>
+  </li>
+  <li>The Price Level and Consumption: The Wealth Effect
+    <ul>
+      <li><em>A decrease in the price level raises the real value of money and makes consumers wealthier, thereby encouraging them to spend more. The increase in consumer spending means a larger quantity of goods and services demanded. Conversely, an increase in the price level reduces the real value of money and makes consumers poorer, thereby reducing consumer spending and the quantity of goods and services demanded.</em></li>
+    </ul>
+  </li>
+  <li>The Price Level and Investment: The Interest-Rate Effect
+    <ul>
+      <li>If the price level is lower, then households need to hold less money, thus incentivizing investment</li>
+      <li>A higher price level discourages investment because households need to hold more money</li>
+      <li><em>Therefore, a lower price level reduces the interest rate, encourages greater spending on investment goods, and thereby increases the quantity of goods and services demanded. Conversely, a higher price level raises the interest rate, discourages investment spending, and decreases the quantity of goods and services demanded.</em></li>
+    </ul>
+  </li>
+  <li>The Price Level and Net Exports: The Exchange-Rate Effect
+    <ul>
+      <li>A lower price level lowers the US interest rate, causing investors to invest abroad
+        <ul>
+          <li>Abroad investing lowers the value of the dollar compared to the value of the euro, as firms must convert their dollars to euros (thus increasing the supply of dollars and lowering the supply of euros worldwide)</li>
+          <li>This change in currency values causes foreign products to become more expensive and domestic products to become cheaper, causing exports to increase and imports to decrease</li>
+        </ul>
+      </li>
+      <li><em>Thus, when a fall in the U.S. price level causes U.S. interest rates to fall, the real value of the dollar declines in foreign exchange markets. This depreciation stimulates U.S. net exports and thereby increases the quantity of goods and services demanded. Conversely, when the U.S. price level rises and causes U.S. interest rates to rise, the real value of the dollar increases, and this appreciation reduces U.S. net exports and the quantity of goods and services demanded</em></li>
+    </ul>
+  </li>
+  <li>Summing Up
+    <ul>
+      <li>A fall in price level causes:
+        <ol>
+          <li>Consumers to be wealthier, increasing the demand for consumption goods</li>
+          <li>Interest rates to fall, increasing the demand for investment</li>
+          <li>Currency to depreciate, increasing the demand for net exports</li>
+        </ol>
+      </li>
+      <li>The same applies in reverse, so if price levels rise, demand decreases</li>
+      <li>These explanations all assume that the money supply is fixed, and a changing money supply can shift the curve</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Why the Aggregate-Demand Might Shift</strong></p>
+
+<ul>
+  <li>Shifts Arising from Changes in Consumption
+    <ul>
+      <li>If Americans en masse begin consuming less (more concerned about saving), then the aggregate-demand curve will shift to the <em>left</em>
+</li>
+      <li>If Americans en masse begin consuming more (less concerned about saving), then the aggregate-demand curve will shift to the <em>right</em>
+</li>
+      <li>Taxation is a big way to affect the level of consumption, as cutting or increasing taxes can heavily influence consumption</li>
+    </ul>
+  </li>
+  <li>Shifts Arising from Changes in Investment
+    <ul>
+      <li>Many events can change the amount firms want to invest, including technological advancements, tax policy, money supply, etc.</li>
+      <li>An event that causes investment to increase shifts the curve to the right while an event that causes investment to decrease shifts it to the left</li>
+    </ul>
+  </li>
+  <li>Shifts Arising from Changes in Government Purchases
+    <ul>
+      <li>If the government begins spending more or less, then the aggregate-demand curve will shift</li>
+    </ul>
+  </li>
+  <li>Shifts Arising from Changes in Net Exports
+    <ul>
+      <li>Events that cause exports to decrease shifts aggregate demand, such as an international recession, increase in value of the US dollar, etc.</li>
+    </ul>
+  </li>
+  <li>Summing Up
+    <ul>
+      <li><img src="https://user-images.githubusercontent.com/54915685/225470309-c954c61b-8ebb-4ac6-8eda-5e9fe3c6d0f5.png" alt="image"></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="33-4-the-aggregate-supply-curve">
+<a class="anchor" href="#33-4-the-aggregate-supply-curve" aria-hidden="true"><span class="octicon octicon-link"></span></a>33-4: The Aggregate-Supply Curve</h3>
+
+<ul>
+  <li>Represents the quantity of goods and services that firms produce and sell at a given price level</li>
+  <li>It is important to know that <em>the aggregate-supply curve is vertical in the long run but slopes upward in the shortrun</em>
+</li>
+</ul>
+
+<p><strong>Why the Aggregate-Supply Curve Is Vertical in the Long Run</strong></p>
+
+<ul>
+  <li>
+<em>In the long run, an economy’s production of goods and services (its real GDP) depends on its supplies of labor, capital, and natural resources and on the available technology used to turn these factors of production into goods and services.</em>
+    <ul>
+      <li>This means that an economy’s output will remain relatively constant in the long run save for advancements; tldr real GDP does not change</li>
+      <li>Price level does not affect real GDP because of monetary neutrality <img src="https://user-images.githubusercontent.com/54915685/225485203-04c7a50c-60c3-4ddc-b3bc-79bae3424c1b.png" alt="image">
+</li>
+      <li>However, the classical dichotomy and theory of monetary neutrality only applies in the long run, so <em>the aggregate-supply curve is vertical only in the long run</em>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Why the Long-Run Aggregate-Supply Curve Might Shift</strong></p>
+
+<ul>
+  <li>The <strong>natural level of output</strong> is the level of production that occurs when unemployment is at its normal/natural rate
+    <ul>
+      <li>Also known as the <em>potential or full-employment output</em>
+</li>
+      <li>Changes in the natural level of output thus shift the long-run aggregate-supply curve which can be attributed to various factors</li>
+    </ul>
+  </li>
+  <li>
+<em>Shifts Arising from Changes in Labor</em>
+    <ul>
+      <li>If an economy experiences an influx of workers, then there is more production in the economy, shifting the long-run aggregate-supply curve to the right (and vice versa if workers leave)</li>
+      <li>Any changes to the natural rate of employment through policy can also shift the curve, such as increases to unemployment insurance or better training for the unemployed</li>
+    </ul>
+  </li>
+  <li>
+<em>Shifts Arising from Changes in Capital</em>
+    <ul>
+      <li>An increase in capital will increase productivity and thus increase the quantity of goods and services, shifting the curve to the right (and vice versa if capital decreases)</li>
+      <li>This observation applies to either physical capital (machines, factories) or human capital (college degrees)</li>
+    </ul>
+  </li>
+  <li>
+<em>Shifts Arising from Changes in Natural Resources</em>
+    <ul>
+      <li>Discovery of new natural resources can increase productivity and shift the curve to the right (and vice versa if some natural resources become unavailable)</li>
+    </ul>
+  </li>
+  <li>
+<em>Shifts Arising from Changes in Technological Knowledge</em>
+    <ul>
+      <li>As new techonology is developed and employed, producitivity increases in all sectors and shifts the curve to the right</li>
+      <li>Trade can act as a sort of “technological knowledge” while the prevention of certain methods can pose a reduction in technological knowledge</li>
+    </ul>
+  </li>
+  <li>Summing Up
+    <ul>
+      <li>Policies and events that affect the real GDP can also be described as affecting the long-run aggregate-supply curve</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Using Aggregate Demand and Aggregate Supply to Depict Long-Run Growth and Inflation</strong></p>
+
+<ul>
+  <li>Over time, technological knowledge will advance and increase an economy’s natural level of output while the government will print more money and raise the price level, causing both inflation and a growing output <img width="628" alt="image" src="https://user-images.githubusercontent.com/54915685/225533513-9415f1ca-e5e6-43b5-84eb-d1f250316e12.png">
+</li>
+  <li>Recall that the short-run model of aggregate supply and demand will have fluctuations that vary away from the long run model
+    <ul>
+      <li>Thus, <em>the short-run fluctuations in output and price level discussed in this chapter should be viewed as deviations from the long-run trends of output growth and inflation</em>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Why the Aggregate-Supply Curve Slopes Upward in the Short Run</strong></p>
+
+<ul>
+  <li>The main difference between the long run and short run economy is the difference in the aggregate-supply curve in the short and long runs
+    <ul>
+      <li>While the long-run curve remains unaffected by short-run changes in price level, the short-run curve <em>is affected</em> by such changes, causing it to slope upwards <img width="447" alt="image" src="https://user-images.githubusercontent.com/54915685/225535606-959a9880-c89e-4b71-85fb-1ba099911b11.png">
+</li>
+      <li>Three main theories for why the short-run aggregate-supply curve slopes upward, but all theories boil down to one basic reason: <em>The quantity of output supplied deviates from its natural/long-run level when the actual price level in the economy deviates from the expected price level</em>
+</li>
+    </ul>
+  </li>
+  <li>
+<em>The Sticky-Wage Theory</em>
+    <ul>
+      <li>This theory proposes that the short-run aggregate-supply curve is affected by price levels because nominal wages are slow to adjust to changing economic conditions (i.e. the wages are “sticky”)</li>
+      <li>Sticky wages can be attributed to long term contracts and social expectations of fairness and value</li>
+      <li>If the wages are set for a certain price level and the actual price level ends up being below the expected price level, then the workers are overcompensated and firms are forced to lay off more of them (and vice versa if the actual price level is above the expected one)</li>
+      <li>Eventually, this short term change goes away because wages readjust according to the equilibrium level</li>
+    </ul>
+  </li>
+  <li>
+<em>The Sticky-Price Theory</em>
+    <ul>
+      <li>This theory proposes that the short-run aggregate-supply curve is affected by price levels because nominal prices are slow to adjust to changing economic conditions (i.e. the prices are “sticky”)</li>
+      <li>A contributing factor to the stickiness of prices is the existence of menu costs and other similar costs</li>
+      <li>If prices are set for a certain price level and the actual price level ends up being below the expected price level, then the firm’s prices are too high and they must cut back on production in order to recuperate their losses (and vice versa if the price level is higher than expected)</li>
+      <li>Eventually, short-term unadjusted prices are readjusted to reflect the actual price level, and production returns to its equilibrium point</li>
+    </ul>
+  </li>
+  <li>
+<em>The Misperceptions Theory</em>
+    <ul>
+      <li>This theory hinges on the relationship between suppliers and markets</li>
+      <li>If the overall price level falls below the expected price level, then suppliers might mistakenly believe that <em>their and only their</em> prices have fallen in the economy, causing them to reduce the amount they supply (and vice versa if the price level increases)</li>
+      <li>Eventually, suppliers realize their misperceptions and adjust accordingly</li>
+    </ul>
+  </li>
+  <li>Summing Up
+    <ul>
+      <li>All theories suggest that output deviates from the natural level of output due to an inaccuracy in expected price levels, expressed mathematically as so (where a represents the reaction to changes in price level): <img width="312" alt="image" src="https://user-images.githubusercontent.com/54915685/225539271-e52e3337-7806-406d-991f-4f7ad7adbcdf.png">
+</li>
+      <li>All theories also provide reasons as to why the long-run curve will correct back to being vertical</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Why the Short-Run Aggregate-Supply Curve Might Shift</strong></p>
+
+<ul>
+  <li>All ways to shift the long-run curve apply to the short-run curve as well, as changes to production would affect both curves</li>
+  <li>Additionally, changes in expectations to the price level will shift the short-run curve
+    <ul>
+      <li>For example, according to the sticky-wage theory, when the expected price level is higher, costs will be higher due to wages, causing firms to produce less at each price level, shifting the curve to the left (and vice versa for lower expected price levels)</li>
+    </ul>
+  </li>
+  <li>Generally, <em>an increase in the expected price level reduces the quantity of goods and services supplied and shifts the short-run aggregate-supply curve to the left. A decrease in the expected price level raises the quantity of goods and services supplied and shifts the short-run aggregate-supply curve to the right.</em>
+</li>
+  <li>Summary: <img width="433" alt="image" src="https://user-images.githubusercontent.com/54915685/225540223-9483a3fd-20c1-40b6-99ad-0e94f9108ae6.png">
+</li>
+</ul>
+
+<h3 id="33-5-two-causes-of-economic-fluctuations">
+<a class="anchor" href="#33-5-two-causes-of-economic-fluctuations" aria-hidden="true"><span class="octicon octicon-link"></span></a>33-5: Two Causes of Economic Fluctuations</h3>
+
+<ul>
+  <li>To analyze fluctuations, let’s first assume that the economy begins in long-run equilibrium <img width="455" alt="image" src="https://user-images.githubusercontent.com/54915685/225540641-d64047a5-9025-4922-8d17-20394c31f983.png">
+</li>
+</ul>
+
+<p><strong>The Effects of a Shift in Aggregate Demand</strong></p>
+
+<ul>
+  <li>To analyze the effects of a shift, consider the following four steps
+    <ol>
+      <li>Decide which curve the event shifts: aggregate demand or aggregate supply (or both)</li>
+      <li>Decude which direction the curve shifts</li>
+      <li>Use the diagram of aggregate demand and aggregate supply to assess the impact on output and price level in the short run</li>
+      <li>Use the diagram to see how the economy moves from its new short-run equilibrium to its new long-run equilibrium</li>
+    </ol>
+  </li>
+  <li>Suppose an event occurs that causes demand to be lower
+    <ul>
+      <li>This event will shift the aggregate-demand curve to the left</li>
+      <li>In the new equilibrium, the level of output and price level will fall due to the shift</li>
+      <li>People will eventually come to match their expectations with the new price level, and the expected price level matches the actual one, thus causing wages + costs to drop and firms to start producing more again
+        <ul>
+          <li>This will then lead the economy back to producing at the long-run aggregate supply curve quantity</li>
+        </ul>
+      </li>
+      <li>Graph: <img width="645" alt="image" src="https://user-images.githubusercontent.com/54915685/225541894-4629ac5a-763d-42c9-9035-f4389fdc96ca.png">
+</li>
+    </ul>
+  </li>
+  <li>Assuming that the government does nothing, then the level of production will slowly return to where it once was, but the government can aid the aggregate-supply curve into shifting to the right in order to match the long-run curve faster</li>
+  <li>Three important takeaways
+    <ul>
+      <li>In the short run, shifts in aggregate demand cause fluctuations in the economy’s output of goods and services</li>
+      <li>In the long run, shifts in aggregate demand affect the overall price level but do not affect output</li>
+      <li>Because policymakers influence aggregate demand, they can potentially mitigate the severity of economic fluctuations.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>The Effects of a Shift in Aggregate Supply</strong></p>
+
+<ul>
+  <li>Suppose that an event occurs that increases firms’ costs of production
+    <ul>
+      <li>This will shift the aggregate-supply curve to the left, causing the level of output to decrease but the price level to increase</li>
+      <li>Because the economy experiences both stagnation (decreasing output) and inflation (increasing price level), the economy is experiencing <strong>stagflation</strong>
+</li>
+      <li>The response to this curve could be that workers demand higher wages due to the higher prices, causing the firms’ costs of production to become even higher, making the problem worse
+        <ul>
+          <li>Known as the <em>wage-price spiral</em>
+</li>
+        </ul>
+      </li>
+      <li>The spiral will eventually stop because the workers have less bargaining power due to the low supply of jobs, thus lowering nominal wages and causing production to return to higher levels (AKA the aggregate-supply curve shifts back to the right) <img width="435" alt="image" src="https://user-images.githubusercontent.com/54915685/225543303-c4b37065-6781-40fe-a3a3-4e996bb4d65c.png">
+</li>
+      <li>The government can aid this problem by shifting the aggregate-demand curve to the right in order to keep output at its natural level <img width="445" alt="image" src="https://user-images.githubusercontent.com/54915685/225543449-a19be48d-2b6e-43a6-bb51-4c8028d5c240.png">
+</li>
+    </ul>
+  </li>
+  <li>Two important takeaways
+    <ul>
+      <li>Shifts in aggregate supply can cause stagflation—a combination of recession (falling output) and inflation (rising prices).</li>
+      <li>Policymakers who can influence aggregate demand can mitigate the adverse impact on output but only at the cost of exacerbating the problem of inflation.</li>
+    </ul>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/econ20b/reading/winter22-23/markdown/2023/03/15/econ20b-reading.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tonyhieu.github.io/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/tonyhieu" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
