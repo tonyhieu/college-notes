@@ -144,5 +144,5 @@ use-math: true
     - Production can unnaturally increase (everyone begins working every day of the week), thus increasing GDP but decreasing well-being
     - Does not include goods and services produced at home, such as a chef's home-cooked meals, volunteer work, or the work of stay-at-home parents
     - Does not measure environmental factors, such as pollution
-    - Does not measure distribution of income; a nation with 100 people making \$50k has the same GDP as a nation with 1 person making \$5 million and 99 people making \$0
+    - Does not measure distribution of income; a nation with 100 people making 50k has the same GDP as a nation with 1 person making 5 million and 99 people making 0
 - In general, GDP is a good measure of well-being for most, but not all, purposes

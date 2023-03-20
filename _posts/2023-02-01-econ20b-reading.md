@@ -120,7 +120,7 @@ use-math: true
 **Policy 1: Saving Incentives**
 
 - Saving is vital to creating resources for capital accumulation and raising the GDP, thus leading to policies incentivizing saving
-    - Tax laws especially can be amended to encourage saving, such as putting a lower tax on bond iinterest payments
+    - Tax laws especially can be amended to encourage saving, such as putting a lower tax on bond interest payments
 - A policy that incentivizes saving will shift the <u>supply of loanable funds</u> to the right because more money will be saved and lent out
     - This will thus lead to a lower interest rate and more investment
     - Graphic: ![image](https://user-images.githubusercontent.com/54915685/216191720-2e9dc646-756d-4515-9844-0ac1bedfcea1.png)

@@ -16,18 +16,19 @@ use-math: true
 **How The CPI Is Calculated**
 
 - The Bureau of Labor Statistics (BLS) uses a few steps to calculate the CPI
+
 1. *Fix the basket*
     - The prices most important to the typical consumer are taken into account
     - Goods and services that are purchased more are given a greater weight when calculating the CPI
     - Important goods and services found through surveys
 2. *Find the prices*
     - Find the prices of the baskets' goods and services at each point in time that you want to caluclate
-3. *Computer the basket's cost*
+3. *Compute the basket's cost*
     - Use the data on the prices and multiply each price by the good/service's weight
 4. *Choose a base year and compute the index*
     - After choosing a base year, you can calculate the CPI by comparing the price of a basket from the current year to the base year
     - $$ | { \text{CPI} = {\text{Price of basket of goods and services in current year} \over \text{Price of basket in base year}} * 100 } | $$
-5. *Computer the inflation rate*
+5. *Compute the inflation rate*
     - Can use the CPI to calculate the **inflation rate** from year to year
     - $$ | { \text{Inflation rate in year 2} = {\text{CPI in year 2 - CPI in year 1} \over \text{CPI in year 1}} * 100 } | $$
 - Example of following the steps: ![image](https://user-images.githubusercontent.com/54915685/213329728-bc6f12b1-6042-4648-b0dd-1a3c1710890b.png)

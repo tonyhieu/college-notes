@@ -64,7 +64,7 @@ title: The Monetary System
 
 **The Simple Case of 100-Percent-Reserve Banking**
 
-- Assume that there is only $100 of currency, so the total supply of money is $100, and one bank that only takes deposits + doesn't make loans
+- Assume that there is only 100 dollars of currency, so the total supply of money is 100 dollars, and one bank that only takes deposits + doesn't make loans
     - Money that banks have received but not loand out are **reserves**
     - Because all deposits are treated as reserves, this system is called *100-percent-reserve-banking*
 - The money in the bank can be represented with a *T-account* which is an accounting statement showing liabilities and assets ![image](https://user-images.githubusercontent.com/54915685/222273436-a7b31b93-0b85-4b69-9317-20bf58007a69.png)
@@ -155,4 +155,4 @@ title: The Monetary System
         - Discount rate and federal funds rate is typically pretty similar
     - The federal funds rate influences the entire market due to its effects on banks
     - Open-market purchases raise the federal funds rate while open-market sales decrease it (less money means more banks need loans and vice versa)
-    - A decrease in the target goal for the federal funds rate means the money supply will increase while a decrease in the target goal signals a decrease in money supply
+    - A decrease in the target goal for the federal funds rate means the money supply will increase while an increase in the target goal signals a decrease in money supply
