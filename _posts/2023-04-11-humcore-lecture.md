@@ -1,0 +1,55 @@
+---
+layout: post
+description: April 11 Fan Lecture 3
+categories: [humcore, lecture, spring22-23, markdown]
+title: American Orientalism
+---
+
+- Race as social construction
+    - Asian Americans are thought of to have less artistic value as a result of their STEM stereotyping
+    - Stereotypes are similar to Halloween costumes
+        - Firms (institutions) decide which costumes to create and how to market them
+        - Customers (society) purchase the most popular costumes without a care about if the costume is racist or not
+    - Two main stereotypes for Asian-Americans: model minority and yellow peril
+- Orientalism
+    - *Orientalism* by Edward Said is the main text regarding orientalism
+        - Focuses on the Middle East, but all of Asia is typically included in the idea of Orientalism
+        - Tracks the fantasy of Orientalism in literature and academic history
+        - Orientalism defined as the belief that the West and East are inherently different, but the West has a distinct superiority over the East
+    - The idea of the Orient became a career as opposed to a culture, a topic to become an expert in rather than a human story
+        - "The Orient can never understand their own culture, so the West must understand it for them"
+    - Can be thought of as a B story; career, all show, no substance
+- Stereotypes and historical variability
+    - Originally created by white liberals to understand minorities
+    - Historical variability references the idea that stereotypes regarding Asians have changed over time
+    - The model minority
+        - Academically focused, career focused, successful
+        - Economically stable, heterosexual, have children
+        - Obedient and passive, making them easy to manage and hard workers
+        - Conceived by a writer tryinvg to understand why Japanese-Americans were so successful despite being placed in internment camps
+            - Used to distinguish "friendly" Asians from "enemy" Asiansm especially during the Cold War and era of Maoism
+            - Racism is not a barrier for minorities, as they can still succeed (as evidenced by Japanese-Americans)
+            - Despite the apparent racism, this view was inherently leftist; the success is based on culture rather than race
+        - Moynihan Report was the first to discuss the model minority stereotype; emphasized how black people were less moral than other races, causing their failure
+        - Today, the stereotype is thought of as a myth and is used by Asian-American intellectuals to fight against racist stereotypes
+            - Focuses more on economic success
+            - Disingenuous to think of it as a myth; certain Asian-American groups are hyperselected which causes the model minority stereotype to be true in a sense
+            - Important to ask: Why is considering the model minority a myth advantageous? How is its existence as not being a myth important?
+    - Yellow peril: then and now
+        - Conceived in the 13th century and continued until the mid-20th century
+        - Belief that Asians are not individuals but a mob of "worker bees" that work towards conquering the world
+        - Labor Unions were supportive of the Chinese Exclusion Act despite the immigration of Chinese workers to the US for work on the Transcontinental Railroad during the Gold Rush
+    - Jack London, “The Unparalleled Invasion”
+        - London was a Socialist who emphasized his identity as a white man (was a white supremacist)
+        - Tried to write fiction regarding economic uncertainty
+        - In *Invasion*, Chinese efficiency is thought of as a threat compared to Japanese ingenuity as a model minority
+        - After the destruction of China in *Invasion*, London realized a socialist utopia where whites were at the top of a racial hierarchy and Chinese were at the bottom
+            - Hypocrisy; elimination of economic classes, but reinforcement of racial classes
+    - Russo-Japanese War (1904–1905)
+        - After the winning the Russo-Japanese War, Japan was almost considered a Western country due to its military strength and ability to best a European country
+        - Japan is shown as both the model minority and the yellow peril; thought of as a threat to the West, but also considered the "most intelligent" Asian country
+        - Important to note that Russia was considered a hybrid of East and West
+        - London's interpretation of the war was that Japan's victory could awaken China's power as another "yellow peril" power
+    - US colonization of the Philippines (1899)
+        - Reverse of the yellow peril; Philippines were thought of as an endless supply of steady labor
+        - Idea of the White Man's Burden and the responsibility of Americans to bring civilization to the Philippines

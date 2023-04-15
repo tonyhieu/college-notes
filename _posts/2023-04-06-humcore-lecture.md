@@ -1,6 +1,6 @@
 ---
 layout: post
-description: April 4 Fan Lecture 1
+description: April 6 Fan Lecture 2
 categories: [humcore, lecture, spring22-23, markdown]
 title: Asian American SF
 ---
