@@ -148,5 +148,51 @@ The tricky part is to realize that you have to subtract h * Row 1 from Row 3
 $$
 \text{A set of vectors } \{\overrightarrow{v_1}, ..., \overrightarrow{v_n}\} \text{ is LD if and only if one of the vectors is in the span of the others.} \\
 \text{Therefore, } \{\overrightarrow{v_1}, ..., \overrightarrow{v_n}\} \text{ is LI if and only if for all } 2 \le k \le n \text{, }
-\overrightarrow{v_k} \notin Span\{\overrightarrow{v_1}, ..., \overrightarrow{v_{k-1}}\}
+\overrightarrow{v_k} \notin Span\{\overrightarrow{v_1}, ..., \overrightarrow{v_{k-1}}\} \\
+$$
+
+This means that a set of vectors is linearly independent if and only if adding vectors to the span keeps increasing the dimension of the span.
+
+![image](https://user-images.githubusercontent.com/54915685/234183687-45b59d8d-c3ca-48aa-8a72-17fef690d36d.png)
+
+$$
+\text{Theorem: Suppose we have } \overrightarrow{v_1}, ..., \overrightarrow{v_n} \in \mathbb{R}^m \text{, and write the matrix } A = \begin{pmatrix} \overrightarrow{v_1} & ... & \overrightarrow{v_n} \end{pmatrix} \\
+\text{We can therefore delete any vectors from the lest that correspond to non-pivot columns of the REF of A.} \\
+\text{This is because any non-pivot columns correspond to a vector already in the spans of the other vectors.}
+$$
+
+### Examples
+
+**1**
+$$
+\text{Q: If we add the vector } \begin{pmatrix}1\\0\\-1\end{pmatrix} \text{ to } Span\{\begin{pmatrix}1\\0\\0\end{pmatrix}, \begin{pmatrix}1\\1\\0\end{pmatrix}\} \text{, is the resulting set LI?} \\
+\text{A: Yes, as the new set of vectors has a pivot in every column.} \\
+\begin{pmatrix}
+    1 & 1 & 1 \\
+    0 & 1 & 1 \\
+    0 & 0 & -1
+\end{pmatrix}
+$$
+
+**2**
+$$
+\text{Given the set of vectors } {\begin{pmatrix}1\\1\\1\end{pmatrix}, \begin{pmatrix}1\\2\\3\end{pmatrix}, \begin{pmatrix}-1\\1\\3\end{pmatrix}, \begin{pmatrix}0\\1\\1\end{pmatrix}, \begin{pmatrix}1\\0\\3\end{pmatrix}} \text{ which can we remove to find a LI subset with the same span?} \\
+
+\text{Through row reduction:} \\
+\begin{pmatrix}
+    1 & 1 & -1 & 0 & 1 \\
+    1 & 2 & 1 & 1 & 0 \\
+    1 & 3 & 3 & 1 & 3
+\end{pmatrix} \rightarrow
+\begin{pmatrix}
+    1 & 1 & -1 & 0 & 1 \\
+    0 & 1 & 2 & 1 & -1 \\
+    0 & 2 & 4 & 1 & 2
+\end{pmatrix} \rightarrow
+\begin{pmatrix}
+    1 & 1 & -1 & 0 & 1 \\
+    0 & 1 & 2 & 1 & -1 \\
+    0 & 0 & 0 & -1 & 4
+\end{pmatrix} \\
+\text{Columns 3 and 5 don't have pivots, so } \begin{pmatrix}-1\\1\\3\end{pmatrix} \text{ and } \begin{pmatrix}1\\0\\3\end{pmatrix} \text{ can be removed to find a LI set with the same span.}
 $$
