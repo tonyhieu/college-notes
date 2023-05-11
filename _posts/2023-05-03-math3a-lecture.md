@@ -18,7 +18,7 @@ $$
 ### Other ways to define properties
 
 $$
-\text{T is onto if and only if } A_T \overrightarrow{x} = \overrightarrow{b} \text{is consistent for every } \overrightarrow{b} \in \mathbb{R}^m \\
+\text{T is onto if and only if } A_T \overrightarrow{x} = \overrightarrow{b} \text{ is consistent for every } \overrightarrow{b} \in \mathbb{R}^m \\
 \text{T is one-to-one if and only if the columns of } A_T \text{ are linearly independent}
 $$
 
