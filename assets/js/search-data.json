@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Stats67 Lecture",
-            "content": "",
-            "url": "https://tonyhieu.github.io/college-notes/2023/05/18/stats67-lecture.html",
-            "relUrl": "/2023/05/18/stats67-lecture.html",
+            "title": "Big 5",
+            "content": "Table for the Big Five . . Standard Error: if the population standard deviation is not known, we can use the standard deviation from the sample instead . Proportion Distributions . . 1 Population Proportion where population standard deviation is known | 1 Population Proportion where population standard deviation is not known; standard error is used instead | Difference in 2 Population Proportions where both population standard deviations are known | Difference in 2 Population Proportions where both population standard deviations are not known; standard error is used instead | Mean Distributions . . 1 Population Mean where population standard deviation is known | 1 Population Mean where population standard deviation is not known; standard error and t distribution are used instead | Matched pairs where population standard deviation is known and each data point is the difference between two, related subjects (twins, change in health, etc.) | Matched pairs where population standard deviation is not known; standard error + t distribution are used instead | Difference in 2 Population Means where both population standard deviations are known | Difference in 2 Population Means where both population standard deviations are not known; standard errors + t distribution are used instead | Difference in 2 Population Means where standard deviations are equal; NOT USED COMMONLY | Z and T values . z = (Observed - Expected) / Standard Deviation . Calculated in R using pnorm(z) | . t = (Observed - Expected) / Standard Error . Calculated in R using pt(t, df) | Can also use qt(% to the left, df) to find a t value based on a desired percentile | .",
+            "url": "https://tonyhieu.github.io/college-notes/stats67/lecture/spring22-23/markdown/2023/05/18/stats67-lecture.html",
+            "relUrl": "/stats67/lecture/spring22-23/markdown/2023/05/18/stats67-lecture.html",
             "date": " • May 18, 2023"
         }
         
