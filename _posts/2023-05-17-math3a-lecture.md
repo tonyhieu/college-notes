@@ -2,7 +2,7 @@
 layout: post
 description: Math 3A
 categories: [math3a, lecture, spring22-23, markdown]
-title: Determinants/Inverting Matrices
+title: Eigenvalues and Eigenvectors
 use-math: true
 ---
 
@@ -38,8 +38,6 @@ A^{-1} = \frac{1}{|A|} *
 $$
 
 ## Eigenvalues and Eigenvectors
-
-In a 3x3 matrix, you would scale the first column by 1, scale the second by 2, and scale the third by 3.
 
 $$
 \text{Consider the matrix } A = \begin{pmatrix}
