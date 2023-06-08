@@ -79,3 +79,146 @@ $$
 \text{2. Form the augmented matrix}  ( A^T A | A^T \overrightarrow{b} ) \text{ and row reduce} \\
 \text{3. This is always consistent, and any solution is a least squares solution of } A\overrightarrow{x} = \overrightarrow{b}
 $$
+
+### Examples
+
+$$
+A = \begin{pmatrix}
+    0 & 1
+    1 & 1 \\
+    2 & 1
+\end{pmatrix},
+\overrightarrow{b} = \begin{pmatrix}6\\0\\0\end{pmatrix} \\
+A^T A = 
+\begin{pmatrix}
+    0 & 1 & 2 \\
+    1 & 1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+    0 & 1 \\
+    1 & 1 \\
+    2 & 1 
+\end{pmatrix} = 
+\begin{pmatrix}
+    5 & 3 \\
+    3 & 3 \\ 
+\end{pmatrix} \\
+A^T \overrightarrow{b} = 
+\begin{pmatrix}
+    0 & 1 & 2 \\
+    1 & 1 & 1
+\end{pmatrix} 
+\begin{pmatrix}6\\0\\0\end{pmatrix} = 
+\begin{pmatrix}0\\6\end{pmatrix} \\
+\left( 
+    \begin{array}{cc|c}
+        5 & 3 & 0 \\
+        3 & 3 & 6
+    \end{array}
+\right) \rightarrow
+\left( 
+    \begin{array}{cc|c}
+        1 & 0 & -3 \\
+        0 & 1 & 5
+    \end{array}
+\right) \\
+\hat{x} = \begin{pmatrix}-3\\5\end{pmatrix}
+$$
+
+<hr>
+
+$$
+A = \begin{pmatrix}
+    1 & 3 \\
+    1 & -1 \\
+    1 & 1
+\end{pmatrix},
+\overrightarrow{b} = \begin{pmatrix}5\\1\\0\end{pmatrix} \\
+A^T A = 
+\begin{pmatrix}
+    1 & 1 & 1 \\
+    3 & -1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+    1 & 3 \\
+    1 & -1 \\
+    1 & 1
+\end{pmatrix} = 
+\begin{pmatrix}
+    3 & 3 \\
+    3 & 11 \\ 
+\end{pmatrix} \\
+A^T \overrightarrow{b} = 
+\begin{pmatrix}
+    1 & 1 & 1 \\
+    3 & -1 & 1
+\end{pmatrix}
+\begin{pmatrix}5\\1\\0\end{pmatrix} =
+\begin{pmatrix}6\\14\end{pmatrix} \\
+\left( 
+    \begin{array}{cc|c}
+        3 & 3 & 6 \\
+        3 & 11 & 14
+    \end{array}
+\right) \rightarrow
+\left( 
+    \begin{array}{cc|c}
+        1 & 0 & 1 \\
+        0 & 1 & 1
+    \end{array}
+\right) \\
+\hat{x} = \begin{pmatrix}1\\1\end{pmatrix} 
+$$
+
+Can find the distance from the least squares solution to the desired point as well:
+
+$$
+|| A\overrightarrow{x_{LS}} - \overrightarrow{b}|| = ||
+\begin{pmatrix}
+    1 & 3 \\
+    1 & -1 \\
+    1 & 1
+\end{pmatrix}
+\begin{pmatrix}1\\1\end{pmatrix} - 
+\begin{pmatrix}5\\1\\0\end{pmatrix}
+||
+= ||
+\begin{pmatrix}4\\0\\2\end{pmatrix} - 
+\begin{pmatrix}5\\1\\0\end{pmatrix}
+|| =
+\sqrt{6}
+$$
+
+<hr>
+
+Orthogonal Example
+
+$$
+A = \begin{pmatrix}
+    1 & 1 \\
+    1 & -1 \\
+    -1 & 1 \\
+    1 & 1
+\end{pmatrix},
+\overrightarrow{b} = \begin{pmatrix}2\\4\\6\\8\end{pmatrix} \\
+\text{Project b onto } Col(A) = Span\{\overrightarrow{v}, \overrightarrow{w}\} \\
+\overrightarrow{v} \perp \overrightarrow{w} \text{, so } proj_{Col(A)} (\overrightarrow{b}) = \frac{\overrightarrow{b} \cdot \overrightarrow{v}}{\overrightarrow{v} \cdot \overrightarrow{v}} \overrightarrow{v} +  \frac{\overrightarrow{b} \cdot \overrightarrow{w}}{\overrightarrow{w} \cdot \overrightarrow{w}} \overrightarrow{w} = \begin{pmatrix}5\\-1\\1\\5\end{pmatrix} \\
+
+\left( 
+    \begin{array}{cc|c}
+        1 & 1 & 5 \\
+        1 & -1 & -1\\
+        -1 & 1 & 1\\
+        1 & 1 & 5
+    \end{array}
+\right) \rightarrow
+\left( 
+    \begin{array}{cc|c}
+        1 & 0 & 2 \\
+        0 & -1 & 3\\
+        0 & 0 & 0\\
+        0 & 0 & 0
+    \end{array}
+\right)
+\hat{x} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+$$
