@@ -155,10 +155,13 @@ $$
 \text{Elliptic Paraboloid: } z = \frac{x^2}{a^2} + \frac{y^2}{b^2} \\ 
 \text{ (the single variable denotes which direction it goes in; can be equal to x or y as well)} \\
 
-\text{Elliptic Paraboloid: } z = \frac{x^2}{a^2} - \frac{y^2}{b^2} \\ 
+\text{Hyperbolic Paraboloid: } z = \frac{x^2}{a^2} - \frac{y^2}{b^2} \\ 
 \text{ (the single variable denotes which direction it goes in; can be equal to x or y as well)} \\
-
 $$
+
+![image](https://github.com/tonyhieu/college-notes/assets/54915685/1b3648e0-a8ab-43e3-9763-a3d7d1f2eac4)
+
+![image](https://github.com/tonyhieu/college-notes/assets/54915685/1e9dbf48-8dd4-49fa-8cf3-2171d62d2cdb)
 
 ## Distance Between a Point and a Line
 
