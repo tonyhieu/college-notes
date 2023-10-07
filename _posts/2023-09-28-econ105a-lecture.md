@@ -40,6 +40,9 @@ $$
 #### Visualizing Budget Constraints and Budget Sets with Two Goods
 
 - With two goods, a graph for budget constraints and sets can be represented on two axes
+    - The actual graph (line) is the budget constraint, and all consumption choice sets lie below the graph
+
+<img width="1400" alt="image" src="https://github.com/tonyhieu/college-notes/assets/54915685/b7952c97-02bc-4f68-9c19-a07764edf315">
 
 $$
 \text{For two goods where } x_1 \text{ is on the horizontal axis, the slope of the BC can be written as } -\frac{p_1}{p_2}
