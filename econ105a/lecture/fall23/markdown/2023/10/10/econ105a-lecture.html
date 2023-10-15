@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Preference Relations | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Preference Relations" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Econ 105A" />
+<meta property="og:description" content="Econ 105A" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/econ105a/lecture/fall23/markdown/2023/10/10/econ105a-lecture.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/econ105a/lecture/fall23/markdown/2023/10/10/econ105a-lecture.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-10-10T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Preference Relations" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-10T00:00:00-05:00","datePublished":"2023-10-10T00:00:00-05:00","description":"Econ 105A","headline":"Preference Relations","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/econ105a/lecture/fall23/markdown/2023/10/10/econ105a-lecture.html"},"url":"https://tonyhieu.github.io/college-notes/econ105a/lecture/fall23/markdown/2023/10/10/econ105a-lecture.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Preference Relations</h1><p class="page-description">Econ 105A</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-10-10T00:00:00-05:00" itemprop="datePublished">
+        Oct 10, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#econ105a">econ105a</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#lecture">lecture</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall23">fall23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="assuptions-about-preference-relations">Assuptions About Preference Relations</h2>
+
+<ul>
+  <li>Completeness: The set of preference relations is complete; that is, for any two bundles x and y, it is always possible to make the statement that x is weakly preferred to y, y is weakly preferred to x, or both</li>
+  <li>Reflexivity: Preferences need to be reflexive; that is, any bundle x is at least as good as itself, or x is weakly preferred to x for all x</li>
+  <li>Transitivity: Preferences need to be transitive; that is, if x is weakly preferred to y, and y is weakly preferred to z, then x is weakly preferred to z</li>
+  <li>Preference relations can be though of as a directed graph, where each node is a bundle and each directed edge represents weak preference</li>
+</ul>
+
+<h2 id="indifference-curve">Indifference Curve</h2>
+
+<ul>
+  <li>In order to graph bundles on two dimensions as opposed to three (utility, x, and y), indifference curves are implemented</li>
+</ul>
+
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Take a bundle x’. The set of all bundles equally preferred to x’ is the indifference curve (IC) to x’.</mtext><mspace linebreak="newline"></mspace><mtext>In other words, it is the set of all bundles y such that </mtext><mi>y</mi><mo>∼</mo><msup><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mtext>. This is notated as </mtext><mi>I</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{Take a bundle x&#x27;. The set of all bundles equally preferred to x&#x27; is the indifference curve (IC) to x&#x27;.} \\
+\text{In other words, it is the set of all bundles y such that } y \sim x&#x27; \text{. This is notated as } I(x&#x27;)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">Take a bundle x’. The set of all bundles equally preferred to x’ is the indifference curve (IC) to x’.</span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">In other words, it is the set of all bundles y such that </span></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">. This is notated as </span></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>
+<img src="https://cdn1.byjus.com/wp-content/uploads/2019/07/Indifference-Map.png" alt="Indifference Curve" /></p>
+
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>WP(x) represents the set of bundles that are weakly preferred to X. It includes the indifference curve.</mtext></mrow><annotation encoding="application/x-tex">\text{WP(x) represents the set of bundles that are weakly preferred to X. It includes the indifference curve.}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">WP(x) represents the set of bundles that are weakly preferred to X. It includes the indifference curve.</span></span></span></span></span>
+<img src="https://o.quizlet.com/wJ7B-xQ-faOh-OExWKm8yw.png" alt="Weakly Preferred Graph" /></p>
+
+<ul>
+  <li>Because we assume that consumers are rational, any sets that are strictly preferred to x must not be affordable, as they would purchase the bundles that make them better off</li>
+</ul>
+
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>SP(x) represents the set of bundles that are strictly preferred to X. It DOES NOT include the indifference curve.</mtext></mrow><annotation encoding="application/x-tex">\text{SP(x) represents the set of bundles that are strictly preferred to X. It DOES NOT include the indifference curve.}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">SP(x) represents the set of bundles that are strictly preferred to X. It DOES NOT include the indifference curve.</span></span></span></span></span></span>
+
+<ul>
+  <li>By definition, indifference curves cannot intersect, as having a “shared bundle” would mean that all of the bundles in both curves are equally preferred to that bundle and thus each other, making them the same curve</li>
+</ul>
+
+<h2 id="slopes-of-indifference-curves">Slopes of Indifference Curves</h2>
+
+<ul>
+  <li>When more of a commodity is always preferred, the commodity is a good
+    <ul>
+      <li>If every commodity is a good, then the ICs are negatively sloped</li>
+      <li>Intuitively, this makes sense; going up/right would give you better bundles (not the same) and going left/down would give you worse bundles (not the same). Thus, indifference curves must be negatively sloped downwards and to the right so bundles have the same preference</li>
+    </ul>
+  </li>
+  <li>When less of a commodity is always preferred, the commodity is a bad
+    <ul>
+      <li>If every commodity is a bad, then the ICs are still negatively sloped by the same logic for if every commodity was a good</li>
+      <li>If one commodity is a bad and the other is a good, then the ICs will be positively sloped
+        <ul>
+          <li>Going up/left would make you better off while going right/down would make you worse off, so the IC must go up and to the right</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="perfect-substitutes">Perfect Substitutes</h2>
+
+<ul>
+  <li>If a consumer regards units of commodities 1 and 2 as equivalent, then the commodities are perfect substitutes
+    <ul>
+      <li>Because the commodities can be swapped out, the total amount of the two commodities determines the rank order of the bundles, meaning that only one value represents each indifference curve and that said curve can be graphed in one dimension</li>
+    </ul>
+  </li>
+  <li>Graphing the ICs of perfect substitutes in two dimensions will reveal that all of their slopes are constantly -1, making them all parallel</li>
+</ul>
+
+<p><img src="https://homework.study.com/cimages/multimages/16/graph14628904268552216484.jpg" alt="Perfect Substitutes Graph" /></p>
+
+<h2 id="perfect-complements">Perfect Complements</h2>
+
+<ul>
+  <li>If a consumer always consumes units of commodities 1 and 2 in fixed proportion (such as 1 to 1), then the commodities are perfect complements
+    <ul>
+      <li>Because the commodities are always consumed in the same proportion, the number of pairs/combos that you can make in said proportion determines the ranked order of the bundles (AKA determined by the “limiting reactant”)</li>
+      <li>For example, if two goods are consumed in a one-to-one ratio, then the bundles (5, 5), (5, 9), and (6, 5) would all be ranked equally</li>
+    </ul>
+  </li>
+  <li>Graphing the ICs of perfect complements in two dimensions will create L-shaped curves</li>
+</ul>
+
+<p><img src="https://www.researchgate.net/publication/357040490/figure/fig3/AS:1101640467775555@1639662963619/The-indifference-curve-of-perfect-complements.jpg" alt="Perfect Complements Graph" /></p>
+
+  </div><a class="u-url" href="/college-notes/econ105a/lecture/fall23/markdown/2023/10/10/econ105a-lecture.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tonyhieu.github.io/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/tonyhieu" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

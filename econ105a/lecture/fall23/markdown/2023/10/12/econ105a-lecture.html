@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Well-Behaved Preferences and Intro to Utility | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Well-Behaved Preferences and Intro to Utility" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Econ 105A" />
+<meta property="og:description" content="Econ 105A" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/econ105a/lecture/fall23/markdown/2023/10/12/econ105a-lecture.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/econ105a/lecture/fall23/markdown/2023/10/12/econ105a-lecture.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-10-12T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Well-Behaved Preferences and Intro to Utility" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-12T00:00:00-05:00","datePublished":"2023-10-12T00:00:00-05:00","description":"Econ 105A","headline":"Well-Behaved Preferences and Intro to Utility","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/econ105a/lecture/fall23/markdown/2023/10/12/econ105a-lecture.html"},"url":"https://tonyhieu.github.io/college-notes/econ105a/lecture/fall23/markdown/2023/10/12/econ105a-lecture.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Well-Behaved Preferences and Intro to Utility</h1><p class="page-description">Econ 105A</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-10-12T00:00:00-05:00" itemprop="datePublished">
+        Oct 12, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#econ105a">econ105a</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#lecture">lecture</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall23">fall23</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="preferences-chapter">Preferences Chapter</h2>
+
+<h3 id="preferences-exhibiting-satiation">Preferences Exhibiting Satiation</h3>
+
+<ul>
+  <li>A bundle that is strictly preferred to any other bundle is a <u>satiation point</u> or bliss point
+    <ul>
+      <li>The existence of a satiation point implies that an excess of one or more commodities turns it into a bad but being below said point makes those commodities goods</li>
+      <li>Getting closer to the satiation point means that the rank order increases, so the indifference curves about a satiation point are circles</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://www.economicsdiscussion.net/wp-content/uploads/2014/06/image54.png" alt="Satiation Point Graph" /></p>
+
+<h3 id="well-behaved-preferences">Well-Behaved Preferences</h3>
+
+<ul>
+  <li>A preference relation is <em>well-behaved</em> if it is both monotonic and convex
+    <ul>
+      <li><strong>Monotonicity</strong>: More of any commodity is always preferred, implying that there is no satiation point and that every commodity is a good</li>
+      <li><strong>Convexity</strong>: Mixtures of bundles are at least weakly preferred to the component bundles themselves
+        <ul>
+          <li>You can create a mixture of two bundles by using parts of two bundles</li>
+          <li>For example, a mixture bundle z can be created using two component bundles x and y via z = 0.5x + 0.5y</li>
+          <li>Essentially, this means that if you draw a line between any two points, then any point on said line would be strictly preferred to the endpoints of that line, meaning that the indifference curves must be <em>convex</em>, or concave up
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Let the mixture bundle </mtext><mi>z</mi><mo>=</mo><mo stretchy="false">(</mo><mi>t</mi><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo stretchy="false">)</mo><msub><mi>y</mi><mn>1</mn></msub><mo separator="true">,</mo><mi>t</mi><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo stretchy="false">)</mo><msub><mi>y</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mspace linebreak="newline"></mspace><mtext>If the preference relations are strictly convex, then </mtext><mi>z</mi><mo>≻</mo><mi>x</mi><mtext> and </mtext><mi>z</mi><mo>≻</mo><mi>y</mi><mtext> for </mtext><mn>0</mn><mo>&lt;</mo><mi>t</mi><mo>&lt;</mo><mn>1</mn><mspace linebreak="newline"></mspace><mtext>If the preference relations are weakly convex, then at least </mtext><mspace linebreak="newline"></mspace><mtext>one mixture bundle z in </mtext><mn>0</mn><mo>&lt;</mo><mi>t</mi><mo>&lt;</mo><mn>1</mn><mtext> is equally preferred to a component bundle</mtext></mrow><annotation encoding="application/x-tex">\text{Let the mixture bundle } z = (t x_1 + (1 - t) y_1 , t x_2 + (1 - t) y_2) \\
+\text{If the preference relations are strictly convex, then } z \succ x \text{ and } z \succ y \text{ for } 0 &lt; t &lt; 1 \\
+\text{If the preference relations are weakly convex, then at least } \\
+\text{one mixture bundle z in } 0 &lt; t &lt; 1 \text{ is equally preferred to a component bundle}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">Let the mixture bundle </span></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">If the preference relations are strictly convex, then </span></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≻</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">x</span><span class="mord text"><span class="mord"> and </span></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≻</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord text"><span class="mord"> for </span></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6542em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">If the preference relations are weakly convex, then at least </span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord text"><span class="mord">one mixture bundle z in </span></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6542em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord text"><span class="mord"> is equally preferred to a component bundle</span></span></span></span></span></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://4.bp.blogspot.com/_nWTlTPsBse4/SSNGhtfA-qI/AAAAAAAAAGo/wI28C055pAs/w1200-h630-p-k-no-nu/ic.JPG" alt="Convex IC Graph" /></p>
+<ul>
+  <li>In this graph, plotting a line between any two points will provide a set of bundles that are strongly preferred to the end points</li>
+</ul>
+
+<p><img src="https://i.ytimg.com/vi/VrAFpRyvqmE/maxresdefault.jpg" alt="Weak Convex IC Graph" /></p>
+<ul>
+  <li>In this graph, some of the lines between two points will have points that are equally preferred to the endpoints</li>
+</ul>
+
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxiX3sUOJM17NFnrLPVaHVkStxiEpnTF6Z9oA4qakovGryTBnZ7RmIx-E2SIkgqVU1UOQ&amp;usqp=CAU" alt="Non-convex IC Graph" /></p>
+<ul>
+  <li>This graph is not convex if both of the commodities are goods, as any lines drawn between two points will not be preferred</li>
+  <li>If both of the commodities are bads, then this graph is convex</li>
+</ul>
+
+<h3 id="slopes-of-ics">Slopes of ICs</h3>
+
+<ul>
+  <li>The slope of an indifference curve is known as its <strong>marginal rate of substitution (MRS)</strong>
+    <ul>
+      <li>In other words, the MRS at a certain point is the slope of the IC at said point</li>
+    </ul>
+  </li>
+</ul>
+
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Considering the point x’, </mtext><mi>M</mi><mi>R</mi><mi>S</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>d</mi><msub><mi>x</mi><mn>1</mn></msub></mrow><mrow><mi>d</mi><msub><mi>x</mi><mn>2</mn></msub></mrow></mfrac><mtext> at x’.</mtext></mrow><annotation encoding="application/x-tex">\text{Considering the point x&#x27;, } MRS(x&#x27;) = \frac{d x_1}{d x_2} \text{ at x&#x27;.}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0519em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">Considering the point x’, </span></span><span class="mord mathnormal" style="margin-right:0.05764em;">MRS</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.2074em;vertical-align:-0.836em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord text"><span class="mord"> at x’.</span></span></span></span></span></span>
+
+<ul>
+  <li>At x’, the MRS is the rate at which the consumer is willing to exchange commodity 2 for a small amount of commodity 1
+    <ul>
+      <li>If both commodities are goods or bads, then the MRS will always be negative, as the ICs are negatively sloped</li>
+      <li>If one commodity is a good and the other a bad, then the MRS will always be positive, as the ICs are positively sloped</li>
+    </ul>
+  </li>
+  <li>If preferences are strictly convex, then the MRS will always increase with x<sub>1</sub>; this is known as <em>diminshing MRS</em>, as the MRS is decreasing in absolute value</li>
+  <li>If preferences are non-convex, then the MRS will actually decrease with x<sub>1</sub>, and if they are weakly convex, then the MRS will be equal to 0 at some points</li>
+</ul>
+
+<h2 id="utility-chapter">Utility Chapter</h2>
+
+<h3 id="utility-functions">Utility Functions</h3>
+
+<ul>
+  <li>A preference relation that is complete, reflexive, transitive, and continuous can be represented by a continuous utility function
+    <ul>
+      <li>Continuity implies that small changes to a consumption bundle causes small changes to the preference level; there are no “jumps” like a step function</li>
+    </ul>
+  </li>
+  <li>
+    <p>A utility function U(x) represents a preference relation, ≽, if and only if
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>A utility function U(x) repreresents a preference relation ≽ if and only if </mtext><mspace linebreak="newline"></mspace><msup><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>≿</mo><msup><mi>x</mi><mrow><mo mathvariant="normal">′</mo><mo mathvariant="normal">′</mo></mrow></msup><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi>u</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mo>≥</mo><mi>u</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mrow><mo mathvariant="normal">′</mo><mo mathvariant="normal">′</mo></mrow></msup><mo stretchy="false">)</mo><mspace linebreak="newline"></mspace><msup><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>≻</mo><msup><mi>x</mi><mrow><mo mathvariant="normal">′</mo><mo mathvariant="normal">′</mo></mrow></msup><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi>u</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mo>&gt;</mo><mi>u</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mrow><mo mathvariant="normal">′</mo><mo mathvariant="normal">′</mo></mrow></msup><mo stretchy="false">)</mo><mspace linebreak="newline"></mspace><msup><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>∼</mo><msup><mi>x</mi><mrow><mo mathvariant="normal">′</mo><mo mathvariant="normal">′</mo></mrow></msup><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi>u</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mo>=</mo><mi>u</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mrow><mo mathvariant="normal">′</mo><mo mathvariant="normal">′</mo></mrow></msup><mo stretchy="false">)</mo><mspace linebreak="newline"></mspace></mrow><annotation encoding="application/x-tex">\text{A utility function U(x) repreresents a preference relation ≽ if and only if } \\ 
+x&#x27; \succsim x&#x27;&#x27; \iff u(x&#x27;) \geq u(x&#x27;&#x27;) \\
+x&#x27; \succ x&#x27;&#x27; \iff u(x&#x27;) &gt; u(x&#x27;&#x27;) \\
+x&#x27; \sim x&#x27;&#x27; \iff u(x&#x27;) = u(x&#x27;&#x27;) \\</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">A utility function U(x) repreresents a preference relation ≽ if and only if </span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.9815em;vertical-align:-0.2296em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel amsrm">≿</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7759em;vertical-align:-0.024em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord mathnormal">u</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord mathnormal">u</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.791em;vertical-align:-0.0391em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≻</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7759em;vertical-align:-0.024em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord mathnormal">u</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord mathnormal">u</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.7519em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7759em;vertical-align:-0.024em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord mathnormal">u</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord mathnormal">u</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span><span class="mspace newline"></span></span></span></p>
+  </li>
+  <li>With preference relations, we cannot determine the magnitude of preference (i.e. x<sub>1</sub> is 3x preferred to x<sub>2</sub>); the same applies to utility functions
+    <ul>
+      <li>e.g. u(x) = 6, u(y) = 2 only implies that x is preferred to y, but x is not 3x preferred to y</li>
+    </ul>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/econ105a/lecture/fall23/markdown/2023/10/12/econ105a-lecture.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tonyhieu.github.io/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/tonyhieu" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
