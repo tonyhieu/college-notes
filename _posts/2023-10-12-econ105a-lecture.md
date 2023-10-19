@@ -24,6 +24,7 @@ use-math: true
         - You can create a mixture of two bundles by using parts of two bundles
         - For example, a mixture bundle z can be created using two component bundles x and y via z = 0.5x + 0.5y
         - Essentially, this means that if you draw a line between any two points, then any point on said line would be strictly preferred to the endpoints of that line, meaning that the indifference curves must be *convex*, or concave up
+        
 $$
 \text{Let the mixture bundle } z = (t x_1 + (1 - t) y_1 , t x_2 + (1 - t) y_2) \\
 \text{If the preference relations are strictly convex, then } z \succ x \text{ and } z \succ y \text{ for } 0 < t < 1 \\
@@ -63,6 +64,7 @@ $$
 - A preference relation that is complete, reflexive, transitive, and continuous can be represented by a continuous utility function
     - Continuity implies that small changes to a consumption bundle causes small changes to the preference level; there are no "jumps" like a step function
 - A utility function U(x) represents a preference relation, ≽, if and only if
+
 $$
 \text{A utility function U(x) repreresents a preference relation ≽ if and only if } \\ 
 x' \succsim x'' \iff u(x') \geq u(x'') \\
@@ -71,4 +73,5 @@ x' \sim x'' \iff u(x') = u(x'') \\
 $$
 
 - With preference relations, we cannot determine the magnitude of preference (i.e. x<sub>1</sub> is 3x preferred to x<sub>2</sub>); the same applies to utility functions
-    - e.g. u(x) = 6, u(y) = 2 only implies that x is preferred to y, but x is not 3x preferred to y
+    - e.g. u(x) = 6, u(y) = 2 only implies that x is preferred to y, but not that x is 3x preferred to y
+- All bundles on the same indifference curve will all have the same utility level
