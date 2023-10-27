@@ -2,7 +2,7 @@
 layout: post
 description: Econ 105A
 categories: [econ105a, lecture, fall23, markdown]
-title: Finishing Utility and Starting Choice
+title: Finishing Utility and Choice
 use-math: true
 ---
 
