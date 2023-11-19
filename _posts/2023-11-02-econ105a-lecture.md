@@ -54,3 +54,15 @@ $$
 \text{Around } p = p^* \text{ the own-price elasticity of supply is approximately: } \\
 \varepsilon _S \approx \frac{\frac{\triangle q}{q^*}}{\frac{p_s - p^*}{p^*}} \rightarrow p_s - p^* \approx \frac{\triangle q \cdot p^*}{\varepsilon _S \cdot q^*} \\
 $$
+
+$$
+\text{Tax incidence (or the ratio of the tax burden on the buyers/sellers) can be written as:}\\
+\frac{p_b - p^*}{p^* - p_s} \approx - \frac{\varepsilon _S}{\varepsilon _D}
+$$
+
+- The fraction of a quantity tax, t, paid by buyers rises as supply becomes more elastic or as demand becomes less elastic
+
+![Elasticity Tax](https://o.quizlet.com/3-vgUYvEPAn5Ewdt1Tf-Ag.png)
+
+- Note that, with perfectly inelastic demand, buyers pay the entirety of the tax burden, and vice versa with supply. There is no deadweight loss because buyers are forced to buy and sellers are forced to sell at the new price
+- With perfectly elastic demand/supply, no trade occurs, as all buyers/sellers exit the market instantaneously. Thus, the deadweight loss is equal to the previous total surplus
