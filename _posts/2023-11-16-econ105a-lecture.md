@@ -2,7 +2,7 @@
 layout: post
 description: Econ 105A
 categories: [econ105a, lecture, fall23, markdown]
-title: 
+title: More on RTS and Start of Profit Maximization
 use-math: true
 ---
 
@@ -64,3 +64,4 @@ $$
     - Product prices are p<sub>1</sub>, ..., p<sub>n</sub>
     - Input prices are w<sub>1</sub>, ..., w<sub>n</sub>
     - The firm can choose the output and input levels, but the product and input prices must be taken as given
+        - This is known as a **competitive market**
