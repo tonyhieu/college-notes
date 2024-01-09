@@ -20,6 +20,7 @@ $$
 \text{where p is output price, w is input price, and f is the production function}
 $$
 - Maximizing this function means that we must find the local maximum of π with respect to x<sub>1</sub>
+
 $$
 \text{The first derivative of the profit is given as:} \\
 \pi' = \frac{p \partial f(x_1^*, \bar{x_2})}{\partial x_1} - w_1 \\
@@ -64,7 +65,7 @@ $$
 $$
 y = x_1^{1/3} x_2^{1/3} \\
 p \cdot MP_1 = w_1 \rightarrow p \cdot \frac{1}{3} x_1^{-2/3} x_2^{1/3} = w_1 \\
-p \cdot MP_2 = w_2 \rightarrow p \cdot \frac{1}{3} x_1^{1/3} x_2^{-2/3} = w_1 \\
+p \cdot MP_2 = w_2 \rightarrow p \cdot \frac{1}{3} x_1^{1/3} x_2^{-2/3} = w_2 \\
 \text{Dividing the two above equations gives} \frac{x_1}{x_2} = \frac{w_2}{w_1} \rightarrow x_1 = \frac{w_2}{w_1} x_2\\
 \frac{p}{3} ({\frac{w_2}{w_1} x_2})^{-2/3} x_2^{1/3} = w_1 \\
 \frac{p}{3} ({\frac{w_2}{w_1}})^{-2/3} x_2^{-1/3} = w_1 \\

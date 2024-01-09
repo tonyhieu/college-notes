@@ -20,7 +20,7 @@ y = Ax_1 ^{a_1} \cdot ... \cdot x_n ^{a_n} \\
 \text{Ex: } y = x_1^{1/3}x_2^{1/3} \\
 \text{Fixed-Proportions Technologies (analagous to perfect complements) take on the following form:}\\
 y = min\{a_1 x_1, ..., a_n x_n\} \\
-\text{Ex: } y = min\{x_1, 2x_2\}
+\text{Ex: } y = min\{x_1, 2x_2\} \\
 \text{Perfect-Substitutes Technologies take on the following form:}\\
 y = a_1 x_1 + ... + a_n x_n \\
 \text{Ex: } y = x_1 + 3x_2
