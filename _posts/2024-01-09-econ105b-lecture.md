@@ -4,9 +4,12 @@ description: Econ 105B
 categories: [econ105b, lecture, winter23, markdown]
 title: Market Structures
 use-math: true
+toc: true
 ---
 
-# Cost Minimization
+# Competitive Equilibrium
+
+## Cost Minimization
 
 - Recall that the average cost of goods is minimized when MC = AC
 - Must minimize cost before trying to maximize profit
@@ -92,3 +95,100 @@ The overall surplus can be hindered by government policies, such as taxes or sup
 <img width="436" alt="image" src="https://github.com/tonyhieu/college-notes/assets/54915685/b44ef200-a096-4b77-b0c9-6db487e0317d">
 
 <img width="433" alt="image" src="https://github.com/tonyhieu/college-notes/assets/54915685/4edbb3b3-04d3-4580-9f51-b85c40df6cf7">
+
+
+# Models of Monopoly
+
+- Monopolies are markets with a single supplier
+- Occurs due to two reasons
+    - *Technological constraints*: The marginal or average costs to produce a good is decreasing over a wide range of output levels relative to the market; in other words, monopolists have extremely low costs of production
+    - *Legal constraints*: The government might grant certain suppliers the sole right to produce their good
+
+## Profit Maximization
+
+Monopolies can choose both the price and the quantity of the good supplied. Their profit maximization problem can be written in one of two ways:
+
+In terms of price:
+$$
+\pi (P) = P \cdot Q(P) - C(Q(P)) \\
+Q(P) = f(P) \text{, or the demand function} \\
+P \cdot Q(P) = P \cdot f(P) \text{, or the total revenus} \\
+C(Q(P)) = \text{ total costs} \\
+R = P \cdot Q(P) \\
+MR_P = Q + P \cdot \frac{\partial Q}{\partial P} \\
+MC_P = \frac{\partial C}{\partial Q} \cdot \frac{\partial Q}{\partial P}
+$$
+
+
+Or in terms of demand:
+$$
+\pi (Q) = P(Q) \cdot Q - C(Q) \\
+P(Q) = g(Q) = f^{-1} (Q) \text{, inverse demand} \\
+P(Q) \cdot Q = g(Q) \cdot (Q) \text{, total revenues} \\
+C(Q) = \text{ total costs}
+R = P(Q) \cdot Q \\
+MR_Q = P + Q \cdot \frac{\partial P}{\partial Q} \\
+MC_Q = \frac{\partial C}{\partial Q}
+$$
+
+To find the profit maximizing quantity/price, we must set the marginal revenue and cost equal to each other; that is, the first-order condition:
+
+$$
+\pi = MR - MC = 0
+\text{Price:} \\
+\pi ' = Q + P \cdot \frac{\partial Q}{\partial P} - \frac{\partial C}{\partial Q} \cdot \frac{\partial Q}{\partial P} \\
+\text{Quantity:} \\
+\pi ' = P + Q \cdot \frac{\partial P}{\partial Q} - \frac{\partial C}{\partial Q}
+$$
+
+
+Another condition that must be satistfied is the second-order condition:
+
+$$
+\pi = \frac{\partial MR}{\partial Q} - \frac{\partial MC}{\partial Q} \leq 0 \\
+\text{Quantity:} \\
+\pi '' (Q^*) = 2 \frac{\partial P}{\partial Q} + \frac{\partial ^2 P}{\partial Q^2} - \frac{\partial ^2 C}{\partial Q^2}
+$$
+
+
+However, monopolies can markup their price higher over their cost. Thus, we can use elasticity to find the optimal price/quantity:
+
+
+$$
+e_{QP} = \frac{\partial QP}{\partial PQ} < 0 \\
+MR = P + Q \cdot \frac{\partial P}{\partial Q} = P [1 + \frac{Q}{P} \frac{\partial P}{\partial Q}] = P [1 - \frac{1}{|e_{QP}|}]
+$$
+
+
+There are three cases of elasticity:
+- Demand is infinitely elastic (like it is in perfect competition). Then, MR = P > 0
+- Demand is relatveily inelastic (i.e. it is between negative infinity and -1). Then, MR > 0, but MR < P
+- Demand is relatively elastic (i.e. it is between -1 and 0). Then, MR <= 0
+
+We can apply elasticity to marginal cost as well.
+
+$$
+MC = P[1 - \frac{1}{|e_{QP}|}] \\
+\frac{P - MC}{P} = \frac{1}{|e_{QP}|} \\
+P = MC \div [1 - \frac{1}{|e_{QP}|}]
+$$
+
+## Comparison with Perfect Competition
+
+### Comparing First-Order Conditions
+
+One big difference between competitive and monopolistic firms are their marginal revenue functions.
+
+$$
+\text{Competitive: } MR = P \\
+\text{Monopoly: } MR = P + Q \cdot \frac{\partial P}{\partial Q}
+$$
+
+This is because competitive firms are price takers and do not influence the price of their good.
+
+### Comparing Outcomes
+
+The overall surplus in a monopolistic industry is lower than in competitive industries, as firms will abuse their leverage and take away from consumers.
+
+<img width="706" alt="image" src="https://github.com/tonyhieu/college-notes/assets/54915685/6bbc88ce-60b8-4683-96c4-9873c5868ce8">
+
