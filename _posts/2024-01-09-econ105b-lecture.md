@@ -377,8 +377,116 @@ A **sub-game perfect equilibrium** is an equilibrium which is not only an overal
 
 ## Imperfect Competition in Static Games
 
+*Static games* are games that are non-cooperative, one-shot games with complete information and simultaneous moves.
+
 ### Bertrand-Nash Equilibrium
 
 Consider a duopoly with firms A and B. Each produces the same good at a constant marginal cost c. A chooses a price P<sub>A</sub> and B chooses P<sub>B</sub>. Both firms make their choice such that P<sub>i</sub> >= c, where P = P(Q) and Q = q<sub>A</sub> + q<sub>B</sub>.
 
 Since the goods are identical, the firm that offers the good at a lower price will capture the entire market. Assume that if P<sub>A</sub> = P<sub>B</sub>, each firm takes half. Note that, because both firms don't want to lose the market, they will both charge a price where P<sub>i</sub> = c, leading to both firms making no profit.
+
+In the competitive solution, A and B choose the same price, where P<sub>A</sub> = P<sub>B</sub> = c.
+- Neither firm can choose a price higher than their marginal cost, as the other firm will choose a lower price and capture the entire market
+- Both firms must choose a price equal to their marginal cost, resulting in the equilibrium
+- The profit will be equal to 0 because price is equal to marginal cost
+
+
+Note that in situations where one firm captures the whole market does NOT mean that the firm has a monopoly. This is because the optimal pricing for the monopoly would allow the opposing firm to reenter the market, thus reducing market power.
+
+### Cournot-Nash Equilibrium
+
+$$
+\text{Suppose that there are capacity constraints } \bar{q_i} \text{ and let } \bar{P} \\
+\text{ represent the price that would prevail when production by the firms is at capacity, } \\
+\bar{P} = P (\sum _i \bar{q_i})  
+$$
+
+Let there be two firms A and B who both produce at the same marginal cost c.
+
+There are two stages to this game: 
+1. Firms choosing their capacity
+2. Firms engaging in Bertrand-Nash price competition
+
+
+To solve the model, we go backwards:
+
+$$
+\text{Stage 2} \\
+P_A = P_B = \bar{P} = P(\bar{Q}) = P(\bar{q_A} + \bar{q_B}) \\
+\text{Facts:} \\
+P_A = P_B \\
+P_A = P_B < \bar{P} \text{ is impossible because there is excess demand} \\
+P_A = P_B > \bar{P} \text{ is impossible because there isn't enough demand} \\
+\text{Thus, both firms must produce at capacity.}
+$$
+
+$$
+\text{Stage 1} \\
+P(Q) = \mu _0 - \mu _1 Q \text{, where } Q = q_A + q_B, \mu _0 > c, \mu _1 > 0 \\
+\pi _A = P(Q) q_A - c q_A = [\mu _0 - \mu _1[q_A + q_B] - c] q_A \\
+\pi _B = P(Q) q_B - c q_B = [\mu _0 - \mu _1[q_A + q_B] - c] q_B \\
+\pi _A ' = \mu _0 - c - 2 \mu _1 q_A - \mu _1 q_B = 0 \\
+\pi _B ' = \mu _0 - c - 2 \mu _1 q_B - \mu _1 q_A = 0 \\
+q_A = \frac{\mu _0 - c - \mu _1 q_B}{2 \mu _1} \\
+q_B = \frac{\mu _0 - c - \mu _1 q_A}{2 \mu _1} \\
+$$
+
+
+<img width="436" alt="image" src="https://github.com/tonyhieu/college-notes/assets/54915685/3238bc24-aca9-47c6-8990-d157dd408ece">
+
+
+## Repeated Static Games and Tacit Collusion
+
+*Repeated static games*, which are defined as dynamic, non-cooperative, simultaneous move games with complete information, have wide strategy sets due to the sheer amount of moves that either firm can choose. Firms can announce their future moves that are based on the present state which can lead to collusion.
+
+The question is: Does collusion occur in repeated static games?
+
+### One-Shot Game
+
+In a duopoly, firms have four options, based on (C)olluding and (D)efecting.
+- (C, C): Both firms choose the monopoly price and maximize profits
+- (D, D): Both firms attempt to undercut each other by setting price equal to marginal cost, leading to the competitive solution
+- (D, C) and (C, D): One firm undercuts the monopoly price while the other doesn't, so the defecting firm gets the entirety of the market share and the most profit possible
+
+In this scenario, the Nash equilibrium is (D, D).
+
+### Finite Repetition
+
+Suppose the game is played T times. The choice of defecting or colluding can be thought of as a *trigger strategy*.
+- A simple trigger strategy would be: defect if the other firm defected last round; otherwise, collude.
+
+However, in finite repetition, the repeated game degenerates to a one-shot game. Think about the scenario in which both firms colluded for all T - 1 games. Both firms are thus incentivized to defect on the last game, as they can get a temporary gain of half of the monopoly's profit and because there is no future to worry about. However, because this last game is fixed, the decision to defect recurses for the remaining subgames, all the way from T - 1, T - 2, ..., 1.
+
+
+### Infinite Repetition
+
+Assume that both firms take the same trigger strategy detailed in the finite games. Note that, if both firms collude initially, then they will collude infinitely, but if they don't collude, then they will defect infinitely. Suppose further that both firms have a discount factor that determines how likely they are to repeat the results of a given sub-game. Thus, the expected profits can as the following:
+
+
+<img width="413" alt="image" src="https://github.com/tonyhieu/college-notes/assets/54915685/f870b5f7-32d2-4499-a186-089bb4fd9084">
+
+<img width="641" alt="image" src="https://github.com/tonyhieu/college-notes/assets/54915685/75ed2218-fc8d-4110-9374-0ef3a5fdb99a">
+
+There exist a few theorems regarding this result:
+- **Severity of the Punishment**: A shorter punihsment might support collusion. Different punishment lengths lead to many equilibria
+- **Power of the Shadow of the Future**: If firms are sufficiently patient or believe that the game will last sufficiently long, then collusion will be further supported in the finite game
+
+## Strategic Considerations with Entry and Exit
+
+One-time expenditures necessary to enter a market are known as **sunk costs**. This can be expressed in a cost function:
+
+$$
+c_t = c(q_t) = S + F_t + a \cdot q_t \\
+\text{Where S is a per-period amortization of sunk costs, } F_1 \text{ denotes the fixed cost in period t,}\\
+\text{and } q_t \text{ is the quantity produced in period t.}
+$$
+
+Are sunk costs good or bad?
+
+### First-move Advantage
+
+Suppose that firm A leads, and B follows. Firm A has a variety of options, and it knows that whatever price/quantity it chooses could influence B's decision to enter the market.
+
+<img width="818" alt="image" src="https://github.com/tonyhieu/college-notes/assets/54915685/d7a01f68-4f1c-4990-b93b-689e0a9d54cd">
+
+<img width="825" alt="image" src="https://github.com/tonyhieu/college-notes/assets/54915685/ecdf5a63-0ff9-480b-80fb-2865b8963948">
