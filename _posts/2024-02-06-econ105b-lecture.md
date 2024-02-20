@@ -115,3 +115,56 @@ Thus, under trade, there are two separate problems to solve: maximizing income, 
 For consumers, trade allows for a more balanced, preferred bundle, but for the economy, trade allows for specialization which means that there are more goods in the economy.
 
 <img width="674" alt="image" src="https://github.com/tonyhieu/college-notes/assets/54915685/4e774192-ac1f-4ea0-97a2-eb1e25cf315b">
+
+# Efficiency
+
+## Pareto Efficiency
+
+Suppose there are two individuals, A and B, and each individual's real income is a reasonable measure for their well-being
+
+- *Social opportunity set*: Depicts the entire range of achievable income, I<sub>A</sub>, I<sub>B</sub>
+- *Social opportunity frontier*: The boundary of the social opportunity set
+
+There are various ways to gauge efficiency based on the sum of real income, I<sub>A</sub> + I<sub>B</sub>
+- *Iso-income line*: Combinations of I<sub>A</sub> and I<sub>B</sub> which implies a constant sum with a slope of -1
+- *Maximal income*: Where the social opportunity frontier is tangent with the outermost iso-income line
+- Very similar to budget constraints and isoquant lines
+
+Pareto efficiency is based off of the observation that, on the frontier, you cannot make one person better off without making the other worse off.
+- An allocation of goods X is *Pareto-preferred* to another allocation Y if, under X, everyone is at least as well off as under Y AND at least one individual is better off
+- Allocation X is *Pareto-efficient or Pareto-optimal* if no feasible alternative is Pareto-preferred to it
+    - All points along the frontier are therefore Pareto-efficient
+
+## Characterizing a Pareto-Efficient Outcome
+
+Under perfect competition, utility-maximizing behavior by individuals combined with profit maximizing behavior by firms leads to a Pareto-efficient outcome
+
+
+An allocation of resources is *efficient in production* or *technically efficient* if no further reallocation would permit more of one good to be produced without necessarily reducing the output of some other good.
+- Pareto-efficiency implies technical efficiency, as not being technically efficient implies that the allocation does not lie on the frontier
+- Technical efficiency does NOT imply Pareto-efficiency
+
+**Efficient choice of inputs for a single firm**: Requires that all inputs held by a firm be fully employed and that the rate of technical substitution between inputs (or the ratio of the inputs’ marginal productivities) be the same across goods produced by the firm.
+- If one firm has too much labor, then the other will have too much capital. The social planner will then shift some labor and capital to make the ratio of TRS equal.
+
+**Efficient allocation of resources across firms**: Requires that the marginal product of any resource in the production of a particular good be the same no matter which firm produces that good.
+- If the marginal product of capital at firm 1 was greater than the marginal product of labor, then the planner would give firm 1 more capital, and vice versa.
+
+**Efficient choice of output across firms**: Requires that the marginal rate of transformation between two products be equalized across firms.
+- If the marginal rate of transformation for a certain good is higher at firm 1 than firm 2, then the planner will shift production of that good away from firm 2 towards firm 1
+
+**Efficiency in consumption**: Under trade, the MRS are equal between two individuals; in other words, no individual has an incentive to trade any more than they already have.
+
+**Efficient balance in consumption and production**: Both production and consumption must be efficient. Mathematically, the MRS between two goods should be the same as the corresponding MRT.
+
+## The Invisible Hand and the Role of Competitive Prices
+
+The *theorem of the invisible hand*, or the *first theorem of welfare economics*, states that no social planner is needed because individuals and firms will naturally reach efficient outcomes.
+
+1. Profit maximizing production results in technical rates of substitution between inputs being equal, satisfying the clause for an efficient choice of inputs.
+2. The marginal products for each firm will be equal to each other for all firms producing x and y, as a firm not doing so would lose profits on one of the goods, satisfying the clause for efficient allocation of resources.
+3. The marginal cost for firms in a competitive market must be equal to the price it faces. In other words, MC<sub>x</sub> / MC<sub>y</sub> = p<sub>x</sub> / p<sub>y</sub> = MRT<sub>xy</sub>. Thus, this satisfies the clause for efficient choice of output.
+
+Utility maximizing individuals will maximize their utility by default, and at that bundle, they won't be willing to give up either good to gain more of the other, satisfying efficiency in consumption.
+
+Recall that p<sub>x</sub> / p<sub>y</sub> is the isocost/isoquant line, and profit/utility maximization means that the bundle lies on that line. Thus, the MRT and MRS are both equal to the slope of that line, satisfying the clause of efficient balance in consumption and production.
