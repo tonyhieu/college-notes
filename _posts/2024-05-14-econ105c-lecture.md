@@ -35,3 +35,21 @@ toc: true
 
 - Abandoning the gold standard (dollar was worth less)
 - Increasing government spending
+
+### Negative Nominal Interest Rates
+
+- People can tolerate slightly negative nominal interest rates because the bank storing money for you acts as a service
+- "Paying" for the service of storing money
+- Physical money is inconvenient to store, transport, etc.
+
+How it works:
+
+- Central bank annoucnes a negative interest rate on electronic reserves
+- Arbitrage pushes other short-term interest rates below zero
+
+### Extraordinary Discount Window Lending
+
+- In a financial crisis, customers want cash but banks don't have reserves
+- The government gives cash loands to banks so they can give money to customers; known as **discount window lending**
+    - Loans are collaterized so banks can't weasel their way out
+- Remember that discount loans are seen as a sign of weakness if banks take them, but in a crisis, optics don't matter as much
