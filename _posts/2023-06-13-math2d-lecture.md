@@ -170,3 +170,24 @@ $$
 D = \frac{|| \overrightarrow{PQ} \times \overrightarrow{v} ||}{|| \overrightarrow{v} ||} \\
 \text{where v is a direction vector of the line and P is a point on the line}
 $$
+
+## Coordinate Conversion
+
+$$
+\text{Cylindrical to Rectangular: } x = r \cdot cos \theta , y = r \cdot sin \theta , z = z \\
+\text{Rectangular to Cylindrical: } r^2 = x^2 + y^2 , tan \theta = \frac{y}{x} , z = z \\
+$$
+
+<hr>
+
+$$
+\text{Spherical to Rectangular: } x = \rho \cdot sin \phi \cdot cos \theta , y = \rho \cdot sin \phi \cdot sin \theta , z = \rho \cdot cos \phi \\
+\text{Rectangular to Spherical: } \rho^2 = x^2 + y^2 + z^2 , tan \theta = \frac{y}{x} , \phi = arccos(\frac{z}{\sqrt{x^2 + y^2 + z^2}}) \\
+$$
+
+<hr>
+
+$$
+\text{Spherical to Cylindrical (r > 0): } r^2 = \rho^2 \cdot sin^2 \phi , \theta = \theta , z = \rho \cdot cos \phi \\
+\text{Cylindrical to Spherical (r > 0): } \rho = \sqrt{r^2 + z^2} , \theta = \theta , \phi = arccos(\frac{z}{\sqrt{r^2 + z^2}}) \\
+$$
