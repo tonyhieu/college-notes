@@ -41,3 +41,16 @@ $$
 
 - Downwards sloping IS curve (Y(r)) and upwards sloping LM curve (r(Y))
 - Very similar to IS-MP curve; LM curve essentially shows how the government would set interest rates given a monetary base and a GDP
+- In this model, targeting the money supply and targeting the interest rate is the same, but most banks target interest rate because it's more efficient
+    - Investment demand depends on interest rates, so targeting interest rates targets demand more directly
+
+## Differences in IS-LM and IS-MP
+
+| | IS-LM | IS-MP |
+| --- | --- | --- |
+| Central Bank | Targeting money (M/P) | Targeting r |
+| Money Supply | Fixed | Varies as needed to hit the r target |
+| Fixed in short run | M/P, prices, inflation (constant at 0) | inflation (not prices) |
+| Inflation | Hard to model | Easy to model via IA curve |
+| When developed | 1930s (Keynes) | 1990s, 2000s |
+| Good model for | Gold standard, Great Depression, etc; whenever M/P fixed | Inflation, unconvential monetary policy, financial crises |
