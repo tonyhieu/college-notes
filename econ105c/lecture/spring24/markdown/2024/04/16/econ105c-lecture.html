@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>The Monetary System and Money Multiplier | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="The Monetary System and Money Multiplier" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Econ 105C" />
+<meta property="og:description" content="Econ 105C" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/econ105c/lecture/spring24/markdown/2024/04/16/econ105c-lecture.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/econ105c/lecture/spring24/markdown/2024/04/16/econ105c-lecture.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-04-16T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Monetary System and Money Multiplier" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-04-16T00:00:00-05:00","datePublished":"2024-04-16T00:00:00-05:00","description":"Econ 105C","headline":"The Monetary System and Money Multiplier","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/econ105c/lecture/spring24/markdown/2024/04/16/econ105c-lecture.html"},"url":"https://tonyhieu.github.io/college-notes/econ105c/lecture/spring24/markdown/2024/04/16/econ105c-lecture.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">The Monetary System and Money Multiplier</h1><p class="page-description">Econ 105C</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2024-04-16T00:00:00-05:00" itemprop="datePublished">
+        Apr 16, 2024
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#econ105c">econ105c</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#lecture">lecture</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#spring24">spring24</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#a-theory-of-the-money-supply">A Theory of the Money Supply</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#case-1-no-banks">Case 1: No Banks</a></li>
+<li class="toc-entry toc-h3"><a href="#case-2-banks-dont-make-loans">Case 2: Banks Don’t Make Loans</a></li>
+<li class="toc-entry toc-h3"><a href="#case-3-banks-take-deposits-and-make-loans">Case 3: Banks Take Deposits and Make Loans</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#theory-of-the-money-multiplier">Theory of the Money Multiplier</a></li>
+</ul><h2 id="a-theory-of-the-money-supply">
+<a class="anchor" href="#a-theory-of-the-money-supply" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Theory of the Money Supply</h2>
+
+<ul>
+  <li>Currency in circulation (D) and deposits (D) make up money (M = C + D)</li>
+  <li>Assume there are $1000 in currency</li>
+</ul>
+
+<h3 id="case-1-no-banks">
+<a class="anchor" href="#case-1-no-banks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Case 1: No Banks</h3>
+
+<ul>
+  <li>With no banks, D = 0 and M = C = 1000</li>
+</ul>
+
+<h3 id="case-2-banks-dont-make-loans">
+<a class="anchor" href="#case-2-banks-dont-make-loans" aria-hidden="true"><span class="octicon octicon-link"></span></a>Case 2: Banks Don’t Make Loans</h3>
+
+<ul>
+  <li>In this scenario, banks don’t make loans; they hold 100% of all deposits as cash reserves</li>
+  <li>If people deposit half of their currency into banks:
+    <ul>
+      <li>C = 500</li>
+      <li>D = 500</li>
+      <li>M = 1000</li>
+      <li>R (reserves, not counted in money supply) = 500</li>
+    </ul>
+  </li>
+  <li>Monetary base (B) is C + R = 1000, shows how much money the economy started with</li>
+</ul>
+
+<h3 id="case-3-banks-take-deposits-and-make-loans">
+<a class="anchor" href="#case-3-banks-take-deposits-and-make-loans" aria-hidden="true"><span class="octicon octicon-link"></span></a>Case 3: Banks Take Deposits and Make Loans</h3>
+
+<ul>
+  <li>
+    <p>Banks make money based on the fact that most depositors don’t need all of their money all the time; they can make loans and investments w/ depositor’s cash to make more money</p>
+  </li>
+  <li>
+    <p>Suppose that people deposit half of their currency into the bank, and banks keep 20% of those deposits as reserves and lend out 80% as loans</p>
+    <ul>
+      <li>C = 500 + 400 = 900</li>
+      <li>D = 500, 100 of which is kept and 400 of which is given out as loans</li>
+      <li>M = 1400</li>
+      <li>R = 100</li>
+      <li>B = C + R = 1000</li>
+    </ul>
+  </li>
+</ul>
+
+<p>This effect is known as the <strong>money multiplier</strong>. The scenario where banks hold a fraction of their deposits as reserves is known as <strong>Fractional Reserve Banking</strong>, and this automatically expands the amount of money M in the economy.</p>
+
+<p>The borrower can further deposit their lone into another bank, thus redepositing the loan into another bank, and this process can continue until there are no more banks left, vastly increasing the money supply.</p>
+
+<ul>
+  <li>Scenario with two banks:
+    <ul>
+      <li>C = 500 + 200 + 160 = 860</li>
+      <li>D<sub>Bank 1</sub> = 500 -&gt; 100 + 400</li>
+      <li>D<sub>Bank 2</sub> = 200 -&gt; 40 + 160</li>
+      <li>M = 860 + 500 + 200 = 1560</li>
+      <li>R = 100 + 40 = 140</li>
+      <li>B = C + R = 1000</li>
+    </ul>
+  </li>
+</ul>
+
+<p>This effect is known as <strong>multiple deposit creation</strong>, and it makes the money multiplier bigger.</p>
+
+<table>
+
+<thead>
+    <td>C</td>
+    <td>D</td>
+    <td>Bank</td>
+    <td>R</td>
+    <td>L</td>
+</thead>
+
+<tr>
+    <td>500</td>
+    <td>500</td>
+    <td>Firstbank</td>
+    <td>100</td>
+    <td>400</td>
+</tr>
+
+<tr>
+    <td>200</td>
+    <td>200</td>
+    <td>Secondbank</td>
+    <td>40</td>
+    <td>160</td>
+</tr>
+
+<tr>
+    <td>80</td>
+    <td>80</td>
+    <td>Thirdbank</td>
+    <td>16</td>
+    <td>64</td>
+</tr>
+
+<tr>
+    <td>32</td>
+    <td>32</td>
+    <td>Fourthbank</td>
+    <td>6.40</td>
+    <td>25.60</td>
+</tr>
+
+</table>
+
+<p>This goes on until C = 500 / (1 - 0.4) = 833.3</p>
+
+<p><strong>Note</strong>: This is representative of a geometric series, and the sum of a geometric series will converge to a * (1 - x), which will be the final amount of money available in the economy.</p>
+
+<h2 id="theory-of-the-money-multiplier">
+<a class="anchor" href="#theory-of-the-money-multiplier" aria-hidden="true"><span class="octicon octicon-link"></span></a>Theory of the Money Multiplier</h2>
+
+<ul>
+  <li>Monetary Base: B = C + R</li>
+  <li>Currency-Deposit Ratio: cr = C/D (determined by household preferences)</li>
+  <li>Reserve-Deposit Ratio: rr = R/D (determined by regulations)</li>
+</ul>
+
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>M</mi><mo>=</mo><mi>C</mi><mo>+</mo><mi>D</mi><mspace linebreak="newline"></mspace><mi>B</mi><mo>=</mo><mi>C</mi><mo>+</mo><mi>R</mi><mspace linebreak="newline"></mspace><mfrac><mi>M</mi><mi>B</mi></mfrac><mo>=</mo><mfrac><mrow><mi>C</mi><mo>+</mo><mi>D</mi></mrow><mrow><mi>C</mi><mo>+</mo><mi>R</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>C</mi><mi mathvariant="normal">/</mi><mi>D</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>C</mi><mi mathvariant="normal">/</mi><mi>D</mi><mo>+</mo><mi>R</mi><mi mathvariant="normal">/</mi><mi>D</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>c</mi><mi>r</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>c</mi><mi>r</mi><mo>+</mo><mi>r</mi><mi>r</mi></mrow></mfrac><mspace linebreak="newline"></mspace><mi>r</mi><mi>r</mi><mo>≤</mo><mn>1</mn><mo>→</mo><mfrac><mi>M</mi><mi>B</mi></mfrac><mo>≥</mo><mn>1</mn><mo separator="true">,</mo><mfrac><mi>M</mi><mi>B</mi></mfrac><mo>&gt;</mo><mn>1</mn><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi>r</mi><mi>r</mi><mo>&lt;</mo><mn>1</mn><mspace linebreak="newline"></mspace><mtext>If rr or cr goes up, then M/B will go down</mtext></mrow><annotation encoding="application/x-tex">M = C + D \\
+B = C + R \\
+\frac{M}{B} = \frac{C + D}{C + R} = \frac{C/D + 1}{C/D + R/D} = \frac{cr + 1}{cr + rr} \\
+rr \leq 1 \rightarrow \frac{M}{B} \geq 1, \frac{M}{B} &gt; 1 \iff rr &lt; 1 \\
+\text{If rr or cr goes up, then M/B will go down}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.1297em;vertical-align:-0.7693em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0908em;vertical-align:-0.7693em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">cr</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">rr</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">cr</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">rr</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6684em;vertical-align:-0.024em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">rr</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">If rr or cr goes up, then M/B will go down</span></span></span></span></span></span>
+
+<ul>
+  <li>M/B is given a special letter: m, such that M = m * B
+    <ul>
+      <li>m is called the <strong>money multiplier</strong>
+</li>
+    </ul>
+  </li>
+  <li>A <strong>central bank</strong> is an institution that regulates and controls the monetary base B
+    <ul>
+      <li>Does not have perfect control over the total quantity of money M in the economy (cr and rr)</li>
+      <li>In depressive periods, cr and rr increase drastically because of reduced confidence in the economy
+        <ul>
+          <li>To keep M stable, the government can increase B in order to offset the increases in cr and rr, thus maintaining the value of m</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/econ105c/lecture/spring24/markdown/2024/04/16/econ105c-lecture.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tonyhieu.github.io/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/tonyhieu" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
