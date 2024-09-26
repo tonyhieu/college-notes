@@ -1,7 +1,7 @@
 ---
 layout: post
 description: Econ 105B
-categories: [econ105b, lecture, winter23, markdown]
+categories: [econ105b, lecture, winter24, markdown]
 title: Market Structures
 use-math: true
 toc: true

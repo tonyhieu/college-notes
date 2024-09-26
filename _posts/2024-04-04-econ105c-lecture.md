@@ -1,7 +1,7 @@
 ---
 layout: post
 description: Econ 105C
-categories: [econ105c, lecture, winter23, markdown]
+categories: [econ105c, lecture, spring24, markdown]
 title: Classical Inflation
 use-math: true
 toc: true
