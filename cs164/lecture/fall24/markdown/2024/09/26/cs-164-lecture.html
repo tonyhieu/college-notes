@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Computational Geometry | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Computational Geometry" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="COMPSCI 164" />
+<meta property="og:description" content="COMPSCI 164" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/cs164/lecture/fall24/markdown/2024/09/26/cs-164-lecture.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/cs164/lecture/fall24/markdown/2024/09/26/cs-164-lecture.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-26T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Computational Geometry" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-26T00:00:00-05:00","datePublished":"2024-09-26T00:00:00-05:00","description":"COMPSCI 164","headline":"Computational Geometry","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/cs164/lecture/fall24/markdown/2024/09/26/cs-164-lecture.html"},"url":"https://tonyhieu.github.io/college-notes/cs164/lecture/fall24/markdown/2024/09/26/cs-164-lecture.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/college-notes/schedule/">Class Schedule</a><a class="page-link" href="/college-notes/labs/">Labs</a><a class="page-link" href="/college-notes/categories/">Tags</a><a class="page-link" href="/college-notes/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Computational Geometry</h1><p class="page-description">COMPSCI 164</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2024-09-26T00:00:00-05:00" itemprop="datePublished">
+        Sep 26, 2024
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#cs164">cs164</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#lecture">lecture</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall24">fall24</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#baseline">Baseline</a></li>
+<li class="toc-entry toc-h2"><a href="#convex-hull">Convex Hull</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#line-sweep-algorithm">Line Sweep Algorithm</a></li>
+<li class="toc-entry toc-h3"><a href="#gift-wrapping-jarvis-march">Gift Wrapping (Jarvis March)</a></li>
+<li class="toc-entry toc-h3"><a href="#divide-and-conquer">Divide and Conquer</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#line-segment-intersections">Line Segment Intersections</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#plane-sweep-algorithm">Plane Sweep Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#doubly-connected-edge-list-dcel">Doubly Connected Edge List (DCEL)</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#computing-map-overaly">Computing Map Overaly</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#polygon-triangulation-art-gallery-guarding-problem">Polygon Triangulation (Art Gallery Guarding Problem)</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#triangulating-a-polygon">Triangulating a Polygon</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#plane-sweep-algorithm-1">Plane Sweep Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#creating-monotone-polygons">Creating Monotone Polygons</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#lower-envelope">Lower Envelope</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#dc-algorithm">D&amp;C Algorithm</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#sweep-line-merge">Sweep Line Merge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h2 id="baseline">
+<a class="anchor" href="#baseline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Baseline</h2>
+
+<ul>
+  <li>
+<strong>Real Random Access Machine (RAM) Model</strong> is the basis for algorithmic analysis
+    <ul>
+      <li>Stored program that has a memory and CPU</li>
+      <li>Each memory cell can store a real number; supports all data structures</li>
+      <li>Performs basic arithmetic operations (add, subtract, multiply, divide) in O(1) time
+        <ul>
+          <li>Depending on definition, can also perform more complicated ones like powers or rounding</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="convex-hull">
+<a class="anchor" href="#convex-hull" aria-hidden="true"><span class="octicon octicon-link"></span></a>Convex Hull</h2>
+<ul>
+  <li>
+<strong>Convexity</strong>: A shape S is convex if for any two points $p, q \in S$ the line $\bar{pq}$ is covered wholly by the shape</li>
+  <li>
+<strong>Convex hull</strong>: Any set of points that are convex and contains a set of constraining points</li>
+  <li>Problem statement: Given n points, find a convex hull that covers the points</li>
+</ul>
+
+<h3 id="line-sweep-algorithm">
+<a class="anchor" href="#line-sweep-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Line Sweep Algorithm</h3>
+<ul>
+  <li>Stop at event points to form the upper and lower convex hulls separately
+    <ul>
+      <li>Add points to hull linearly, and if the last three points form an “incorrect turn” (i.e. a left turn for the upper hull, or a right turn for the lower hull), remove offending points</li>
+      <li>O(n log n) time; must sort points by x-coordinate first (O(n log n)) and then form the convex hulls linearly (O(n))</li>
+      <li>Start with point with the smallest x-coordinate, end with point with largest x-coordinate
+        <ul>
+          <li>These two are guaranteed to be on the hull</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="gift-wrapping-jarvis-march">
+<a class="anchor" href="#gift-wrapping-jarvis-march" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gift Wrapping (Jarvis March)</h3>
+<ul>
+  <li>Start at lowest point, draw a horizontal line of infinite length</li>
+  <li>Look at all points to determine which one will be reached first when rotating the line</li>
+  <li>O(hn) runtime, where h is the size of the hull
+    <ul>
+      <li>Each point on hull requires n comparisons to the other points</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="divide-and-conquer">
+<a class="anchor" href="#divide-and-conquer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Divide and Conquer</h3>
+<ul>
+  <li>Separate the set of points S into two sets, S<sub>1</sub> and S<sub>2</sub>
+</li>
+  <li>Calculate the upper hull for S<sub>1</sub> and S<sub>2</sub>, and then merge them by adding a bridge edge
+    <ul>
+      <li>No points will lie above this bridge edge, thus keeping the property of the upper hull containing all points</li>
+      <li>Can use binary search for a O(log n) merge step</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="line-segment-intersections">
+<a class="anchor" href="#line-segment-intersections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Line Segment Intersections</h2>
+<ul>
+  <li>Problem: Given a set S of closed line segments, return all intersections</li>
+  <li>Calculating if two lines intersect is O(1); can use matrix operations</li>
+  <li>Brute force: O(n<sup>2</sup>); compare all lines with each other</li>
+  <li>Run time can be no better than O(n log n + k)
+    <ul>
+      <li>Element uniqueness problem can be reduced into line segment intersections, and that problem is provably O(n log n)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="plane-sweep-algorithm">
+<a class="anchor" href="#plane-sweep-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plane Sweep Algorithm</h3>
+<ul>
+  <li>
+<strong>Cleanliness property</strong>: all points to the left of the sweep line have been processed</li>
+  <li>
+<strong>Sweep Line Status</strong>: store segments that currently intersect with the sweep line in order of their y-coordinate intersections</li>
+  <li>Events
+    <ul>
+      <li>Points in time when sweep line status changes
+        <ul>
+          <li>e.g. status goes from A, B to B, A</li>
+        </ul>
+      </li>
+      <li>Endpoints of segments</li>
+      <li>Intersection points</li>
+    </ul>
+  </li>
+  <li>Event handling
+    <ul>
+      <li>
+<em>Left endpoint</em>: Add segment to sweep line status, check for intersection with adjacent segments, add new intersection point(s) to queue</li>
+      <li>
+<em>Intersection event</em>: swap order of intersecting segments, check intersections of swapped segments with new adjacencies</li>
+      <li>
+<em>Right endpoint</em>: delete segment from status, check for intersections in newly adjacent segments</li>
+    </ul>
+  </li>
+  <li>Works by intersection lemma: all intersecting lines must become adjacent at some point</li>
+</ul>
+
+<h2 id="doubly-connected-edge-list-dcel">
+<a class="anchor" href="#doubly-connected-edge-list-dcel" aria-hidden="true"><span class="octicon octicon-link"></span></a>Doubly Connected Edge List (DCEL)</h2>
+<ul>
+  <li>Representation of a map</li>
+  <li>Records each edge, face, and vertex
+    <ul>
+      <li>Stores geometric information, topological information, attribute information, etc</li>
+    </ul>
+  </li>
+  <li>Used for traversing all faces of a planar intersection, visiting all edges around a given vertex or face</li>
+  <li>Main design paradigm: utilizing <strong>half-edges</strong>
+    <ul>
+      <li>Each edge borders two faces, so use two half-edges to represent one edge with both half-edges going in different directions</li>
+      <li>Each face’s half-edges are oriented counter-clockwise, excluding the outer face</li>
+    </ul>
+  </li>
+  <li>Object information
+    <ul>
+      <li>Vertex stores coordinates, pointer to an incident half-edge that considers the vertex its origin</li>
+      <li>Face stores a pointer to one of its half-edges to begin traversal</li>
+      <li>Half-edge stores origin vertex, twin half-edge (half-edge that combines with this one to create a single edge), next half-edge on the boundary of the incident face, the previous edge, the face to its left (AKA incident face)</li>
+      <li>All of this information can be represented with functions (e.g. IncidentFace(v))</li>
+    </ul>
+  </li>
+  <li>Available operations:
+    <ul>
+      <li>Walk around the boundary of a given face</li>
+      <li>Access a face from an adjacent one</li>
+      <li>Visit all edges around a vertex</li>
+    </ul>
+  </li>
+  <li>With n vertices, there are &lt;= 3n-6 edges and &lt;= 2n-4 faces</li>
+</ul>
+
+<h3 id="computing-map-overaly">
+<a class="anchor" href="#computing-map-overaly" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computing Map Overaly</h3>
+<ul>
+  <li>Input: Two DCELs; Output: A DCEL that is a combination of both
+    <ul>
+      <li>Can use the plane sweep line intersection algorithm to construct this DCEL by finding new intersections (vertices)</li>
+      <li>Can use some algorithms for boolean operations: union, intersection, difference of DCELs</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="polygon-triangulation-art-gallery-guarding-problem">
+<a class="anchor" href="#polygon-triangulation-art-gallery-guarding-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Polygon Triangulation (Art Gallery Guarding Problem)</h2>
+<ul>
+  <li>Given a simple polygon P with n vertices, place a number of guards/cameras on vertices such that every point in P can be seen by some guard/camera</li>
+  <li>NP-hard to find minimum number of guards (NP-complete for decision problem)</li>
+  <li>Guard using triagnulations
+    <ul>
+      <li>
+<strong>Triangulate</strong>: Get diagonals between all vertices</li>
+      <li>
+<strong>Triangulation</strong>: Maximal set of non-crossing diagonals</li>
+      <li>Creates many triangles inside the polygon</li>
+    </ul>
+  </li>
+  <li>Simple solution: Place one guard per triangle, either in the middle of it or on a vertex</li>
+  <li>
+<strong>Theorem</strong>: Every simple polygon has a triangulation with n-2 triangles
+    <ul>
+      <li>First bound: n-2 guards necessary</li>
+    </ul>
+  </li>
+  <li>3-coloring: assign each vertex a color such that adjacent vertices have different colors
+    <ul>
+      <li>
+<em>Lemma</em>: 3-coloring is possible for vertices in a triangulation
+        <ul>
+          <li>Create a dual graph: vertex for each triangle, edge between traingles that share an edge</li>
+          <li>Max degree of 3 (3 sides), acylcic (tree)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>Theorem</strong>: You need the floor of n/3 guards to guard the polygon
+    <ul>
+      <li>Derived from 3-coloring: since each triangle has one of each color, you can choose 1 color and place guards on those vertices</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="triangulating-a-polygon">
+<a class="anchor" href="#triangulating-a-polygon" aria-hidden="true"><span class="octicon octicon-link"></span></a>Triangulating a Polygon</h3>
+<ul>
+  <li>O(n log n) algorithm
+    <ol>
+      <li>Split polygon into monotone polygons, O(n log n)</li>
+      <li>Triangulate each monotone polygon, O(n)</li>
+    </ol>
+  </li>
+  <li>A polygon is <strong>monotone</strong> with respect to a line l iff for every line l’ perpendicular to l is connected with P
+    <ul>
+      <li>x-monotone, y-monotone: monotone with respect to the x or y axis</li>
+    </ul>
+  </li>
+  <li>Can check if triangle is monotone in O(n): check upper and lower half, see if x-coordinates are increasing in values</li>
+</ul>
+
+<h4 id="plane-sweep-algorithm-1">
+<a class="anchor" href="#plane-sweep-algorithm-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plane Sweep Algorithm</h4>
+<ul>
+  <li>Triangulate in O(n) time, with everything to the left of the sweep line being triangulated
+    <ul>
+      <li>Use left/right turns to determine when to draw triangles</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="creating-monotone-polygons">
+<a class="anchor" href="#creating-monotone-polygons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Monotone Polygons</h3>
+<ul>
+  <li>From each vertex, shoot a ray up/down until it hits a boundary
+    <ul>
+      <li>AKA trapezoidal decomposition</li>
+      <li>Takes O(n log n) time to sweep n events, O(log n) time per event bc of binary tree</li>
+    </ul>
+  </li>
+  <li>Identify split/merge vertices as ones with two edges going the same direction</li>
+  <li>Add diagonals to each by joining it to the polygon vertex of the trapezoid in the opposite direction of the edges
+    <ul>
+      <li>Both edges going left = split vertex; both going right = merge vertex</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="lower-envelope">
+<a class="anchor" href="#lower-envelope" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lower Envelope</h2>
+<ul>
+  <li>Problem: Given n real-valued functions, find the function f(x) that gives the minimum of all n functions; known as the <strong>lower envelope</strong>
+    <ul>
+      <li>Other parameters: s is the maximum number of intersection points between any two functions</li>
+    </ul>
+  </li>
+  <li>Assumptions
+    <ul>
+      <li>All functions are x-monotone</li>
+      <li>Function evaluation and intersection finding takes O(1)</li>
+      <li>Functions take constant space</li>
+    </ul>
+  </li>
+  <li>Lower envelope represented by list-like object (array, linked list); record the current function being used and the range of x-values for which it’s being used</li>
+</ul>
+
+<h3 id="dc-algorithm">
+<a class="anchor" href="#dc-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>D&amp;C Algorithm</h3>
+<ul>
+  <li>Divide the set S of n functions in half into S<sub>1</sub> and S<sub>2</sub>
+</li>
+  <li>Compute the lower envelopes L<sub>1</sub> and L<sub>2</sub> for S<sub>1</sub> and S<sub>2</sub>, respectively</li>
+  <li>Use a sweep-line algorithm to merge the lower envelopes</li>
+</ul>
+
+<h4 id="sweep-line-merge">
+<a class="anchor" href="#sweep-line-merge" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sweep Line Merge</h4>
+<ul>
+  <li>Event points: All vertices of L<sub>1</sub> and L<sub>2</sub>, all intersection points</li>
+  <li>Queue
+    <ul>
+      <li>Next (right) endpoint of L<sub>1</sub>
+</li>
+      <li>Next (right) endpoint of L<sub>2</sub>
+</li>
+      <li>Intersection point (if it exists)</li>
+    </ul>
+  </li>
+  <li>Sweep status: y-order of L<sub>1</sub> and L<sub>2</sub>
+</li>
+  <li>Runtime is O(λ<sub>s</sub>(n) log n)
+    <ul>
+      <li>λ<sub>s</sub> has an upper bound of n log* n</li>
+      <li>log* n is defined as the number of times you have to log a number for it to be less than 1</li>
+    </ul>
+  </li>
+  <li>Inverse Ackermann function: slowest growing function possible
+    <ul>
+      <li>λ<sub>3</sub>(n) has an average runtime of n * α(n), where α(n) is the Inverse Ackermann function</li>
+    </ul>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/cs164/lecture/fall24/markdown/2024/09/26/cs-164-lecture.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tonyhieu.github.io/college-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/tonyhieu" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
