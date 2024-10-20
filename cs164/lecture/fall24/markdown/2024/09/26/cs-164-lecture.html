@@ -127,6 +127,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#line-sweep-algorithm">Line Sweep Algorithm</a></li>
 <li class="toc-entry toc-h3"><a href="#gift-wrapping-jarvis-march">Gift Wrapping (Jarvis March)</a></li>
 <li class="toc-entry toc-h3"><a href="#divide-and-conquer">Divide and Conquer</a></li>
+<li class="toc-entry toc-h3"><a href="#quick-hull">Quick Hull</a></li>
+<li class="toc-entry toc-h3"><a href="#randomized-quickhull">Randomized Quickhull</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#line-segment-intersections">Line Segment Intersections</a>
@@ -225,6 +227,29 @@ window.onload = wrap_img;
       <li>Can use binary search for a O(log n) merge step</li>
     </ul>
   </li>
+</ul>
+
+<h3 id="quick-hull">
+<a class="anchor" href="#quick-hull" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick Hull</h3>
+<ul>
+  <li>Select the leftmost and rightmost points in S, p and q</li>
+  <li>Select the point furthest from $\bar{pq}$, r</li>
+  <li>Prune all points in the triangle formed by pqr and call this algorithm on $\bar{pr}$ and $\bar{rq}$</li>
+  <li>O(nh) runtime</li>
+</ul>
+
+<h3 id="randomized-quickhull">
+<a class="anchor" href="#randomized-quickhull" aria-hidden="true"><span class="octicon octicon-link"></span></a>Randomized Quickhull</h3>
+<ul>
+  <li>Select the leftmost and rightmost points in S, p and r</li>
+  <li>Select a random point and shoot a ray perpendicular to $\bar{pr}$</li>
+  <li>The bridge edge (AKA edge furthest away from $\bar{pr}$) defined by points s and t will be in the convex hull
+    <ul>
+      <li>Add s and t to the hull</li>
+    </ul>
+  </li>
+  <li>Call randomized quickhull on $\bar{ps}$ and $\bar{tq}$</li>
+  <li>Expected runtime is O(n log h)</li>
 </ul>
 
 <h2 id="line-segment-intersections">
