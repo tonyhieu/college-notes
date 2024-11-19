@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      15 min read
     
 </span></p>
 
@@ -138,7 +138,7 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h2"><a href="#doubly-connected-edge-list-dcel">Doubly Connected Edge List (DCEL)</a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#computing-map-overaly">Computing Map Overaly</a></li>
+<li class="toc-entry toc-h3"><a href="#computing-map-overlay">Computing Map Overlay</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#polygon-triangulation-art-gallery-guarding-problem">Polygon Triangulation (Art Gallery Guarding Problem)</a>
@@ -158,6 +158,38 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#sweep-line-merge">Sweep Line Merge</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#linear-programming">Linear Programming</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#half-plane-intersection">Half-Plane Intersection</a></li>
+<li class="toc-entry toc-h3"><a href="#incremental-linear-programming">Incremental Linear Programming</a></li>
+<li class="toc-entry toc-h3"><a href="#seidels-algorithm">Seidel’s Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#orthogonal-range-searching">Orthogonal Range Searching</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#1d-case">1D Case</a></li>
+<li class="toc-entry toc-h3"><a href="#naive-2d-case">Naive 2D Case</a></li>
+<li class="toc-entry toc-h3"><a href="#better-2d-fractional-cascading">Better 2D: Fractional Cascading</a></li>
+<li class="toc-entry toc-h3"><a href="#d-dimension-case">d-Dimension Case</a></li>
+<li class="toc-entry toc-h3"><a href="#kd-tree">KD tree</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#point-location">Point Location</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#slab-method">Slab Method</a></li>
+<li class="toc-entry toc-h3"><a href="#plane-sweep">Plane Sweep</a></li>
+<li class="toc-entry toc-h3"><a href="#kirkpatricks-point-location-algorithm">Kirkpatrick’s Point Location Algorithm</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#kirkpatricks-hierarchy">Kirkpatrick’s Hierarchy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#voronoi-diagrams">Voronoi Diagrams</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#fortunes-sweep">Fortune’s Sweep</a></li>
 </ul>
 </li>
 </ul><h2 id="baseline">
@@ -330,8 +362,8 @@ window.onload = wrap_img;
   <li>With n vertices, there are &lt;= 3n-6 edges and &lt;= 2n-4 faces</li>
 </ul>
 
-<h3 id="computing-map-overaly">
-<a class="anchor" href="#computing-map-overaly" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computing Map Overaly</h3>
+<h3 id="computing-map-overlay">
+<a class="anchor" href="#computing-map-overlay" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computing Map Overlay</h3>
 <ul>
   <li>Input: Two DCELs; Output: A DCEL that is a combination of both
     <ul>
@@ -476,6 +508,342 @@ window.onload = wrap_img;
   <li>Inverse Ackermann function: slowest growing function possible
     <ul>
       <li>λ<sub>3</sub>(n) has an average runtime of n * α(n), where α(n) is the Inverse Ackermann function</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="linear-programming">
+<a class="anchor" href="#linear-programming" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear Programming</h2>
+
+<ul>
+  <li>Problem: Optimize an objective function subject to some constraints</li>
+  <li>
+<strong>Linear program</strong>: Defined by d variables and n constraints</li>
+  <li>Each constraint can be considered a half-space in R<sup>d</sup>; e.g. the 2D case with lines</li>
+  <li>The set of points satisfying all constraints is $\cap_{i=1}^{n} h_i$</li>
+  <li>Want to maximize $f_{\vec{c}} = \vec{x} \cdot \vec{c}$, i.e. finding a point $\vec{x}$ that is extreme in the direction of $\vec{c}$</li>
+</ul>
+
+<h3 id="half-plane-intersection">
+<a class="anchor" href="#half-plane-intersection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Half-Plane Intersection</h3>
+<ul>
+  <li>Given a set of n half-planes in 2D, return the set of points in the interesction of the set
+    <ul>
+      <li>The output will be a convex polygon with at most n edges</li>
+    </ul>
+  </li>
+  <li>Can use the same method employed in the lower envelope algorithm; divide and conquer
+    <ul>
+      <li>O(n log n) runtime</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="incremental-linear-programming">
+<a class="anchor" href="#incremental-linear-programming" aria-hidden="true"><span class="octicon octicon-link"></span></a>Incremental Linear Programming</h3>
+<ul>
+  <li>Assumes that the linear program is bounded and that there’s a unique solution</li>
+  <li>Add half-planes one by one and keep track of the optimal solution</li>
+  <li>Definitions: $H_i = [h_1, h_2, …, h_3], C_n = \cap_{i=1}^{n} h_i, v_i = \text{ Optimal vertex for } C_i$</li>
+  <li>Lemma
+    <ul>
+      <li>If $v_{i-1} \in h_i$, then $v_i = v_{i-1}$</li>
+      <li>If $v_{i-1} \notin h_i$, then $C_i = \emptyset$ or $v_i \in l_i$, the line bounding $h_i$</li>
+    </ul>
+  </li>
+  <li>Takes O(n<sup>2</sup>) time in worst case because of the case where $v_{i-1} \notin h_i$</li>
+  <li>Takes O(n) time on average when randomizing the input</li>
+</ul>
+
+<h3 id="seidels-algorithm">
+<a class="anchor" href="#seidels-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Seidel’s Algorithm</h3>
+<ul>
+  <li>Randomly permute constraints</li>
+  <li>Choose an infinity for an optimal solution</li>
+  <li>For each constraint:
+    <ul>
+      <li>Check if solution point obeys new constraint</li>
+      <li>If not, solve the new constraint’s (d-1)-dimensional linear program recursively and update optimal solution</li>
+    </ul>
+  </li>
+  <li>Exepected runtime is O(d!n) which is O(n) in lower dimensions</li>
+</ul>
+
+<h2 id="orthogonal-range-searching">
+<a class="anchor" href="#orthogonal-range-searching" aria-hidden="true"><span class="octicon octicon-link"></span></a>Orthogonal Range Searching</h2>
+
+<ul>
+  <li>Given n points in d dimensions, query an axis algined box
+    <ul>
+      <li>Can report points in box, the number inside the box, etc.</li>
+      <li>Goal: preprocess this list into a data structure that supports fast queries</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="1d-case">
+<a class="anchor" href="#1d-case" aria-hidden="true"><span class="octicon octicon-link"></span></a>1D Case</h3>
+
+<ul>
+  <li>Naive: store points in an array and query by binary searching on endpoints
+    <ul>
+      <li>O(k + log n) runtime to list all points in query</li>
+    </ul>
+  </li>
+  <li>Better: use a balanced binary search tree
+    <ul>
+      <li>Store points in the leaves of tree</li>
+      <li>Internal nodes store copies of leaves for binary search</li>
+      <li>key[x] is the maximum key of any leaf in the left subtree</li>
+      <li>Faster than binary searching because you can “share” the two binary search queries up until a split node</li>
+      <li>Can make counting queries (i.e. how many points lie in this range) faster by storing number of nodes in subtree for each node</li>
+    </ul>
+  </li>
+  <li>BST: Space is O(n), preprocessing is O(n log n)</li>
+</ul>
+
+<h3 id="naive-2d-case">
+<a class="anchor" href="#naive-2d-case" aria-hidden="true"><span class="octicon octicon-link"></span></a>Naive 2D Case</h3>
+
+<ul>
+  <li>Create a 1D binary tree for x-coordinates, and for every node, store another 1D tree for y-coordinates</li>
+  <li>Query both trees to find all points</li>
+  <li>Query time: $O(n^2 logn)$ or $O(k + n^2 logn)$ for reporting list of points</li>
+  <li>Space: O(n log n)</li>
+</ul>
+
+<h3 id="better-2d-fractional-cascading">
+<a class="anchor" href="#better-2d-fractional-cascading" aria-hidden="true"><span class="octicon octicon-link"></span></a>Better 2D: Fractional Cascading</h3>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Fractional_cascading">Wikipedia link</a></li>
+  <li>Results in O(log n) for counting queries or O(k + log n) for listing queries</li>
+</ul>
+
+<h3 id="d-dimension-case">
+<a class="anchor" href="#d-dimension-case" aria-hidden="true"><span class="octicon octicon-link"></span></a>d-Dimension Case</h3>
+
+<ul>
+  <li>For each node in the d-dimension tree, add a tree for the (d-1)-dimension</li>
+  <li>In the 2D case, use fractional cascading</li>
+  <li>Query time is $O(log^{d-1}n)$ or $O(log^{d-1}n + k)$ depending on query type
+    <ul>
+      <li>log factor is saved by fractional cascading; without it would be $O(log^d n)$</li>
+    </ul>
+  </li>
+  <li>Space: $O(log^{d-1}n)$</li>
+</ul>
+
+<h3 id="kd-tree">
+<a class="anchor" href="#kd-tree" aria-hidden="true"><span class="octicon octicon-link"></span></a>KD tree</h3>
+
+<ul>
+  <li>Split odd layers by x-coordinate and even layers by y-coordinate in the 2D case
+    <ul>
+      <li>Higher dimensions will use modulo to determine which coordinate to discriminate on</li>
+    </ul>
+  </li>
+  <li>Similar to a decision tree</li>
+  <li>O(n log n) preprocessing time</li>
+  <li>$O(n^{1 - \frac{1}{d}})$ or $O(n^{1 - \frac{1}{d}} + k)$ query time</li>
+</ul>
+
+<h2 id="point-location">
+<a class="anchor" href="#point-location" aria-hidden="true"><span class="octicon octicon-link"></span></a>Point Location</h2>
+
+<ul>
+  <li>An undirected graph is considered <strong>planar</strong> if it can be embedded in the plane without edge crossings</li>
+  <li>A planar embedding induces a planar subdivision; represented by DCEL
+    <ul>
+      <li>Edges, faces, and vertices are all linear compared to each other; O(n)</li>
+    </ul>
+  </li>
+  <li>Problem: Given a planar subdivision, find which face a point p lies in
+    <ul>
+      <li>Naive: Use DCEL to check each face in O(n) time</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="slab-method">
+<a class="anchor" href="#slab-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Slab Method</h3>
+
+<ul>
+  <li>Draw a vertical line through each point, dividing the subdivision into “slabs”</li>
+  <li>Binary search for the slab p lies in and binary search the slab to determine the face</li>
+  <li>$O(n^2 log n)$ preprocessing, $O(n^2)$ space, $O(log n)$ query</li>
+</ul>
+
+<h3 id="plane-sweep">
+<a class="anchor" href="#plane-sweep" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plane Sweep</h3>
+
+<ul>
+  <li>Events: Intersections and endpoints</li>
+  <li>Status: Ordering of lines, lines are removed/added/reordered based on events</li>
+  <li>Runtime is O(n log n), can be used to preprocess the DCEL</li>
+  <li>
+<em>Persistent</em> data structures allow for queries on past versions of themselves
+    <ul>
+      <li>BSTs do this via path copying; never overwrite old nodes, simply create new copies</li>
+    </ul>
+  </li>
+  <li>Path copying for persistence maintains the O(n log n) runtime but extends space to O(n log n)
+    <ul>
+      <li>
+<strong>Fat nodes</strong>, as defined in the Sarnak and Tarjan paper, reduce space to O(n)</li>
+    </ul>
+  </li>
+  <li>Point location is done in O(log n)</li>
+</ul>
+
+<h3 id="kirkpatricks-point-location-algorithm">
+<a class="anchor" href="#kirkpatricks-point-location-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kirkpatrick’s Point Location Algorithm</h3>
+
+<ul>
+  <li>Takes traingulation as input</li>
+  <li>Can convert a planar subdivision to a triangulation in linear time
+    <ul>
+      <li>Triangulate each face, maintaining label, in O(n) time</li>
+      <li>Turn outer face into triangle by drawing a triangle around the convex hull</li>
+    </ul>
+  </li>
+  <li>Size is O(n), conversion is O(n)</li>
+</ul>
+
+<h4 id="kirkpatricks-hierarchy">
+<a class="anchor" href="#kirkpatricks-hierarchy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kirkpatrick’s Hierarchy</h4>
+<ul>
+  <li>Compute a sequence $T_0, …, T_k$ of increasingly coarse triangulations</li>
+  <li>$T_0$ is the input triangulation, $T_k$ is the outer triangle</li>
+  <li>k is O(log n) and each triangle in $T_{i+1}$ intersects a constant number of triangles in $T_i$</li>
+  <li>Build this sequence by deleting vertices and re-triangulating
+    <ul>
+      <li>Delete a constant fraction of vertices O(log n) times</li>
+      <li>Only delete vertices with a constant degree (≤8)</li>
+      <li>Choose an independent set of vertices to delete; don’t delete adjacent ones</li>
+      <li>O(n) run time</li>
+      <li>Removes n/18 vertices each time; $log_{18/17} n$ steps</li>
+    </ul>
+  </li>
+  <li>Query: Store hierarchy as DAG (or tree) and path find to the corresponding triangle in $T_0$</li>
+  <li>Complete algorithm has O(n) preprocessing, O(n) space, and O(log n) query but with large constant factors
+    <ul>
+      <li>O(216 log n), O(18n)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="voronoi-diagrams">
+<a class="anchor" href="#voronoi-diagrams" aria-hidden="true"><span class="octicon octicon-link"></span></a>Voronoi Diagrams</h2>
+
+<ul>
+  <li>Given a set of point sites $P = {p_1, …, p_n} \in \R^2$</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+<strong>Voronoi cell</strong>: $V(p_i) = {q \in \R^2</td>
+          <td>d(p_i, q) &lt; d(p_j, q) \text{ for all } j \neq i}$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+<strong>Voronoi diagram</strong>: The planar division derived from removing all V cells</li>
+  <li>
+<strong>Voronoi edges</strong> are bisectors of points; equidistant from two points p and q</li>
+  <li>
+<strong>Voronoi vertex</strong>: the intersection of three edges
+    <ul>
+      <li>Guaranteed to be the center of an empty disk defined by three sites</li>
+    </ul>
+  </li>
+  <li>Voronoi cells are convex, as they are the intersection of half planes
+    <ul>
+      <li>Cells have at most n-1 cells</li>
+    </ul>
+  </li>
+  <li>Number of vertices ≤ 2n - 5, Number of edges ≤ 3n - 6</li>
+  <li>A Voronoi cell $V(p_i)$ will be unbounded if and only if $p_i$ is on the convex hull of P</li>
+  <li>Can use non-Euclidean distance formulas</li>
+</ul>
+
+<h3 id="fortunes-sweep">
+<a class="anchor" href="#fortunes-sweep" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fortune’s Sweep</h3>
+
+<ul>
+  <li>Status: “beach line”
+    <ul>
+      <li>Can be thought of as the lower envelope of parabolas above the sweep line
+        <ul>
+          <li>Parabolas are equidistant from their origin site and line</li>
+        </ul>
+      </li>
+      <li>Intersections of parabolas will be on a Voronoi edge</li>
+    </ul>
+  </li>
+  <li>Events
+    <ul>
+      <li>New point (<strong>Site Event</strong>)
+        <ul>
+          <li>A new parabola must be drawn for the new point</li>
+          <li>Create a new Voronoi edge by tracing the intersection of parabolas</li>
+        </ul>
+      </li>
+      <li>
+<strong>Circle Event</strong>
+        <ul>
+          <li>An arc shrinks to a point and disappears; “eaten up” by two other parabolas</li>
+          <li>Defines a Voronoi vertex</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Voronoi diagram will be stored in a DCEL</li>
+  <li>Status will be stores in a BST
+    <ul>
+      <li>The tree’s leaves store sitres that define the arcs above the beach line</li>
+      <li>Internal nodes refer to break points; intersections of arcs</li>
+    </ul>
+  </li>
+  <li>Event queue: Priority queue ordered by y-coordinate
+    <ul>
+      <li>New sites are stored as site events</li>
+      <li>Circle events
+        <ul>
+          <li>Store lowest point of circle</li>
+          <li>Store pointer to the leaf/arc in the tree that will disappear</li>
+        </ul>
+      </li>
+      <li>Size: O(n) because there are n sites and O(n) circles</li>
+    </ul>
+  </li>
+  <li>Detecting circle events
+    <ul>
+      <li>Store the circles created by any three consecutive points</li>
+      <li>Calculate point on circle</li>
+    </ul>
+  </li>
+  <li>Handling site events
+    <ul>
+      <li>Locate parabola directly above new point</li>
+      <li>If a circle event related to the parabola exists, delete it</li>
+      <li>Replace the prior leaf node corresponding to the above parabola with a three-subtree containing the new point’s leaf node in the middle and leaf nodes for the old point on the outside</li>
+      <li>Add new half-edges separated by the new breakpoints to the DCEL</li>
+      <li>Create new circle events with the newly consecutive points and add them if they are below the sweep line</li>
+    </ul>
+  </li>
+  <li>Handling circle events
+    <ul>
+      <li>Delete the point corresponding to the disappearing arc</li>
+      <li>Add intersection point to Voronoi diagram and add half-edges for the breakpoints</li>
+      <li>Check newly consecutive parabolas for circle events</li>
+    </ul>
+  </li>
+  <li>Total runtime: O(n log n)
+    <ul>
+      <li>Insert and delete is O(log n), O(n) events</li>
     </ul>
   </li>
 </ul>
