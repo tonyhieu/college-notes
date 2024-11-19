@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -149,6 +149,18 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#first-fit-ff">First-Fit (FF)</a></li>
 <li class="toc-entry toc-h3"><a href="#best-fit-bf">Best-Fit (BF)</a></li>
 <li class="toc-entry toc-h3"><a href="#ffd-and-bfd">FFD and BFD</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#algorithms-and-architectures">Algorithms and Architectures</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#turing-machine">Turing Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#von-neumann-architecture">Von Neumann Architecture</a></li>
+<li class="toc-entry toc-h3"><a href="#memory-hierarchy">Memory Hierarchy</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#external-memory-model">External Memory Model</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#parallel-random-access-machine-pram">Parallel Random Access Machine (PRAM)</a></li>
 </ul>
 </li>
 </ul><h2 id="sorts">
@@ -305,6 +317,86 @@ window.onload = wrap_img;
 <a class="anchor" href="#ffd-and-bfd" aria-hidden="true"><span class="octicon octicon-link"></span></a>FFD and BFD</h3>
 <ul>
   <li>Sort the items from largest to smallest first, then run FF or BF, respectively</li>
+</ul>
+
+<h2 id="algorithms-and-architectures">
+<a class="anchor" href="#algorithms-and-architectures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Algorithms and Architectures</h2>
+
+<ul>
+  <li>Algorithm descriptions require a computational model to start as a foundation</li>
+</ul>
+
+<h3 id="turing-machine">
+<a class="anchor" href="#turing-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Turing Machine</h3>
+
+<ul>
+  <li>Mathmatical model</li>
+  <li>Any polynomial-time function has a polynomial-time algorithm on a Turing machine</li>
+  <li>Any computational model or system than can complete any operation a Turing machine can is known as <strong>Turing-complete</strong>
+    <ul>
+      <li>The <strong>ENIAC</strong> (first digital computer) was Turing-complete</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="von-neumann-architecture">
+<a class="anchor" href="#von-neumann-architecture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Von Neumann Architecture</h3>
+
+<ul>
+  <li>New model that consisted of a control unit, arithmetic/logic unit (ALU), and memory unit to store instructions and execute them</li>
+  <li>Built upon by the <strong>Random Access Machine (RAM)</strong>
+</li>
+  <li>Programming languages were built for the RAM and Von Neumann machines
+    <ul>
+      <li>Based on high-level programming languages; consisted of artihmetic + logical operators, conditionals, loops, subroutines, memory access</li>
+    </ul>
+  </li>
+  <li>
+<strong>Word RAM Model</strong>: Computational model in which a RAM can do arithmetic and bitwise operations on a word of w bits in constant time</li>
+</ul>
+
+<h3 id="memory-hierarchy">
+<a class="anchor" href="#memory-hierarchy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Memory Hierarchy</h3>
+
+<ul>
+  <li>Defined by a trade-off of size vs. speed</li>
+  <li>The closer to the core/CPU, the faster lookup is, but the less you can store</li>
+</ul>
+
+<h4 id="external-memory-model">
+<a class="anchor" href="#external-memory-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>External Memory Model</h4>
+
+<ul>
+  <li>Identifies he frontier between the two highest layers in the memory hierarchy
+    <ul>
+      <li>B = block size</li>
+      <li>M = “internal” memory size</li>
+      <li>N = “external” input size</li>
+    </ul>
+  </li>
+  <li>Can use a <strong>B-tree</strong> to maintain a map in external memory
+    <ul>
+      <li>Adapted version of a (a,b) tree</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="parallel-random-access-machine-pram">
+<a class="anchor" href="#parallel-random-access-machine-pram" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parallel Random Access Machine (PRAM)</h3>
+
+<ul>
+  <li>Performs operations synchronously over p processors
+    <ul>
+      <li>
+<strong>Exclusive Read (ER)</strong>: p processors can simultaneously read the content of p <em>distinct</em> memory locations</li>
+      <li>
+<strong>Concurrent Read (CR)</strong>: p processors can simultaneously read the content of p’ memory locations where p’ &lt; p</li>
+      <li>
+<strong>Exclusive Write (EW)</strong>: p processors can simultaneously write the content of p distinct memory locations</li>
+      <li>
+<strong>Concurrent Write (CW)</strong>: p processors can simultaneously write the content of p’ memory locations where p’ &lt; p</li>
+    </ul>
+  </li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/cs165/lecture/fall24/markdown/2024/09/26/cs-165-lecture.html" hidden></a>

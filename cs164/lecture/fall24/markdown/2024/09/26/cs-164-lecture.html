@@ -326,6 +326,7 @@ window.onload = wrap_img;
     </ul>
   </li>
   <li>Works by intersection lemma: all intersecting lines must become adjacent at some point</li>
+  <li>Runs in O((n + k)log n), where k is the size of the output</li>
 </ul>
 
 <h2 id="doubly-connected-edge-list-dcel">
@@ -369,6 +370,7 @@ window.onload = wrap_img;
     <ul>
       <li>Can use the plane sweep line intersection algorithm to construct this DCEL by finding new intersections (vertices)</li>
       <li>Can use some algorithms for boolean operations: union, intersection, difference of DCELs</li>
+      <li>Runs in O((n + k)log n), where n is the total size of the two DCELS and k is the number of intersections</li>
     </ul>
   </li>
 </ul>
@@ -377,7 +379,12 @@ window.onload = wrap_img;
 <a class="anchor" href="#polygon-triangulation-art-gallery-guarding-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Polygon Triangulation (Art Gallery Guarding Problem)</h2>
 <ul>
   <li>Given a simple polygon P with n vertices, place a number of guards/cameras on vertices such that every point in P can be seen by some guard/camera</li>
-  <li>NP-hard to find minimum number of guards (NP-complete for decision problem)</li>
+  <li>NP-hard to find minimum number of guards (NP-complete for decision problem)
+    <ul>
+      <li>
+<strong>Simple polygon</strong>: A polygon that does not intersect itself and has no holes</li>
+    </ul>
+  </li>
   <li>Guard using triagnulations
     <ul>
       <li>

@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      5 min read
     
 </span></p>
 
@@ -121,7 +121,283 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#elasticities">Elasticities</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#income-elasticity">Income Elasticity</a></li>
+<li class="toc-entry toc-h3"><a href="#cross-price-elasticity">Cross Price Elasticity</a></li>
 </ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#market-power">Market Power</a></li>
+<li class="toc-entry toc-h2"><a href="#price-discrimination">Price Discrimination</a></li>
+<li class="toc-entry toc-h2"><a href="#advertising-and-marketing">Advertising and Marketing</a></li>
+<li class="toc-entry toc-h2"><a href="#formulas">Formulas</a></li>
+</ul><h2 id="elasticities">
+<a class="anchor" href="#elasticities" aria-hidden="true"><span class="octicon octicon-link"></span></a>Elasticities</h2>
+
+<ul>
+  <li>To maximize total revenue, we want elasticity to be unitary
+    <ul>
+      <li>Without demand function, we have to predict the optimal price via elasticities</li>
+    </ul>
+  </li>
+  <li>
+<strong>Elasticity</strong>: $e_p = \frac{\Delta Q}{\Delta P} \cdot \frac{p_0}{q_0} = \frac{\partial logQ}{\partial logP}$
+    <ul>
+      <li>Keep guessing until |e<sub>p</sub>| = 1</li>
+      <li>If |e<sub>p</sub>| &gt; 1, decrease price; if |e<sub>p</sub>| &lt; 1, increase price</li>
+    </ul>
+  </li>
+  <li>
+<strong>Heterogeneity</strong>: Different (groups of) consumers have different demand curves and different optimal prices
+    <ul>
+      <li>Can use either uniform pricing (less profit) or price discrimination (more profit)</li>
+      <li>The elasticities of demand can affect your pricing strategy
+        <ul>
+          <li>Less elastic = more room to play with; more elastic = less room to play with</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Goal of firm is to maximize producer surplus (equal to profit if there is no fixed cost)
+    <ul>
+      <li>Depends on demand (unknown) and supply curve (cost)</li>
+      <li>This class will <strong>not</strong> focus on fixed costs; the total cost will be made up of variable costs
+        <ul>
+          <li>$MC = \frac{\partial TC}{\partial Q}$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Demand can be elastic for two reasons
+    <ul>
+      <li>Product has low valuation: price increases, people stop buying</li>
+      <li>Competitive market, many substitutes</li>
+      <li>To alleviate elasticity elasticity and increase market power, firms use <strong>product differentiation</strong>
+        <ul>
+          <li>
+<strong>Vertical differentiation</strong>: Changes in quality</li>
+          <li>
+<strong>Horizontal differentiation</strong>: Changes in superficial features</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>In the long run, goods become more elastic because it’s easier to substitute in the long run</li>
+  <li>Can calculate demand function from elasticities (assuming D has a constant slope)
+    <ul>
+      <li>$e_p = \frac{\Delta Q}{\Delta P} \cdot \frac{P}{Q} = \text{Slope} \cdot \frac{P}{Q}$</li>
+      <li>Plug this slope into Q = mP + b</li>
+      <li>Can only do this if the firm is a price maker; can change price and affect demand
+        <ul>
+          <li>Implies high market power</li>
+        </ul>
+      </li>
+      <li>Quirk: When demand is straight line, you can double the slope (of P = mQ + b) to get marginal revenue</li>
+    </ul>
+  </li>
+  <li>
+<strong>Midpoint elasticity</strong>: $e_p^{mid} = \frac{\Delta Q}{q_1 - q_0} \cdot \frac{p_1 - p_0}{\Delta P}$</li>
+</ul>
+
+<h3 id="income-elasticity">
+<a class="anchor" href="#income-elasticity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Income Elasticity</h3>
+<ul>
+  <li>
+<strong>Income elasticity</strong>: $\frac{\% \Delta Q_d}{\% \Delta I} = \frac{\partial log Q_d}{\partial log I}$
+    <ul>
+      <li>Income is positive for <em>normal goods</em> and negative for <em>inferior goods</em>
+        <ul>
+          <li>Normal goods: coffee, games</li>
+          <li>Inferior goods: canned soup, instant ramen</li>
+        </ul>
+      </li>
+      <li>
+<strong>Quasi-linear</strong> preferences have an income elasticity of 0
+        <ul>
+          <li>Includes necessities like salt or toothpaste</li>
+        </ul>
+      </li>
+      <li>Normal goods include <em>luxury goods</em> (e &gt; 1) and <em>Veblens goods</em> (upwards sloping demand curve)
+        <ul>
+          <li>Veblens goods include status-indicating goods, such as jewelry and designer brands</li>
+        </ul>
+      </li>
+      <li>Inferior goods include <em>Giffen goods</em> (upwards sloping demand curve)
+        <ul>
+          <li>Giffen goods are driven by poverty; income effect dominates the substitution effect</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="cross-price-elasticity">
+<a class="anchor" href="#cross-price-elasticity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cross Price Elasticity</h3>
+<ul>
+  <li>
+<strong>Cross price elasticity</strong>: $\frac{\partial log Q_A}{\partial log P_B}$
+    <ul>
+      <li>If e = 0, goods are unrelated, as $\Delta Q_A = 0$, so $P_B$ doesn’t affect it</li>
+      <li>If e &gt; 0, A and B are substitutes; when the price of B goes up, the quantity demanded of A goes up because it is cheaper</li>
+      <li>If e &lt; 0, A and B are substitutes; when the price of B goes up, the quantity demanded of A goes down because it’s consumed in conjunction with B</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="market-power">
+<a class="anchor" href="#market-power" aria-hidden="true"><span class="octicon octicon-link"></span></a>Market Power</h2>
+
+<ul>
+  <li>Factors that affect market power
+    <ul>
+      <li>Number of firms
+        <ul>
+          <li>Consumers have more options (substitutes)</li>
+          <li>Demand becomes more elastic</li>
+        </ul>
+      </li>
+      <li>Consumer preference; value of market
+        <ul>
+          <li>Low value implies willingness-to-pay is low</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Shifts to demand caused by above factors
+    <ul>
+      <li>Number of firms
+        <ul>
+          <li>Lower consumer base implies an inward shift, and more substitutes implies a higher elasticity</li>
+        </ul>
+      </li>
+      <li>Invaluable market
+        <ul>
+          <li>Low willingness-to-pay implies high elasticity</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Linking market power to elasticity
+    <ul>
+      <li>
+<strong>Market power</strong>: ability to set P above MC</li>
+      <li>
+<strong>Learner index</strong>: $LE = \frac{P - MC}{P}$</li>
+      <li>Range of Learner index: 0 &lt;= LE &lt;= 1
+        <ul>
+          <li>LE = 0: Perfect competition</li>
+          <li>LE &gt; 0: Firms have some market power</li>
+          <li>LE = 1: Monopoly or dominant firm</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Higher market power (P - MC) means lower elasticity of demand</li>
+</ul>
+
+<h2 id="price-discrimination">
+<a class="anchor" href="#price-discrimination" aria-hidden="true"><span class="octicon octicon-link"></span></a>Price Discrimination</h2>
+<ul>
+  <li>Two types of consumer base
+    <ul>
+      <li>
+<em>Homogenous</em>: All consumers are the same or are indistinguishable</li>
+      <li>
+<em>Heterogenous</em>: Consumers differ by income, preferences, etc.</li>
+    </ul>
+  </li>
+  <li>If homogenous, use a uniform pricing strategy</li>
+  <li>If heterogenous, have to ask if resale can be prevented? If it can, price discriminate</li>
+  <li>Different types of price discrimination: 1st, 2nd, or 3rd
+    <ul>
+      <li>1st: Offer different prices to individual consumers</li>
+      <li>2nd: Product versioning; offer different prices for different versions of products</li>
+      <li>3rd: Offer different prices to different groups</li>
+      <li>1st is always preferred</li>
+    </ul>
+  </li>
+  <li>Welfare is measured by the sum of consumer surplus and profit</li>
+  <li>
+<strong>Two part pricing strategy</strong>: Charging an entrance fee (fixed) and a user fee (variable based on preferences)</li>
+  <li>
+<strong>Bundling pricing</strong>: Offering items in a bundle
+    <ul>
+      <li>
+<em>Pure bundling</em>: Must buy all items of a bundle</li>
+      <li>
+<em>Mixed bundling</em>: Can buy whole bundle or single items at a higher cost</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="advertising-and-marketing">
+<a class="anchor" href="#advertising-and-marketing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advertising and Marketing</h2>
+
+<ul>
+  <li>Benefits of advertising
+    <ul>
+      <li>Can increase willingness-to-pay which increases the slope, easier to raise prices</li>
+      <li>Can increase consumer base which means demand shifts outwards</li>
+      <li>Create awareness</li>
+      <li>Reduce search costs by giving hard information</li>
+      <li>Differentiate product(s)</li>
+      <li>Brand loyalty; can lead to higher market power</li>
+    </ul>
+  </li>
+  <li>
+<strong>Advertising</strong>: Increasing awareness about a product
+    <ul>
+      <li>
+<em>Informative advertising</em>: Based on objectivity</li>
+      <li>
+<em>Persuasive advertising</em>: Based on subjectivity</li>
+    </ul>
+  </li>
+  <li>
+<strong>Marketing</strong>: Initiating conversations about a product for brand loyalty
+    <ul>
+      <li>
+<em>Inbound Marketing</em>: Consumers come to you to discuss your product</li>
+      <li>
+<em>Outbound Marketing</em>: You go to consumers to discuss your product</li>
+    </ul>
+  </li>
+  <li>
+<strong>ROAS</strong>: Return on ad spend, calculated as revenue produced by ads divided by amount spent on ads</li>
+  <li>Two types of information in ads
+    <ul>
+      <li>
+<strong>Hard information</strong>: Direct details about a product; price, qualities, etc</li>
+      <li>
+<strong>Soft information</strong>: Indirect details about a product; signalling</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="formulas">
+<a class="anchor" href="#formulas" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formulas</h2>
+
+<ul>
+  <li>Total Revenue
+    <ul>
+      <li>$TR = P(Q)Q \rightarrow MR = \frac{\partial TR}{\partial Q} = \frac{\partial P}{\partial Q} Q + P = P[\frac{\partial P}{\partial Q} \cdot \frac{Q}{P} + 1] = P[\frac{1}{e_p} + 1]$</li>
+    </ul>
+  </li>
+  <li>Marginal Cost
+    <ul>
+      <li>Revenue maximized when MR = MC</li>
+      <li>$MC = P[\frac{1}{e_p} + 1] \rightarrow \frac{MC}{P} = \frac{1}{e_p} + 1 \rightarrow \frac{P - MC}{P} = - \frac{1}{e_p} \rightarrow LE = - \frac{1}{e_p}$</li>
+    </ul>
+  </li>
+  <li>Percent change in demand
+    <ul>
+      <li>Factors: Price, income, preferences, price of related goods, expectations</li>
+      <li>$Q^d = f(P, I, P^R) \rightarrow dQ^d = \frac{\partial f}{\partial P} dP + \frac{\partial f}{\partial I} dI + \frac{\partial f}{\partial P^R} dP^R$</li>
+      <li>Implies $\% \Delta Q^d = e_P \% \Delta P + e_I \% \Delta I + e_{AB} \% \Delta P^R$</li>
+    </ul>
+  </li>
+</ul>
+
 
   </div><a class="u-url" href="/college-notes/econ140/lecture/fall24/markdown/2024/09/26/econ140-lecture.html" hidden></a>
 </article>
