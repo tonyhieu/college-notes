@@ -615,7 +615,8 @@ window.onload = wrap_img;
 <ul>
   <li>Create a 1D binary tree for x-coordinates, and for every node, store another 1D tree for y-coordinates</li>
   <li>Query both trees to find all points</li>
-  <li>Query time: $O(n^2 logn)$ or $O(k + n^2 logn)$ for reporting list of points</li>
+  <li>Query time: $O(log^2n)$ or $O(k + log^2n)$ for reporting list of points</li>
+  <li>Preprocessing: $O(n log n)$</li>
   <li>Space: O(n log n)</li>
 </ul>
 
@@ -638,6 +639,7 @@ window.onload = wrap_img;
       <li>log factor is saved by fractional cascading; without it would be $O(log^d n)$</li>
     </ul>
   </li>
+  <li>Preprocessing: $O(n log^{d-1} n)$</li>
   <li>Space: $O(log^{d-1}n)$</li>
 </ul>
 
@@ -746,16 +748,7 @@ window.onload = wrap_img;
 <ul>
   <li>Given a set of point sites $P = {p_1, …, p_n} \in \R^2$</li>
   <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>
-<strong>Voronoi cell</strong>: $V(p_i) = {q \in \R^2</td>
-          <td>d(p_i, q) &lt; d(p_j, q) \text{ for all } j \neq i}$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+<strong>Voronoi cell</strong>: $V(p_i) = {q \in \R^2 \vert d(p_i, q) &lt; d(p_j, q) \text{ for all } j \neq i}$</li>
   <li>
 <strong>Voronoi diagram</strong>: The planar division derived from removing all V cells</li>
   <li>
