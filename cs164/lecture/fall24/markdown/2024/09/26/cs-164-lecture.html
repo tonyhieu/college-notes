@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      20 min read
     
 </span></p>
 
@@ -190,6 +190,23 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#voronoi-diagrams">Voronoi Diagrams</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#fortunes-sweep">Fortune’s Sweep</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#point-line-duality">Point Line Duality</a></li>
+<li class="toc-entry toc-h2"><a href="#line-arrangements">Line Arrangements</a></li>
+<li class="toc-entry toc-h2"><a href="#delaunay-triangulation">Delaunay Triangulation</a></li>
+<li class="toc-entry toc-h2"><a href="#3d-convex-hull">3D Convex Hull</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#gift-wrapping">Gift Wrapping</a></li>
+<li class="toc-entry toc-h3"><a href="#divide-and-conquer-1">Divide and Conquer</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#windowing">Windowing</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#interval-trees">Interval Trees</a></li>
+<li class="toc-entry toc-h3"><a href="#priority-search-trees">Priority Search Trees</a></li>
+<li class="toc-entry toc-h3"><a href="#segment-tree">Segment Tree</a></li>
+<li class="toc-entry toc-h3"><a href="#solving-the-windowing-problem">Solving the Windowing Problem</a></li>
 </ul>
 </li>
 </ul><h2 id="baseline">
@@ -846,6 +863,182 @@ window.onload = wrap_img;
       <li>Insert and delete is O(log n), O(n) events</li>
     </ul>
   </li>
+</ul>
+
+<h2 id="point-line-duality">
+<a class="anchor" href="#point-line-duality" aria-hidden="true"><span class="octicon octicon-link"></span></a>Point Line Duality</h2>
+<ul>
+  <li>Let $P = {p_1, …, p_n} \in \R ^2$ be a set of points</li>
+  <li>$P* = {p_1^<em>, …, p_n^</em>}$ is defined as the <em>dual</em> set of lines
+    <ul>
+      <li>Primal: Point p: (p<sub>x</sub>, p<sub>y</sub>), Line l: y = mx + b</li>
+      <li>Dual: Line p* = y = p<sub>x</sub>x - p<sub>y</sub>, Point l* = (m, -b)</li>
+    </ul>
+  </li>
+  <li>Properties
+    <ul>
+      <li>(p<em>)</em> = p</li>
+      <li>$p \in l \iff l^* \in p^*$ (Incidence preservation)</li>
+      <li>$\text{p lies above l} \iff l^* \text{ lies above } p^*$ (Order preservation)</li>
+    </ul>
+  </li>
+  <li>From the properties, it follows that the intersection of lines in the dual plane defines the line between two points in the primal plane</li>
+  <li>Used for mapping algorithms between planes
+    <ul>
+      <li>e.g. the lower convex hull in primal is the same as the upper envelope in dual</li>
+    </ul>
+  </li>
+  <li>Conversion takes O(n) time</li>
+</ul>
+
+<h2 id="line-arrangements">
+<a class="anchor" href="#line-arrangements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Line Arrangements</h2>
+<ul>
+  <li>Let L be a set of lines; then, A(L) is the <strong>arrangement</strong> of L
+    <ul>
+      <li>Defined as the planar subdivision induced by all lines in L; represented by DCEL</li>
+    </ul>
+  </li>
+  <li>Vertices &lt;= n choose 2 (O(n<sup>2</sup>)), edges &lt;= n<sup>2</sup>, faces &lt;= 1 + n(n+1)/2</li>
+  <li>Using a sweep line algorithm would take O(n<sup>2</sup> log n) time</li>
+  <li>Incremental construction takes this down to O(n<sup>2</sup>)
+    <ul>
+      <li>Add lines one at a time</li>
+      <li>Each line is guaranteed to intersect/split O(i) faces by the Zone Theorem</li>
+      <li>O(i) &lt; O(n)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="delaunay-triangulation">
+<a class="anchor" href="#delaunay-triangulation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Delaunay Triangulation</h2>
+<ul>
+  <li>The triangulation of a set of point is guaranteed to have an outer face bounded by the convex hull</li>
+  <li>The dual graph G* has a node for each face of G and an edge connecting nodes if and only if the faces share an edge
+    <ul>
+      <li>G would be a planar subdivision</li>
+    </ul>
+  </li>
+  <li>The <strong>Delaunay triangulation</strong> is the dual graph of a Voronoi diagram for a set of points
+    <ul>
+      <li>Making each edge straight in the Delaunay triangulation turns it into a triangulation</li>
+      <li>Only occurs if P is in general position</li>
+      <li>Can be stored as an abstract graph; less space than a DCEL</li>
+    </ul>
+  </li>
+  <li>Straight line edges don’t intersect due to the fact that an edge exists in the Delaunay graph if and only if an empty disk exists that has both points on its boundary</li>
+  <li>For any three points in P:
+    <ul>
+      <li>Their triangle is in the Delaunay triangulation</li>
+      <li>The center of the circle is a vertex in the Voronoi diagram</li>
+      <li>Equivalent statements</li>
+    </ul>
+  </li>
+  <li>Can be used to compute the convex hull of a 3D set of points</li>
+</ul>
+
+<h2 id="3d-convex-hull">
+<a class="anchor" href="#3d-convex-hull" aria-hidden="true"><span class="octicon octicon-link"></span></a>3D Convex Hull</h2>
+
+<h3 id="gift-wrapping">
+<a class="anchor" href="#gift-wrapping" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gift Wrapping</h3>
+<ol>
+  <li>Find a face guaranteed to be on the convex hull</li>
+  <li>Choose an edge on this face whose other face has not been found</li>
+  <li>Find the point that creates the minimum angle with the current face and add it to the convex hull
+    <ul>
+      <li>Note that the new point creates a triangle when joined with the original edge
+    - Runtime is O(nF) where F is the number of faces</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="divide-and-conquer-1">
+<a class="anchor" href="#divide-and-conquer-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Divide and Conquer</h3>
+<ul>
+  <li>Same paradigm as 2D; divide points into two sets and merge the calculated convex hulls</li>
+  <li>Merge step
+    <ul>
+      <li>Option 1: Find each new face by projecting the set of points into 2D and finding the new hull using the same 2D binary search method</li>
+      <li>Option 2: Find the bottom plane that merges the two hulls, and gift wrap it around
+        <ul>
+          <li>Since you can ignore points if they don’t belong on the hull when processed, this takes O(n) time</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Runtime: O(n log n)</li>
+</ul>
+
+<h2 id="windowing">
+<a class="anchor" href="#windowing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Windowing</h2>
+
+<ul>
+  <li>Input: A set S of line segments</li>
+  <li>Query: Report all segments that intersect a query window</li>
+  <li>Subproblem (1D): Report all intervals that contain a query point</li>
+</ul>
+
+<h3 id="interval-trees">
+<a class="anchor" href="#interval-trees" aria-hidden="true"><span class="octicon octicon-link"></span></a>Interval Trees</h3>
+<ul>
+  <li>Input: A set of I intervals on a line</li>
+  <li>Uses D&amp;C paradigm: Partition I at each step into I<sub>left</sub>, I<sub>mid</sub>, and I<sub>right</sub>
+    <ul>
+      <li>I<sub>mid</sub> contains intervals containing the median of the 2n endpoints</li>
+      <li>I<sub>mid</sub> stores intervals in two lists; one sorted by left endpoint, and one stored by right endpoint</li>
+    </ul>
+  </li>
+  <li>O(n) space (each interval stored in two lists), O(n log n) preprocessing (Master’s theorem), O(log n + k) query
+    <ul>
+      <li>Each node takes O(1 + k<sub>v</sub>) time, as we must report the k<sub>v</sub> intervals hit at each node</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="priority-search-trees">
+<a class="anchor" href="#priority-search-trees" aria-hidden="true"><span class="octicon octicon-link"></span></a>Priority Search Trees</h3>
+<ul>
+  <li>Allows for 3-sided range queries; find all points in a range where one of the sides is unbounded
+    <ul>
+      <li>e.g. two y constraints and one x constraint</li>
+    </ul>
+  </li>
+  <li>Acts like a heap on x and a BST on y</li>
+  <li>Each vertex stores the minimum x-coordinate of its set of points and the median y-coordinate
+    <ul>
+      <li>For children nodes: split the set of points by median y-coordinate, and then intialize them with the point with the minimum x-coordinate</li>
+    </ul>
+  </li>
+  <li>O(log n + k) 3-sided query, O(n) space, built in O(n log n)</li>
+</ul>
+
+<h3 id="segment-tree">
+<a class="anchor" href="#segment-tree" aria-hidden="true"><span class="octicon octicon-link"></span></a>Segment Tree</h3>
+<ul>
+  <li>Partition line segments by all endpoints
+    <ul>
+      <li>$\text{Line segments} = {(-\infty, p_1), [p_1, p_1], (p_1, p_2), …, (p_n , \infty)}$</li>
+    </ul>
+  </li>
+  <li>Store intervals in leaves of tree
+    <ul>
+      <li>Parent nodes are unions of their children’s intervals</li>
+    </ul>
+  </li>
+  <li>O(n) space; each interval can be stored in a maximum of two nodes</li>
+  <li>O(log n + k) query, O(n log n) preprocess</li>
+  <li>Built bottom up from the leaf nodes</li>
+</ul>
+
+<h3 id="solving-the-windowing-problem">
+<a class="anchor" href="#solving-the-windowing-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solving the Windowing Problem</h3>
+<ul>
+  <li>Create slabs using the segment tree and search for the slabs contained by the query</li>
+  <li>In each slab, use a 1D range query (taken from point location) to detect segments that intersect</li>
+  <li>O(log<sup>2</sup> n + k) query; query the segment tree in O(log n) time, and for each of those queries, query the 1D range tree in O(log n) time</li>
+  <li>O(n log n) preprocessing</li>
+  <li>O(n log n) space because each node contains a 1D range tree</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/cs164/lecture/fall24/markdown/2024/09/26/cs-164-lecture.html" hidden></a>
