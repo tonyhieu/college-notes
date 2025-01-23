@@ -180,5 +180,5 @@ $$
 $$
 \frac{\chi ^2_p / p}{\chi ^2_r / r} \sim F_{p,r} \\
 \frac{(e_R'e_R - e'e) / q}{e'e / (n-k)} \sim \frac{\chi ^2_q}{\chi ^2_{n-k}} \sim F_{q, n-k} \\
-\text{where } e_R { is the residuals from the restricted model and q is the number of restrictions}
+\text{where } e_R \text{ is the residuals from the restricted model and q is the number of restrictions}
 $$
