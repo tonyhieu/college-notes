@@ -182,3 +182,25 @@ $$
 \frac{(e_R'e_R - e'e) / q}{e'e / (n-k)} \sim \frac{\chi ^2_q}{\chi ^2_{n-k}} \sim F_{q, n-k} \\
 \text{where } e_R \text{ is the residuals from the restricted model and q is the number of restrictions}
 $$
+
+## Breaking Assumptions
+
+### Heteroskedasticity
+
+- Instead of $Var(\epsilon \vert X) = \sigma^2 I_n$, we know have $Var(\epsilon \vert X) = \Omega^2_{\text{n x n}}$, where $\Omega$ is symmetric positive definite
+- $E(\hat{\beta}_{OLS}) = \beta$ since the expected value of the errors don't change
+- $Var(\hat{\beta}_{OLS}) = (X'X)^{-1}X' \Omega X(X'X)^{-1}$
+
+$$
+Var(\hat{\beta}_{OLS} \vert X) = Var((X'X)^{-1}X'y \vert X) \\
+= Var((X'X)^{-1}X'(X\beta + \epsilon) \vert X) \\
+= Var((X'X)^{-1}X'X\beta + (X'X)^{-1}X'\epsilon \vert X) \\
+= Var(\beta + (X'X)^{-1}X'\epsilon \vert X)\\
+= Var((X'X)^{-1}X'\epsilon \vert X) \text{ (Variance of a constant, beta, is 0)}\\
+= (X'X)^{-1}X' Var(\epsilon \vert X) X(X'X)^{-1} \\
+= (X'X)^{-1}X' \Omega X(X'X)^{-1} \\
+$$
+
+- $\hat{\beta}_{OLS}$ is inefficient under this assumption, but it is unbiased
+- Model is equivalent to $y = X \beta + C' \eta$ where $E(\eta \vert X) = u, Var(\eta \vert X) = I_n$
+    - $C'C = \Omega$ where C is the Cholesky factor; C' is lower triangular
