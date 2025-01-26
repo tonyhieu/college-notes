@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      11 min read
     
 </span></p>
 
@@ -145,9 +145,19 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#shortest-and-longest-paths">Shortest and Longest Paths</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#critical-path-scheduling-pert-method">Critical Path Scheduling (PERT method)</a></li>
-<li class="toc-entry toc-h3"><a href="#shortest-path-trees-and-relaxation-algorithms">Shortest Path Trees and Relaxation Algorithms</a></li>
-<li class="toc-entry toc-h3"><a href="#bellman-ford-algorithm">Bellman-Ford Algorithm</a></li>
-<li class="toc-entry toc-h3"><a href="#dijkstras-algorithm">Dijkstra’s Algorithm</a></li>
+<li class="toc-entry toc-h3"><a href="#shortest-path-trees-and-relaxation-algorithms">Shortest Path Trees and Relaxation Algorithms</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#bellman-ford-algorithm">Bellman-Ford Algorithm</a></li>
+<li class="toc-entry toc-h4"><a href="#dijkstras-algorithm">Dijkstra’s Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#changing-weights-without-changing-optimum-paths">Changing Weights without Changing Optimum Paths</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#johnsons-algorithm">Johnson’s Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#suurballes-algorithm">Suurballe’s Algorithm</a></li>
+<li class="toc-entry toc-h3"><a href="#a">A*</a></li>
 </ul>
 </li>
 </ul><h2 id="graph-representation">
@@ -419,8 +429,8 @@ for v in topological order:
         relax(u, v)
 </code></pre></div></div>
 
-<h3 id="bellman-ford-algorithm">
-<a class="anchor" href="#bellman-ford-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bellman-Ford Algorithm</h3>
+<h4 id="bellman-ford-algorithm">
+<a class="anchor" href="#bellman-ford-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bellman-Ford Algorithm</h4>
 <ul>
   <li>Uses relaxation paradigm and takes O(mn) times</li>
 </ul>
@@ -435,8 +445,8 @@ repeat n-1 times:
   <li>Can be improved based on ordering of nodes or stopping early; still results in same big O</li>
 </ul>
 
-<h3 id="dijkstras-algorithm">
-<a class="anchor" href="#dijkstras-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dijkstra’s Algorithm</h3>
+<h4 id="dijkstras-algorithm">
+<a class="anchor" href="#dijkstras-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dijkstra’s Algorithm</h4>
 
 <ul>
   <li>Topologically sorts the shortest path tree by sorting vertices by distance
@@ -456,6 +466,99 @@ while Q is non-empty:
 
 <ul>
   <li>Takes O(m log n) with a binary heap or O(m + n log n) with a Fibonacci heap</li>
+</ul>
+
+<h3 id="changing-weights-without-changing-optimum-paths">
+<a class="anchor" href="#changing-weights-without-changing-optimum-paths" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing Weights without Changing Optimum Paths</h3>
+
+<ul>
+  <li>We can add another decoration to the edges, a <em>height</em> h(x), to reweight the edges</li>
+  <li>Each edge has two properties: length and height
+    <ul>
+      <li>New length: $l_h(u\rightarrow v) = l(u\rightarrow v) - h(u) + h(v)$</li>
+      <li>Downhill edges have decreased length, uphill edges have increased length</li>
+    </ul>
+  </li>
+  <li>Heights can eliminate negative edges and allow Dijkstra’s to work
+    <ul>
+      <li>Can now use Johnson’s and Suurballe’s algorithm</li>
+      <li>Won’t get rid of negative cycles</li>
+    </ul>
+  </li>
+  <li>Can also change the order of computation
+    <ul>
+      <li>A* algorithm uses this fact</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="johnsons-algorithm">
+<a class="anchor" href="#johnsons-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Johnson’s Algorithm</h4>
+
+<ul>
+  <li>Input: A graph G with negative edges but not negative cycles</li>
+  <li>Output: Shortest paths between all pairs of vertices</li>
+</ul>
+
+<ol>
+  <li>Add a start vertex s that is connected to all other vertices by zero-weight edges</li>
+  <li>Use Bellman-Ford only once to compute the shortest paths from s to all other vertices</li>
+  <li>Reweight using the absolute value of distance from s as the height (guarantees that all edges are non-negative)</li>
+  <li>Use Dijkstra from each starting vertex in the reweighted graph</li>
+</ol>
+
+<ul>
+  <li>BF takes O(mn), reweighting takes linear time, Dijkstra is run n times; $O(mn + n^2 \text{log } n)$ time</li>
+</ul>
+
+<h3 id="suurballes-algorithm">
+<a class="anchor" href="#suurballes-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Suurballe’s Algorithm</h3>
+
+<ul>
+  <li>Input: A weighted directed graph and two endpoint vertices, s and t</li>
+  <li>Output: Find two paths from s to t such that the paths don’t share edges and minimize the sum of the length of both</li>
+  <li>Can find two shortest paths by finding one shortest path, then adding “reverse” edges with negative weights from the first shortest path
+    <ul>
+      <li>If both shortest paths take the same edge, then the edge will be cancelled out</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>Use Dijkstra to find single-source paths and distances from s</li>
+  <li>Reweight the edges if they belong to a shortest path to equal 0</li>
+  <li>Find shortest path P from s to t and reverse its edges</li>
+  <li>Find a new shortest path in the modified graph</li>
+  <li>Remove any edges visited in both paths and reconnect the paths</li>
+</ol>
+
+<ul>
+  <li>Two runs of Dijkstra, linear time to reweight and reverse; total runtime of O(m + log n)</li>
+</ul>
+
+<h3 id="a">
+<a class="anchor" href="#a" aria-hidden="true"><span class="octicon octicon-link"></span></a>A*</h3>
+
+<ul>
+  <li>Want to traverse paths to destination with Dijkstra without going down bad paths</li>
+  <li>Idea: choose a height function for each vertex v that is easily to calculate and accurately estimates the distance from v to t
+    <ul>
+      <li>Must be an underestimate so paths to t eventually go downhill</li>
+      <li>Can’t decrease too quickly; height between two vertices differs by at most the length of the edge between them</li>
+      <li>AKA needs to be admissible</li>
+    </ul>
+  </li>
+  <li>Reweight the graph by height function
+    <ul>
+      <li>Edges will be non-negative because of our height function</li>
+      <li>Edges with smaller estimates appear shorter</li>
+    </ul>
+  </li>
+  <li>Run Dijkstra on this reweighted graph
+    <ul>
+      <li>Same runtime as Dijkstra, but with linear time added to reweight</li>
+    </ul>
+  </li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/cs163/lecture/winter25/markdown/2025/01/06/cs163-lecture.html" hidden></a>
