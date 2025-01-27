@@ -183,7 +183,7 @@ window.onload = wrap_img;
   <li>Dictionary, with vertices as keys</li>
   <li>Number vertices and index an array using those numbers</li>
   <li>Separate variables for vertex objects for each piece of information</li>
-  <li>One dictionary varialbe per vertex with keys for each piece of information</li>
+  <li>One dictionary variable per vertex with keys for each piece of information</li>
 </ol>
 
 <ul>
@@ -395,7 +395,7 @@ window.onload = wrap_img;
 
 <ul>
   <li>In graphs without negative cycles, we can generate a tree of shortest paths</li>
-  <li>If s is the startest vertex, then other vertices will have parents are the vertices that come before them their shortest path
+  <li>If s is the starting vertex, then other vertices will have parents that are the vertices that come before them in their shortest path
     <ul>
       <li>e.g. if the shortest path from x to c is $x \rightarrow b \rightarrow c$, then b is a parent of c in the tree</li>
     </ul>
@@ -414,10 +414,23 @@ window.onload = wrap_img;
     </ul>
   </li>
   <li>Initialize by setting P(x) = None and D(x) = 0 if the vertex is s; otherwise D(x) = infinity</li>
-  <li>For each edge uv, check whether the distance to u + the length of uv is less than the current shortest path for v, then update if so</li>
+  <li>For each edge uv, check whether the distance to u + the length of uv is less than the current shortest path for v, then update if so
+    <ul>
+      <li>Known as <strong>relaxing</strong> an edge</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def relax(u, v):
+    if D[u] + length(edge uv) &lt; D[v]:
+        D[v] = D[u] + length(edge uv)
+        P[v] = u
+</code></pre></div></div>
+
+<ul>
   <li>If the graph is a DAG:
     <ul>
-      <li>Simple algorithm is to go through vertices in topological order and relaxing each vertices edges</li>
+      <li>Simple algorithm is to go through vertices in topological order and relaxing each vertices’ edges</li>
       <li>Total time is O(m)</li>
     </ul>
   </li>
@@ -432,7 +445,7 @@ for v in topological order:
 <h4 id="bellman-ford-algorithm">
 <a class="anchor" href="#bellman-ford-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bellman-Ford Algorithm</h4>
 <ul>
-  <li>Uses relaxation paradigm and takes O(mn) times</li>
+  <li>Uses relaxation paradigm and takes O(mn) time</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>initialize D, P
