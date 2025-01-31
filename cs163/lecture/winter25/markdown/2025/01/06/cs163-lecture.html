@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      14 min read
     
 </span></p>
 
@@ -158,6 +158,21 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h3"><a href="#suurballes-algorithm">Suurballe’s Algorithm</a></li>
 <li class="toc-entry toc-h3"><a href="#a">A*</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#widest-paths">Widest Paths</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#linear-algorithm">Linear Algorithm</a></li>
+<li class="toc-entry toc-h3"><a href="#dijkstra">Dijkstra</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#all-pairs-directed-widest-paths">All-Pairs Directed Widest Paths</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#applications-voting-systems">Applications: Voting Systems</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#condorcet-property--schulze-method">Condorcet Property / Schulze Method</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><h2 id="graph-representation">
@@ -572,6 +587,98 @@ while Q is non-empty:
       <li>Same runtime as Dijkstra, but with linear time added to reweight</li>
     </ul>
   </li>
+</ul>
+
+<h2 id="widest-paths">
+<a class="anchor" href="#widest-paths" aria-hidden="true"><span class="octicon octicon-link"></span></a>Widest Paths</h2>
+
+<ul>
+  <li>Input: A graph with weighted edges</li>
+  <li>Output: Path from start to end with the maximum minimum weight (i.e. the path with the highest throughput, as given by the minimum edge weight on the path)</li>
+</ul>
+
+<h3 id="linear-algorithm">
+<a class="anchor" href="#linear-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear Algorithm</h3>
+
+<ul>
+  <li>For undirected graphs: if there is a single source and a single destination, the path can be found in <strong>linear time</strong>
+    <ol>
+      <li>Find median edge weight</li>
+      <li>If a path can be made using heavier-than-median edges, get rid of lighter edges and recurse</li>
+      <li>If a path cannot be made in this fashion, collapse connected components of wide edges into “supervertices” and recurse; combine edges</li>
+    </ol>
+  </li>
+  <li>Linear time because $\Sigma \frac{m}{2^{i+1}} = O(m)$</li>
+  <li>For directed graphs: we can use an algorithm that divides edges into subsets and runs linear time Dijkstra on these subsets in order to get a runtime of <strong>O(m log<sup>*</sup>n)</strong>
+</li>
+</ul>
+
+<h3 id="dijkstra">
+<a class="anchor" href="#dijkstra" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dijkstra</h3>
+
+<ul>
+  <li>We can modify the relax algorithm to prioritize widths of paths</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def relax(u, v):
+    if v in Q and min(D[u], length(uv)) &gt; D[v]:
+        D[v] = min(D[u], length(uv))
+        P[v] = u
+</code></pre></div></div>
+
+<ul>
+  <li>Same runtime as regular Dijkstra’s: <strong>O(m + n log n)</strong>
+    <ul>
+      <li>If edges are already sorted, then this algorithm runs in <strong>linear time</strong> using an integer priority queue</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="all-pairs-directed-widest-paths">
+<a class="anchor" href="#all-pairs-directed-widest-paths" aria-hidden="true"><span class="octicon octicon-link"></span></a>All-Pairs Directed Widest Paths</h4>
+
+<ol>
+  <li>Sort all the edges before finding paths (O(m log m))</li>
+  <li>Run linear Dijkstra on each vertex (O(mn))</li>
+  <li>Total runtime: <strong>O(mn + m log m)</strong>
+</li>
+</ol>
+
+<ul>
+  <li>Can also use fast matrix multiplication if the number of edges is large in $O(n^{2.688})$ time</li>
+</ul>
+
+<h3 id="applications-voting-systems">
+<a class="anchor" href="#applications-voting-systems" aria-hidden="true"><span class="octicon octicon-link"></span></a>Applications: Voting Systems</h3>
+
+<ul>
+  <li>Instant runoff voting: Eliminate the candidate with the fewest amount of voters who have them as their favorite until a candidate has a majority</li>
+  <li>Borda count: With c candidates, give candidates points based on their positioning in a voter’s preference ordering (first = c-1, second = c-2, last = 0); candidate with the most points wins</li>
+  <li>Desirable properties
+    <ul>
+      <li>Majority: Candidate with a majority of first-place votes wins</li>
+      <li>Weak majority: Candidate with all first-place votes wins</li>
+      <li>Symmetry: All voters are treated equally</li>
+      <li>Weak Symmetry: There is no super-voter whose preference decides the election</li>
+      <li>No spoilers: If candidate X does not win the election, then removing X does not change the outcome (think third-parties)</li>
+    </ul>
+  </li>
+  <li>Impossible to satisfy weak symmetry, weak majority, and no spoilers</li>
+</ul>
+
+<h4 id="condorcet-property--schulze-method">
+<a class="anchor" href="#condorcet-property--schulze-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Condorcet Property / Schulze Method</h4>
+
+<ul>
+  <li>
+<strong>Condorcet Property</strong>: If there is a candidate X who wins every head-to-head comparison, then X should win the election
+    <ul>
+      <li>If a cycle exists, then there is no apparent winner (i.e. A beats B, B beats C, C beats A)</li>
+    </ul>
+  </li>
+  <li>Generate a graph where an edge from candidate U to V is weighted with the number of voters who prefer U to V</li>
+  <li>Relabel each edge X to Y with the width of the widest path from X to Y in the original graph</li>
+  <li>There is guaranteed to be a winner in this graph</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/cs163/lecture/winter25/markdown/2025/01/06/cs163-lecture.html" hidden></a>
