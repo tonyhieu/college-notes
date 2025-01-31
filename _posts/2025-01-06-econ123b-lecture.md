@@ -66,6 +66,7 @@ E(\hat{\beta} \vert X) = \beta_1 + (X_1'X_1)^{-1}X_1' X_2 \beta \text{, has bias
 $$
 
 - Bias is 0 if $\beta _2 = 0$ or if $X_1$ and $X_2$ are orthogonal (independent)
+- The bias depends on the correlation between the two features; negative bias leads to negative correlation, and vice versa
 
 ### Including Irrelevant Covariates
 
@@ -187,7 +188,7 @@ $$
 
 ### Heteroskedasticity
 
-- Instead of $Var(\epsilon \vert X) = \sigma^2 I_n$, we know have $Var(\epsilon \vert X) = \Omega^2_{\text{n x n}}$, where $\Omega$ is symmetric positive definite
+- Instead of $Var(\epsilon \vert X) = \sigma^2 I_n$, we know have $Var(\epsilon \vert X) = \Omega _{\text{n x n}}$, where $\Omega$ is symmetric positive definite
 - $E(\hat{\beta}_{OLS}) = \beta$ since the expected value of the errors don't change
 - $Var(\hat{\beta}_{OLS}) = (X'X)^{-1}X' \Omega X(X'X)^{-1}$
 
@@ -202,5 +203,94 @@ Var(\hat{\beta}_{OLS} \vert X) = Var((X'X)^{-1}X'y \vert X) \\
 $$
 
 - $\hat{\beta}_{OLS}$ is inefficient under this assumption, but it is unbiased
-- Model is equivalent to $y = X \beta + C' \eta$ where $E(\eta \vert X) = u, Var(\eta \vert X) = I_n$
-    - $C'C = \Omega$ where C is the Cholesky factor; C' is lower triangular
+- OLS model is equivalent to $y = X \beta + C' \eta$ where $E(\eta \vert X) = 0, Var(\eta \vert X) = I_n$
+    - $C'C = \Omega$ where C is the Cholesky factor; C' is lower triangular and C is upper triangular
+
+$$
+E[y \vert X, \beta] = E[X \beta + C' \eta \vert X, \beta] \\
+= X \beta + E[C' \eta \vert X, \beta] \\
+= X \beta + C' E[\eta \vert X, \beta] \\
+= X \beta \\
+\text{This is the same expectation as the OLS model}
+$$
+
+$$
+Var[y \vert X, \beta] = Var[X \beta + C' \eta \vert X, \beta] \\
+= Var[C' \eta \vert X, \beta] \\
+= C' Var[\eta \vert X, \beta] C \\
+= C' I_n C \\
+= \Omega \\
+\text{This is the same variance as the OLS model}
+$$
+
+- Multiplying both sides of the new model by $(C')^{-1}$ gives $(C')^{-1}y = (C')^{-1}X \beta + \eta$ which can be written as $y^* = X^* \beta + \eta$
+    - Involves data transformation but can now have BLUE estimators with OLS process
+- New estimator: $\hat{\beta}_{GLS} = (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y$
+    - Derivation involves the fact that $C'C = \Omega \iff \Omega ^{-1} = C^{-1}(C')^{-1}$
+$$
+\hat{\beta}_{GLS} = (X^{*T} X^*)^T X^{*T} y^{*} \\
+= (((C')^{-1}X)' (C')^{-1}X)^{-1} ((C')^{-1}X)' (C')^{-1}y \\
+= (X'(C')^{-1 T} (C')^{-1}X)^{-1} X'C'^{-1 T} (C')^{-1}y \\
+= (X'C^{-1} (C')^{-1}X)^{-1} X'C^{-1} (C')^{-1}y \\
+= (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y \\
+$$
+
+- Note that the GLS and OLS estimators are equal iff $\Omega = \sigma^2 I_n$
+
+$$
+\hat{\beta}_{GLS} = (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y \\
+= (X'(\sigma^2 I_n)^{-1}X)^{-1} X'(\sigma^2 I_n)^{-1}y \\
+= (X'\sigma^2 I_n X)^{-1} X'\sigma^2 I_n y \\
+= \frac{1}{\sigma ^2} (X'X)^{-1} \sigma ^2 X'y = (X'X)^{-1} X'y = \hat{\beta}_{OLS}
+$$
+
+- The GLS estimator is BLUE under heteroskedasticity
+    - OLS is not efficient compared to GLS
+
+$$
+E[\hat{\beta}_{GLS} \vert X] = E[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y \vert X] \\
+= E[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}(X \beta + \epsilon) \vert X] \\
+= E[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}X \beta \vert X] + E[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1} \epsilon \vert X] \\ 
+= E[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}X \beta \vert X] \\
+= E[\beta \vert X] = \beta
+$$
+
+$$
+Var[\hat{\beta}_{GLS} \vert X] = E[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y \vert X] \\
+= Var[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}(X \beta + \epsilon) \vert X] \\
+= Var[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}X \beta + (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1} \epsilon \vert X] \\ 
+= Var[\beta + (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1} \epsilon \vert X] \\ 
+= Var[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1} \epsilon \vert X] \\ 
+= ((X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}) Var[\epsilon \vert X] ((X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1})' \\
+= (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1} \Omega ((X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1})' \\ 
+= (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1} \Omega \Omega ^{-1} X (X'\Omega ^{-1}X)^{-1}\\
+= (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}  X (X'\Omega ^{-1}X)^{-1}\\
+= (X'\Omega ^{-1}X)^{-1} \\
+$$
+
+- Since $\Omega$ cannot be found in practice, we estimate it and use the (F)easible GLS estimator $\hat{\beta}_{FGLS} = (X'\hat{\Omega} ^{-1}X)^{-1} X'\hat{\Omega} ^{-1}y$
+    - Note that $E[\hat{\Omega}] = \Omega$ does not imply that $E[\hat{\Omega} ^{-1}] = \Omega ^{-1}$; 
+    - However, $\hat{\Omega}$ IS consistent by Slutsky's Theorem
+    - FGLS is biased in small samples, but as the sample size gets larger, it becomes efficient; thus, it is asymptotically efficient
+
+#### Jensen's Inequality
+
+- **Jensen's inequality**: $f(E[X]) \geq E[f(x)] \text{ if f is concave, and } f(E[X]) \leq E[f(x)] \text{ if f is convex}$ 
+    - Uses the fact that $E[X] = \overline{X}$ and $E[f(X)] = \overline{f(X)}$; compares $f(\overline{X})$ and $\overline{f(X)}$
+- We can use this inequality to show that $\hat{\Omega} \rightarrow \Omega$ and $\hat{\Omega}^{-1} \rightarrow \Omega^{-1}$
+
+#### Estimating Variance
+
+- Model: $y_i = X_i' \beta + \epsilon _i \rightarrow y = X \beta + \epsilon$
+- Since the variance is a nonnegative random variable, and we assume that the variance goes up with the values of i, then we can model variance as $ln(\sigma ^2_i) = w_i' \gamma$
+
+Steps to estimate variance
+
+1. Regress y on X using OLS
+2. Construct the residuals $e = y - X \hat{\beta}_{OLS}$
+3. Do one of two regressions to get $\gamma$
+    - Regress $e_i^2$ on $w_i$
+    - Regress $ln(e_i^2)$ on $w_i$
+    - This can be done using $\hat{\gamma} = (\omega ' \omega)^{-1} \omega ' e^2$
+4. Obtain $\hat{\sigma}_i^2 = \omega _i' \hat{\gamma}$ or $\hat{\sigma}_i^2 = e^{\omega _i' \hat{\gamma}}$
+5. Construct $\hat{\Omega}$ using $\hat{\sigma}_i^2$ and apply FGLS
