@@ -40,7 +40,7 @@ $$
 E(Cy \vert X) = E(CX\beta + C\epsilon \vert X) = CX\beta + CE(\epsilon \vert X) = CX\beta = \beta \\
 \text{Thus, } CX = I \\
 \text{Let } D = C - (X'X)^{-1}X' \\
-DX = CX - (X'X)^{-1}X' = I - I = 0 \text{ (Optimal when DX = 0)} \\
+DX = CX - (X'X)^{-1}X'X = I - I = 0 \text{ (Optimal when DX = 0)} \\
 $$
 
 $$
@@ -227,8 +227,9 @@ $$
     - Involves data transformation but can now have BLUE estimators with OLS process
 - New estimator: $\hat{\beta}_{GLS} = (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y$
     - Derivation involves the fact that $C'C = \Omega \iff \Omega ^{-1} = C^{-1}(C')^{-1}$
+
 $$
-\hat{\beta}_{GLS} = (X^{*T} X^*)^T X^{*T} y^{*} \\
+\hat{\beta}_{GLS} = (X^{*T} X^*)^{-1} X^{*T} y^{*} \\
 = (((C')^{-1}X)' (C')^{-1}X)^{-1} ((C')^{-1}X)' (C')^{-1}y \\
 = (X'(C')^{-1 T} (C')^{-1}X)^{-1} X'C'^{-1 T} (C')^{-1}y \\
 = (X'C^{-1} (C')^{-1}X)^{-1} X'C^{-1} (C')^{-1}y \\
@@ -256,7 +257,7 @@ E[\hat{\beta}_{GLS} \vert X] = E[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y \vert X]
 $$
 
 $$
-Var[\hat{\beta}_{GLS} \vert X] = E[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y \vert X] \\
+Var[\hat{\beta}_{GLS} \vert X] = Var[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y \vert X] \\
 = Var[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}(X \beta + \epsilon) \vert X] \\
 = Var[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}X \beta + (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1} \epsilon \vert X] \\ 
 = Var[\beta + (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1} \epsilon \vert X] \\ 
