@@ -337,10 +337,11 @@ ln f(y \vert \Theta) = -\frac{n}{2}ln(2\pi) - \frac{n}{2}ln(\sigma^2) -\frac{1}{
 \rightarrow \hat{\sigma}^2_{MLE} = \frac{(y-X\beta)'(y-X\beta)}{n}
 $$
 
-These results suggest that $\hat{\beta}_{OLS} = (X'X)^{-1}X'y$
-and
-$s^2 = \frac{e'e}{n}$
-are unbiased. Another way to express this is that $\hat{\Theta}_{MLE} \sim N(\Theta_0, I(\Theta_0)^{-1})$, where $\Theta_0$ is the true $\Theta$ and $I(\Theta_0)$ is the [Fisher information](https://en.wikipedia.org/wiki/Fisher_information) matrix
+These results suggest that $\hat{\beta}_{OLS} = (X'X)^{-1}X'y$ and $s^2 = \frac{e'e}{n}$
+are unbiased.
+
+
+Another way to express this is that $\hat{\Theta}_{MLE} \sim N(\Theta_0, I(\Theta_0)^{-1})$, where $\Theta_0$ is the true $\Theta$ and $I(\Theta_0)$ is the [Fisher information](https://en.wikipedia.org/wiki/Fisher_information) matrix
 - $I(\Theta_0) = - E\left(\frac{\partial^2 ln f(y\vert\Theta)}{\partial \Theta \partial \Theta '}\right) = E\left(\frac{\partial ln f(y\vert\Theta)}{\partial\Theta}\cdot\frac{\partial ln f(y\vert\Theta)}{\partial\Theta}'\right)$
 - $asy Var(\hat{\beta}_{MLE}) = - E\left(\frac{\partial^2 ln f(y\vert\beta, \sigma^2)}{\partial \beta \partial \beta '}\right) = \frac{1}{\sigma^2}X'X$
 - $asy Var(\hat{\sigma^2}_{MLE}) = - E\left(\frac{\partial^2 ln f(y\vert\beta, \sigma^2)}{\partial \sigma^2 \partial \sigma^{2T}}\right) = \frac{n}{2\sigma^4}$
