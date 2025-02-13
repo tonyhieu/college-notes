@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      14 min read
+      18 min read
     
 </span></p>
 
@@ -173,6 +173,26 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#condorcet-property--schulze-method">Condorcet Property / Schulze Method</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#euler-tours">Euler Tours</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#fleurys-algortihm">Fleury’s Algortihm</a></li>
+<li class="toc-entry toc-h3"><a href="#hierholzers-algorithm">Hierholzer’s Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#traveling-salesman-problem">Traveling Salesman Problem</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#2-approximation">2-Approximation</a></li>
+<li class="toc-entry toc-h3"><a href="#32-approximation">3/2-Approximation</a></li>
+<li class="toc-entry toc-h3"><a href="#exact-dp-algorithm">Exact DP Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#cliques-and-coloring">Cliques and Coloring</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#centrality">Centrality</a></li>
+<li class="toc-entry toc-h3"><a href="#cores">Cores</a></li>
+<li class="toc-entry toc-h3"><a href="#degeneracy">Degeneracy</a></li>
 </ul>
 </li>
 </ul><h2 id="graph-representation">
@@ -681,6 +701,184 @@ while Q is non-empty:
   <li>There is guaranteed to be a winner in this graph</li>
 </ul>
 
+<h2 id="euler-tours">
+<a class="anchor" href="#euler-tours" aria-hidden="true"><span class="octicon octicon-link"></span></a>Euler Tours</h2>
+
+<ul>
+  <li>Defined as a walk through a graph such that each edge is visited once</li>
+  <li>Note that, for any finite graph, there should be an even number of odd-degree vertices, as the sum of degrees should be even
+    <ul>
+      <li>A graph with no odd vertices has an Euler tour that starts and ends at the same vertex</li>
+      <li>A graph with two odd vertices has an Euler tour that starts at one of the odd vertices and ends at the other</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="fleurys-algortihm">
+<a class="anchor" href="#fleurys-algortihm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fleury’s Algortihm</h3>
+
+<ul>
+  <li>Greedy algorithm: Keep adding edges without adding an edge that connects two uncovered parts of the graph</li>
+  <li>Basic implementation is $O(m^2)$; check all edges when adding each edge</li>
+  <li>Advanced implementations have better times, but still not linear</li>
+</ul>
+
+<h3 id="hierholzers-algorithm">
+<a class="anchor" href="#hierholzers-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hierholzer’s Algorithm</h3>
+
+<ul>
+  <li>Keep adding edges without checking whether or not we add an edge that connects to two uncovered parts of the graph</li>
+  <li>After getting stuck, return to a vertex with uncovered edges and start a new tour
+    <ul>
+      <li>Splice the original tour with the new tour to create an Euler tour</li>
+    </ul>
+  </li>
+  <li>Linear time complexity; each edge is visited once in either the original or a offshoot tour</li>
+</ul>
+
+<h2 id="traveling-salesman-problem">
+<a class="anchor" href="#traveling-salesman-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Traveling Salesman Problem</h2>
+
+<ul>
+  <li>Input: A connected undirected graph with nonzero positive edge lengths</li>
+  <li>Goal: Find a walk that visits each vertex at least once and returns to the start index, minimizing the sum of edge lengths</li>
+  <li>Can also be written as a distance problem
+    <ul>
+      <li>Input: A symmetric positive matrix of distances between points that satisfies the triangle inequality</li>
+      <li>Goal: Find a cylcic order of points that uses each point exactly once, minimizing the sum of distances between points</li>
+      <li>These two representations can be converted to each other</li>
+    </ul>
+  </li>
+  <li>TSP is NP-hard, and even with unit edge lengths, it is NP-complete
+    <ul>
+      <li>Approximation ratio of 2 can be found with MSTs; theoretical best AR is $\frac{123}{122}$, but the best AR found is $\frac{3}{2} - \frac{1}{10^{36}}$</li>
+      <li>These approximations run in polynomial time</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-approximation">
+<a class="anchor" href="#2-approximation" aria-hidden="true"><span class="octicon octicon-link"></span></a>2-Approximation</h3>
+
+<ul>
+  <li>Use the graph version so repeated vertices are allowed</li>
+  <li>Find a MST and make a copy of each edge such that all degrees are now even</li>
+  <li>Take an Euler tour of this graph and return it as the approximate TSP tour</li>
+</ul>
+
+<h3 id="32-approximation">
+<a class="anchor" href="#32-approximation" aria-hidden="true"><span class="octicon octicon-link"></span></a>3/2-Approximation</h3>
+
+<ul>
+  <li>Construct an MST</li>
+  <li>Identify the odd vertices in the MST
+    <ul>
+      <li>The number of odd vertices will be even by the handshaking lemma</li>
+    </ul>
+  </li>
+  <li>Connect them in pairs using the shortest paths from the original graph, choosing the pairings that have the minimal sum of path lengths</li>
+  <li>Combine the pair paths and the MST edges into one graph; return the Euler tour as the TSP tour</li>
+</ul>
+
+<h3 id="exact-dp-algorithm">
+<a class="anchor" href="#exact-dp-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exact DP Algorithm</h3>
+
+<ul>
+  <li>Basic algorithm takes O(n!) time (try all permutations)</li>
+  <li>Dynamic programming algorithm takes $O(2^nn^2)$ time
+    <ul>
+      <li>Preprocess the graph to get the all pairs shortest paths distance matrix</li>
+      <li>Choose some starting vertex s</li>
+      <li>Compute, for every subset of A of remaining vertices, and every vertex in A, the best path from s to v covering all vertices in A</li>
+      <li>Choose v such that the path through all vertices to v + one more path back from v towards s has the minimum total length</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Algorithm to compute the third step:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>L[A, v] is a table containing the length of the shortest tour starting at s, ending at v, covering all vertices in A
+V(G) is the set of all vertices
+
+for subset A in 1, 2, ..., 2^(n-1) - 1:
+    for v in A:
+        if A - v is empty:
+            L[A, v] = D[n - 1, v]
+        else:
+            L[A, v] = min{L[A - v, u] + D[u, v] for u in A - v}
+
+return min{L[V(G) - s, v] + D[v, n - 1] for v in V(G) - s}
+</code></pre></div></div>
+
+<h2 id="cliques-and-coloring">
+<a class="anchor" href="#cliques-and-coloring" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cliques and Coloring</h2>
+
+<h3 id="centrality">
+<a class="anchor" href="#centrality" aria-hidden="true"><span class="octicon octicon-link"></span></a>Centrality</h3>
+
+<ul>
+  <li>
+<strong>Centrality</strong>: A measure of how central (AKA how well-connected) a node is
+    <ul>
+      <li>There exist various measures of centrality, such as degree and pagerank</li>
+    </ul>
+  </li>
+  <li>
+<em>Closeness centrality</em>: $\frac{1}{\text{average distance to other vertices}}$
+    <ul>
+      <li>Closeness centrality can be calculated by computing the all-pairs shortest paths and averaging the distances; O(mn)</li>
+      <li>Approximate algorithm exists where k vertices are chosen and we calculate the distances to these k vertices in O(km)
+        <ul>
+          <li>Graphs with the small world property (all distances ≤ D) leads to lower variance; setting k to $D \log n / \varepsilon^2$ gives a $(1+\varepsilon)$-approximation in time $O(\frac{m}{\varepsilon^2} \log n)$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<em>Betweenness centrality</em> attempts to find a vertex that is on many shortest paths
+    <ul>
+      <li>Formula: $\sum_{u, w\neq v} \frac{\text{No. of shortest paths from u to w through v}}{\text{No. of shortest paths from u to w}}$</li>
+      <li>Optimal algorithm takes O(mn) time</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="cores">
+<a class="anchor" href="#cores" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cores</h3>
+
+<ul>
+  <li>A <strong>k-core</strong> of a graph is the largest subgraph in which all vertices have a degree ≥ k
+    <ul>
+      <li>Can be found by deleting vertices of degree &lt; k until there are none left</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Algorithm for computing all cores simultaneously:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def cores(G):
+    core = dict()
+    current_core = 0
+    while G is non-empty:
+        v = a minimum-degree vertex
+        current_core = max(current_core, degree(v))
+        core[v] = current_core
+        delete V from G
+    return core
+</code></pre></div></div>
+
+<ul>
+  <li>Can be made efficient by decorating each vertex with the number of uncovered neighbors (intially its degree) and updating + maintaining a dictionary with degrees as keys and lists of unprocessed nodes as values</li>
+  <li>Takes O(sum of all degrees) = O(m) time</li>
+</ul>
+
+<h3 id="degeneracy">
+<a class="anchor" href="#degeneracy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Degeneracy</h3>
+
+<ul>
+  <li>Many definitions; one is the largest k for which a nonempty k-core exists</li>
+</ul>
+
   </div><a class="u-url" href="/college-notes/cs163/lecture/winter25/markdown/2025/01/06/cs163-lecture.html" hidden></a>
 </article>
 
@@ -695,7 +893,11 @@ while Q is non-empty:
         <p class="feed-subscribe">
           <a href="https://tonyhieu.github.io/college-notes/feed.xml">
             <svg class="svg-icon orange">
-              <use xlink:href="/college-notes/assets/minima-social-icons.svg#rss"></use>
+              <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+                11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+                13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+                16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+              />
             </svg><span>Subscribe</span>
           </a>
         </p>
@@ -706,20 +908,14 @@ while Q is non-empty:
     </div>
 
     <div class="social-links"><ul class="social-media-list"><li>
-  <a rel="me" href="https://github.com/tonyhieu" target="_blank" title="github">
-    <svg class="svg-icon grey">
-      <use xlink:href="/college-notes/assets/minima-social-icons.svg#github"></use>
-    </svg>
-  </a>
-</li>
-<li>
-  <a rel="me" href="https://twitter.com/" target="_blank" title="twitter">
-    <svg class="svg-icon grey">
-      <use xlink:href="/college-notes/assets/minima-social-icons.svg#twitter"></use>
-    </svg>
-  </a>
-</li>
-</ul>
+    <a rel="me" href="" target="_blank" title="">
+      <span class="grey fa-brands fa- fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="" target="_blank" title="">
+      <span class="grey fa-brands fa- fa-lg"></span>
+    </a>
+  </li></ul>
 </div>
 
   </div>
