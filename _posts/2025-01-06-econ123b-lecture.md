@@ -40,7 +40,7 @@ $$
 E(Cy \vert X) = E(CX\beta + C\epsilon \vert X) = CX\beta + CE(\epsilon \vert X) = CX\beta = \beta \\
 \text{Thus, } CX = I \\
 \text{Let } D = C - (X'X)^{-1}X' \\
-DX = CX - (X'X)^{-1}X' = I - I = 0 \text{ (Optimal when DX = 0)} \\
+DX = CX - (X'X)^{-1}X'X = I - I = 0 \text{ (Optimal when DX = 0)} \\
 $$
 
 $$
@@ -227,8 +227,9 @@ $$
     - Involves data transformation but can now have BLUE estimators with OLS process
 - New estimator: $\hat{\beta}_{GLS} = (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y$
     - Derivation involves the fact that $C'C = \Omega \iff \Omega ^{-1} = C^{-1}(C')^{-1}$
+
 $$
-\hat{\beta}_{GLS} = (X^{*T} X^*)^T X^{*T} y^{*} \\
+\hat{\beta}_{GLS} = (X^{*T} X^*)^{-1} X^{*T} y^{*} \\
 = (((C')^{-1}X)' (C')^{-1}X)^{-1} ((C')^{-1}X)' (C')^{-1}y \\
 = (X'(C')^{-1 T} (C')^{-1}X)^{-1} X'C'^{-1 T} (C')^{-1}y \\
 = (X'C^{-1} (C')^{-1}X)^{-1} X'C^{-1} (C')^{-1}y \\
@@ -256,7 +257,7 @@ E[\hat{\beta}_{GLS} \vert X] = E[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y \vert X]
 $$
 
 $$
-Var[\hat{\beta}_{GLS} \vert X] = E[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y \vert X] \\
+Var[\hat{\beta}_{GLS} \vert X] = Var[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}y \vert X] \\
 = Var[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}(X \beta + \epsilon) \vert X] \\
 = Var[(X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1}X \beta + (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1} \epsilon \vert X] \\ 
 = Var[\beta + (X'\Omega ^{-1}X)^{-1} X'\Omega ^{-1} \epsilon \vert X] \\ 
@@ -284,7 +285,7 @@ $$
 - Model: $y_i = X_i' \beta + \epsilon _i \rightarrow y = X \beta + \epsilon$
 - Since the variance is a nonnegative random variable, and we assume that the variance goes up with the values of i, then we can model variance as $ln(\sigma ^2_i) = w_i' \gamma$
 
-Steps to estimate variance
+Steps to estimate variance (or to test for heteroskedasticity)
 
 1. Regress y on X using OLS
 2. Construct the residuals $e = y - X \hat{\beta}_{OLS}$
@@ -292,5 +293,51 @@ Steps to estimate variance
     - Regress $e_i^2$ on $w_i$
     - Regress $ln(e_i^2)$ on $w_i$
     - This can be done using $\hat{\gamma} = (\omega ' \omega)^{-1} \omega ' e^2$
-4. Obtain $\hat{\sigma}_i^2 = \omega _i' \hat{\gamma}$ or $\hat{\sigma}_i^2 = e^{\omega _i' \hat{\gamma}}$
+    - Final result: $\omega _i' \hat{\gamma} + u_i$
+4. Obtain $\hat{\sigma}_i^2 = \omega _i' \hat{\gamma} + u_i$ or $\hat{\sigma}_i^2 = e^{\omega _i' \hat{\gamma}}$
 5. Construct $\hat{\Omega}$ using $\hat{\sigma}_i^2$ and apply FGLS
+
+#### Tests for Heteroskedasticity
+
+- [Breusch-Pagan](https://en.wikipedia.org/wiki/Breusch%E2%80%93Pagan_test): Run an OLS, get the residuals, and run OLS on the residuals
+    - $\omega _i' \hat{\gamma} + u_i$ can be rewritten as $\gamma_1 + \underline{\omega_{i2}\gamma_2 + ... + \gamma_{iq}\omega_{q}} + u_i$; if the underlined part is nonzero, then we have heteroskedasticity
+    - Can test this via an Chi-square with degrees of freedom (q-1)
+    - To choose what variables to include in $\omega_i$, take the [Kronecker product](https://en.wikipedia.org/wiki/Kronecker_product) of $x_i$ and remove any duplicate elements
+- [Goldfeld-Quandt](https://en.wikipedia.org/wiki/Goldfeld%E2%80%93Quandt_test): Split the data into two regions and check if the variances are different in these two regions
+    - Uses an F-test with df $(n_1 - k, n_2 - k)$
+    - Reject if F is not inside of the reasible region $(c_L, c_R)$
+- White's robust standard errors: Uses the fact that we can consistently estimate $Var(\hat{\beta}_{OLS}) = (X'X)^{-1}X'\Omega X (X'X)^{-1}$ (specifically the $X'\Omega X$ term) by substiuting squared residuals into $\Omega$
+
+## Maximum Likelihood Estimator
+
+- Given a data generating process (DGP) $y = f(y \vert \Theta)$, we want to find the $\Theta$ that has the maximum likelihood of generating our data $y$
+    - $f(y \vert \Theta)$ is known as the *likelihood function*
+    - MLE estimator: $\hat{\Theta}_{MLE} = \text{argmax } ln f(y \vert \Theta)$
+- We can use the likelihood function to find our coefficients in a linear model
+    - Assumes that Y is generated independently using $y_i = x_i'\beta + \epsilon_i$ and $\epsilon \sim N(0, \sigma^2)$; $y_i \sim N(x_i'\beta, \sigma^2)$
+
+$$
+\theta = \begin{bmatrix}\beta\\\sigma^2\end{bmatrix}\\
+f(y \vert \Theta) = \prod_{i=1}^n f(y_i \vert \Theta)\\
+= \prod_{i=1}^n f_N(y_i \vert x_i'\Beta, \sigma^2)\\
+= \prod_{i=1}^n (2\pi\sigma^2)^{-1/2}\cdot e^{-\frac{1}{2\sigma^2}(y_i-x_i'\beta)^2}\\
+= (2\pi\sigma^2)^{-n/2}\cdot e^{-\frac{1}{2\sigma^2}\sum(y_i-x_i'\beta)^2}\\
+= (2\pi\sigma^2)^{-n/2}\cdot e^{-\frac{1}{2\sigma^2}(y-X\beta)'(y-X\beta)}\\
+$$
+
+- This technique is more general and works for different DGP setups; e.g. ordinal data
+
+$$
+\text{Example Derivation:}\\
+ln f(y \vert \Theta) = -\frac{n}{2}ln(2\pi) - \frac{n}{2}ln(\sigma^2) -\frac{1}{2\sigma^2}(y-X\beta)'(y-X\beta) \\
+\frac{\partial ln f(y \vert \Theta)}{\beta} = -\frac{1}{2\sigma^2} (-X'y - X'y + (X'X + X'X)\beta) = 0\\
+\rightarrow 2X'y = 2X'X\beta \rightarrow \hat{\beta}_{OLS} = (X'X)^{-1}X'y\\
+\frac{\partial ln f(y \vert \Theta)}{\sigma^2} = - \frac{n}{2\sigma^2} + \frac{1}{2\sigma^4}(y-X\beta)'(y-X\beta) = 0\\
+\rightarrow -n\sigma^2 + (y-X\beta)'(y-X\beta) = 0\\
+\rightarrow \hat{\sigma}^2_{MLE} = \frac{(y-X\beta)'(y-X\beta)}{n}
+$$
+
+These results suggest that $\hat{\beta}_{OLS} = (X'X)^{-1}X'y$ and $s^2 = \frac{e'e}{n}$ are unbiased. Another way to express this is that $\hat{\Theta}_{MLE} \sim N(\Theta_0, I(\Theta_0)^{-1})$, where $\Theta_0$ is the true $\Theta$ and $I(\Theta_0)$ is the [Fisher information](https://en.wikipedia.org/wiki/Fisher_information) matrix
+- $I(\Theta_0) = - E\left(\frac{\partial^2 ln f(y\vert\Theta)}{\partial \Theta \partial \Theta '}\right) = E\left(\frac{\partial ln f(y\vert\Theta)}{\partial\Theta}\cdot\frac{\partial ln f(y\vert\Theta)}{\partial\Theta}'\right)$
+- $asy Var(\hat{\beta}_{MLE}) = - E\left(\frac{\partial^2 ln f(y\vert\beta, \sigma^2)}{\partial \beta \partial \beta '}\right) = \frac{1}{\sigma^2}X'X$
+- $asy Var(\hat{\sigma^2}_{MLE}) = - E\left(\frac{\partial^2 ln f(y\vert\beta, \sigma^2)}{\partial \sigma^2 \partial \sigma^{2T}}\right) = \frac{n}{2\sigma^4}$

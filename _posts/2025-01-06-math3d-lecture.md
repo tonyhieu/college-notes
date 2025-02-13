@@ -232,14 +232,56 @@ f(x, y) \text{ is continuous near } (x_0, y_0) \\
 \text{then a solution to this IVP exists and is unique for (at least) some x near } (x_0, y_0)
 $$
 
+## Higher Order Linear ODEs
 
-## Common Differential Equations + General Solutions
+### Inhomogenous
+
+These functions take the form of ${a_ny^{(n)} + a_{n-1}y^{(n-1)} + ... + a_1y' + a_0y = f(x)}$. Note that you need one particular solution and one general solution, and the general solution can be found by setting the right hand side to 0; this degenerates the ODE to a homogenous equation.
+
+#### Undetermined Coefficients
+
+In order to find a particular solution, we can plug in different forms of solutions and find the coefficients that make the form true. These strategies involve adding factors of x such that the form is not a solution to the homogenous ODE.
+
+#### f(x) is a polynomial 
+
+Given a d degree polynomial, the particular solution will take the form of ${y_p = (a_dx^d + ... + a_1x + a_0)x^s}$ where s is the multiplicity of the root $r=0$.
+
+#### f(x) is exponential
+
+The particular solution will take the form of $y_p = ax^se^{kx}$, where s is the multiplicity of the root k in the characteristic equation and a is to be found.
+
+#### f(x) is trigonometric
+
+The particular solution will take the form of $y_p = (ae^{\alpha x}\cos \beta x + be^{\alpha x}\sin \beta x)x^s$, where s is the multiplicity of the complex root $\alpha \pm \beta i$.
+
+Example:
 
 $$
-\frac{dx}{dt} = kx \rightarrow x(t) = Ce^{kt}
+y'' + y' = 2 \cos x \\
+y_c = C_1 + C_2e^{-x} \\
+y_p = a \cos x + b \sin x \\
+y_p' = -a \sin x + b \cos x \\
+y_p'' = -a \cos x - b \sin x  \\
+y_p'' + y_p' = (-a + b) \cos x + (-a - b)\sin x = 2 \cos x + 0 \sin x \\
+a = -1\text{, }b = 1\\
+y_p = - \cos x + \sin x
 $$
 
-### Newton's Cooling Law
-$$
-\frac{dT}{dt} = -k(T - A)
-$$
+#### Combinations
+
+If the right hand side is given by $f(x) + g(x)$ and $y_f$ solves $Ly = f(x)$ and $y_g$ solves $Ly = g(x)$, then $y_p = y_g + y_f$ is a particular solution.
+
+## Systems of ODEs
+
+- A **system of differential equations** is a finite set of diff. eqs.
+- Systems can obey different properties depending on whether or not all ODEs have that property; e.g. if all ODEs are linear, then the system is linear
+    - The highest order in any ODE defines the order of the system
+- In this course, we will have the number of equations equal to the number of dependent variables
+
+### First-Order
+
+- Form: $y_1' = g_1(y_1, y_2, \cdots, y_n, x), \cdots, y_n' = g_n(y_1, y_2, \cdots, y_n, x)$
+- We can convert an ODE with one dependent of nth order to a system of ODEs with n dependent variables of first order
+    - Ex. $y''' - y'' + 2y = 1$ can be converted to $\{u_3' - u_3 + 2u_1 = 1\, u_2' = u_3, u_1' = u_2  \}$, where ${u_3 = y''}, {u_2 = y'}, {u_1 = y}$
+    - General strategy: given $y^{(n)} = F(y^{(n-1)}, \cdots, y', y, x)$, convert using $u_1 = y, u_2 = y', \cdots, u_n = y^{(n-1)}$ and $u_1' = u_2, \cdots, u_{n-1}' = u_n,  u_{n}' = F(u_n, \cdots, u_1, x)$
+    - Used to convert systems to nth order linear ODEs
