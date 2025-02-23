@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      18 min read
+      27 min read
     
 </span></p>
 
@@ -193,8 +193,32 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#centrality">Centrality</a></li>
 <li class="toc-entry toc-h3"><a href="#cores">Cores</a></li>
 <li class="toc-entry toc-h3"><a href="#degeneracy">Degeneracy</a></li>
+<li class="toc-entry toc-h3"><a href="#clique">Clique</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#bron-kerbosch-algorithm">Bron-Kerbosch Algorithm</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#graph-coloring">Graph Coloring</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#greedy-algorithm">Greedy Algorithm</a></li>
+<li class="toc-entry toc-h3"><a href="#register-allocation-and-strahler-numbers">Register Allocation and Strahler Numbers</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#chordal-graphs">Chordal Graphs</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#elimination-ordering-algorithm-lexicographic-bfs">Elimination Ordering Algorithm (Lexicographic BFS)</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#perfect-graphs">Perfect Graphs</a></li>
+<li class="toc-entry toc-h2"><a href="#interval-graphs-and-path-decomposition">Interval Graphs and Path Decomposition</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#algorithms-1">Algorithms</a></li>
+<li class="toc-entry toc-h3"><a href="#trees-and-pathwidths">Trees and Pathwidths</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#fpt">FPT</a></li>
 </ul><h2 id="graph-representation">
 <a class="anchor" href="#graph-representation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Graph Representation</h2>
 
@@ -877,6 +901,282 @@ return min{L[V(G) - s, v] + D[v, n - 1] for v in V(G) - s}
 
 <ul>
   <li>Many definitions; one is the largest k for which a nonempty k-core exists</li>
+</ul>
+
+<h3 id="clique">
+<a class="anchor" href="#clique" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clique</h3>
+
+<ul>
+  <li>A <strong>clique</strong> is a subset of a graph for which all pairs are connected by an edge
+    <ul>
+      <li>Maximum clique is the biggest clique in the graph; a maximal clique is a clique to which no more vertices can be added while maintaining the clique property</li>
+      <li>Independent set problem and clique problem are equivalent; add edges between vertices that are unconnected, and remove existing edges
+        <ul>
+          <li>NP-hard to find the maximum clique</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>There exist various algorithms to find all maximal cliques</li>
+  <li>The <strong>Moon-Moser Theorem</strong> states that the maximum number of maximal cliques is $\leq 3^{n/3}$</li>
+</ul>
+
+<h4 id="bron-kerbosch-algorithm">
+<a class="anchor" href="#bron-kerbosch-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bron-Kerbosch Algorithm</h4>
+
+<ul>
+  <li>Uses recursive backtracking with three sets
+    <ul>
+      <li>R is the set of vertices containing the current clique being built</li>
+      <li>P is the set of potential new vertices (that are adjacent to ones in R)</li>
+      <li>X is the set of vertices that have already been added to a clique and should not be explored</li>
+    </ul>
+  </li>
+  <li>Optimizations can be made
+    <ul>
+      <li>Choose a pivot $p \in P \cup X$ with the smallest number of non-neighbors in P and only loop over these neighbors
+        <ul>
+          <li>p’s neighbors will also be in a found clique, so the only vertices that can be added to R are its non-neighbors</li>
+        </ul>
+      </li>
+      <li>Use the reverse degeneracy ordering so we don’t have to loop over so many vertices</li>
+    </ul>
+  </li>
+  <li>Overall run time is $O(dn3^{d/3})$</li>
+</ul>
+
+<h2 id="graph-coloring">
+<a class="anchor" href="#graph-coloring" aria-hidden="true"><span class="octicon octicon-link"></span></a>Graph Coloring</h2>
+
+<ul>
+  <li>Input: A graph</li>
+  <li>Output: A coloring of vertices in the graph such that no neighboring vertices have the same color</li>
+  <li>
+<strong>Four color theorem</strong>: If a planar graph can be drawn without crossing edges, then it can be colored with at most four colors</li>
+  <li>Two color graphs are <strong>bipartite</strong> and are easy to test for, but testing for a 3-coloring is NP-complete</li>
+</ul>
+
+<h3 id="greedy-algorithm">
+<a class="anchor" href="#greedy-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Greedy Algorithm</h3>
+<ol>
+  <li>Order the vertices</li>
+  <li>Number the available colors (1, 2, 3, …)</li>
+  <li>For each vertex in the ordering, give it the lowest-numbered color that is not used by one (or more) of its neighbor
+    <ul>
+      <li>O(degree) per node, O(m) total runtime</li>
+      <li>If vertices are ordered in degeneracy ordering, then the greedy algorithm will use at most d + 1 colors</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def first_unused(v):
+    used = { color(w) for w in neighbors of v }
+    for c in 1, 2, ... 
+        if c not in used: return c
+</code></pre></div></div>
+
+<ul>
+  <li>This algorithm is optimal for interval graphs (using a left-to-right ordering)</li>
+</ul>
+
+<h3 id="register-allocation-and-strahler-numbers">
+<a class="anchor" href="#register-allocation-and-strahler-numbers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Register Allocation and Strahler Numbers</h3>
+
+<ul>
+  <li>Problem: Calculate an expression using the minimum number of registers at any given time</li>
+  <li>If two expressions A and B require a and b registers respectively, then we will need to store the answer to one of them while doing the other
+    <ul>
+      <li>If A is calculated first, then max(a, b+1) registers are use; otherwise, max(b, a+1) registers are used</li>
+      <li>Calculate intensive expressions first to save the +1 constant</li>
+    </ul>
+  </li>
+  <li>Bottom-up calculation of optimal ordering
+    <ul>
+      <li>If a node x is a leaf, then the number of calculations R(x) is 1</li>
+      <li>If x has two children y and z, then evaulate the one with the larger subtree first, so R(x) = max(R(y), R(z))</li>
+      <li>If R(y) = R(z), then R(x) = R(y) + 1 = R(z) + 1</li>
+    </ul>
+  </li>
+  <li>This bottom-up calculation also produces the <strong>Strahler numbers</strong> of nodes in a tree</li>
+  <li>This problem can be written as a graph coloring problem
+    <ul>
+      <li>Vertices are the local variables of the intermediate code</li>
+      <li>Edges are local variables that need to be stored at the same time</li>
+      <li>Colors are available registers</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="chordal-graphs">
+<a class="anchor" href="#chordal-graphs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chordal Graphs</h2>
+
+<ul>
+  <li>A graph is a <strong>chordal graph</strong> if and only if one of the following conditions are satisfied:
+    <ol>
+      <li>Every cycle longer than three vertices has a <strong>chord</strong>, or another edge connecting two vertices of the cycle</li>
+      <li>It has an <strong>elimination ordering</strong>: An ordering of the vertices where the later neighbors of every vertex form a clique</li>
+      <li>For every two vertices x and y and every minimal subset S whose deletion would separate x from y, S is a clique</li>
+    </ol>
+  </li>
+  <li>Definition 1 is analagous to a graph with no holes, where a <strong>hole</strong> is a cycle of at least length 4 that does not have a chord</li>
+</ul>
+
+<h3 id="elimination-ordering-algorithm-lexicographic-bfs">
+<a class="anchor" href="#elimination-ordering-algorithm-lexicographic-bfs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Elimination Ordering Algorithm (Lexicographic BFS)</h3>
+
+<ul>
+  <li>If G has an elimination ordering, so does G - v</li>
+  <li>Slow, basic algorithm: find vertices whose neighbors form a clique and delete it</li>
+  <li>We can check validity of an elimination order in linear time; for each vertex v, check that all later neighbors of v are neighbors of w (the neighbor of v that is next in the ordering)
+    <ul>
+      <li>This can be done using BFS</li>
+      <li>
+<strong>Lexicographic ordering</strong>: Given an ordering of vertices, define $pred_i(v)$ to be the ith neighbor of v or v itself if there are fewer than i neighbors earlier than v; order these vertices based on the tuple ${pred_1(v), pred_2(v), …, pred_n(v)}</li>
+    </ul>
+  </li>
+  <li>Algorithm for finding lexicographic order
+    <ul>
+      <li>Maintain a sequence of sets of unprocessed vertices, initially in one big set</li>
+      <li>While this sequence is nonempty:
+        <ol>
+          <li>Let $S_i$ be the first set in the sequence and v by any vertex in this set</li>
+          <li>Remove v from $S_i$ (and remove $S_i$ if it becomes empty)</li>
+          <li>Output v; let N(v) be the set of neighbors of v</li>
+          <li>For each set $S_j$ in the sequence, split $S_j$ into two sets $S_j \cap N(v)$ and $S_j \ N(v)$</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>We can use dynamic sets, linked lists, and dictionaries to get $O(\vert N(v)\vert)$ time</li>
+</ul>
+
+<h2 id="perfect-graphs">
+<a class="anchor" href="#perfect-graphs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Perfect Graphs</h2>
+<ul>
+  <li>A graph is <strong>perfect</strong> if the optimal number of colors equals the number of vertices in the largest clique
+    <ul>
+      <li>Deleting any vertex in this graph will produce another perfect graph
+        <ul>
+          <li>This property is true for interval, chordal, and bipartite graphs</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>Strong Perfect Graph Theorem</strong>: A graph G is perfect if and only if it has no odd-length holes AND its complement has no odd-length holes
+    <ul>
+      <li>Implies the “weak perfect graph theorem” that complement of perfect graphs are perfect</li>
+    </ul>
+  </li>
+  <li>Perfect graphs can be found in polynomial time ($O(n^9)$)</li>
+  <li>An optimal method for coloring and finding cliques in perfect graphs takes polynomial time but is complex</li>
+  <li>Interval graphs $\in$ chordal graphs $\in$ perfect graphs</li>
+</ul>
+
+<h2 id="interval-graphs-and-path-decomposition">
+<a class="anchor" href="#interval-graphs-and-path-decomposition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Interval Graphs and Path Decomposition</h2>
+
+<ul>
+  <li>An <strong>interval graph</strong> is defined as a graph with nodes representing intervals and edges representing overlaps of two intervals</li>
+  <li>We can rewrite an interval graph using <strong>bags</strong> where each interval segment is labeled by the intervals that overlap during it
+    <ul>
+      <li>Get rid of bags that are not subsets of larger bags</li>
+      <li>The intervals can be recovered from the path decomposition</li>
+      <li>This is known as the <strong>interval graph path decomposition</strong>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img width="655" alt="Image" src="https://github.com/user-attachments/assets/98392fd9-4d9a-4647-b097-a7968ab33f63"></p>
+
+<ul>
+  <li>Properties of the interval graph path decomposition
+    <ul>
+      <li>Each vertex belongs to a consecutive sequence of bags</li>
+      <li>Edges are pairs of vertices that both appear in the same bag</li>
+      <li>The largest clique is the biggest bag</li>
+      <li>Each edge has both its endpoints in some bag</li>
+    </ul>
+  </li>
+  <li>
+<strong>Path decomposition</strong>: get rid of the intervals and use a sequence of bags with the following properties
+    <ul>
+      <li>Each vertex appears in a consecutive subsequence of bags</li>
+      <li>Every edge has ≥ 1 bag containing both endpoints</li>
+    </ul>
+  </li>
+  <li>One graph can have many different path decompositions
+    <ul>
+      <li>The <em>width</em> of a decomposition is the size of the biggest bag minus 1</li>
+      <li>The pathwidth of a graph is the smallest width of any decomposition</li>
+      <li>The pathwidth of a graph can also be defined as the smallest possible max clique size (minus one) of an interval graph containing G</li>
+    </ul>
+  </li>
+  <li>Vertices of a clique have overlapping subsequences of bags
+    <ul>
+      <li>Some bag contains the whole clique</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="algorithms-1">
+<a class="anchor" href="#algorithms-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Algorithms</h3>
+<p>Fast clique finding with a low-width path decomposition:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for each bag in the path decomposition:
+    for each subset of the bag:
+        if it's a clique bigger than the best found so far
+            remember it as max clique
+</code></pre></div></div>
+
+<ul>
+  <li>Outer loop is O(n), inner loop is $O(2^w)$, so $O(n2^w)$ time</li>
+</ul>
+
+<p>Fast coloring:</p>
+<ul>
+  <li>We can use a dynamic programming algorithm to color a graph fast</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for each bag B in left-to-right order, and each coloring C with ≤ k colors:
+    let B' be the bag just before B
+    Good(B, C) = true if C is compatible with a good coloring of B'
+</code></pre></div></div>
+
+<ul>
+  <li>G has a k-coloring if and only if its last bad has a good coloring</li>
+  <li>Time takes $O(nk^{w+1})$</li>
+</ul>
+
+<h3 id="trees-and-pathwidths">
+<a class="anchor" href="#trees-and-pathwidths" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trees and Pathwidths</h3>
+
+<ul>
+  <li>Trees are easy to find cliques and easy to color but can have large pathwidth - must be a way to decompose them</li>
+  <li>
+<strong>Tree decomposition</strong> involves making a tree of bags instead of a sequence of bags
+    <ul>
+      <li>Every vertex must belong to a connected subtree of bags</li>
+      <li>Every edge must have both endpoints in at least one bag</li>
+    </ul>
+  </li>
+  <li>
+<strong>Treewidth</strong>: the smallest width of any tree decomposition, or the smallest possible max clique size (minus one) of a chordal graph that contains G
+    <ul>
+      <li>The tree decomposition can be used in the algorithms that use path decompositions but will work better because more graphs have smaller treewidth</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="fpt">
+<a class="anchor" href="#fpt" aria-hidden="true"><span class="octicon octicon-link"></span></a>FPT</h2>
+
+<ul>
+  <li>
+<strong>Fixed parameter tractable</strong>: Time is polynomial n with a fixed exponent, but may depend badly on width</li>
+  <li>
+<strong>Courcelle’s theorem</strong>: There exists an FPT algorithm for any existence or min-weight/max-weight optimization problem on classes of graphs that can be described as a logical formula involving vertices, edges, sets of vertices and edges, and adjacency</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/cs163/lecture/winter25/markdown/2025/01/06/cs163-lecture.html" hidden></a>
