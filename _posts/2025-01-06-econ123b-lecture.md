@@ -308,6 +308,104 @@ Steps to estimate variance (or to test for heteroskedasticity)
     - Reject if F is not inside of the reasible region $(c_L, c_R)$
 - White's robust standard errors: Uses the fact that we can consistently estimate $Var(\hat{\beta}_{OLS}) = (X'X)^{-1}X'\Omega X (X'X)^{-1}$ (specifically the $X'\Omega X$ term) by substiuting squared residuals into $\Omega$
 
+### Instrumental Variables and Two-Stage Least Squares (TSLS) Estimation
+
+- Assumption broken: $E(\epsilon \vert X) \neq 0$
+- OLS estimator is biased and inconsistent as the number of observations goes to infinity
+
+$$
+\begin{align*}
+    E[\hat{\beta}_{OLS} \vert X] &= E[(X'X)^{-1}X'y \vert X]\\
+    &= E[(X'X)^{-1}X'(X\beta + \varepsilon) \vert X]\\
+    &= E[(X'X)^{-1}X'X\beta + (X'X)^{-1}X'\varepsilon \vert X]\\
+    &= \beta + (X'X)^{-1}X'E[\varepsilon \vert X]
+\end{align*}
+$$
+
+- An **instrumental variable** is a variable that directly affects X but does not effect the error terms nor the Y terms
+    - In other words, the IV, Z, should be related to the explanatory variables X (informative) and uncorrelated with $\varepsilon$ (valid)
+- Can create two equations out of this: $y = X\beta + \varepsilon$ and $X = Z\Pi + v$
+    - Estimate $\hat{\Pi} = (Z'Z)^{-1}Z'X$ and let $\hat{X} = Z\hat{\Pi}$
+    - Regress $y$ on $\hat{X}$
+    - $\hat{\beta}_{2SLS/TSLS/IV} = (\hat{X}'\hat{X})^{-1}\hat{X}'y$
+
+#### Properties of TSLS Estimator
+
+$$
+\begin{align*}
+    \hat{\beta}_{IV} &= (\hat{X}'\hat{X})^{-1}\hat{X}'y\\
+    &= ((Z\hat{\Pi})'(Z\hat{\Pi}))^{-1}\hat{X}'y\\
+    &= [(Z(Z'Z)^{-1}Z'X)'(Z(Z'Z)^{-1}Z'X)]^{-1}\hat{X}'y\\
+\end{align*}
+$$
+
+$$
+P_Z = Z(Z'Z)^{-1}Z'\\
+P_Z = P_Z'\\
+P_Z=P_ZP_Z
+P_ZX = \hat{X}
+$$
+
+$$
+\begin{align*}
+    \hat{\beta}_{IV} &= [(Z(Z'Z)^{-1}Z'X)'(Z(Z'Z)^{-1}Z'X)]^{-1}\hat{X}'y\\
+    &= [(P_ZX)'(P_ZX)]^{-1}\hat{X}'y\\
+    &= [X'P_Z'P_ZX]^{-1}\hat{X}'y\\
+    &= [\hat{X}'\hat{X}]^{-1}\hat{X}'y\\
+    &= [\hat{X}'X]^{-1}\hat{X}'y\\
+    &= [X'\hat{X}]^{-1}\hat{X}'y\\
+\end{align*}
+$$
+
+$$
+\begin{align*}
+    \hat{\beta}_{IV} &= [\hat{X}'X]^{-1}\hat{X}'y\\
+    &= [\hat{X}'X]^{-1}\hat{X}'(X\beta + \varepsilon) \\
+    &= [\hat{X}'X]^{-1}\hat{X}'X\beta + [\hat{X}'X]^{-1}\hat{X}'\varepsilon \\
+    &= \beta + [\hat{X}'X]^{-1}\hat{X}'\varepsilon\\
+    \plim_{n\rightarrow \infty} \hat{\beta}_{IV} &= \plim_{n\rightarrow \infty}(\beta + [\hat{X}'X]^{-1}\hat{X}'\varepsilon)\\
+    &= \beta + \plim_{n\rightarrow \infty}(\left[\frac{\hat{X}'X}{n}\right]^{-1}) \cdot \plim_{n\rightarrow \infty} (\frac{\hat{X}'\varepsilon}{n})
+\end{align*}
+$$
+
+$$
+AsyVar(\hat{\beta}_{IV}\vert X) = \hat{\sigma}^2(\hat{X}'\hat{X})'\\
+\hat{\sigma}^2 = \frac{e'e}{n-k}\text{, where } e = y - X\hat{\beta}_{IV} \\
+\text{Do NOT use }\hat{X} \text{, as it is not used in the DGP}
+$$
+
+$$
+\plim_{n\rightarrow \infty}(\left[\frac{\hat{X}'X}{n}\right]^{-1}) \text{ will exist and is non-singular as long as } \hat{X} \text{ and } X \text{ are correlated,}\\
+\text{such that } \Pi \neq 0 \text{ i.e. the IV is informative or relevant.}\\
+\plim_{n\rightarrow \infty} \frac{\hat{X}'\varepsilon}{n} \text{ will equal 0 as long as } \hat{X} \text{ and } \varepsilon \text{ are uncorrelated, which is implied when}\\
+\text{Z is a valid instrument.}\\
+\text{Therefore, } \hat{\beta}_{IV} \text{ is a consistent estimator given an appropriate instrument.}
+$$
+
+#### Additional Notes
+
+**Restrictions:**
+1. Since Z is n by l and X is n by k, l must be greater than or equal to k
+    - In other words, there should be at least as many instruments as endogenous covariates
+2. $rank(\Pi_{l \times k}) = k$; rank condition
+    - Rules out irrelevant covariates, can't be verified until regression is run
+3. l must be much lower than n, as $\hat{X}$ should not be close to $X$
+    - If $\hat{X}$ is too similar to $X$, then we find that $\hat{X}$ becomes correlated with $\varepsilon$
+4. No weak instruments; causes biases to explode
+    - One way to test this is to check that the F-statistic ≥ 10
+    - $\frac{(e_R'e_R - e'e) / q}{e'e/(n-k)} \sim F_{q, (n-k)}$, where we set the number of restrictions to the number of features, as $e_R'e_R = e'e$ if and only if there is no endogeneity ($E(\varepsilon \vert X) = 0$)
+
+- OLS will be better than IV if there is perfect exogeneity, as IV is more volatile, but if the RHS variables are correlated, then IV will be better
+
+#### Hausman Test for Endogeneity
+
+- Test whether a model as endogeneity or not
+- Null: Gauss-Markov assumptions
+
+$$
+(\hat{\beta}_{IV} - \hat{\beta}_{OLS})'(AsyVar(\hat{\beta}_{IV}) - AsyVar(\hat{\beta}_{OLS}))^{-1}(\hat{\beta}_{IV} - \hat{\beta}_{OLS}) \sim \chi^2_k
+$$
+
 ## Maximum Likelihood Estimator
 
 - Given a data generating process (DGP) $y = f(y \vert \Theta)$, we want to find the $\Theta$ that has the maximum likelihood of generating our data $y$
@@ -345,3 +443,10 @@ Another way to express this is that $\hat{\Theta}_{MLE} \sim N(\Theta_0, I(\Thet
 - $I(\Theta_0) = - E\left(\frac{\partial^2 ln f(y\vert\Theta)}{\partial \Theta \partial \Theta '}\right) = E\left(\frac{\partial ln f(y\vert\Theta)}{\partial\Theta}\cdot\frac{\partial ln f(y\vert\Theta)}{\partial\Theta}'\right)$
 - $asy Var(\hat{\beta}_{MLE}) = - E\left(\frac{\partial^2 ln f(y\vert\beta, \sigma^2)}{\partial \beta \partial \beta '}\right) = \frac{1}{\sigma^2}X'X$
 - $asy Var(\hat{\sigma^2}_{MLE}) = - E\left(\frac{\partial^2 ln f(y\vert\beta, \sigma^2)}{\partial \sigma^2 \partial \sigma^{2T}}\right) = \frac{n}{2\sigma^4}$
+
+## Panel Data
+
+- Model: $y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}$ where i ranges from 1 to n and t ranges from 1 to T<sub>i</sub>
+    - If $T_i$ is constant, then we have a *balanced panel*; otherwise, it is an *unbalanced panel*
+- **Mean differencing**: $(y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}) - (\bar{y_i} = \bar{x_i}'\beta + \alpha_i + \bar{\varepsilon}_i) \rightarrow {(y_{it} - \bar{y_i}) = (x_{it} - \bar{x_i})'\beta + v_{it}}$
+    - Can be rewritten as an OLS model where $y_{it}^* = x_{it}^{*T}\beta + v_{it}$
