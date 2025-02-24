@@ -723,7 +723,10 @@ while Q is non-empty:
   <li>Generate a graph where an edge from candidate U to V is weighted with the number of voters who prefer U to V</li>
   <li>Relabel each edge X to Y with the width of the widest path from X to Y in the original graph</li>
   <li>There is guaranteed to be a winner in this graph</li>
+  <li>With randomized quickselect, this method takes $O(candidates^2 \cdot \log candidates)$</li>
 </ul>
+
+<p><img width="872" alt="Image" src="https://github.com/user-attachments/assets/7f9cc7fb-b78c-45e3-9107-9f6a87c71b31"></p>
 
 <h2 id="euler-tours">
 <a class="anchor" href="#euler-tours" aria-hidden="true"><span class="octicon octicon-link"></span></a>Euler Tours</h2>
@@ -789,6 +792,8 @@ while Q is non-empty:
   <li>Find a MST and make a copy of each edge such that all degrees are now even</li>
   <li>Take an Euler tour of this graph and return it as the approximate TSP tour</li>
 </ul>
+
+<p><img width="508" alt="Image" src="https://github.com/user-attachments/assets/dc7c9755-4ad6-4fa9-a6ac-e5e41a9e22b5"></p>
 
 <h3 id="32-approximation">
 <a class="anchor" href="#32-approximation" aria-hidden="true"><span class="octicon octicon-link"></span></a>3/2-Approximation</h3>
@@ -1031,7 +1036,7 @@ return min{L[V(G) - s, v] + D[v, n - 1] for v in V(G) - s}
     <ul>
       <li>This can be done using BFS</li>
       <li>
-<strong>Lexicographic ordering</strong>: Given an ordering of vertices, define $pred_i(v)$ to be the ith neighbor of v or v itself if there are fewer than i neighbors earlier than v; order these vertices based on the tuple ${pred_1(v), pred_2(v), …, pred_n(v)}</li>
+<strong>Lexicographic ordering</strong>: Given an ordering of vertices, define $pred_i(v)$ to be the ith neighbor of v or v itself if there are fewer than i neighbors earlier than v; order these vertices based on the tuple ${pred_1(v), pred_2(v), …, pred_n(v)}$</li>
     </ul>
   </li>
   <li>Algorithm for finding lexicographic order
@@ -1039,10 +1044,10 @@ return min{L[V(G) - s, v] + D[v, n - 1] for v in V(G) - s}
       <li>Maintain a sequence of sets of unprocessed vertices, initially in one big set</li>
       <li>While this sequence is nonempty:
         <ol>
-          <li>Let $S_i$ be the first set in the sequence and v by any vertex in this set</li>
+          <li>Let $S_i$ be the first set in the sequence and v be any vertex in this set</li>
           <li>Remove v from $S_i$ (and remove $S_i$ if it becomes empty)</li>
           <li>Output v; let N(v) be the set of neighbors of v</li>
-          <li>For each set $S_j$ in the sequence, split $S_j$ into two sets $S_j \cap N(v)$ and $S_j \ N(v)$</li>
+          <li>For each set $S_j$ in the sequence, split $S_j$ into two sets $S_j \cap N(v)$ and $S_j \backslash N(v)$</li>
         </ol>
       </li>
     </ul>
