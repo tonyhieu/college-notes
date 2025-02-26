@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      16 min read
+      17 min read
     
 </span></p>
 
@@ -155,7 +155,17 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#maximum-likelihood-estimator">Maximum Likelihood Estimator</a></li>
-<li class="toc-entry toc-h2"><a href="#panel-data">Panel Data</a></li>
+<li class="toc-entry toc-h2"><a href="#panel-data">Panel Data</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#fixed-effects">Fixed Effects</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#drawbacks">Drawbacks</a></li>
+<li class="toc-entry toc-h4"><a href="#benefits">Benefits</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#random-effects">Random Effects</a></li>
+</ul>
+</li>
 </ul><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Linear algebra rules:</mtext><mspace linebreak="newline"></mspace><mo stretchy="false">(</mo><mi>A</mi><mi>B</mi><msup><mo stretchy="false">)</mo><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>=</mo><msup><mi>B</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><msup><mi>A</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mspace linebreak="newline"></mspace><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>A</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac><mo>=</mo><msup><mi>A</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mspace linebreak="newline"></mspace><mfrac><mrow><mi mathvariant="normal">∂</mi><msup><mi>z</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mi>A</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac><mo>=</mo><mi>A</mi><mspace linebreak="newline"></mspace></mrow><annotation encoding="application/x-tex">\text{Linear algebra rules:} \\
 (AB)' = B'A' \\
 \frac{\partial Az}{\partial z} = A' \\
@@ -715,11 +725,14 @@ are unbiased.</p>
 <h2 id="panel-data">
 <a class="anchor" href="#panel-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Panel Data</h2>
 
+<h3 id="fixed-effects">
+<a class="anchor" href="#fixed-effects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fixed Effects</h3>
 <ul>
   <li>Model: $y_{it} = x_{it}’\beta + \alpha_i + \varepsilon_{it}$ where i ranges from 1 to n and t ranges from 1 to T<sub>i</sub>
     <ul>
       <li>If $T_i$ is constant, then we have a <em>balanced panel</em>; otherwise, it is an <em>unbalanced panel</em>
 </li>
+      <li>n should be large, T should be small</li>
     </ul>
   </li>
   <li>
@@ -728,6 +741,59 @@ are unbiased.</p>
       <li>Can be rewritten as an OLS model where $y_{it}^* = x_{it}^{*T}\beta + v_{it}$</li>
     </ul>
   </li>
+  <li>
+<strong>First differencing</strong>: $(y_{it} = x_{it}’\beta + \alpha_i + \varepsilon_{it}) - (y_{i,t-1} = x_{i,t-1}’\beta + \alpha_i + \varepsilon_{i,t-1}) \rightarrow {(y_{it} - y_{i,t-1}) = (x_{it} - x_{i,t-1})’\beta + (\varepsilon_{it} - \varepsilon_{i,t-1})}$
+    <ul>
+      <li>Rewritten as $\tilde{y_{it}} = \tilde{x_{it}’} \beta + \eta_{it}$</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="drawbacks">
+<a class="anchor" href="#drawbacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Drawbacks</h4>
+<ol>
+  <li>Differencing in general loses data; first-differencing drops n observations, mean-differencing removes degrees of freedom
+    <ul>
+      <li>This makes them inefficient</li>
+    </ul>
+  </li>
+  <li>Eliminates time-invariant covariates (bad)</li>
+  <li>Only accounts for heterogeneity in intercepts; does not account for heterogeneity in slopes</li>
+  <li>Not applicable in non-linear models</li>
+</ol>
+
+<h4 id="benefits">
+<a class="anchor" href="#benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Benefits</h4>
+<ol>
+  <li>You don’t need to make assumptions about $\alpha_i$</li>
+</ol>
+
+<h3 id="random-effects">
+<a class="anchor" href="#random-effects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Random Effects</h3>
+
+<ul>
+  <li>Model: $y_{it} = x_{it}’ \beta + w_{it}’b_i + \epsilon_{it}$
+    <ul>
+      <li>$w_{it}\subseteq x_{it}$</li>
+      <li>$b_i \sim N(0, D)$</li>
+      <li>$\varepsilon_i \sim N(0, \sigma^2I_T)$</li>
+      <li>Therefore, $y_i \sim N(X_i\beta, \sigma^2 I_t)$</li>
+      <li>For an individual: $y_i = X_i\beta + W_ib_i + \varepsilon_i$</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Likelihood function: 
+<span class="katex-error" title="ParseError: KaTeX parse error: {align*} can be used only in display mode." style="color:#cc0000">\begin{align*}
+    f(y \vert \beta, \sigma^2, D) &amp;= \prod_{i=1}^n f(y_i \vert \beta, \sigma^2, D)\\
+    &amp;= \prod_{i=1}^n \int f(y_i, b_i \vert \beta, \sigma^2, D) db_i\\
+    &amp;= \prod_{i=1}^n \int f_N(y_i \vert X_i\beta + W_ib_i, \sigma^2I_T)f_N(b_i \vert 0, D) db_i\\
+    &amp;= \prod_{i=1}^n \int f_N(y_i \vert X_i\beta, \sigma^2I_t)
+\end{align*}</span></p>
+
+<ul>
+  <li>MLE is asymptotically efficient and doesn’t remove data</li>
+  <li>Doesn’t have the drawbacks that fixed effects estimation does, but makes assumptions about the form of the time invariate coefficients</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/econ123b/lecture/winter25/markdown/2025/01/06/econ123b-lecture.html" hidden></a>
@@ -772,6 +838,7 @@ are unbiased.</p>
   </div>
 
 </footer>
+
 </body>
 
 </html>
