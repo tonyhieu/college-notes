@@ -444,9 +444,45 @@ Another way to express this is that $\hat{\Theta}_{MLE} \sim N(\Theta_0, I(\Thet
 - $asy Var(\hat{\beta}_{MLE}) = - E\left(\frac{\partial^2 ln f(y\vert\beta, \sigma^2)}{\partial \beta \partial \beta '}\right) = \frac{1}{\sigma^2}X'X$
 - $asy Var(\hat{\sigma^2}_{MLE}) = - E\left(\frac{\partial^2 ln f(y\vert\beta, \sigma^2)}{\partial \sigma^2 \partial \sigma^{2T}}\right) = \frac{n}{2\sigma^4}$
 
-## Panel Data
+## Panel Data 
 
+### Fixed Effects
 - Model: $y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}$ where i ranges from 1 to n and t ranges from 1 to T<sub>i</sub>
     - If $T_i$ is constant, then we have a *balanced panel*; otherwise, it is an *unbalanced panel*
+    - n should be large, T should be small
 - **Mean differencing**: $(y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}) - (\bar{y_i} = \bar{x_i}'\beta + \alpha_i + \bar{\varepsilon}_i) \rightarrow {(y_{it} - \bar{y_i}) = (x_{it} - \bar{x_i})'\beta + v_{it}}$
     - Can be rewritten as an OLS model where $y_{it}^* = x_{it}^{*T}\beta + v_{it}$
+- **First differencing**: $(y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}) - (y_{i,t-1} = x_{i,t-1}'\beta + \alpha_i + \varepsilon_{i,t-1}) \rightarrow {(y_{it} - y_{i,t-1}) = (x_{it} - x_{i,t-1})'\beta + (\varepsilon_{it} - \varepsilon_{i,t-1})}$
+    - Rewritten as $\tilde{y_{it}} = \tilde{x_{it}'} \beta + \eta_{it}$
+
+#### Drawbacks
+1. Differencing in general loses data; first-differencing drops n observations, mean-differencing removes degrees of freedom
+    - This makes them inefficient
+2. Eliminates time-invariant covariates (bad)
+3. Only accounts for heterogeneity in intercepts; does not account for heterogeneity in slopes
+4. Not applicable in non-linear models
+
+#### Benefits
+1. You don't need to make assumptions about $\alpha_i$
+
+### Random Effects
+
+- Model: $y_{it} = x_{it}' \beta + w_{it}'b_i + \epsilon_{it}$
+    - $w_{it}\subseteq x_{it}$
+    - $b_i \sim N(0, D)$
+    - $\varepsilon_i \sim N(0, \sigma^2I_T)$
+    - Therefore, $y_i \sim N(X_i\beta, \sigma^2 I_t)$
+    - For an individual: $y_i = X_i\beta + W_ib_i + \varepsilon_i$
+
+Likelihood function: 
+$$
+\begin{align*}
+    f(y \vert \beta, \sigma^2, D) &= \prod_{i=1}^n f(y_i \vert \beta, \sigma^2, D)\\
+    &= \prod_{i=1}^n \int f(y_i, b_i \vert \beta, \sigma^2, D) db_i\\
+    &= \prod_{i=1}^n \int f_N(y_i \vert X_i\beta + W_ib_i, \sigma^2I_T)f_N(b_i \vert 0, D) db_i\\
+    &= \prod_{i=1}^n \int f_N(y_i \vert X_i\beta, \sigma^2I_t)
+\end{align*}
+$$
+
+- MLE is asymptotically efficient and doesn't remove data
+- Doesn't have the drawbacks that fixed effects estimation does, but makes assumptions about the form of the time invariate coefficients
