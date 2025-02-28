@@ -397,7 +397,7 @@ f_y(y) = \frac{d}{dy}\int_{g(y)}^{h(y)} f_x(x)dx = f_x(h(y))h'(y) - f_x(g(y))g'(
       </li>
     </ul>
   </li>
-  <li>If $S(0) = S_0$, then $S_t = S_0 \exp\left(\left(\mu - \frac{1}{2}\sigma^2\right)t + \sigma S_t W_t\right)$
+  <li>If $S(0) = S_0$, then $S_t = S_0 \exp\left(\left(\mu - \frac{1}{2}\sigma^2\right)t + \sigma W_t\right)$
     <ul>
       <li>By taking the natural log of both sides, we find that $\ln(S_t)$ is normally distributed, so $S_t$ is log-normally distributed</li>
       <li>$\ln(S_t) \sim N(\ln(S_0) + (\mu - \frac{1}{2}\sigma^2)t, \sigma^2 t)$</li>
@@ -489,8 +489,16 @@ f_y(y) = \frac{d}{dy}\int_{g(y)}^{h(y)} f_x(x)dx = f_x(h(y))h'(y) - f_x(g(y))g'(
 <a class="anchor" href="#american-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>American Options</h3>
 
 <ul>
-  <li>The value of an American call option should be above $S - E$; if $S - E$ is greater than the value of the option, then there is risk-free arbitrage</li>
-  <li>The value of an American put option should generally be below $E - S$, but as S gets lower, it might be above $E - S$ due to how little profit is made</li>
+  <li>The value of an American call option should be above $S - E$; if $S - E$ is greater than the value of the option, then there is risk-free arbitrage
+    <ul>
+      <li>This means that the value of an American call option should equal the price of a European call option</li>
+    </ul>
+  </li>
+  <li>The value of an American put option should generally be below $E - S$, but as S gets lower, it might be above $E - S$ due to how little profit is made
+    <ul>
+      <li>American puts have different values than European puts because being able to exercise it early can give value, especially when $S$ is close to 0</li>
+    </ul>
+  </li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/econ135/lecture/winter25/markdown/2025/01/06/econ135-lecture.html" hidden></a>
