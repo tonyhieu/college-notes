@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      17 min read
+      18 min read
     
 </span></p>
 
@@ -163,7 +163,13 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#benefits">Benefits</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h3"><a href="#random-effects">Random Effects</a></li>
+<li class="toc-entry toc-h3"><a href="#random-effects">Random Effects</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#benefits-1">Benefits</a></li>
+<li class="toc-entry toc-h4"><a href="#drawbacks-1">Drawbacks</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#seemingly-unrelated-regression-sur-model">Seemingly Unrelated Regression (SUR) Model</a></li>
 </ul>
 </li>
 </ul><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Linear algebra rules:</mtext><mspace linebreak="newline"></mspace><mo stretchy="false">(</mo><mi>A</mi><mi>B</mi><msup><mo stretchy="false">)</mo><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>=</mo><msup><mi>B</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><msup><mi>A</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mspace linebreak="newline"></mspace><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>A</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac><mo>=</mo><msup><mi>A</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mspace linebreak="newline"></mspace><mfrac><mrow><mi mathvariant="normal">∂</mi><msup><mi>z</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mi>A</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac><mo>=</mo><mi>A</mi><mspace linebreak="newline"></mspace></mrow><annotation encoding="application/x-tex">\text{Linear algebra rules:} \\
@@ -732,7 +738,7 @@ are unbiased.</p>
     <ul>
       <li>If $T_i$ is constant, then we have a <em>balanced panel</em>; otherwise, it is an <em>unbalanced panel</em>
 </li>
-      <li>n should be large, T should be small</li>
+      <li><em>n should be large, T should be small</em></li>
     </ul>
   </li>
   <li>
@@ -778,7 +784,11 @@ are unbiased.</p>
       <li>$b_i \sim N(0, D)$</li>
       <li>$\varepsilon_i \sim N(0, \sigma^2I_T)$</li>
       <li>Therefore, $y_i \sim N(X_i\beta, \sigma^2 I_t)$</li>
-      <li>For an individual: $y_i = X_i\beta + W_ib_i + \varepsilon_i$</li>
+      <li>For an individual: $y_i = X_i\beta + W_ib_i + \varepsilon_i$
+        <ul>
+          <li>$y_i$ is T by 1, where T is the number of observations available for an individual</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -788,12 +798,57 @@ are unbiased.</p>
     f(y \vert \beta, \sigma^2, D) &amp;= \prod_{i=1}^n f(y_i \vert \beta, \sigma^2, D)\\
     &amp;= \prod_{i=1}^n \int f(y_i, b_i \vert \beta, \sigma^2, D) db_i\\
     &amp;= \prod_{i=1}^n \int f_N(y_i \vert X_i\beta + W_ib_i, \sigma^2I_T)f_N(b_i \vert 0, D) db_i\\
-    &amp;= \prod_{i=1}^n \int f_N(y_i \vert X_i\beta, \sigma^2I_t)
+    &amp;= \prod_{i=1}^n f_N(y_i \vert X_i\beta, \sigma^2I_t + W_iDW_i')\\
+    &amp;= \prod_{i=1}^n (2\pi)^{-T/2} \vert W_iDW_i' + \sigma^2I_T\vert^{-1/2} \exp(-\frac{1}{2}(y_i - X\beta)'(W_iDW_i + \sigma^2 I_T)^{-1}(y_i - X\beta))
 \end{align*}</span></p>
 
 <ul>
-  <li>MLE is asymptotically efficient and doesn’t remove data</li>
-  <li>Doesn’t have the drawbacks that fixed effects estimation does, but makes assumptions about the form of the time invariate coefficients</li>
+  <li>Can use gradient descent to find the optimal MLE estimator</li>
+</ul>
+
+<h4 id="benefits-1">
+<a class="anchor" href="#benefits-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Benefits</h4>
+<ol>
+  <li>Asymptotically efficient (because no data is lost)</li>
+  <li>Can draw inferences about the effects of time-invariant covariates</li>
+  <li>Can be employed in non-linear models</li>
+  <li>Can address heterogeneity in both intercepts and slopes</li>
+</ol>
+
+<h4 id="drawbacks-1">
+<a class="anchor" href="#drawbacks-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Drawbacks</h4>
+<ol>
+  <li>Must assume that $b_i \sim N(0,D)$</li>
+</ol>
+
+<h3 id="seemingly-unrelated-regression-sur-model">
+<a class="anchor" href="#seemingly-unrelated-regression-sur-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Seemingly Unrelated Regression (SUR) Model</h3>
+
+<ul>
+  <li>Model: $y_it = x_{it}’\beta_i + \varepsilon_{it}$
+    <ul>
+      <li>In this case, <em>n is small while T is large</em>
+</li>
+    </ul>
+  </li>
+  <li>Instead of having models for individuals, we have models for time periods through stacking on time periods
+    <ul>
+      <li>$y_t = X_t\beta + \varepsilon_t$</li>
+      <li>$E(\varepsilon_t \vert X_t) = 0$</li>
+      <li>$Var(\varepsilon_t \vert X_t) = \Omega_{n\times n}$</li>
+    </ul>
+  </li>
+  <li>Rewrite the model as $y = X\beta + \varepsilon$, where y is nT by 1 and X is nT by k
+    <ul>
+      <li>$E(\varepsilon\vert X) = 0_{nT\times 1}$</li>
+      <li>$Var(\varepsilon\vert X) = \begin{bmatrix}\Omega_{n\times n} &amp; 0 &amp; 0\ 0 &amp; \ddots &amp; 0\ 0 &amp; 0 &amp; \Omega_{n\times n}\end{bmatrix}_{nT\times nT} = \Psi$; this is a block diagonal matrix</li>
+    </ul>
+  </li>
+  <li>We can use GLS now
+    <ul>
+      <li>$\hat{\beta}<em>{GLS} = (X’\Psi^{-1}X)^{-1}X’\Psi^{-1}y = (\sum</em>{t=1}^T X_t’\Omega^{-1}X_t)^{-1}(\sum_{t=1}^T X_t’\Omega^{-1}y_t)$</li>
+    </ul>
+  </li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/econ123b/lecture/winter25/markdown/2025/01/06/econ123b-lecture.html" hidden></a>
