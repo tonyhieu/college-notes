@@ -449,7 +449,7 @@ Another way to express this is that $\hat{\Theta}_{MLE} \sim N(\Theta_0, I(\Thet
 ### Fixed Effects
 - Model: $y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}$ where i ranges from 1 to n and t ranges from 1 to T<sub>i</sub>
     - If $T_i$ is constant, then we have a *balanced panel*; otherwise, it is an *unbalanced panel*
-    - n should be large, T should be small
+    - *n should be large, T should be small*
 - **Mean differencing**: $(y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}) - (\bar{y_i} = \bar{x_i}'\beta + \alpha_i + \bar{\varepsilon}_i) \rightarrow {(y_{it} - \bar{y_i}) = (x_{it} - \bar{x_i})'\beta + v_{it}}$
     - Can be rewritten as an OLS model where $y_{it}^* = x_{it}^{*T}\beta + v_{it}$
 - **First differencing**: $(y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}) - (y_{i,t-1} = x_{i,t-1}'\beta + \alpha_i + \varepsilon_{i,t-1}) \rightarrow {(y_{it} - y_{i,t-1}) = (x_{it} - x_{i,t-1})'\beta + (\varepsilon_{it} - \varepsilon_{i,t-1})}$
@@ -473,6 +473,7 @@ Another way to express this is that $\hat{\Theta}_{MLE} \sim N(\Theta_0, I(\Thet
     - $\varepsilon_i \sim N(0, \sigma^2I_T)$
     - Therefore, $y_i \sim N(X_i\beta, \sigma^2 I_t)$
     - For an individual: $y_i = X_i\beta + W_ib_i + \varepsilon_i$
+        - $y_i$ is T by 1, where T is the number of observations available for an individual
 
 Likelihood function: 
 $$
@@ -480,9 +481,32 @@ $$
     f(y \vert \beta, \sigma^2, D) &= \prod_{i=1}^n f(y_i \vert \beta, \sigma^2, D)\\
     &= \prod_{i=1}^n \int f(y_i, b_i \vert \beta, \sigma^2, D) db_i\\
     &= \prod_{i=1}^n \int f_N(y_i \vert X_i\beta + W_ib_i, \sigma^2I_T)f_N(b_i \vert 0, D) db_i\\
-    &= \prod_{i=1}^n \int f_N(y_i \vert X_i\beta, \sigma^2I_t)
+    &= \prod_{i=1}^n f_N(y_i \vert X_i\beta, \sigma^2I_t + W_iDW_i')\\
+    &= \prod_{i=1}^n (2\pi)^{-T/2} \vert W_iDW_i' + \sigma^2I_T\vert^{-1/2} \exp(-\frac{1}{2}(y_i - X\beta)'(W_iDW_i + \sigma^2 I_T)^{-1}(y_i - X\beta))
 \end{align*}
 $$
 
-- MLE is asymptotically efficient and doesn't remove data
-- Doesn't have the drawbacks that fixed effects estimation does, but makes assumptions about the form of the time invariate coefficients
+- Can use gradient descent to find the optimal MLE estimator
+
+#### Benefits
+1. Asymptotically efficient (because no data is lost)
+2. Can draw inferences about the effects of time-invariant covariates
+3. Can be employed in non-linear models
+4. Can address heterogeneity in both intercepts and slopes
+
+#### Drawbacks
+1. Must assume that $b_i \sim N(0,D)$
+
+### Seemingly Unrelated Regression (SUR) Model
+
+- Model: $y_it = x_{it}'\beta_i + \varepsilon_{it}$
+    - In this case, *n is small while T is large*
+- Instead of having models for individuals, we have models for time periods through stacking on time periods
+    - $y_t = X_t\beta + \varepsilon_t$
+    - $E(\varepsilon_t \vert X_t) = 0$
+    - $Var(\varepsilon_t \vert X_t) = \Omega_{n\times n}$
+- Rewrite the model as $y = X\beta + \varepsilon$, where y is nT by 1 and X is nT by k
+    - $E(\varepsilon\vert X) = 0_{nT\times 1}$
+    - $Var(\varepsilon\vert X) = \begin{bmatrix}\Omega_{n\times n} & 0 & 0\\ 0 & \ddots & 0\\ 0 & 0 & \Omega_{n\times n}\end{bmatrix}_{nT\times nT} = \Psi$; this is a block diagonal matrix
+- We can use GLS now
+    - $\hat{\beta}_{GLS} = (X'\Psi^{-1}X)^{-1}X'\Psi^{-1}y = (\sum_{t=1}^T X_t'\Omega^{-1}X_t)^{-1}(\sum_{t=1}^T X_t'\Omega^{-1}y_t)$
