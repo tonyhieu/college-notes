@@ -450,9 +450,9 @@ Another way to express this is that $\hat{\Theta}_{MLE} \sim N(\Theta_0, I(\Thet
 - Model: $y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}$ where i ranges from 1 to n and t ranges from 1 to T<sub>i</sub>
     - If $T_i$ is constant, then we have a *balanced panel*; otherwise, it is an *unbalanced panel*
     - *n should be large, T should be small*
-- **Mean differencing**: $(y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}) - (\bar{y_i} = \bar{x_i}'\beta + \alpha_i + \bar{\varepsilon}_i) \rightarrow {(y_{it} - \bar{y_i}) = (x_{it} - \bar{x_i})'\beta + v_{it}}$
+- **Mean differencing**: $$(y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}) - (\bar{y_i} = \bar{x_i}'\beta + \alpha_i + \bar{\varepsilon}_i) \rightarrow {(y_{it} - \bar{y_i}) = (x_{it} - \bar{x_i})'\beta + v_{it}}$$
     - Can be rewritten as an OLS model where $y_{it}^* = x_{it}^{*T}\beta + v_{it}$
-- **First differencing**: $(y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}) - (y_{i,t-1} = x_{i,t-1}'\beta + \alpha_i + \varepsilon_{i,t-1}) \rightarrow {(y_{it} - y_{i,t-1}) = (x_{it} - x_{i,t-1})'\beta + (\varepsilon_{it} - \varepsilon_{i,t-1})}$
+- **First differencing**: $$(y_{it} = x_{it}'\beta + \alpha_i + \varepsilon_{it}) - (y_{i,t-1} = x_{i,t-1}'\beta + \alpha_i + \varepsilon_{i,t-1}) \rightarrow {(y_{it} - y_{i,t-1}) = (x_{it} - x_{i,t-1})'\beta + (\varepsilon_{it} - \varepsilon_{i,t-1})}$$
     - Rewritten as $\tilde{y_{it}} = \tilde{x_{it}'} \beta + \eta_{it}$
 
 #### Drawbacks
