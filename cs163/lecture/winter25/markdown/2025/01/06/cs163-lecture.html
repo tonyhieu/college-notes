@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      27 min read
+      29 min read
     
 </span></p>
 
@@ -219,6 +219,15 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#fpt">FPT</a></li>
+<li class="toc-entry toc-h2"><a href="#flow">Flow</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#greedy-algorithm-1">Greedy Algorithm</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#augmenting-path">Augmenting Path</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul><h2 id="graph-representation">
 <a class="anchor" href="#graph-representation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Graph Representation</h2>
 
@@ -1182,6 +1191,71 @@ return min{L[V(G) - s, v] + D[v, n - 1] for v in V(G) - s}
 <strong>Fixed parameter tractable</strong>: Time is polynomial n with a fixed exponent, but may depend badly on width</li>
   <li>
 <strong>Courcelle’s theorem</strong>: There exists an FPT algorithm for any existence or min-weight/max-weight optimization problem on classes of graphs that can be described as a logical formula involving vertices, edges, sets of vertices and edges, and adjacency</li>
+</ul>
+
+<h2 id="flow">
+<a class="anchor" href="#flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Flow</h2>
+
+<ul>
+  <li>Flow can be used in many applications; playoff elimination, traffic engineering, etc.</li>
+  <li>
+<strong>Maximum flow</strong> is the question of determining the maximum flow out of a starting vertex s into an ending vertex t
+    <ul>
+      <li>The flow into and out of a vertex should be equal (aside from the start and end vertices)</li>
+    </ul>
+  </li>
+  <li>Properties of maximum flow
+    <ul>
+      <li>Can be converted to a linear program and solved; <em>polynomial time</em>
+</li>
+      <li>A maximum flow will always exist, even with irrational numbers</li>
+      <li>
+<strong>Integrality</strong>: If all the capacities are integers, then there exists a maximum flow in which all flow amounts are integers</li>
+    </ul>
+  </li>
+  <li>The max flow problem is equivalent to the <strong>minimum cut</strong> problem
+    <ul>
+      <li>Min-cut: find the minimum sum of capacities flowing from one subset of the graph to another, where subsets are found by “cutting” the graph in the plane</li>
+      <li>For every flow network, the maximum flow is equal to the minimum cut</li>
+      <li>For every flow, either there is an equal cut or we can increase the flow; <strong>max flow ≥ min cut</strong>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img width="366" alt="Image" src="https://github.com/user-attachments/assets/18fb9e62-9fb8-4be2-81c2-f3b726c29280"></p>
+
+<h3 id="greedy-algorithm-1">
+<a class="anchor" href="#greedy-algorithm-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Greedy Algorithm</h3>
+
+<ul>
+  <li>Start with a flow that is not maximum (all-zero flow)</li>
+  <li>If we ever get stuck, we can find a cut with a capacity equal to the flow amount</li>
+  <li>Since max flow ≤ min cut ≤ this new cut, and our flow equals our cut, then we have found the maximum flow</li>
+</ul>
+
+<h4 id="augmenting-path">
+<a class="anchor" href="#augmenting-path" aria-hidden="true"><span class="octicon octicon-link"></span></a>Augmenting Path</h4>
+<ul>
+  <li>
+<strong>Residual graph</strong>: A graph with backwards edges containing the capacities of the edge in the current graph minus the flow of the incoming vertex</li>
+  <li>While the residual graph has a path $P$ from $s$ to $t$:
+    <ul>
+      <li>Find the width $w$ of $P$</li>
+      <li>Increase flow along $P$ by $w$ units</li>
+      <li>Recompute the residual graph</li>
+    </ul>
+  </li>
+  <li>When the algorithm terminates, it finds a minimum cut (and a maximum flow)
+    <ul>
+      <li>Stops when there are no residual paths from s to t</li>
+      <li>Form a cut of the graph into two subsets $S$ and $T$
+        <ul>
+          <li>$S$ consists of everything that can be reached from $s$ by a residual path; $T$ is everything else</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/cs163/lecture/winter25/markdown/2025/01/06/cs163-lecture.html" hidden></a>
