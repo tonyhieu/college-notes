@@ -519,7 +519,13 @@ $$
 
 1. Regress the observations for each equation separately by OLS ($i=1,\ldots,n$)
     - Obtain $\hat{\beta}_{OLS}$ for $i=1,\ldots,n$
-2. Form residuals $e_t = \begin{pmatrix}e_{1t} & e_{2t} & \ldots & e_{nt}\end{pmatrix}$' for $t=1,\ldots,T$ where ${e_t = y_t -X_t\hat{\beta}_{OLS}}$ or ${e_{it} = y_{it}- x_{it}'\hat{\beta}_{i, OLS}}$
+2. Form residuals $e_t = \begin{pmatrix}e_{1t} & e_{2t} & \ldots & e_{nt}\end{pmatrix}$' for $t=1,\ldots,T$ 
+
+$$
+{e_t = y_t -X_t\hat{\beta}_{OLS}} \text{, or} \\
+{e_{it} = y_{it}- x_{it}'\hat{\beta}_{i, OLS}}
+$$
+
 3. Produce $\hat{\Omega} = \frac{\Sigma e_ie_i'}{T}$
 
 $$
