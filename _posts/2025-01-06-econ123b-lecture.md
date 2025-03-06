@@ -499,14 +499,49 @@ $$
 
 ### Seemingly Unrelated Regression (SUR) Model
 
-- Model: $y_it = x_{it}'\beta_i + \varepsilon_{it}$
+- Model: $y_{it} = x_{it}'\beta_i + \varepsilon_{it}$
     - In this case, *n is small while T is large*
 - Instead of having models for individuals, we have models for time periods through stacking on time periods
     - $y_t = X_t\beta + \varepsilon_t$
     - $E(\varepsilon_t \vert X_t) = 0$
-    - $Var(\varepsilon_t \vert X_t) = \Omega_{n\times n}$
+    - $Var(\varepsilon_t \vert X_t) = \Omega_{n\times n}$ (doesn't vary over time)
 - Rewrite the model as $y = X\beta + \varepsilon$, where y is nT by 1 and X is nT by k
-    - $E(\varepsilon\vert X) = 0_{nT\times 1}$
-    - $Var(\varepsilon\vert X) = \begin{bmatrix}\Omega_{n\times n} & 0 & 0\\ 0 & \ddots & 0\\ 0 & 0 & \Omega_{n\times n}\end{bmatrix}_{nT\times nT} = \Psi$; this is a block diagonal matrix
+$$
+E(\varepsilon\vert X) = 0_{nT\times 1}\\
+Var(\varepsilon\vert X) = \begin{bmatrix}\Omega_{n\times n} & 0 & 0\\ 0 & \ddots & 0\\ 0 & 0 & \Omega_{n\times n}\end{bmatrix}_{nT\times nT} = \Psi
+$$
 - We can use GLS now
-    - $\hat{\beta}_{GLS} = (X'\Psi^{-1}X)^{-1}X'\Psi^{-1}y = (\sum_{t=1}^T X_t'\Omega^{-1}X_t)^{-1}(\sum_{t=1}^T X_t'\Omega^{-1}y_t)$
+$$
+\hat{\beta}_{GLS} = (X'\Psi^{-1}X)^{-1}X'\Psi^{-1}y = (\sum_{t=1}^T X_t'\Omega^{-1}X_t)^{-1}(\sum_{t=1}^T X_t'\Omega^{-1}y_t)
+$$
+
+#### FGLS Estimation
+
+1. Regress the observations for each equation separately by OLS ($i=1,\ldots,n$)
+    - Obtain $\hat{\beta}_{OLS}$ for $i=1,\ldots,n$
+2. Form residuals $e_t = \begin{pmatrix}e_{1t} & e_{2t} & \ldots & e_{nt}\end{pmatrix}$' for $t=1,\ldots,T$ where ${e_t = y_t -X_t\hat{\beta}_{OLS}}$ or ${e_{it} = y_{it}- x_{it}'\hat{\beta}_{i, OLS}}$
+3. Produce $\hat{\Omega} = \frac{\Sigma e_ie_i'}{T}$
+
+$$
+\hat{\beta}_{FGLS} = (X'\hat{\Psi}^{-1}X)^{-1}X'\hat{\Psi}^{-1}y = (\sum_{t=1}^T X_t'\hat{\Omega}^{-1}X_t)^{-1}(\sum_{t=1}^T X_t'\hat{\Omega}^{-1}y_t)
+$$
+
+$$
+asyVar(\hat{\beta}_{FGLS}\vert X) = (X'\hat{\Psi}^{-1}X)^{-1} = (\sum_{t=1}^T X'_t\hat{\Omega}^{-1}X_t)^{-1}
+$$
+
+## Discrete Data Models
+
+- Various different types
+    - Binary data: $y_i\in\{0,1\}$
+        - Use probit, logit, robit; don't use linear probability model, which is just OLS
+    - Ordinal data: $y_i\in\{1,2,\ldots, J\}$, where $1 \leq 2 \leq \ldots \leq J$
+        - Use ordinal probit, ordinal logit
+    - Count data: $y_i\in \mathbb{Z}^+$
+    - Censored data: $y_i\in\{0\}\cup\mathbb{R}^+$, or the data is continuous but there is a point mass at 0
+        - Use tobit model
+    - Sequential data: ordinal data but with discontinuities (i.e. 11 vs 12 years of education)
+- **Heckit Model**: $y_i = x_i'\beta + \varepsilon_i$
+    - $y_i$ is only observed when $d_i = 1$, where $d_i\in\{0,1\}$
+    - If $d_i = 0$, then $y_i$ is missing
+    - AKA Heckman sample selection model
