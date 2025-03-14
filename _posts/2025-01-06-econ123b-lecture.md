@@ -551,3 +551,133 @@ $$
     - $y_i$ is only observed when $d_i = 1$, where $d_i\in\{0,1\}$
     - If $d_i = 0$, then $y_i$ is missing
     - AKA Heckman sample selection model
+
+
+### Binary Data
+
+#### Linear Probability Model
+- **Linear probability model**: $Pr(y_i=1\vert x_i) = x_i'\beta$
+    - Basic model has issues; heteroskedastic, $Pr(y_i=1\vert x_i)$ might not be between 0 and 1
+    - **Three modeling strategy**: Force it so that $0\leq Pr(y_i=1\vert x_i) \leq 1$ by updating our model to $Pr(y_i=1\vert x_i) = F(x_i'\beta)$
+        - *Probit*: $Pr(y_i=1\vert x_i) = \Phi(x_i'\beta)$, where $\Phi$ is the Normal CDF
+        - *Logit/Logistic Regression*: $Pr(y_i=1\vert x_i) = \frac{\exp(x_i'\beta)}{1+\exp(x_i'\beta)} = \frac{1}{1+\exp(-x_i'\beta)}$
+        - *Robit/Robust Regression*: $Pr(y_i=1\vert x_i) = F_{T_\nu}(x_i'\beta)$, where $F_{T_\nu}$ is the CDF of the t distribution with $\nu$ degrees of freedom
+
+#### Latent Utility Framework
+
+- Let $y_i^*\in(-\infty, \infty)$ represent the latent (unobserved) utility
+- $y_i^* = x_i'\beta + \varepsilon_i, \varepsilon_i \sim N(0,1)$
+- Model two utilities: $u_{i0}$ is the utility from choosing $0$, and $u_{i1}$ is the utility from choosing $1$
+    - $u_{i0} = f(x_i'\beta_0) + \eta_{i0}$
+    - $u_{i1} = f(x_i'\beta_1) + \eta_{i1}$
+    - $y_i^* = u_{i0} - u_{i1} = F(x_i'\beta) + \eta_{i0}-\eta_{i1}$
+- If $y_i^* > 0$, then $y_i = 0$; otherwise, $y_i=1$
+- Now, we have $Pr(y_i=1\vert x_i) = Pr(y_i^* > 0 \vert x_i) = Pr(\varepsilon_i > -x_i' \beta \vert x_i) = 1-Pr(\varepsilon_i\leq -x_i'\beta\vert x_i) = 1-\Phi(-x_i'\beta) = \Phi(x_i'\beta)$ (Probit model)
+    - For different error distributions, we find the different regressions
+    - If $\varepsilon_i\sim \mathcal{L}(0,1)$, where $\mathcal{L}$ is a Logit random variable, then we derive the Logit model
+    - If $\varepsilon_i\sim t_{\nu}(0,1)$, where $t_{\nu}$ is the t-distribution with $df=\nu$, then we derive the Robit model
+
+
+#### Estimating Coefficients
+
+Probit:
+
+$$
+Pr(y_i=1 \vert x_i) = \Phi(x_i'\beta)\\
+f(y_i\vert\beta) = \begin{cases}
+    \Phi(x_i'\beta) & y_i=1\\
+    1- \Phi(x_i'\beta) & y_i=0
+\end{cases} \rightarrow \Phi(x_i'\beta)^{y_i} (1 - \Phi(x_i'\beta))^{1-y_i}\\
+\begin{align*}
+    f(y\vert\beta) &= \prod^n_{i=1} f(y_i\vert\beta) \\
+    &= \prod^n_{i=1} \Phi(x_i'\beta)^{y_i} (1 - \Phi(x_i'\beta))^{1-y_i}\\
+    &= \left\{\prod_{i:\text{ } y_i=1} \Phi(x_i'\beta)\right\} \left\{\prod_{i:\text{ } y_i=0}(1 - \Phi(x_i'\beta))\right\}\\
+    \mathcal{L}(\beta) &= \sum^n_{i=1}\left[y_i\ln(\Phi(x_i'\beta) + (1-y_i)\ln(1-\Phi(x_i'\beta)))\right]
+\end{align*}
+$$
+
+- Explaining the MLE derivation will be on the final
+
+### Ordinal Data
+
+- $y_i^* = x_i'\beta + \varepsilon_i, \varepsilon_i\sim N(0,\sigma^2)$
+- Since there is an order to the variables, we will divide the CDF into $J$ subsections 
+    - Option 1: Set $\sigma^2 = 1$ and set $J-1$ cutpoints (denoted by $\gamma$)
+    - Option 2: Let $\sigma^2$ be free and set $J-2$ cutpoints
+    - Regardless, we will have a *location restriction* ($E[\varepsilon_i\vert X] = 0$) and a *scale restriction*
+$$
+\begin{align*}
+    Pr(y_i=1) &= Pr(\gamma_0 \leq y_i^* \leq \gamma_1) \\ 
+    Pr(y_i=2) &= Pr(\gamma_1 \leq y_i^* \leq \gamma_2) \\
+    Pr(y_i=3) &= Pr(\gamma_2 \leq y_i^* \leq \gamma_3) \\
+    Pr(y_i=4) &= Pr(\gamma_3 \leq y_i^* \leq \gamma_4) = Pr( y_i^* \leq \gamma_4) - Pr(y_i^*\leq \gamma_3)\\ 
+    &\vdots\\
+    f(y_i=j\vert x_i) = Pr(y_i=j\vert x_i) &= \Phi(\gamma_{j} - x_i'\beta) - \Phi(\gamma_{j-1} - x_i'\beta)
+\end{align*}
+$$
+
+- Estimate using MLE
+- Define $\gamma_0 = -\infty$ and $\gamma_J = \infty$
+$$
+\begin{align*}
+    f(y_\vert\theta) &= \prod_{i=1}^n f(y_i\vert \beta, \sigma^2, \gamma_1, \ldots, \gamma_{J-1})\\
+    &= \prod_{i=1}^n [\Phi(\gamma_{y_i}-x_i'\beta) - \Phi(\gamma_{y_i - 1}-x_i'\beta)]\\
+    \mathcal{L}(f(y\vert\theta))&= \sum_{i=1}^n \ln[\Phi(\gamma_{y_i}-x_i'\beta) - \Phi(\gamma_{y_i - 1}-x_i'\beta)]
+\end{align*}
+$$
+
+### Censored Data Model
+
+- Main model: **Tobit model**
+
+$$
+y_i^* = x_i'\beta + \varepsilon_i \text{, where } \varepsilon_i \sim N(0, \sigma^2)\\
+y_i^* \sim N(x_i'\beta, \sigma^2)\\
+\text{One-sided DGP: } y_i = \begin{cases}
+    0, & y_i^* \leq 0\\
+    y_i^*, & y_i^* > 0
+\end{cases}\\
+\text{Two-sided DGP: } 
+y_i = \begin{cases}
+    l, & y_i^* \leq l\\
+    y_i^*, & l < y_i^* < u \\
+    u, & y_i^* > u
+\end{cases} \\
+$$
+
+For the Tobit model, we can use an MLE model:
+
+$$
+\begin{align*}
+    f(y_i \vert y_i=0) &= Pr(y_i = 0) \\
+    &= Pr(y_i^* \leq 0)\\
+    &= Pr(x_i'\beta + \varepsilon_i \leq 0)\\
+    &= Pr(\frac{\varepsilon_i}{\sigma} \leq -\frac{x_i'\beta}{\sigma})\\
+    &= \Phi(-\frac{x_i'\beta}{\sigma})
+\end{align*}\\
+\begin{align*}
+    f(y_i \vert \beta, \sigma^2) &= f_N(y_i^* \vert \beta, \sigma^2)\\
+    &= \frac{1}{\sqrt{2\pi\sigma}}\exp(-\frac{(y-x_i'\beta)^2}{2\sigma^2})
+\end{align*}\\
+\begin{align*}
+    f(y\vert\beta, \sigma^2) &= \prod^n_{i=1} f(y_i\vert\beta,\sigma^2)\\
+    &= \left\{\prod^n_{i:y_i=0} 1 - \Phi(\frac{x_i'\beta}{\sigma}) \right\} \times \left\{\prod^n_{i:y_i>0} \frac{1}{\sqrt{2\pi\sigma}}\exp(-\frac{(y-x_i'\beta)^2}{2\sigma^2}) \right\}
+\end{align*}
+$$
+
+### Count Data Model
+
+- Technique: **Poisson regression**
+
+$$
+\text{DGP: } y_i \sim Poisson(\lambda_i)\\
+Pr(y_i=k) = \frac{e^{-\lambda_i}\lambda_i^{y_i}}{y_i!} = \frac{e^{-\lambda_i}\lambda_i^{k}}{k!}\\
+\lambda_i = e^{x_i'\beta}\iff \ln \lambda_i = x_i'\beta\\
+\begin{align*}
+    \mathcal{L} &= \prod_{i=1}^n f(y_i\vert \lambda_i)\\
+    &= \prod_{i=1}^n \frac{e^{-\lambda_i}\lambda_i^{y_i}}{y_i!}\\
+    \ln\mathcal{L} &= \sum_{i=1}^n \ln(\frac{e^{-\lambda_i}\lambda_i^{y_i}}{y_i!}) \\
+    &= \sum_{i=1}^n \left[-\lambda_i + y_i\ln(\lambda_i) - \ln(y_i!)\right]\\
+    &= \sum_{i=1}^n \left[-\exp(x_i'\beta) + y_i(x_i'\beta) - \ln(y_i!)\right]
+\end{align*}
+$$
