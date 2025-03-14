@@ -107,7 +107,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      31 min read
+      34 min read
     
 </span></p>
 
@@ -241,10 +241,12 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#matching">Matching</a>
 <ul>
 <li class="toc-entry toc-h4"><a href="#complete-bipartite-matching">Complete Bipartite Matching</a></li>
+<li class="toc-entry toc-h4"><a href="#stable-matching">Stable Matching</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#planar-graphs">Planar Graphs</a></li>
 </ul><h2 id="graph-representation">
 <a class="anchor" href="#graph-representation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Graph Representation</h2>
 
@@ -1350,6 +1352,94 @@ return min{L[V(G) - s, v] + D[v, n - 1] for v in V(G) - s}
       <li>Use Dijkstra’s to find the adjusted distances from s to all other vertices, including the shortest alternating path</li>
       <li>Adjust heights: subtract distance at red vertices, add distance at blue</li>
       <li>Use the shortest alternating path to increase the size of matching</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="stable-matching">
+<a class="anchor" href="#stable-matching" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stable Matching</h4>
+<ul>
+  <li>Input: A balanced complete bipartite graph with edges representing a preference ordering; i.e. each vertex has a preference ordering of vertices on the other side of the bipartition
+    <ul>
+      <li>In other words: $n$ applicants and $n$ positions, where applicants and positions provide a preference ordering of each other</li>
+    </ul>
+  </li>
+  <li>Output: A <strong>stable</strong> matching where no pair of vertices would both prefer to be matched to each other
+    <ul>
+      <li>In other words: there exists no $(x, y)$ such that $x$ would prefer $y$ and $y$ would prefer $x$ as opposed to the current matching</li>
+    </ul>
+  </li>
+  <li>Stable matching always exists and can be found in linear time</li>
+  <li>Various applications; match med students to residencies, high school students to universities, etc.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Gale-Shapley algorithm
+
+Start with an empty matching
+
+While there are unfilled positions:
+    Choose any set U of unfilled positions
+    Each position in U sends an offer to its most preferred applicant (that it hasn't previously sent anything to)
+    Each applicant who receives an offer from a more preferred company accepts it
+</code></pre></div></div>
+
+<ul>
+  <li>We can get the Gale-Shapley algorithm to run in linear time using decorators, dictionaries, and iterators
+    <ul>
+      <li>Each offer takes constant time because of our data structures, at most $O(m)$ offers; linear time</li>
+    </ul>
+  </li>
+  <li>This algorithm will always produce the same stable matching
+    <ul>
+      <li>The stable matching produced will be the best for positions but the worst for applicants (in terms of possible matchings and preference orderings)</li>
+      <li>Positions cannot game the system by giving false preference orderings</li>
+    </ul>
+  </li>
+  <li>Changing the constraints of the stable matching (such as with non-bipartite graphs) turns the problem into NP-hard</li>
+</ul>
+
+<h2 id="planar-graphs">
+<a class="anchor" href="#planar-graphs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Planar Graphs</h2>
+
+<ul>
+  <li>A <strong>planar graph</strong> is a graph that you can draw in the 2D plane such that there are no crossings
+    <ul>
+      <li>A famous example is the <a href="https://en.wikipedia.org/wiki/Three_utilities_problem">three utilities problem</a>; this is a <strong>nonplanar graph</strong> with at least one crossing</li>
+    </ul>
+  </li>
+  <li>Examples of planar graphs: trees, grid graphs, convex polyhedra</li>
+  <li>Properties of Planar Graphs
+    <ul>
+      <li>
+<strong>Euler’s formula</strong>: A connected planar graph with $V$ vertices, $E$ edges, and $F$ faces satisfies the equation $V-E+F=2$
+        <ul>
+          <li>Implies that there are few edges in a graph</li>
+          <li>For simple planar graphs, ${E \leq 3V - 6}$; for bipartite ones, ${E\leq 2V - 4}$</li>
+        </ul>
+      </li>
+      <li>Simple planar graphs have $\leq 3n-6$ edges and their degeneracy is $\leq 5$
+        <ul>
+          <li>This means that $m$ is $O(n)$</li>
+        </ul>
+      </li>
+      <li>
+<strong>Four-color theorem</strong>: Can be colored with $\leq 4$ colors</li>
+      <li>
+<strong>Planar separator theorem</strong>: Tree width is $O(\sqrt{n})$</li>
+      <li>
+<strong>Product structure theorem</strong>: Every planar graph is a subgraph of a product $P\boxtimes T$ where $P$ is a path and $T$ has treewidth $O(1)$</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Kuratowski’s Theorem</strong>: A graph is planar iff it does not have a subgraph formed by $K_{3,3}$ or $K_5$ by creating big edges using existing edges</p>
+  </li>
+  <li>Duality; create a vertex for each face and an edge between touching faces
+    <ul>
+      <li>If a subgraph of the primal has a cycle, then the dual will be a disconnected graph</li>
+      <li>If the primal is a spanning tree, then the dual will also be a spanning tree</li>
+      <li>If the primal graph is Eulerian, then the dual graph will be bipartite</li>
+      <li>Acyclic in primal $\iff$ dual is strongly connected</li>
+      <li>Shortest path in primal $\iff$ min cut in dual</li>
     </ul>
   </li>
 </ul>
