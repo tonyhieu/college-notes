@@ -107,7 +107,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      34 min read
+      36 min read
     
 </span></p>
 
@@ -246,7 +246,12 @@ window.onload = wrap_img;
 </li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#planar-graphs">Planar Graphs</a></li>
+<li class="toc-entry toc-h2"><a href="#planar-graphs">Planar Graphs</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#planarity-testing">Planarity Testing</a></li>
+<li class="toc-entry toc-h3"><a href="#planarity-drawnig">Planarity Drawnig</a></li>
+</ul>
+</li>
 </ul><h2 id="graph-representation">
 <a class="anchor" href="#graph-representation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Graph Representation</h2>
 
@@ -1442,6 +1447,65 @@ While there are unfilled positions:
       <li>Shortest path in primal $\iff$ min cut in dual</li>
     </ul>
   </li>
+</ul>
+
+<h3 id="planarity-testing">
+<a class="anchor" href="#planarity-testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Planarity Testing</h3>
+
+<ul>
+  <li>Find the cyclical ordering of edges around each vertex</li>
+  <li>Determine whether or not the ordering follows Euler’s formula</li>
+</ul>
+
+<h3 id="planarity-drawnig">
+<a class="anchor" href="#planarity-drawnig" aria-hidden="true"><span class="octicon octicon-link"></span></a>Planarity Drawnig</h3>
+
+<ul>
+  <li>According to Fary’s theorem, drawing a planar graph where vertices are given (integer) coordinates and edges are straight lines is always possible</li>
+  <li>The grid on which the graph is drawn must be at least $n/3 \times n/3$</li>
+  <li>There are various known upper bounds
+    <ul>
+      <li>$(2n-3) \times (n-1)$ grid</li>
+      <li>$(\frac{4n}{3}) \times (\frac{2n}{3})$ grid</li>
+      <li>$(n-1) \times (n-1)$ grid (the one used for class)</li>
+    </ul>
+  </li>
+  <li>A planar graph is <strong>maximal</strong> if you cannot add any more edges while preserving planarity
+    <ul>
+      <li>A graph with a face with four or more vertices CANNOT be maximal; add another edge between two of the vertices in this face
+        <ul>
+          <li>All faces are triangles if maximal</li>
+        </ul>
+      </li>
+      <li>The number of edges must be $m = 3n-6$</li>
+    </ul>
+  </li>
+  <li>It never hurts to add extra edges and turn a planar graph into a maximal planar graph; adding these extra edges takes linear time
+    <ul>
+      <li>Can use a DCEL !</li>
+    </ul>
+  </li>
+  <li>A <strong>Schnyder forest</strong> is a representation of a graph such that there are three trees rooted at the outer vertices that each contain all of the other vertices of the graph</li>
+</ul>
+
+<p><img width="975" alt="Image" src="https://github.com/user-attachments/assets/9996c73c-82dc-42ac-84bb-124eeddc73e4"></p>
+
+<p>To create a Schnyder forest:</p>
+<ol>
+  <li>Find a neighbor of one of the three root vertices that only shares two neighbors with the root</li>
+  <li>Merge this vertex, and repeat the last two steps until all vertices are merged</li>
+  <li>Unmerge vertices and color</li>
+</ol>
+
+<ul>
+  <li>
+<strong>Trilinear coordinates</strong> is a coordinate system of 3-tuples; each element of the tuple represents the distance from each of the three sides
+    <ul>
+      <li>Can be converted to Cartesian coordinates by dropping the last element of the 3-tuple</li>
+    </ul>
+  </li>
+  <li>To get coordinates of a planar graph, we can create trilinear coordinates for each vertex, where each element of the 3-tuple is the number of vertices in the red/blue/yellow region of the Schnyder forest</li>
+  <li>Connect the vertices with straight lines to finish the planar drawing with straight line</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/cs163/lecture/winter25/markdown/2025/01/06/cs163-lecture.html" hidden></a>

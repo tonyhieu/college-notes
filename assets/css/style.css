@@ -183,6 +183,8 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 /** Wrapper */
 .wrapper { max-width: 1000px; margin: 0 auto; padding: 0 30px; }
 
+@media screen and (max-width: 1000px) { .wrapper { padding-right: 18px; padding-left: 18px; } }
+
 /** Clearfix */
 .wrapper:after { content: ""; display: table; clear: both; }
 
@@ -215,7 +217,7 @@ table td { border: 1px solid #e8e8e8; }
 
 .site-title, .site-title:visited { color: #424242; }
 
-.site-nav { position: absolute; top: 9px; right: 15px; background-color: #fdfdfd; border: 1px solid #e8e8e8; border-radius: 5px; text-align: right; }
+.site-nav { position: absolute; top: 9px; right: 18px; background-color: #fdfdfd; border: 1px solid #e8e8e8; border-radius: 5px; text-align: right; }
 
 .site-nav .nav-trigger, .site-nav .slab { display: none; }
 

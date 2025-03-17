@@ -107,7 +107,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      11 min read
     
 </span></p>
 
@@ -145,12 +145,18 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#shannons-demon">Shannon’s Demon</a></li>
 <li class="toc-entry toc-h2"><a href="#black-scholes">Black-Scholes</a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#modeling-stock-prices">Modeling Stock Prices</a></li>
+<li class="toc-entry toc-h3"><a href="#modeling-stock-prices">Modeling Stock Prices</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#log-normal-distribution-of-securities">Log Normal Distribution of Securities</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h3"><a href="#itos-lemma">Ito’s Lemma</a></li>
 <li class="toc-entry toc-h3"><a href="#base-formula">Base Formula</a></li>
 <li class="toc-entry toc-h3"><a href="#option-formulas">Option Formulas</a></li>
 <li class="toc-entry toc-h3"><a href="#greeks-formulas">Greeks Formulas</a></li>
 <li class="toc-entry toc-h3"><a href="#american-options">American Options</a></li>
+<li class="toc-entry toc-h3"><a href="#implied-vs-realized-volatility">Implied vs. Realized Volatility</a></li>
+<li class="toc-entry toc-h3"><a href="#dividends">Dividends</a></li>
 </ul>
 </li>
 </ul><h2 id="simple-sports-betting">
@@ -420,6 +426,14 @@ f_y(y) = \frac{d}{dy}\int_{g(y)}^{h(y)} f_x(x)dx = f_x(h(y))h'(y) - f_x(g(y))g'(
   </li>
 </ul>
 
+<h4 id="log-normal-distribution-of-securities">
+<a class="anchor" href="#log-normal-distribution-of-securities" aria-hidden="true"><span class="octicon octicon-link"></span></a>Log Normal Distribution of Securities</h4>
+
+<ul>
+  <li>$\ln S(T) = N(\mu_1, \sigma_1^2)$, where $\mu_1 = \ln S(t) + (\mu - \frac{1}{2}\sigma^2)(T-t)$ and $\sigma_1^2 = \sigma^2(T-t)$</li>
+  <li>$Prob(S \leq S_1) = N(\frac{\ln S_1 - \mu_1}{\sigma_1})$; probability that the security price will be below some set price $S_1$</li>
+</ul>
+
 <h3 id="itos-lemma">
 <a class="anchor" href="#itos-lemma" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ito’s Lemma</h3>
 
@@ -511,6 +525,42 @@ f_y(y) = \frac{d}{dy}\int_{g(y)}^{h(y)} f_x(x)dx = f_x(h(y))h'(y) - f_x(g(y))g'(
       <li>American puts have different values than European puts because being able to exercise it early can give value, especially when $S$ is close to 0</li>
     </ul>
   </li>
+</ul>
+
+<h3 id="implied-vs-realized-volatility">
+<a class="anchor" href="#implied-vs-realized-volatility" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implied vs. Realized Volatility</h3>
+<ul>
+  <li>
+<strong>Implied volatility</strong> is the volatility of a security derived from plugging values into the Black-Scholes formula
+    <ul>
+      <li>Varies across strike price (volatility smile, volatility skew) and across expiry time (term structure)</li>
+    </ul>
+  </li>
+  <li>
+<strong>Historical volatility</strong> is the volatility of a security derived from past prices
+    <ul>
+      <li>Daily returns: $R_n = \frac{S(n) - S(n-1)}{S(n-1)}$</li>
+      <li>Daily average: $\hat{\mu}<em>d = \frac{1}{N}\sum^N</em>{n=1} \ln(1 + R_n)$</li>
+      <li>Daily volatility: $\hat{\sigma}<em>d^2 = \frac{1}{N-1} \sum^N</em>{n=1} (\ln(1+R_n) - \hat{\mu}_d)^2$</li>
+      <li>Get annualized volatility/average by multiplying daily volatility/average by 252</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="dividends">
+<a class="anchor" href="#dividends" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dividends</h3>
+
+<ul>
+  <li>When paying dividends, we receive dividends at a continuous rate</li>
+  <li>GBM: $dS = (\mu-\rho)Sdt + \sigma Sdw$, $(dS)^2 = \sigma^2S^2dt$</li>
+  <li>Ito’s Lemma: $dV = \frac{\partial V}{\partial S}dS + \frac{\partial V}{\partial t}dt + \frac{1}{2}\frac{\partial^2 V}{\partial S^2}(dS)^2$</li>
+  <li>The Black-Scholes PDE becomes ${\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2S^2\frac{\partial^2V}{\partial S^2} + (r-\rho)S\frac{\partial V}{\partial S} -rV = 0}$</li>
+  <li>
+<strong>Call option</strong>: $C_E(S, t) = Se^{-\rho(T-t)}N(d_1) - Ee^{-r(T-t)}N(d_2)$</li>
+  <li>
+<strong>Put option</strong>: $P_E(S, t) = Ee^{-r(T-t)}N(-d_2) - Se^{-\rho(T-t)}N(-d_1)$</li>
+  <li>$d_1 = \frac{\ln(S/E) + (r - \rho + \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}}$</li>
+  <li>$d_2 = \frac{\ln(S/E) + (r -\rho - \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}} = d_1 - \sigma\sqrt{T-t}$</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/econ135/lecture/winter25/markdown/2025/01/06/econ135-lecture.html" hidden></a>
