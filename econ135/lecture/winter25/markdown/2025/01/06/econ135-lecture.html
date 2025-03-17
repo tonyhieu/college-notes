@@ -107,7 +107,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      12 min read
     
 </span></p>
 
@@ -153,6 +153,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#itos-lemma">Ito’s Lemma</a></li>
 <li class="toc-entry toc-h3"><a href="#base-formula">Base Formula</a></li>
 <li class="toc-entry toc-h3"><a href="#option-formulas">Option Formulas</a></li>
+<li class="toc-entry toc-h3"><a href="#asymptotic-behavior">Asymptotic Behavior</a></li>
 <li class="toc-entry toc-h3"><a href="#greeks-formulas">Greeks Formulas</a></li>
 <li class="toc-entry toc-h3"><a href="#american-options">American Options</a></li>
 <li class="toc-entry toc-h3"><a href="#implied-vs-realized-volatility">Implied vs. Realized Volatility</a></li>
@@ -475,6 +476,48 @@ f_y(y) = \frac{d}{dy}\int_{g(y)}^{h(y)} f_x(x)dx = f_x(h(y))h'(y) - f_x(g(y))g'(
   <li>$d_1 = \frac{\ln(S/E) + (r + \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}}$</li>
   <li>$d_2 = \frac{\ln(S/E) + (r - \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}} = d_1 - \sigma\sqrt{T-t}$</li>
   <li>Normal distribution: $N = \Phi$, $N’ = \phi$</li>
+</ul>
+
+<h3 id="asymptotic-behavior">
+<a class="anchor" href="#asymptotic-behavior" aria-hidden="true"><span class="octicon octicon-link"></span></a>Asymptotic Behavior</h3>
+
+<ul>
+  <li>$\sigma \rightarrow \infty$
+    <ul>
+      <li>$C_E(S,t) = S$</li>
+      <li>$P_E(S,t) = Ee^{-r(T-t)}$</li>
+    </ul>
+  </li>
+  <li>$\sigma \rightarrow 0$
+    <ul>
+      <li>$C_E(S,t) = S - Ee^{-r(T-t)}$</li>
+      <li>$P_E(S,t) = Ee^{-r(T-t)} - S$</li>
+    </ul>
+  </li>
+  <li>$S \rightarrow \infty$
+    <ul>
+      <li>$C_E(S,t) = \infty$</li>
+      <li>$P_E(S,t) = -\infty = 0$ (can’t be negative)</li>
+    </ul>
+  </li>
+  <li>$S \rightarrow 0$
+    <ul>
+      <li>$C_E(S,t) = 0$</li>
+      <li>$P_E(S, t) = Ee^{-r(T-t)}N(-\frac{(r - \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}})$</li>
+    </ul>
+  </li>
+  <li>$t\rightarrow T$
+    <ul>
+      <li>$C_E(S,t) = \frac{1}{2}(S-E)$</li>
+      <li>$P_E(S,t) = \frac{1}{2}(E-S)$</li>
+    </ul>
+  </li>
+  <li>$r\rightarrow \infty$
+    <ul>
+      <li>$C_E(S,t) = S$</li>
+      <li>$P_E(S,t) = 0$</li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="greeks-formulas">
