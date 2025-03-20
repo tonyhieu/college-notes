@@ -476,6 +476,7 @@ Another way to express this is that $\hat{\Theta}_{MLE} \sim N(\Theta_0, I(\Thet
         - $y_i$ is T by 1, where T is the number of observations available for an individual
 
 Likelihood function: 
+
 $$
 \begin{align*}
     f(y \vert \beta, \sigma^2, D) &= \prod_{i=1}^n f(y_i \vert \beta, \sigma^2, D)\\
@@ -605,6 +606,7 @@ $$
     - Option 1: Set $\sigma^2 = 1$ and set $J-1$ cutpoints (denoted by $\gamma$)
     - Option 2: Let $\sigma^2$ be free and set $J-2$ cutpoints
     - Regardless, we will have a *location restriction* ($E[\varepsilon_i\vert X] = 0$) and a *scale restriction*
+
 $$
 \begin{align*}
     Pr(y_i=1) &= Pr(\gamma_0 \leq y_i^* \leq \gamma_1) \\ 
@@ -618,6 +620,7 @@ $$
 
 - Estimate using MLE
 - Define $\gamma_0 = -\infty$ and $\gamma_J = \infty$
+
 $$
 \begin{align*}
     f(y_\vert\theta) &= \prod_{i=1}^n f(y_i\vert \beta, \sigma^2, \gamma_1, \ldots, \gamma_{J-1})\\
