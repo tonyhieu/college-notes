@@ -41,7 +41,7 @@ $$
 E\left[\sum_{h=0}^\infty \gamma^h r(s_h, a_h)\right]
 $$
 
-- A policy $\pi : A \rightarrow \Delta(S)$
+- A policy $\pi : A \rightarrow \Delta(S)$ describes how the agent acts
 - Value function:
 
 $$
@@ -52,40 +52,54 @@ $$
 - Bellman equation for value function:
 
 $$
-V^\pi(s) = E_{a\sim\pi(s)}\left[r(s,a) + \gamma \right]
+V^\pi(s) = E_{a\sim\pi(s)}\left[r(s,a) + \gamma E_{s'\sim P(\cdot \vert s,a) V^\pi(s')} \right]
 $$
 
-- The Bellman equation is unique and maximizes
-- Q-function (Action-value function) $Q^\pi (s,a)$:
+- Q-function (Action-value function)
+
+$$
+Q^\pi (s,a) = E\left[\sum_{h=0}^\infty \gamma^h r(s_h, a_h) \vert (s_0, a_0) = (s, a), a_h \sim \pi(s_h), s_{h+1} \sim P(\cdot \vert s_h, a_h)\right]
+$$
+
 - Bellman equation for Q-function:
+
+$$
+Q^\pi(s,a) = r(s, a) + \gamma E_{s'\sim P(\cdot \vert s,a)} V^\pi (s')
+$$
 
 - Research revolves around estimating the value function and/or Q-function in order to find an optimal policy
 - **Bellman Optimality** states that, for an infinite horizon discounted MDP, there exists a deterministic stationary policy $\pi ^*$ which is optimal
 
 $$
-\pi^* : S \rightarrow A, \text{ s.t.}
+\pi^* : S \rightarrow A, \text{ s.t.,} V^{\pi^*}(s) \geq V^\pi(s), \forall s,\pi
 $$
 
 ## Bellman Optimality Equation Derivation
 
 - Denote $V^* := V^{\pi*}$, $Q^* := Q^{\pi*}$
 - Define $\hat{\pi}(s) := \text{arg max}_a Q^*(s,a)$; greedy policy
+- **Bellman Optimality Equation**: ${V^*(s) = \max_a [r(s,a) + \gamma E_{s'\sim P(\cdot \vert s,a)} V^*(s')]}$
 - We can prove that $V^{\hat{\pi}} = V^*(s), \forall s$
-- This implies that $\hat{\pi}(s) := \text{arg max}_a Q^*(s,a)$ is an optimal policy
-*Theorem*: For any $V : S \rightarrow \mathbb{R}$, if $V(s) = \max_a$
+- This implies that $\hat{\pi}(s) := \argmax_a Q^*(s,a)$ is an optimal policy
+
+*Theorem*: For any $V : S \rightarrow \mathbb{R}$, if ${V(s) = \max_a [r(s,a)+ \gamma E_{s'\sim P(\cdot\vert s,a)} V(s')], \forall s}$, then ${V(s) = V^*(s), \forall s}$
 
 - $V^*$ satisfies Bellman Optimality
 - Any V that satisfies Bellman Optimality must be that $V(s) = V^*(s), \forall s$
 - Similarly, for any $Q$ that satisfies Bellamn Optimality, $Q(s,a) = Q^*(s,a), \forall s,a$
 
+*Theorem*: For any $Q : S\times A \rightarrow \mathbb{R}$, if ${Q(s,a) = r(s,a)+ \gamma E_{s'\sim P(\cdot\vert s,a)} \max_{a'}Q(s', a'), \forall s}$, then ${Q(s,a) = Q^*(s,a), \forall s}$
+
 ## Value Iteration Algorithm
 
-- **Bellman operator** $T$ has the property that $Q^* = TQ^*$
+- **Bellman operator** $\mathcal{T}$ has the property that $Q^* = \mathcal{T}Q^*$
+    - Formal definition: Given a function ${f : S\times A \rightarrow \mathbb{R}}$, $\mathcal{T}f$ satisfies ${(\mathcal{T}f)(s,a) := r(s,a) + \gamma E_{s'\sim P(\cdot \vert s,a)} \max_{a'\in A} f(s',a'), \forall s,a \in S\times A }$
 - The **value iteration algorithm** is a dynamic programming method to find the optimal $Q$-function $Q^*$ by solving the Bellman equations iteraively
     - Converges exponentially fast
 - Initialization: $Q^0 : \lVert Q^0 \rVert _\infty \in (0, \frac{1}{1-\gamma})$
-- Iterate until convergence: $Q^{t+1} = TQ^t$
-- **Bellman Contraction Property**: ${\lVert TQ - TQ' \rVert _\infty \leq \gamma \lVert Q - Q' \rVert _\infty}$
+- Iterate until convergence: $Q^{t+1} = \mathcal{T}Q^t$
+- **Bellman Contraction Property**: ${\lVert \mathcal{T}Q - \mathcal{T}Q' \rVert _\infty \leq \gamma \lVert Q - Q' \rVert _\infty}$
 - **Value Iteration Theory**: Given $Q^0$, the following inequality holds for any iteration: ${\lVert Q^{t+1} - Q^* \rVert _\infty \leq \gamma^{t+1} \lVert Q^0 - Q^* \rVert _\infty}$
 - The difference between a learned policy at some iteration and the optimal policy has a performance bound dependent on $\gamma$
+    - ${V^*(s) - V^{\pi^{t+1}}(s) \leq \frac{2\gamma^{t+1}}{1-\gamma} \lVert Q^0 - Q^* \rVert _\infty \forall s\in S}$
     - If the performance bound is small, then performance is guaranteed to be good; requires Q-functions to be similar
