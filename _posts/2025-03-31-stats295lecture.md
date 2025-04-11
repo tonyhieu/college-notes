@@ -103,3 +103,48 @@ $$
 - The difference between a learned policy at some iteration and the optimal policy has a performance bound dependent on $\gamma$
     - ${V^*(s) - V^{\pi^{t+1}}(s) \leq \frac{2\gamma^{t+1}}{1-\gamma} \lVert Q^0 - Q^* \rVert _\infty \forall s\in S}$
     - If the performance bound is small, then performance is guaranteed to be good; requires Q-functions to be similar
+
+## Policy Iteration Algorithm
+
+- **Policy iteration** skips calculating an optimal value function and instead directly learns the policy
+    1. Initialization: $\pi^0 : S\rightarrow A$
+    2. Policy evaluation: $Q^{\pi^t}(s,a),\forall s,a$
+    3. Policy improvement: 
+
+- **Policy Improvement Lemma**: For $t=0,\ldots$, the policy value is monitonically increasing, i.e. ${Q^{\pi^{t+1}}(s,a)\geq Q^{\pi^t}(s,a)}$
+- For $t=0,\ldots$, the policy is convergent: ${\lVert V^{\pi^{t+1}} - V^{\pi^t}  \rVert _\infty \leq \gamma\lVert V^{\pi^{t+1}} - V^{\pi^t}  \rVert _\infty}$
+    - Policy iteration converges exponentially fast
+- Policy iteration is [strongly polynomial](https://en.wikipedia.org/wiki/Strongly-polynomial_time) whereas value iteration is not, making it a more computationally efficient algorithm
+
+# Sample Efficient Reinforcement Learning
+
+- **Computational complexity** refers to the amount of time required to compute something (i.e. Q-function, policy)
+- **Statistical (sample) complexity** refers to the number of *observed transitions* needed to estimate a policy or Q-function
+- Three settings in RL
+    - **Episodic setting**
+        - In every episode $s_0 \sim \mu$
+        - The learner acts for some finite number of steps and observes the trajectory
+        - The state then resets to $s_0 \sim \mu$
+    - **Generative model setting**
+        - Input: $(s,a)$
+        - Output: A sample $s' \sim P(\cdot \vert s,a)$ and $r(s,a)$
+    - **Offline setting**:
+        - Only has access to a pre-colleted dataset generated under some policy
+- A transition kernel only has $S^2A$ parameters
+
+## Model-based Learning
+
+- Assumes we are using generative model settings
+
+1. Call the simulator N times at each state action pair to create a mean-estimator
+    - $\hat{P}(s'\vert s,a) = \frac{\text{count}(s',s,a)}{N}$
+    - We also receive rewards after each call
+2. Use $\hat{P}$ for planning: $\hat{\pi}^* = PI(\hat{P}, r)$, where $PI$ is policy iteration
+3. The total number of calls to the generative model is $SAN$
+
+- With probability $\geq 1-\delta$, the transition kernel estimator $\hat{P}$ has error bounded as ${\max_{s,a} \lVert P(\cdot \vert s,a) - \hat{P}(\cdot \vert s,a) \rVert _1 \leq O\left( \sqrt{\frac{S\ln(SA/\delta)}{N}} \right)}$
+- **Simulation lemma**
+
+## 
+
+- A better strategy would be better to get an accurate estimate of $Q^*$ as opposed to estimating the value of every policy in the MDP
