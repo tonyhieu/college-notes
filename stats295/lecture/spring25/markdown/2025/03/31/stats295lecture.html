@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      5 min read
     
 </span></p>
 
@@ -131,6 +131,12 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#markov-decision-process">Markov Decision Process</a></li>
 <li class="toc-entry toc-h2"><a href="#bellman-optimality-equation-derivation">Bellman Optimality Equation Derivation</a></li>
 <li class="toc-entry toc-h2"><a href="#value-iteration-algorithm">Value Iteration Algorithm</a></li>
+<li class="toc-entry toc-h2"><a href="#policy-iteration-algorithm">Policy Iteration Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#sample-efficient-reinforcement-learning">Sample Efficient Reinforcement Learning</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#model-based-learning">Model-based Learning</a></li>
 </ul>
 </li>
 </ul><h1 id="introduction">
@@ -265,6 +271,93 @@ window.onload = wrap_img;
       <li>If the performance bound is small, then performance is guaranteed to be good; requires Q-functions to be similar</li>
     </ul>
   </li>
+</ul>
+
+<h2 id="policy-iteration-algorithm">
+<a class="anchor" href="#policy-iteration-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Policy Iteration Algorithm</h2>
+
+<ul>
+  <li>
+<strong>Policy iteration</strong> skips calculating an optimal value function and instead directly learns the policy
+    <ol>
+      <li>Initialization: $\pi^0 : S\rightarrow A$</li>
+      <li>Policy evaluation: $Q^{\pi^t}(s,a),\forall s,a$</li>
+      <li>Policy improvement:</li>
+    </ol>
+  </li>
+  <li>
+<strong>Policy Improvement Lemma</strong>: For $t=0,\ldots$, the policy value is monitonically increasing, i.e. ${Q^{\pi^{t+1}}(s,a)\geq Q^{\pi^t}(s,a)}$</li>
+  <li>For $t=0,\ldots$, the policy is convergent: ${\lVert V^{\pi^{t+1}} - V^{\pi^t}  \rVert _\infty \leq \gamma\lVert V^{\pi^{t+1}} - V^{\pi^t}  \rVert _\infty}$
+    <ul>
+      <li>Policy iteration converges exponentially fast</li>
+    </ul>
+  </li>
+  <li>Policy iteration is <a href="https://en.wikipedia.org/wiki/Strongly-polynomial_time">strongly polynomial</a> whereas value iteration is not, making it a more computationally efficient algorithm</li>
+</ul>
+
+<h1 id="sample-efficient-reinforcement-learning">
+<a class="anchor" href="#sample-efficient-reinforcement-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample Efficient Reinforcement Learning</h1>
+
+<ul>
+  <li>
+<strong>Computational complexity</strong> refers to the amount of time required to compute something (i.e. Q-function, policy)</li>
+  <li>
+<strong>Statistical (sample) complexity</strong> refers to the number of <em>observed transitions</em> needed to estimate a policy or Q-function</li>
+  <li>Three settings in RL
+    <ul>
+      <li>
+<strong>Episodic setting</strong>
+        <ul>
+          <li>In every episode $s_0 \sim \mu$</li>
+          <li>The learner acts for some finite number of steps and observes the trajectory</li>
+          <li>The state then resets to $s_0 \sim \mu$</li>
+        </ul>
+      </li>
+      <li>
+<strong>Generative model setting</strong>
+        <ul>
+          <li>Input: $(s,a)$</li>
+          <li>Output: A sample $s’ \sim P(\cdot \vert s,a)$ and $r(s,a)$</li>
+        </ul>
+      </li>
+      <li>
+<strong>Offline setting</strong>:
+        <ul>
+          <li>Only has access to a pre-colleted dataset generated under some policy</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>A transition kernel only has $S^2A$ parameters</li>
+</ul>
+
+<h2 id="model-based-learning">
+<a class="anchor" href="#model-based-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model-based Learning</h2>
+
+<ul>
+  <li>Assumes we are using generative model settings</li>
+</ul>
+
+<ol>
+  <li>Call the simulator N times at each state action pair to create a mean-estimator
+    <ul>
+      <li>$\hat{P}(s’\vert s,a) = \frac{\text{count}(s’,s,a)}{N}$</li>
+      <li>We also receive rewards after each call</li>
+    </ul>
+  </li>
+  <li>Use $\hat{P}$ for planning: $\hat{\pi}^* = PI(\hat{P}, r)$, where $PI$ is policy iteration</li>
+  <li>The total number of calls to the generative model is $SAN$</li>
+</ol>
+
+<ul>
+  <li>With probability $\geq 1-\delta$, the transition kernel estimator $\hat{P}$ has error bounded as ${\max_{s,a} \lVert P(\cdot \vert s,a) - \hat{P}(\cdot \vert s,a) \rVert _1 \leq O\left( \sqrt{\frac{S\ln(SA/\delta)}{N}} \right)}$</li>
+  <li><strong>Simulation lemma</strong></li>
+</ul>
+
+<p>##</p>
+
+<ul>
+  <li>A better strategy would be better to get an accurate estimate of $Q^*$ as opposed to estimating the value of every policy in the MDP</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/stats295/lecture/spring25/markdown/2025/03/31/stats295lecture.html" hidden></a>
