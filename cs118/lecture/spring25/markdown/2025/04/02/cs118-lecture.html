@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      5 min read
     
 </span></p>
 
@@ -128,6 +128,11 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h1"><a href="#introduction">Introduction</a></li>
 <li class="toc-entry toc-h1"><a href="#rendering">Rendering</a></li>
+<li class="toc-entry toc-h1"><a href="#graphics-pipeline">Graphics Pipeline</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#vertex-procesing">Vertex Procesing</a></li>
+</ul>
+</li>
 </ul><h1 id="introduction">
 <a class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h1>
 <ul>
@@ -245,8 +250,93 @@ window.onload = wrap_img;
           <li>Matrix has parameters on the diagonal; can be reversed using the inverse matrix, which is equivalent to $S(1/s_x, 1/s_y, 1/s_z)$</li>
         </ul>
       </li>
+      <li>
+<strong>Rotation</strong>: Apply a rotation matrix which rotates a point about one of the three axes using sine and cosine</li>
+      <li>
+<strong>Translation</strong>: Must use a 4D matrix and convert the 3-vector into a 4-vector
+        <ul>
+          <li>
+<strong>Homogenous coordinates</strong>: A 3-vector and 4-vector representing the same point in 3D; append an extra 1</li>
+          <li>All of the previous transformations can be converted into 4D matrices in order to work with the homogenous representation</li>
+        </ul>
+      </li>
+      <li>
+<strong>Shearing</strong>: Translating an object about two out of the three axes by a value proportional to the third axis; affects shape of the object</li>
     </ul>
   </li>
+  <li>Can concatenate different transformations onto each other to perform complex operations
+    <ul>
+      <li>Most notable is rotating/scaling about a <strong>fixed point</strong> by translating to the origin, performing the transformation, and inverting the first translation</li>
+    </ul>
+  </li>
+  <li>An <strong>affine transformation</strong> is any transformation using a 4x4 matrix where the last row is 0 0 0 1
+    <ul>
+      <li>Degree of curve can’t be changed, and parallel lines cannot become intersecting lines</li>
+    </ul>
+  </li>
+  <li>In <strong>projective transformations</strong>, parallel lines can intersect and vice versa; used when rendering using a pinhole camera</li>
+</ul>
+
+<h1 id="graphics-pipeline">
+<a class="anchor" href="#graphics-pipeline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Graphics Pipeline</h1>
+
+<ul>
+  <li>Input: Soup of triangles</li>
+  <li>Output: Image from a particular viewpoint, produced in real time
+    <ul>
+      <li>The output is put into the <strong>frame buffer</strong>, which is updated according to the FPS and sent to the monitor</li>
+    </ul>
+  </li>
+  <li>Steps (done in the GPU)
+    <ul>
+      <li>
+<em>Vertex Processing</em>: Process the vertices and normals
+        <ul>
+          <li>Performs transformations on points and per vertex lighting</li>
+          <li>Transformations include model, view, and projection transforms</li>
+        </ul>
+      </li>
+      <li>
+<em>Rasterization</em>: Convert vertices into a set of fragments (triangles)</li>
+      <li>
+<em>Fragment Processing</em>: Process individual fragments
+        <ul>
+          <li>Performs texturing and per fragment lighting</li>
+        </ul>
+      </li>
+      <li>
+<em>Output Merging</em>: Combine 3D fragments into 2D space for the display</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="vertex-procesing">
+<a class="anchor" href="#vertex-procesing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vertex Procesing</h2>
+
+<ul>
+  <li>Begins by arranging the objects in the world using a model transform
+    <ul>
+      <li>Involves scaling, rotation, translation, shear transformations to propagate the world space</li>
+    </ul>
+  </li>
+  <li>Positions and orients the camera using a view transform
+    <ul>
+      <li>Translate the camera to the origi ($T$) and then rotate it appropriately ($R$); final transformation is $M = RT$</li>
+    </ul>
+  </li>
+  <li>Defines properties of the camera (FOV, lens) and projects the 3D space onto the camera using a projection transform
+    <ul>
+      <li>Uses gaze direction (shear), FOV, aspect ratio, near plane (image plane), and far plane (cuts off rest of scene) to create the 2D image</li>
+      <li>Displays all objects inside of the <strong>view frustum</strong> which is a 3D object connecting the near and far planes
+        <ul>
+          <li>Must be normalized so conversion to window coordinates is easy</li>
+        </ul>
+      </li>
+      <li>Final transformation matrix: ${v_{clip} = M_{proj} \cdot M_{view} \cdot M_{model} \cdot v}$</li>
+      <li>Must clip objects to fit on screen by transforming coordinates again</li>
+    </ul>
+  </li>
+  <li>TLDR: Takes 3D vertices and puts them on a 2D screen, ensuring that only vertices that are “on-screen” are rendered</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/cs118/lecture/spring25/markdown/2025/04/02/cs118-lecture.html" hidden></a>
