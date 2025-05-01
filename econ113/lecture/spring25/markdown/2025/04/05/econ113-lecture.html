@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      24 min read
     
 </span></p>
 
@@ -145,6 +145,17 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h3"><a href="#stag-hunt-game">Stag Hunt Game</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#incentivizing-cooperation">Incentivizing Cooperation</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#extensive-form-games">Extensive Form Games</a></li>
+<li class="toc-entry toc-h3"><a href="#dictator-and-ultimatum-game">Dictator and Ultimatum Game</a></li>
+<li class="toc-entry toc-h3"><a href="#repeated-games">Repeated Games</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#infinitely-repeated-games">Infinitely Repeated Games</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -357,7 +368,12 @@ window.onload = wrap_img;
         <ul>
           <li>
 <strong>Homo Economicus</strong> is the main model for agents; they are instrumental and selfish, or intentional, consequential, and selfish</li>
-          <li>Some actors might not be Homo Economicus, but they will always be assumed to be rational</li>
+          <li>Some actors might not be Homo Economicus, but they will always be assumed to be rational
+            <ul>
+              <li>Rational actors maximize utility, where utility is defined as some individual material payoff</li>
+            </ul>
+          </li>
+          <li>Hard to achieve cooperation with Homo Economicus; if cooperation is achieved, then it can be achieved in many other situations</li>
         </ul>
       </li>
     </ul>
@@ -580,6 +596,356 @@ window.onload = wrap_img;
   <li>The <strong>risk-dominant strategy</strong> is to mix and choose $S$ with probability $\frac{1}{x}$</li>
   <li>Risk-averse players will play a <strong>maxmin</strong> strategy (maximizing the minimum payoff), so they will always choose $H$</li>
   <li>Assurance games are social dilemmas due to the lack of assurance</li>
+</ul>
+
+<h2 id="incentivizing-cooperation">
+<a class="anchor" href="#incentivizing-cooperation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Incentivizing Cooperation</h2>
+
+<ul>
+  <li>To achieve cooperation, the game itself must be changed (strategy set, players, utility functions)
+    <ul>
+      <li>Changing the set of players: change the players’ preference (Homo Economicus to Homo Altruist), add players (like police), exclude players</li>
+      <li>Changing strategy set: repeat the same interaction, introduce new ways of interacting</li>
+      <li>Changing utilities is implied when doing the above actions</li>
+      <li>Typically, we will keep Homo Economicus and change other assumptions</li>
+    </ul>
+  </li>
+  <li>
+<strong>Reciprocity</strong>: Receiving an action and doing the same action back to the other player
+    <ul>
+      <li>Requires timing of choices, knowledge of others’ choices, etc.</li>
+      <li>We will use an <strong>extensive-form game</strong> to model this</li>
+      <li>Reciprocity relies on <strong>history-dependent strategies</strong> where players remember what happened earlier in the game
+        <ul>
+          <li>
+<strong>Trigger strategy</strong>: A strategy where one player instantly punishes the other in response to a non-cooperative behavior</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>History-dependent strategies rely on <strong>monitoring</strong> where players observe other players’ actions
+    <ul>
+      <li>Better monitoring = more accurate strategies</li>
+    </ul>
+  </li>
+  <li>External third party actors can induce cooperation, typically by using trigger strategies (think of police)
+    <ul>
+      <li>
+<strong>Self-enforcing cooperation</strong> is cooperation without external enforcement; the Puzzle of Cooperation asks why people cooperate without these externalities</li>
+      <li>Punishing can be thought of as a public good game since punishment requires resources
+        <ul>
+          <li>Known as the <strong>Second-order Public Good Problem</strong> since external enforcement is a public good</li>
+          <li>This means that external enforcement also requires self-enforcing cooperation due to second-order public good problems</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="extensive-form-games">
+<a class="anchor" href="#extensive-form-games" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extensive Form Games</h3>
+
+<ul>
+  <li>Sequential games can provide advantages to players arbitrarily based on move order
+    <ul>
+      <li>Chicken Game has first-mover advantage, Matching Pennies has last-mover advantage, PD has no advantage</li>
+    </ul>
+  </li>
+  <li>
+<strong>Dictator Game</strong>: Only one player has an option, meaning that they have a first-mover advanage</li>
+  <li>A <strong>game tree</strong> represents sequential actions
+    <ul>
+      <li>Starts at a decision node, and each decision node has branches that represent possible choices</li>
+      <li>Terminal nodes have payoff profiles</li>
+      <li>Trees are acyclic</li>
+    </ul>
+  </li>
+  <li>
+<strong>Extensive Form Games</strong> include more information than normal form ones
+    <ul>
+      <li>Set of players</li>
+      <li>Order of moves/decisions</li>
+      <li>What each player’s possible decisions are at each decision node</li>
+      <li>What each player knows about prior moves when making a chioce</li>
+      <li>Utilities dependent on moves</li>
+      <li>Probability distributions over random events</li>
+    </ul>
+  </li>
+  <li>The extensive form is a complete representation of a game; a normal form is a (useful) abstraction since normal form is a subset</li>
+  <li>An <strong>information set</strong> represents what a player knows when making a move
+    <ul>
+      <li>Represented in a game tree using a circle/oval/rectangle; whatever is outside of the circle is outside of the information set</li>
+      <li>Depicted as $\mathcal{I}_i = {{a}, {b, c}, \cdots }$</li>
+      <li>A game with <strong>perfect information</strong> means that all information sets have one decision node
+        <ul>
+          <li>Implicit: simultaneous games cannot have perfect information</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>A <strong>pure strategy</strong> in the extensive form is a complete plan of moves, where one move is planned for each information set
+    <ul>
+      <li>A pure strategy is chosen at the start of the game and followed throughout, regardless of if an information set is unreachable or not</li>
+      <li>A <strong>mixed strategy</strong> is a randomization of pure strategies, just as in normal-form games</li>
+    </ul>
+  </li>
+  <li>
+<strong>Sequential rationality</strong>: A rationality where players look ahead and predict future moves; players assume that BRs will be chosen in all future moves
+    <ul>
+      <li>Sequential rationality is depicted using backward induction (BI) in perfect information games</li>
+    </ul>
+  </li>
+  <li>
+<strong>Kuhn’s Theorem</strong>: Every finite extensive-form game of perfect information has a BI solution
+    <ul>
+      <li>This means that every BI solution has a corresponding weak IEDS NE</li>
+    </ul>
+  </li>
+  <li>BI requires common knowledge of the game, common knowledge of rationality, and a large cognitive load
+    <ul>
+      <li>Players might not use BI if these requirements are not met</li>
+    </ul>
+  </li>
+  <li>
+<strong>Subgames</strong> are studied to solve games with imperfect information
+    <ul>
+      <li>Subgames start from a single decision node, contains all of the later decision nodes and information sets, and maintains the original information sets</li>
+      <li>Can be thought of as a extensive-form game that exists in another extensive-form game</li>
+      <li>Each single decision node forms a new subgame; games with imperfect information will have a number of subgames less than the number of decision nodes</li>
+    </ul>
+  </li>
+  <li>A <strong>Subgame Perfect Equilibrium (SPE)</strong> is an equilibrium where each subgame has an NE
+    <ul>
+      <li>SPEs can be found in a game with imperfect information</li>
+      <li>A BI solution is a SPE solution of a perfect-information game</li>
+      <li>Caputres sequential rationality</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="dictator-and-ultimatum-game">
+<a class="anchor" href="#dictator-and-ultimatum-game" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dictator and Ultimatum Game</h3>
+
+<ul>
+  <li>Dictator Setup: Player 1 chooses $s_1 \in [0, \bar{s}]$ to give to player 2
+    <ul>
+      <li>Using Homo Economicus preferences, $u_1 = \bar{s} - s_1$ and $u_2 = s_1$</li>
+    </ul>
+  </li>
+  <li>Player 1 will always choose $s_1^* = 0$</li>
+  <li>Ultimatum Setup: Player 1 chooses $s_1 \in [0, \bar{s}]$ to give to player 2, and player 2 must accept the offer
+    <ul>
+      <li>
+        <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mover accent="true"><mi>s</mi><mo>ˉ</mo></mover><mo>−</mo><msub><mi>s</mi><mn>1</mn></msub><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>if player 2 accepts</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>0</mn><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>if player 2 rejects</mtext></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">u_1 = \begin{cases}\bar{s} - s_1, &amp; \text{if player 2 accepts}\\ 0, &amp; \text{if player 2 rejects}\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5678em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">s</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1944em;"><span class="mord">ˉ</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">0</span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if player 2 accepts</span></span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if player 2 rejects</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>
+      </li>
+      <li>
+        <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>u</mi><mn>2</mn></msub><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msub><mi>s</mi><mn>1</mn></msub><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>if player 2 accepts</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>0</mn><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>if player 2 rejects</mtext></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">u_2 = \begin{cases}s_1, &amp; \text{if player 2 accepts}\\ 0, &amp; \text{if player 2 rejects}\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">0</span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if player 2 accepts</span></span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if player 2 rejects</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>
+      </li>
+    </ul>
+  </li>
+  <li>Player 2 will accept any offer since it will be better than or the same as rejection, so player 1 will only choose to share 0</li>
+  <li>These games show that Homo Economicus will not share any money in the Dictator Game and will accept any offer in the Ultimatum Game
+    <ul>
+      <li>No/very little money is shared in both</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="repeated-games">
+<a class="anchor" href="#repeated-games" aria-hidden="true"><span class="octicon octicon-link"></span></a>Repeated Games</h3>
+
+<ul>
+  <li>Many interactions are repeated, and threats of punishments/bad responses in future periods dissuade short-run selfishness</li>
+  <li>
+<strong>Repeated games</strong> are a subset of extensive-form games
+    <ul>
+      <li>Involves <strong>stage games</strong> (which is an extensive-form game in of itself) that are played multiple times</li>
+      <li>Players observe + remember the moves from each stage</li>
+      <li>There are $T$ <strong>stages</strong>, and the utility is the sum of the utilities at each stage (possibly with a discount)</li>
+      <li>Not easily represented with a game tree; too large
+        <ul>
+          <li>Better represented with the stage game and the number of pretitions $T$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Repeated games can be infinite $(T=\infty)$ or finite
+    <ul>
+      <li>Finitely repeated games with a unique stage-game NE must have a unique SPE, as backward induction can be used
+        <ul>
+          <li>Implies that cooperation is not possible since players (Homo Economiucs) will try to be selfish at the last stage (and consequently all stages before that)</li>
+        </ul>
+      </li>
+      <li>If the stage game does not have a unique NE, there will be multiple <em>history-independent</em> SPE
+        <ul>
+          <li>Not of note; everything is independent, and no reward/punishment strategies are employed</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>History-dependent</strong> strategies bases future behavior on the past
+    <ul>
+      <li>
+<strong>One shot deviation principle</strong>: A strategy is a BR (and SPE) if there is no benefit to deviating in any singular stage of the game</li>
+      <li>The SPEs from history-dependent strategies might not follow the stage game NEs and also can outperform history-independent strategies</li>
+      <li>
+<strong>Trigger strategies</strong> involve punishing non-cooperative behavior by threatening to be non-cooperative in all future periods
+        <ul>
+          <li>Will also reward cooperative behavior with future cooperation</li>
+          <li>Incentives sacrificing short-term gains for long-term gains</li>
+          <li>Requires multiple NE in stage game and rewards/punishment greater than defection gain</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="infinitely-repeated-games">
+<a class="anchor" href="#infinitely-repeated-games" aria-hidden="true"><span class="octicon octicon-link"></span></a>Infinitely Repeated Games</h4>
+
+<ul>
+  <li>In these games, $T=\infty$
+    <ul>
+      <li>Does not mean the game will actually go on forever; players simply don’t know when the game will end</li>
+    </ul>
+  </li>
+  <li>Payoffs are <strong>discounted</strong> for future stages since payoff in the future is not realized and thus has less importance than present payoffs
+    <ul>
+      <li>The <strong>discount factor</strong> is denoted as $0 &lt; \delta &lt; 1$; overall utility is $U_i = \sum^\infty_{t=0}\delta^tu_{it}$
+        <ul>
+          <li>Short form sum: $U_i = \frac{1-\delta^T}{1-\delta}v = \frac{1}{1-\delta}v$ if $T\rightarrow\infty$</li>
+          <li>Discount factor is assumed to be the same across all players</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>A <strong>one-shot deviation</strong> from a strategy $s_i$ is a strategy $s_i’$ where you only deviate in one period
+    <ul>
+      <li>The <strong>One-Shot Deviation Principle</strong> states that a strategy profile is an SPE iff there are no profitable one-shot deviations</li>
+    </ul>
+  </li>
+  <li>Similar to finite games, history-independent SPE will not induce cooperation since they are only comprised of (selfish) NE
+    <ul>
+      <li>Must use history-dependent strategies to get cooperation</li>
+    </ul>
+  </li>
+  <li>
+<strong>Grim Trigger Strategy</strong>: Keep cooperating until the other player does not cooperate; then, only defect
+    <ul>
+      <li>Key properties: initial and potentially infinite cooperation, infinite punishment after defection</li>
+      <li>Two phases: <strong>cooperation phase</strong> and <strong>punishment phase</strong>, can calculate benefit (and necessary $\delta$ for cooperation) from deviating in the cooperation phase</li>
+      <li>Employs <strong>direct reciprocity</strong> to sustain cooepration; works when there is a low punishment payoff and a high discount factor</li>
+    </ul>
+  </li>
+  <li>The Grim Trigger strategy is known as a <strong>Nash-Reversion strategy</strong> because it has a history-dependent phase (cooperation) and a history-independent phase (punishment)
+    <ul>
+      <li>Nash reversion ensures an SPE since the history-independent period will be guaranteed to be an SPE</li>
+      <li>Intuitive; cooperate, and then punish by not cooperating using NE actions</li>
+      <li>May require large discount factors, but will always exist</li>
+    </ul>
+  </li>
+  <li>By adding infinite periods, non-cooperative games (like PD) can be turned into coordination games with a cooperation equilibrium</li>
+  <li>A <strong>minmax punishment</strong> punishes a player for not cooperating by guaranteeing the defector receives their <strong>minmax utility</strong>; i.e. the minimum utility possible assuming the defector is maximizing their utility
+    <ul>
+      <li>More extreme than Nash reversion, as the minmax punishment might not be a NE</li>
+      <li>Requires a lower discount rate in general due to the harsher punishment, leading to more cooperation</li>
+      <li>Might not be a SPE since the punishment because the minmax punishment might not be a NE
+        <ul>
+          <li>Can be a NE without being a SPE</li>
+          <li>Punisher may want to go deviate back to the NE in the stage game if the payoff is higher; makes minmax punishment less credible</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>Indrect reciprocity</strong> is when a third party reciprocates based on the interactions between two separate players
+    <ul>
+      <li>Example: Infinitely-Repeated Random-Matching PD, where there are $n\geq 4$ players who are randomly matched with each other
+        <ul>
+          <li>Direct Grim strategy: Play C when you are paired with someone for the first time, and keep playing C if they palyed C; play D otherwise
+            <ul>
+              <li>Requires a discount rate of $\delta \geq \frac{n-1}{n}$ since you are unlikely to play the same person multiple times</li>
+            </ul>
+          </li>
+          <li>Indirect Grim strategy: Play C at first, and play C if your partner played C in all prior rounds; play D otherwise
+            <ul>
+              <li>Requires a discount rate of $\frac{1}{2}$ instead</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Relies on perfect observation and memory, but can still work with imperfections
+        <ul>
+          <li>Humans rely on communication (gossip) to share information</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Cooperation can be sustained by excluding others
+    <ul>
+      <li>
+<strong>Rivalrous</strong>: A good can only be consumed by one person</li>
+      <li>
+<strong>Excludable</strong>: A person can be prevented from consuming a good</li>
+      <li>
+<strong>Club goods</strong> are non-rivalrous, excludable goods that are produced by clubs (families, gyms, church, etc.)</li>
+      <li>The threat of being kicked out of a club can incentivize cooperation and leave the punishers even better off</li>
+      <li>Requires a relatively low cost compared to the number of members in the club
+        <ul>
+          <li>If cost is too high, then punishers will go back to the standard Grim strategy</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Cooperation can still be sustained even with <strong>imperfect monitoring</strong> such that not all actions are observed
+    <ul>
+      <li>Example: The probabilistic Convex Public Good game, where $n’$ of the $n$ players are selected at random and monitored
+        <ul>
+          <li>Probability of being observed: $m = \frac{n’}{n}$</li>
+        </ul>
+      </li>
+      <li>Discount factor $\delta \geq \frac{1}{1+m}$, higher discount factor that approaches $\frac{1}{2}$ when $m\rightarrow 1$ and $1$ as $m\rightarrow 0$</li>
+      <li>Monitoring gets worse if the group gets bigger</li>
+      <li>Exclusion also works with imperfect monitoring</li>
+    </ul>
+  </li>
+  <li>
+<strong>Folk Theorem</strong>: Cooperation is possible with large discount factors
+    <ul>
+      <li>To prove Folk theorem, there are three parts
+        <ul>
+          <li>Identify harshest punishment (minmax)</li>
+          <li>Identify what payoffs are possible that are better than the harshest punishments (include mixtures)</li>
+          <li>Show that the latter can be sustained with high enough discount factors</li>
+        </ul>
+      </li>
+      <li>Individually rational profiles will have a reward/punishment from the minmax punishment
+        <ul>
+          <li>Coordination on some point $x$, where a player will get $z$ from defecting and $y$ in all subsequent periods, requires a discount factor $\delta\geq\frac{z-x}{z-y}$</li>
+        </ul>
+      </li>
+      <li>This can be rewritten as $\frac{\delta}{1-\delta}(x-y) \geq z-x$ which represents the future sum of discounted rewards vs. the defection benefit today
+        <ul>
+          <li>As $\delta\rightarrow 0$, LHS becomes 0, so no cooperation</li>
+          <li>As $\delta\rightarrow 1$, LHS becomes infinity</li>
+        </ul>
+      </li>
+      <li>There must exist a “sweet spot” $\delta^* \equiv \frac{z-x}{z-y} \in [0,1]$ to sustain cooperation, proving Folk Theorem</li>
+      <li>Does not guarantee coordination</li>
+    </ul>
+  </li>
+  <li>Self-enforcing cooperation has various requirements
+    <ul>
+      <li>Infinite repetition</li>
+      <li>Sufficient detection of defectors (monitoring)</li>
+      <li>Strong punishment for defectors (minmax, Nash reversion)</li>
+      <li>Punishments that are credible and not too costly for the punisher</li>
+      <li>Large future rewards from cooperation (high discount factors)</li>
+      <li>If any of these requirements are not met, then Homo Economicus will not cooperate</li>
+    </ul>
+  </li>
+  <li>Because there are various trigger strategies, a failure to coordinate on the cooperation-sustaining strategy will result in non-cooperation</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/econ113/lecture/spring25/markdown/2025/04/05/econ113-lecture.html" hidden></a>
