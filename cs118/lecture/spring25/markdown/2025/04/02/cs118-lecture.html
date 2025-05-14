@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      12 min read
     
 </span></p>
 
@@ -138,6 +138,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#stereo-display">Stereo Display</a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#hmd-display">HMD Display</a></li>
+<li class="toc-entry toc-h2"><a href="#varifocal-display">Varifocal Display</a></li>
 </ul>
 </li>
 </ul><h1 id="introduction">
@@ -330,7 +331,7 @@ window.onload = wrap_img;
   <li>
 <em>View Transform</em>: Positions and orients the camera using a view transform
     <ul>
-      <li>Translate the camera to the origi ($T$) and then rotate it appropriately ($R$); final transformation is $M = RT$</li>
+      <li>Translate the camera to the origin ($T$) and then rotate it appropriately ($R$); final transformation is $M = RT$</li>
     </ul>
   </li>
   <li>
@@ -340,11 +341,13 @@ window.onload = wrap_img;
       <li>Displays all objects inside of the <strong>view frustum</strong> which is a 3D object connecting the near and far planes
         <ul>
           <li>Must be normalized (to a cube) so conversion to window coordinates is easy</li>
+          <li>Requires shear, scale, and projective transformation to convert</li>
         </ul>
       </li>
       <li>Final transformation matrix: ${v_{clip} = M_{proj} \cdot M_{view} \cdot M_{model} \cdot v}$</li>
       <li>Must clip objects to fit on screen by transforming coordinates again</li>
       <li>z-coordinate is retained for occlusion</li>
+      <li>To make it look like the camera is coming from the right perspective, a <em>perspective projection</em> is applied which uses translation (to move the camera), shear (to change the LookAt value), and scaling (to convert to cuboid)</li>
     </ul>
   </li>
   <li>A Viewport Transform is performed</li>
@@ -374,7 +377,11 @@ window.onload = wrap_img;
 <strong>Phong illumination/lighting</strong> calculates three channels (ambient, diffuse, specular) and combinews them to light objects
         <ul>
           <li>Requires a material color and a light color for each channel</li>
-          <li>Ambient: viewer-independent, acts as a “background color”</li>
+          <li>Ambient: viewer-independent, acts as a “background color”
+            <ul>
+              <li>Formula: $m\cdot l$; does not depend on viewer, normals, or light</li>
+            </ul>
+          </li>
           <li>Diffuse: light coming off of a surface, relies on the angle of lighting and the normal of the surface
             <ul>
               <li>Formula: $m\cdot l \cdot \max(L\cdot N, 0)$, where $L\cdot N$ is the dot product between the light and the normal angles</li>
@@ -463,6 +470,7 @@ window.onload = wrap_img;
           <li>Can only see color in fovea</li>
         </ul>
       </li>
+      <li>The total visual field is about 200 degrees; the binocular visual field is about 120 degrees</li>
     </ul>
   </li>
   <li>Headsets are limited because there is a minimum distance that people are able to focus at
@@ -473,6 +481,11 @@ window.onload = wrap_img;
   <li>Visual acuity is difficult to achieve because the photoreceptors capture 1 arcmin of visual angle
     <ul>
       <li>Leads to requiring a massive amount of pixels; high compute and data requirements</li>
+      <li>The eye will see a certain number of “cycles” in one degree, where there are two pixels per cycle (high and low)
+        <ul>
+          <li>This is known as the <strong>resolution</strong>, more cycles per degree means better resolution</li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>
@@ -579,6 +592,15 @@ window.onload = wrap_img;
 
 <ul>
   <li>Basic idea: Have a lens that is a short distance away from a micro display</li>
+  <li>Lens magnifies the virtual image to appear at a realistic distance away from the viewer</li>
+  <li>Must account for <em>pincushion</em> (inwards) or <em>barrel</em> (outwards) distortion created by the lens by applying the opposite distortion</li>
+</ul>
+
+<h2 id="varifocal-display">
+<a class="anchor" href="#varifocal-display" aria-hidden="true"><span class="octicon octicon-link"></span></a>Varifocal Display</h2>
+
+<ul>
+  <li>Use an actuator and an eye-tracking camera to move the screen away/towards the viewer based on where they are looking in order to remove the vergence-accomodation issue</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/cs118/lecture/spring25/markdown/2025/04/02/cs118-lecture.html" hidden></a>
