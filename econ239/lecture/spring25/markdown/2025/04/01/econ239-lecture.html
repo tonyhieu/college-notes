@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      20 min read
     
 </span></p>
 
@@ -161,6 +161,33 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#prospect-theory-explanation">Prospect Theory Explanation</a></li>
 <li class="toc-entry toc-h2"><a href="#narrow-bracketing">Narrow Bracketing</a></li>
 <li class="toc-entry toc-h2"><a href="#market-sentiment">Market Sentiment</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#week-4">Week 4</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#limits-to-arbitrage">Limits to Arbitrage</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#noise-trader-risk">Noise Trader Risk</a></li>
+<li class="toc-entry toc-h3"><a href="#fundamental-risk">Fundamental Risk</a></li>
+<li class="toc-entry toc-h3"><a href="#agency-problems">Agency Problems</a></li>
+<li class="toc-entry toc-h3"><a href="#costs">Costs</a></li>
+<li class="toc-entry toc-h3"><a href="#statistical-limits-to-arbitrage">Statistical Limits to Arbitrage</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#overconfidence">Overconfidence</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#week-5">Week 5</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#other-modeling-approaches">Other Modeling Approaches</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#rational-inattention">Rational Inattention</a></li>
+<li class="toc-entry toc-h3"><a href="#cognitive-uncertainty">Cognitive Uncertainty</a></li>
+<li class="toc-entry toc-h3"><a href="#information-ambiguity">Information Ambiguity</a></li>
+<li class="toc-entry toc-h3"><a href="#experience-effects">Experience Effects</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#week-6">Week 6</a></li>
 </ul>
 </li>
 </ul><h1 id="week-1">
@@ -605,6 +632,254 @@ v(x) = \begin{cases}
   <li>Market sentiment and mood have been proven to affect asset prices
     <ul>
       <li>Sunshine effect, weekend/Monday effects, sports outcomes, natural disasters, and tragedies all lead to significant differences in returns the next day</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="week-4">
+<a class="anchor" href="#week-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 4</h1>
+
+<h2 id="limits-to-arbitrage">
+<a class="anchor" href="#limits-to-arbitrage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Limits to Arbitrage</h2>
+
+<ul>
+  <li>Behavioral finance is based on the fact that irrational actors affect prices, but the <strong>arbitrage critique</strong> argues that arbitrageurs will corret these mispricings; this critique has various limits
+    <ul>
+      <li>Noise trader risk, fundamental risk, implementation costs, statistical limits</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="noise-trader-risk">
+<a class="anchor" href="#noise-trader-risk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Noise Trader Risk</h3>
+
+<ul>
+  <li>Model: The market is comprised of informed traders (arbitrageurs), who know the true value of an asset, and noise traders, who are uninformed</li>
+  <li>Most models will have one risky asset and one risk-free asset that give dividends</li>
+  <li>Arbitrageurs will understand there is a mispricing, but the mispricing could worsen before correcitng, leading to a heavier loss; <strong>noise trader risk</strong>
+</li>
+  <li>Noise traders can profit if sentiment persist, allowing them to make profit and making the amount of noise traders permanently non-zero</li>
+</ul>
+
+<h3 id="fundamental-risk">
+<a class="anchor" href="#fundamental-risk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fundamental Risk</h3>
+
+<ul>
+  <li>A mispriced asset is still risky because it takes time for prices to revert back to their fundamentals
+    <ul>
+      <li>This lag can shift what the fundamentals of an asset are, causing prices to veer further away from the original expectation</li>
+    </ul>
+  </li>
+  <li>Can be hedged against, but only partially
+    <ul>
+      <li>General strategy: If you believe one stock is overpriced, short it and buy an index of the market it belongs to. If market sentiment changes, then the value of the index will go up, offsetting your loss from the short</li>
+      <li>The index is not a perfect substitute, making the arbitrage fundamentally risk</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="agency-problems">
+<a class="anchor" href="#agency-problems" aria-hidden="true"><span class="octicon octicon-link"></span></a>Agency Problems</h3>
+
+<ul>
+  <li>Arbitrageurs don’t manage their own capital, so investors must decide how much capital to give arbitrageurs</li>
+  <li>
+<strong>Performance-based arbitrage</strong> limits arbitrage even further since arbitrage is subject to the whims of short-run performance; poor performance leads to capital withdrawals and forced liquidations</li>
+  <li>Mispricing worsens as arbitrageurs scramble out of bad short-run positions</li>
+</ul>
+
+<h3 id="costs">
+<a class="anchor" href="#costs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Costs</h3>
+
+<ul>
+  <li>Transaction fees, requirements, etc. cause arbitrage to be hard to implement in reality</li>
+  <li>Jones and Lamont (2002) show that stocks that are expensive to short remain overpriced</li>
+  <li>Overpriced assets are typically not arbitraged against due to the costs of shorting</li>
+  <li>Empirically analyzing mergers highlights these costs; two companies who are merged should trade at the same price, but often one of the companies will be mispriced due to shorting difficulties</li>
+</ul>
+
+<h3 id="statistical-limits-to-arbitrage">
+<a class="anchor" href="#statistical-limits-to-arbitrage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Statistical Limits to Arbitrage</h3>
+
+<ul>
+  <li>Arbitrageurs use statistical estimation to learn the fundamental values of assets; known as <strong>statistical arbitrage</strong>
+</li>
+  <li>$\alpha$ opportunities are bounded due to the fact that they must be estimated from past returns, and sampling will always have error
+    <ul>
+      <li>Opportunities will still be missed</li>
+    </ul>
+  </li>
+  <li>Data is sampled from noisy sources, so there is bound to be overfitting, risk, and estimation error</li>
+</ul>
+
+<h2 id="overconfidence">
+<a class="anchor" href="#overconfidence" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overconfidence</h2>
+
+<ul>
+  <li>
+<strong>Overprecision</strong>: Overconfidence in accuracy of beliefs, also known as <em>miscalibration</em>
+    <ul>
+      <li>Evidence: Studies have been shown that people have narrower confidence intervals than is true</li>
+      <li>Explains <em>disposition effect</em> (hold onto losers and sell winners), excess volatility + momentum, overreaction to information, inaccurate estimates of effects of mergers</li>
+    </ul>
+  </li>
+  <li>
+<strong>Overplacement</strong>: Belief that one is better than others, such as believing one is above average in driving
+    <ul>
+      <li>Evidence: Studies have shown that over 50% of people will call themselves above average</li>
+      <li>
+<em>Illusory superiority</em>: Most people will rate themselves in the top half</li>
+    </ul>
+  </li>
+  <li>High market turnover is evidence that people are overconfident
+    <ul>
+      <li>Average share of stock changes hands more than once a year; efficient, informed traders should hold onto stocks for longer due to transaction costs and symmetric info</li>
+      <li>Overplacement: Investors believe they are better than others at trading</li>
+      <li>Overprecision: Investors are more confident in their expectations than is true</li>
+    </ul>
+  </li>
+  <li>Leads to excess volatility, lower returns than expected</li>
+  <li>Studies have shown that higher trading frequency leads to lower net returns, mostly due to trading costs
+    <ul>
+      <li>Shows that investors are overconfident</li>
+    </ul>
+  </li>
+  <li>Overconfidence can be attributed to various things
+    <ul>
+      <li>
+<em>Biology</em>: Overconfidence was required to survive because they needed to hunt, take risks, etc.; especially prevalent in men</li>
+      <li>
+<em>Biased self-attribution</em>: Belief that good outcomes are due to skill and bad outcomes are due to luck</li>
+      <li>
+<em>Confirmation bias</em>: People look for evidence that supports what they already believe</li>
+    </ul>
+  </li>
+  <li>Overconfidence survives because they can earn higher payoffs in bull markets, they reminisce on early gains, selection bias, and feedback delay</li>
+</ul>
+
+<h1 id="week-5">
+<a class="anchor" href="#week-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 5</h1>
+
+<h2 id="other-modeling-approaches">
+<a class="anchor" href="#other-modeling-approaches" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Modeling Approaches</h2>
+
+<h3 id="rational-inattention">
+<a class="anchor" href="#rational-inattention" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rational Inattention</h3>
+
+<ul>
+  <li>No agent has full information, and information comes at a cost; rational agents must choose how to obtain information and for what cost</li>
+  <li>In this model, information acquisition is endogenous, and heterogeneity is derived from preferences towards preferences</li>
+  <li>Contrasts the limit to arbitrage approach, as agents don’t have full information</li>
+  <li>Idea: choose what information structure ($P(s\vert x)$) to follow that gives you information on your perceived state of the world $s$ given the true state of the world $x$
+    <ul>
+      <li>Actions are chosen probabilistically; mistakes are optimal due to cognitive limits</li>
+      <li>Higher payoff means that an action is more likely to be chosen</li>
+      <li>Small payoff differences are smoothed out</li>
+      <li>Information constraints reationalize errors and delays in decision-making</li>
+    </ul>
+  </li>
+  <li>This leads to under-diversified portfolios, bias towards local stocks, and actively managed mutual funds
+    <ul>
+      <li>
+<strong>Home Bias Puzzle</strong>: Investors disproportionately hold domestic assets despite theoretically gains through global diversification
+        <ul>
+          <li>Explained by even a slight home information edge providing a large incentive to specialize</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Different from <strong>Cognitive Uncertainty</strong>; rational inattention states that actors make rational choices from limited information, but cognitive uncertainty states that actors have doubts about their own actions and judgements</li>
+</ul>
+
+<h3 id="cognitive-uncertainty">
+<a class="anchor" href="#cognitive-uncertainty" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cognitive Uncertainty</h3>
+
+<ul>
+  <li>Actors have second-order doubts about their actions
+    <ul>
+      <li>Leads to internal noise, reliance on intuitive heuristics</li>
+    </ul>
+  </li>
+  <li>Idea: $a^*(p)$ represents the DM’s true expected utility-maximizing action, but the DM has an imperfect model of it due to limited cognition
+    <ul>
+      <li>DM receives a cognitive signal $s_i = a^<em>(p)+\varepsilon_i$ and holds a prior belief ${a^</em>(p)\sim \mathcal{N}(d_i, \sigma^2)}$ where $d_i$ is the default action</li>
+    </ul>
+  </li>
+  <li>Explains underreaction and probability weighting</li>
+</ul>
+
+<h3 id="information-ambiguity">
+<a class="anchor" href="#information-ambiguity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Information Ambiguity</h3>
+
+<ul>
+  <li>Agents do not trust the quality of news sources (signals); leads to agents having a set of plausible priors as opposed to a single prior</li>
+  <li>Each signal follows $s = \theta + \varepsilon, \varepsilon \sim \mathcal{N}(0, \sigma_s^2)$ where $\sigma_s^2$ is random inside of a range
+    <ul>
+      <li>In the Bayesian case, we know what $\sigma_s^2$ is, but with ambiguity we have no idea</li>
+    </ul>
+  </li>
+  <li>With multiple priors, agents evaluate actions under a worst-case posterior, overweighting bad news compared to good news
+    <ul>
+      <li>AKA assymetric response to news, overweighting of signals that convey bad news, assets should be undervalued when signals are ambiguous</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="experience-effects">
+<a class="anchor" href="#experience-effects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Experience Effects</h3>
+
+<ul>
+  <li>Theoretically, DMs have access to all data throughout all of history</li>
+  <li>Empirical data shows that recent and live experience matters more than history that was not personally experienced
+    <ul>
+      <li>
+<strong>Experience Effects</strong>: Professionals and amateurs are biased towards their lived experience</li>
+    </ul>
+  </li>
+  <li>Bulkley and Harris (1997) showed that analysts overweight recent earnings growth in forecasting long-term earnings and that this overoptimism is often wrong</li>
+</ul>
+
+<h2 id="week-6">
+<a class="anchor" href="#week-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 6</h2>
+
+<ul>
+  <li>A <strong>bubble</strong> has different meanings depending on who you ask; violates EMH, but behaviorists will justify bubbles by citing herd mentality</li>
+  <li>Historical examples
+    <ul>
+      <li>First recorded bubble was in the Netherlands where speculators drove up the price of tulips (Garber (1989))</li>
+      <li>Dot-com bubble was a big recent bubble regarding tech companies</li>
+    </ul>
+  </li>
+  <li>Bubbles can be illustrated by the cyclically adjusted price/earnings ratio (CAPE) which has a long-run average of 16-17</li>
+  <li>Rational bubbles require an infinite horizon, grow at some rate $r$, and grow even faster if there is a probability of bursting
+    <ul>
+      <li>To remove bubbles, economists use the <strong>transverality condition</strong> where they set $b_t = 0$; justified if agents live forever + care only about dividends and markets are efficient
+        <ul>
+          <li>Actors obviously live finitely and buy for resale (Greater Fool fallacy)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Tirole (1985) gives an overlapping generations model of bubbles to justify bubbles using intrinsically worthless fiat money
+    <ul>
+      <li>Money has value because it can be resold and because actors will die</li>
+    </ul>
+  </li>
+  <li>Cryptocurrency also has value because of bubbles
+    <ul>
+      <li>Limited supply leads to resale demand (Harrison and Kreps, 1978)</li>
+      <li>Social and signalling value; owners can express ideology and identity (Sockin and Xiong, 2020)</li>
+      <li>Network access: Owning a coin gives you access to the platform (Catalini and Gans, 2016)</li>
+      <li>Dual-role utility: Tokens provide access to services and incentivize trust (Pagnotta and Buraschi, 2018)</li>
+    </ul>
+  </li>
+  <li>Harrison and Kreps showed that the market price will be greater than the fundamental price under one’s beliefs because they believe someone else will buy it for more (heterogenous beliefs)</li>
+  <li>Abreu-Brunnermeier Bubble-Riding Model (2003) shows that bubbles can exist with arbitrageurs because arbitrageurs will disagree when the bubble will burst, leading to the bubble growing larger and larger</li>
+  <li>
+<strong>No-Trade Theorem</strong> states that no speculative trade should occur if a market has common priors, symmetric information, and rational agents
+    <ul>
+      <li>Bubbles will only persist if there are <em>heterogenous beliefs</em>, <em>assymetric or delayed information</em>, and/or <em>behavioral biases or noise trading</em>
+</li>
     </ul>
   </li>
 </ul>

@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      11 min read
     
 </span></p>
 
@@ -131,6 +131,13 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#graphics-pipeline">Graphics Pipeline</a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#vertex-procesing">Vertex Procesing</a></li>
+<li class="toc-entry toc-h2"><a href="#rasterizer">Rasterizer</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#vr-display">VR Display</a></li>
+<li class="toc-entry toc-h1"><a href="#stereo-display">Stereo Display</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#hmd-display">HMD Display</a></li>
 </ul>
 </li>
 </ul><h1 id="introduction">
@@ -314,29 +321,264 @@ window.onload = wrap_img;
 <a class="anchor" href="#vertex-procesing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vertex Procesing</h2>
 
 <ul>
-  <li>Begins by arranging the objects in the world using a model transform
+  <li>
+<em>Model Transform</em>: Begins by arranging the objects in the world using a model transform
     <ul>
       <li>Involves scaling, rotation, translation, shear transformations to propagate the world space</li>
     </ul>
   </li>
-  <li>Positions and orients the camera using a view transform
+  <li>
+<em>View Transform</em>: Positions and orients the camera using a view transform
     <ul>
       <li>Translate the camera to the origi ($T$) and then rotate it appropriately ($R$); final transformation is $M = RT$</li>
     </ul>
   </li>
-  <li>Defines properties of the camera (FOV, lens) and projects the 3D space onto the camera using a projection transform
+  <li>
+<em>Projection Transform</em>: Defines properties of the camera (FOV, lens) and projects the 3D space onto the camera using a projection transform
     <ul>
       <li>Uses gaze direction (shear), FOV, aspect ratio, near plane (image plane), and far plane (cuts off rest of scene) to create the 2D image</li>
       <li>Displays all objects inside of the <strong>view frustum</strong> which is a 3D object connecting the near and far planes
         <ul>
-          <li>Must be normalized so conversion to window coordinates is easy</li>
+          <li>Must be normalized (to a cube) so conversion to window coordinates is easy</li>
         </ul>
       </li>
       <li>Final transformation matrix: ${v_{clip} = M_{proj} \cdot M_{view} \cdot M_{model} \cdot v}$</li>
       <li>Must clip objects to fit on screen by transforming coordinates again</li>
+      <li>z-coordinate is retained for occlusion</li>
     </ul>
   </li>
+  <li>A Viewport Transform is performed</li>
   <li>TLDR: Takes 3D vertices and puts them on a 2D screen, ensuring that only vertices that are “on-screen” are rendered</li>
+</ul>
+
+<h2 id="rasterizer">
+<a class="anchor" href="#rasterizer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rasterizer</h2>
+
+<ul>
+  <li>After clipping and retriangulating, the rasterizer “fills in” the interiors of triangles
+    <ul>
+      <li>Main issue: Edges of triangles are non-integer, but pixels on a screen are integer; must interpolate vertex attributes onto the pixels</li>
+    </ul>
+  </li>
+  <li>One strategy is to use <strong>scanline interpolation</strong> which involves sweeping across the 2D plane to determine which pixels fall inside of a triangle and interpolating the pixel accordingly
+    <ul>
+      <li>The z-coordinate allows the rasterizer to figure out which shapes take precedence over others via the <em>depth buffer</em>; known as <strong>occlusion resolution</strong>
+</li>
+    </ul>
+  </li>
+  <li>The rasterizer also performs lighting and shading which is extremely difficult to model due to the vast amount of light sources (direct + indirect illumination)</li>
+  <li>Lighting
+    <ul>
+      <li>A simple model would be to remove indirect lighting and to replace with one lighting term</li>
+      <li>
+<strong>Phong illumination/lighting</strong> calculates three channels (ambient, diffuse, specular) and combinews them to light objects
+        <ul>
+          <li>Requires a material color and a light color for each channel</li>
+          <li>Ambient: viewer-independent, acts as a “background color”</li>
+          <li>Diffuse: light coming off of a surface, relies on the angle of lighting and the normal of the surface
+            <ul>
+              <li>Formula: $m\cdot l \cdot \max(L\cdot N, 0)$, where $L\cdot N$ is the dot product between the light and the normal angles</li>
+            </ul>
+          </li>
+          <li>Specular: Reflected light depending on where the viewer is standing, models the shininess of objects
+            <ul>
+              <li>Formula: $m\cdot l \cdot \max(R\cdot V, 0)^{shininess}$, where $R\cdot V$ is the dot product of the refelector and viewer angles</li>
+              <li>$shininess$ is an additional parameter required for the specular channel</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+<strong>Attentuation</strong> is used to model the falloff of light intensity w.r.t. distance
+        <ul>
+          <li>Formula for attentuation coefficient: $\frac{1}{k_c + k_ld_i + k_qd_i^2}$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Shading
+    <ul>
+      <li>Shading is the acutal computation of the color for each pixel/fragment/vertex whereas lighting gives the model to do so</li>
+      <li>
+<strong>Flat shading</strong>: Compute color once per triangle using some model (like Phong lighting)
+        <ul>
+          <li>Fast to compute, but looks very unrealistic</li>
+        </ul>
+      </li>
+      <li>
+<strong>Gourand shading</strong>: Compute color once per vertex and interpolate these colors to the triangles
+        <ul>
+          <li>A little slower than flat shading, but looks a little more realistic</li>
+        </ul>
+      </li>
+      <li>
+<strong>Phong shading</strong>: Compute color once per fragment which requires interpolation of per-vertex normals
+        <ul>
+          <li>Most realistic, but slowest strategy</li>
+        </ul>
+      </li>
+      <li>Vertex shading will be done before the rasterizer while fragment shading will be done afterwards</li>
+    </ul>
+  </li>
+  <li>Texture mapping is also done in the rasterizer, and the main operation is to map coordinates from the 3D surface (x, y, z) into 2D texture coordinates (u, v)
+    <ul>
+      <li>These coordinates are interpolated for each fragment</li>
+      <li>Since texture coordinates are not guaranteed to be integer, we use <em>texture filtering</em> and use bilinear interpolation</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="vr-display">
+<a class="anchor" href="#vr-display" aria-hidden="true"><span class="octicon octicon-link"></span></a>VR Display</h1>
+
+<ul>
+  <li>Various issues with having a high quality display
+    <ul>
+      <li>
+<em>Visual acuity</em>: VR world must be precise, like reality - should be able to see 15 pixels per inch from 20 feet away
+        <ul>
+          <li>Varies over different eyes</li>
+        </ul>
+      </li>
+      <li>
+<em>Visual field</em>: Seeing with one eye vs. two eyes means that the FOOV should be different</li>
+      <li>
+<em>Temporal resolution</em>: Video should be smooth in order to not be offputting</li>
+      <li>
+<em>Depth</em>: Depth is hard to work with; many issues exist like disparity, vergence, accomodation, blur</li>
+    </ul>
+  </li>
+  <li>Biology of vision
+    <ul>
+      <li>Eye peforms low-level processing, brain does high-level</li>
+      <li>Most of the eye’s functions are concentrated within a small part of the eye</li>
+      <li>Eye uses cones and rods to process color/light; short, medium, and long wave cones process RGB colors</li>
+      <li>Each eye has its own <strong>monocular</strong> visual field that it can see
+        <ul>
+          <li>The <strong>binocular (stereo) visual field</strong> is the overlap of the two eyes; allows you to see depth</li>
+        </ul>
+      </li>
+      <li>Monocular = <em>periphery</em>, binocular = <em>fovea</em>
+        <ul>
+          <li>Can only see color in fovea</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Headsets are limited because there is a minimum distance that people are able to focus at
+    <ul>
+      <li>Strategy: Use two lenses, increasing the FOV and weight</li>
+    </ul>
+  </li>
+  <li>Visual acuity is difficult to achieve because the photoreceptors capture 1 arcmin of visual angle
+    <ul>
+      <li>Leads to requiring a massive amount of pixels; high compute and data requirements</li>
+    </ul>
+  </li>
+  <li>
+<strong>Minimum Angle of Resolution</strong>: $\omega = me + \omega_0$
+    <ul>
+      <li>$\omega$: resolution in degrees per cycle</li>
+      <li>$e$: angle per eccentricity in degrees</li>
+      <li>$\omega_0$: smallest resolvable angle in fovea in degrees per cycle</li>
+    </ul>
+  </li>
+  <li>Visual acuity can be calculated as the reciprocal of MAR ($\omega$)
+    <ul>
+      <li>Use MAR to accomplish <strong>foveated rendering</strong>: Split the image into multiple layers (inner/foveal, middle, outer) based on MAR and render them as more/less blurry
+        <ul>
+          <li>Less compute since less pixels have to be rendered; great speedup</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Depth can be perceived in both binocular and monocular vision
+    <ul>
+      <li>Monocular: Accomodation, retinal blue, motion parallax</li>
+      <li>Binocular: (Con)vergence, disparity</li>
+      <li>Pictorial cues: Shading, perspective, texture</li>
+    </ul>
+  </li>
+  <li>
+<strong>Vergence</strong>: Convergence of muscles to fixate on a single object</li>
+  <li>
+<strong>Accomodation</strong>: Ability of lens to focus on fixated object</li>
+  <li>
+<strong>Vergence-Accomodation Conflict</strong>: Eyes try to focus on the screen in front of them, but the screen “fools” them into perceiving depth, creating a difference in vergence and accomodation; causes much fatigure</li>
+  <li>
+<strong>Motion parallax</strong>: Ability to see different objects while moving</li>
+  <li>
+<strong>Retinal blur</strong>: Blurring of objects when eyes focus on something different
+    <ul>
+      <li>Blur can be calculated using $c_z = ar\left(\frac{1}{f} - \frac{1}{z}\right)$
+        <ul>
+          <li>$r$: Distance to sensor</li>
+          <li>$a$: Aperture, controlled by pupil (such as by squinting)</li>
+          <li>$f$: Focal length, controlled by accomodation</li>
+          <li>$z$: The depth, $d$, that is focused on</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="stereo-display">
+<a class="anchor" href="#stereo-display" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stereo Display</h1>
+
+<ul>
+  <li>One way to achieve stereo vision using 2D is through glasses
+    <ul>
+      <li>Can use anaglyph, polarization, etc.</li>
+      <li>General strategy: have each eye see a different color/polarization/etc., forcing them to work together to see a 3D image</li>
+      <li>
+<em>Polarization</em>: Each eye sees different rows + columns, i.e. right eye sees even while left eye sees odd (different polarizations)
+        <ul>
+          <li>Popular example is RealD</li>
+          <li>Inexpensive and makes gaze direction irrelevant</li>
+          <li>Screen must be polarization-preserving, and this strategy loses brightness + resolution</li>
+        </ul>
+      </li>
+      <li>
+<em>Shutter</em>: Each lens opens and closes exactly when the frame changes
+        <ul>
+          <li>Somewhat expensive, requires fast display, screen must be synced with glasses</li>
+          <li>Active glasses</li>
+        </ul>
+      </li>
+      <li>
+<em>Chromatic Filters</em>: Uses two projectors to project two different colored images (one for each eye)
+        <ul>
+          <li>Somewhat expensive, can’t use in theaters</li>
+        </ul>
+      </li>
+      <li>
+<em>Anaglyph</em>: Render stereo images in different colors so that each eye sees a different image
+        <ul>
+          <li>Most inexpensive glasses</li>
+          <li>Has issues with colors</li>
+          <li>To create a full-color anaglyph image, render a left and right image then color left using red channel and right using green + blue (red-cyan anaglyph)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>Parallax</strong>: The relative distance of a 3D point projected into the 2 stereo images
+    <ul>
+      <li>Positive parallax means point is behind projection plane, zero parallax means point is on the plane, negative means point is in front</li>
+      <li>Must use horizontal parallax where both eyes have the same projection plane (screen), known as <em>off-axis</em> projection
+        <ul>
+          <li>Projection previously was only from one viewpoint, but now that there are two, we have to account for the horizontal parallax</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="hmd-display">
+<a class="anchor" href="#hmd-display" aria-hidden="true"><span class="octicon octicon-link"></span></a>HMD Display</h2>
+
+<ul>
+  <li>Basic idea: Have a lens that is a short distance away from a micro display</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/cs118/lecture/spring25/markdown/2025/04/02/cs118-lecture.html" hidden></a>
