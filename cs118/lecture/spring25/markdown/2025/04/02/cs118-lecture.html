@@ -350,7 +350,11 @@ window.onload = wrap_img;
       <li>To make it look like the camera is coming from the right perspective, a <em>perspective projection</em> is applied which uses translation (to move the camera), shear (to change the LookAt value), and scaling (to convert to cuboid)</li>
     </ul>
   </li>
-  <li>A Viewport Transform is performed</li>
+  <li>A Viewport Transform is performed
+    <ul>
+      <li>Uses translation to move the nearplane to the center of the window and scaling to scale it to the right size</li>
+    </ul>
+  </li>
   <li>TLDR: Takes 3D vertices and puts them on a 2D screen, ensuring that only vertices that are “on-screen” are rendered</li>
 </ul>
 
@@ -377,17 +381,17 @@ window.onload = wrap_img;
 <strong>Phong illumination/lighting</strong> calculates three channels (ambient, diffuse, specular) and combinews them to light objects
         <ul>
           <li>Requires a material color and a light color for each channel</li>
-          <li>Ambient: viewer-independent, acts as a “background color”
+          <li>Ambient: viewer-independent, acts as a “background color”, approximates indirect illumniation
             <ul>
               <li>Formula: $m\cdot l$; does not depend on viewer, normals, or light</li>
             </ul>
           </li>
-          <li>Diffuse: light coming off of a surface, relies on the angle of lighting and the normal of the surface
+          <li>Diffuse: light coming off of a surface, relies on the angle of lighting and the normal of the surface, approximates some aspects of direct illumination
             <ul>
               <li>Formula: $m\cdot l \cdot \max(L\cdot N, 0)$, where $L\cdot N$ is the dot product between the light and the normal angles</li>
             </ul>
           </li>
-          <li>Specular: Reflected light depending on where the viewer is standing, models the shininess of objects
+          <li>Specular: Reflected light depending on where the viewer is standing, models the shininess of objects, approximates some aspects of direct illumination
             <ul>
               <li>Formula: $m\cdot l \cdot \max(R\cdot V, 0)^{shininess}$, where $R\cdot V$ is the dot product of the refelector and viewer angles</li>
               <li>$shininess$ is an additional parameter required for the specular channel</li>
