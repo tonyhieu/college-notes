@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      19 min read
     
 </span></p>
 
@@ -141,6 +141,15 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#varifocal-display">Varifocal Display</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h1"><a href="#sound">Sound</a></li>
+<li class="toc-entry toc-h1"><a href="#tracking">Tracking</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#imu-tracking">IMU Tracking</a></li>
+<li class="toc-entry toc-h2"><a href="#optical-tracking">Optical Tracking</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#human-factors">Human Factors</a></li>
+<li class="toc-entry toc-h1"><a href="#interaction">Interaction</a></li>
 </ul><h1 id="introduction">
 <a class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h1>
 <ul>
@@ -607,6 +616,189 @@ window.onload = wrap_img;
   <li>Use an actuator and an eye-tracking camera to move the screen away/towards the viewer based on where they are looking in order to remove the vergence-accomodation issue
     <ul>
       <li>Instead of an actuator that moves the screen, a tunable lens with varying focus can be employed to change the distance; more expensive but less technically complicated</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="sound">
+<a class="anchor" href="#sound" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sound</h1>
+
+<ul>
+  <li>Sound is the vibration of air particles, and the eardrum is able to hear sound by detecting the vibrations
+    <ul>
+      <li>Can be simulated using bone conduction</li>
+    </ul>
+  </li>
+  <li>Stereophonic sound does not reach both ears at the same time; depends on location of sound, leading to a phase difference and amplitude difference</li>
+  <li>
+<strong>Head Related Impulse Response (HRIR)</strong>: The amplitude of sound heard by each ear, can be modeled using the Dirac delta function (along with some noise due to dampening + scattering to be more realistic)</li>
+  <li>Two types of sound: point sources and ambient sound
+    <ul>
+      <li>
+<em>Point source</em>: Find the HRIR for each ear and play the appropriate sound according to the delta function</li>
+      <li>
+<em>Ambient sound</em>: Sample where the sound is coming from in multiple places, and play them from those places
+        <ul>
+          <li>Think of a living room setup: 6-8 speakers playing sounds to create surround sound</li>
+          <li>Can sample using spherical harmonics</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="tracking">
+<a class="anchor" href="#tracking" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tracking</h1>
+
+<ul>
+  <li>Need to track the position and orientation of the head and hands by either using <strong>Inertial Measurement Units (IMUs)</strong> or <strong>Optical Tracking</strong> with cameras</li>
+  <li>Tracking requires sensors and angular measurements of yaw, pitch, and roll</li>
+  <li>
+<strong>Vestibular System</strong>: Provides a sense of balance and gravity, senses acceleration</li>
+  <li>TODO: Add vertex in clip space</li>
+</ul>
+
+<h2 id="imu-tracking">
+<a class="anchor" href="#imu-tracking" aria-hidden="true"><span class="octicon octicon-link"></span></a>IMU Tracking</h2>
+<ul>
+  <li>IMUs measure angular velocity ($'\omega$ in deg/s) with gyroscope, linear acceleration ($'\alpha$ in m/s<sup>2</sup>) with accelerometer, and magnetic field strength ($m$ in uT = microtesla) with magnetometer
+    <ul>
+      <li>Accel and gyro measurements will accumulate bias because the noise will compound over time</li>
+      <li>Can remove drift and noise using a high pass filter (Kalman filter)</li>
+      <li>Magnetometer is sensitive to distortions; use hardware with low latency that is able to utilize mechanical, ultrasonic, or magnetic tracking</li>
+    </ul>
+  </li>
+  <li>The <strong>Head and Neck Model</strong> provides more accurate position tracking by orienting everything relative to the base of the neck
+    <ul>
+      <li>Handheld controllers can also be tracked using the head neck model using translation with respect to the head</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="optical-tracking">
+<a class="anchor" href="#optical-tracking" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optical Tracking</h2>
+
+<ul>
+  <li>Strategy: Use cameras to find the coordinates of the head/hands, extrapolating 3D coordinates from 2D camera images
+    <ul>
+      <li>$P’=KCP$ converts 4D homogenous coordinates to 3D</li>
+      <li>$K$ is the camera intrinsic matrix, performs rotations and transformations, is known</li>
+      <li>$C$ can be found by calibrating the camera</li>
+      <li>(Pseudo) inverse matrices can be used to recover the 3D point</li>
+    </ul>
+  </li>
+  <li>Two types of optical tracking
+    <ul>
+      <li>
+<em>Outside Looking In</em>: Have lights on the headset that are distinguishable (via lights or indices) and track with outside cameras</li>
+      <li>
+<em>Inside Looking Out</em>: Have cameras on the headset and markers in the outside world; more sophisticated and expensive technique (Apple Vision Pro uses this)
+        <ul>
+          <li>Can also be implemented using base stations that sweep the room with IR (infrared) light and track the headset position</li>
+        </ul>
+      </li>
+      <li>Apply both techniques to get the most accurate reading</li>
+    </ul>
+  </li>
+  <li>Eye tracking techniques
+    <ul>
+      <li>Shine a light into the eye; simple, but causes red eye</li>
+      <li>Use camera and Purkinje images to track IR illumination</li>
+      <li>Place electrosensors on eye muscles; very intrusive</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="human-factors">
+<a class="anchor" href="#human-factors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Human Factors</h1>
+
+<ul>
+  <li>
+<strong>Illusory motion</strong>: The belief that one is moving based on visual cues
+    <ul>
+      <li>Also known as <strong>vection</strong>; used by VR to move the player, but internal human sense (<strong>proprioception</strong>) can override vection</li>
+    </ul>
+  </li>
+  <li>Vector fields are used to plot movement on options on the screen, and certain vector fields (which represent different angular) velocities can make one feel dizzy
+    <ul>
+      <li>e.g. a vector field of all arrows pointing to the right will make one feel like they’re spinning</li>
+    </ul>
+  </li>
+  <li>The eye moves very fast; one <strong>saccade</strong> (movement) every 45ms, meaning that the eye rotates 900 degrees per second
+    <ul>
+      <li>
+<strong>Smooth pursuit</strong> is when the eye moves slowly to track an object which reduces motion blur and stabilizes the image</li>
+      <li>
+<strong>Vestibular Occular Reflex (VOR)</strong>: Fixates on object as the head rotates</li>
+      <li>
+<strong>Opto-Kinetic Reflex</strong> Watch close feature (for reference) instead of trying to track something fast
+        <ul>
+          <li>Might watch tree in front of car instead of car to determine how fast the car is</li>
+        </ul>
+      </li>
+      <li>These eye movements can lead to fatigue and motion sickness, especially when combined with vection</li>
+    </ul>
+  </li>
+  <li>Reducing latency between head movements and scene changes is key to reduce discomfort</li>
+  <li>Frames are discrete, but vision is continuous, so <em>frame skipping</em> leads to desyncs
+    <ul>
+      <li>To load frames faster, frame buffers are swapped to decrease load times</li>
+      <li>Predictive tracking, advanced technology, OLED, etc. can also ease this issue</li>
+    </ul>
+  </li>
+  <li>The <strong>Uncanny Valley</strong> provides issues for affinity to virtual environments</li>
+</ul>
+
+<p><img src="https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fsrep00864/MediaObjects/41598_2012_Article_BFsrep00864_Fig1_HTML.jpg" alt=""></p>
+
+<h1 id="interaction">
+<a class="anchor" href="#interaction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Interaction</h1>
+
+<ul>
+  <li>Consists of <strong>locomotion</strong> which is the movement of a virtual avatar corresponding to movements in real life</li>
+  <li>
+<strong>Matched Zone</strong>: Since the VR area is larger than IRL, a matched zone is employed to map the IRL area to a small portion of the VR area</li>
+  <li>
+<strong>Remapping</strong>: The mapping of an action IRL to an action in VR (i.e. WASD to move)
+    <ul>
+      <li>The greater the mismatch between VR and IRL, the more remapping required</li>
+    </ul>
+  </li>
+  <li>Mismatched obstacles can either be dealt with by drawing a virtual boundary on IRL objects (breaks immersion) or freeze rendering when hitting a virtual object (can cause discomfort when moving IRL but not moving in VR)</li>
+  <li>
+<strong>Redirected walking</strong> lets people move IRL and feel like they’re moving in VR
+    <ul>
+      <li>Subtly change angles and distances (e.g. move 2 m/s IRL and 4 m/s in VR) during saccades/blinks to travel greater distances</li>
+      <li>Redirect users (teleportation, distractors) at the end of the matched zone</li>
+      <li>Take advantage of <strong>change blindness</strong> by changing things when user isn’t looking; most users won’t notice</li>
+    </ul>
+  </li>
+  <li>Can think of a matched zone as a cart that moves through the virtual world using controllers and head rotation</li>
+  <li>
+<strong>Starfing</strong>: Allowing lateral motion during speed up or slow down in one direction</li>
+  <li>Collision detection (between hand and scene) is expensive since you must compute millions of intersections between triangles
+    <ul>
+      <li>Use a <strong>bounding volume</strong> to roughly see if objects collide, simpler structures lets you reject intersections easier</li>
+      <li>Bounding volumes can be axis-aligned or object oriented
+        <ul>
+          <li>Spheres and rectangles have easy computations but are worse fits; shells and hulls have better fits but are harder to compute</li>
+        </ul>
+      </li>
+      <li>Axis-aligned boxes are the most common due to its fast compute and relatively good fit</li>
+    </ul>
+  </li>
+  <li>To create a tight fit axis-aligned bounding box, engines use an octree data structure
+    <ul>
+      <li>Generate one large bounding box (root node) and split it into 8 equally sized bounding boxes (children nodes); repeat this process for each node until the box is a tight fit</li>
+      <li>Done in preprocessing</li>
+      <li>To check for intersection, check root nodes of objects A and B and recurse down the tree until the intersection of two leaf nodes is found</li>
+    </ul>
+  </li>
+  <li>Techniques for comfort
+    <ul>
+      <li>No gorilla arms</li>
+      <li>Select with flashlight as opposed to a laser pointer</li>
+      <li>Don’t force players to continuously press a button; use a state machine (holding vs. not holding)</li>
     </ul>
   </li>
 </ul>
