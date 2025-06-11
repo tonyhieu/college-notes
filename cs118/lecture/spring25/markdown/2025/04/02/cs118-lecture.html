@@ -655,6 +655,7 @@ window.onload = wrap_img;
   <li>Tracking requires sensors and angular measurements of yaw, pitch, and roll</li>
   <li>
 <strong>Vestibular System</strong>: Provides a sense of balance and gravity, senses acceleration</li>
+  <li>Head orientation has 6 degrees of freedom</li>
   <li>TODO: Add vertex in clip space</li>
 </ul>
 
@@ -664,7 +665,12 @@ window.onload = wrap_img;
   <li>IMUs measure angular velocity ($'\omega$ in deg/s) with gyroscope, linear acceleration ($'\alpha$ in m/s<sup>2</sup>) with accelerometer, and magnetic field strength ($m$ in uT = microtesla) with magnetometer
     <ul>
       <li>Accel and gyro measurements will accumulate bias because the noise will compound over time</li>
-      <li>Can remove drift and noise using a high pass filter (Kalman filter)</li>
+      <li>Can remove drift and noise using a filter (Kalman filter)
+        <ul>
+          <li>Gyrometer is accurate in short term, but will drift; requires high pass filtering</li>
+          <li>Accelerometer is accurate in long term, but has noise in short term; requires low pass filtering</li>
+        </ul>
+      </li>
       <li>Magnetometer is sensitive to distortions; use hardware with low latency that is able to utilize mechanical, ultrasonic, or magnetic tracking</li>
     </ul>
   </li>
@@ -681,6 +687,8 @@ window.onload = wrap_img;
 <ul>
   <li>Strategy: Use cameras to find the coordinates of the head/hands, extrapolating 3D coordinates from 2D camera images
     <ul>
+      <li>Known as the <strong>PnP (Point n’ Perspective) Problem</strong>
+</li>
       <li>$P’=KCP$ converts 4D homogenous coordinates to 3D</li>
       <li>$K$ is the camera intrinsic matrix, performs rotations and transformations, is known</li>
       <li>$C$ can be found by calibrating the camera</li>
