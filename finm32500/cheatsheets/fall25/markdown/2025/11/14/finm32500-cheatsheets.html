@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Computing for Finance in Python | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Computing for Finance in Python" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="FINM 32500" />
+<meta property="og:description" content="FINM 32500" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/finm32500/cheatsheets/fall25/markdown/2025/11/14/finm32500-cheatsheets.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/finm32500/cheatsheets/fall25/markdown/2025/11/14/finm32500-cheatsheets.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-11-14T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Computing for Finance in Python" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-11-14T00:00:00-06:00","datePublished":"2025-11-14T00:00:00-06:00","description":"FINM 32500","headline":"Computing for Finance in Python","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/finm32500/cheatsheets/fall25/markdown/2025/11/14/finm32500-cheatsheets.html"},"url":"https://tonyhieu.github.io/college-notes/finm32500/cheatsheets/fall25/markdown/2025/11/14/finm32500-cheatsheets.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a>
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon"></span>
+        </label>
+
+        <div class="nav-items">
+  <a class="nav-item" href="/college-notes/schedule/">Class Schedule</a>
+  <a class="nav-item" href="/college-notes/labs/">Labs</a>
+  <a class="nav-item" href="/college-notes/categories/">Tags</a>
+  <a class="nav-item" href="/college-notes/search/">Search</a>
+</div>
+
+      </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Computing for Finance in Python</h1><p class="page-description">FINM 32500</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2025-11-14T00:00:00-06:00" itemprop="datePublished">
+        Nov 14, 2025
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#finm32500">finm32500</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#cheatsheets">cheatsheets</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall25">fall25</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#object-oriented-programming">Object-Oriented Programming</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#design-patterns">Design Patterns</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#parallel-computing">Parallel Computing</a></li>
+<li class="toc-entry toc-h2"><a href="#inter-process-communicationnetworking">Inter-Process Communication/Networking</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#networking">Networking</a></li>
+</ul>
+</li>
+</ul><h2 id="object-oriented-programming">
+<a class="anchor" href="#object-oriented-programming" aria-hidden="true"><span class="octicon octicon-link"></span></a>Object-Oriented Programming</h2>
+
+<ul>
+  <li>
+<strong>Polymorphism</strong>: Multiple objects with the same method name, can use them the same way
+    <ul>
+      <li>Accomplished using duck-typing (no inheritance) or inheritance (use same base class)</li>
+      <li>
+<strong>Abstract Base Class (ABC)</strong>: A base class that defines what methods the children must have, cannot be instantiated directly and uses <code class="language-plaintext highlighter-rouge">@abstractmethod</code> decorators</li>
+    </ul>
+  </li>
+  <li>Classes can inherit from more than one parent class, conflicting method names are resolved using the <strong>Method Resolution Order (MRO)</strong>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">@property</code> turns a method into an attribute, can define a setter, getter, and deleter without having to add a new attribute</li>
+</ul>
+
+<h3 id="design-patterns">
+<a class="anchor" href="#design-patterns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Design Patterns</h3>
+
+<ul>
+  <li>
+<strong>Creational Patterns</strong>: Control how objects are created
+    <ul>
+      <li>
+<em>Factory</em>: Create objects by passing in an identifier of which object you want, abstracts away the logic to instantiate</li>
+      <li>
+<em>Singleton</em>: Ensures that a class has only one instance
+        <ul>
+          <li>Implemented using the <code class="language-plaintext highlighter-rouge">__new__</code> operator which creates and returns an instance; return the class instance if it already exists</li>
+        </ul>
+      </li>
+      <li>
+<em>Builder</em>: Constructs objects step by step, adding on attributes and methods as requested</li>
+    </ul>
+  </li>
+  <li>
+<strong>Structural Patterns</strong>: Define relationships between components
+    <ul>
+      <li>
+<em>Decorator</em>: Add behavior to a class or function without modifying it
+        <ul>
+          <li>Add parameters to a decorator by creating a decorator factory which adds another function on top of the decorator</li>
+        </ul>
+      </li>
+      <li>
+<em>Adapter</em>: Convert one interface into another</li>
+      <li>
+<em>Composite</em>: Treat individual objects and groups uniformly</li>
+    </ul>
+  </li>
+  <li>
+<strong>Behavioral Patterns</strong>: Manage communication and control flow between objects
+    <ul>
+      <li>
+<em>Strategy</em>: Enapsualtes interchangeable algorithms</li>
+      <li>
+<em>Observer</em>: Notifies dependent objects (subscribers) of state changes
+        <ul>
+          <li>Objects subscribe to the observer, and the server notifies them of changes to the state</li>
+        </ul>
+      </li>
+      <li>
+<em>Command</em>: Encapusales requests as objects</li>
+      <li>
+<em>Iterator</em>: Access elements one at a time
+        <ul>
+          <li>Implemented using <code class="language-plaintext highlighter-rouge">__iter__</code> and <code class="language-plaintext highlighter-rouge">__next__</code>
+</li>
+        </ul>
+      </li>
+      <li>
+<em>Generator</em>: Uses <code class="language-plaintext highlighter-rouge">yield</code> to produce values one at a time</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="parallel-computing">
+<a class="anchor" href="#parallel-computing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parallel Computing</h2>
+<ul>
+  <li>A <strong>process</strong> has its own memory space, CPU context, execution flow, and resources; each Python process has its own, separate interpreter
+    <ul>
+      <li>Each process runs independently from each other and cannot interact with each other unless using shared memory or TCP</li>
+    </ul>
+  </li>
+  <li>A <strong>thread</strong> is a part of a process, can run multiple threads that all execute concurrently
+    <ul>
+      <li>Use the same memory space as the process and are more lightweight, but have issues due to the <strong>Global Interpreter Lock (GIL)</strong> in Python, meaning that only one thread can truly run at a time</li>
+    </ul>
+  </li>
+  <li>Threads are better for system responsiveness and handling multiple tasks at the same time that don’t need to be done concurrently, while processes are better for true parallelism
+    <ul>
+      <li>Threads are also good for when tasks spend time waiting, such as for network requests or database queries</li>
+    </ul>
+  </li>
+  <li>
+<strong>Context switching</strong>: When the CPU switches from one task to another; requires multiple saves and loads of states
+    <ul>
+      <li>Threads context switch more often and faster but risk race conditions</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="inter-process-communicationnetworking">
+<a class="anchor" href="#inter-process-communicationnetworking" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inter-Process Communication/Networking</h2>
+
+<ul>
+  <li>
+<strong>IPC</strong> allows processes to exchange data and communicate
+    <ul>
+      <li>Leads to modular design, parallelism, and resource/time management</li>
+    </ul>
+  </li>
+  <li>Types of IPC
+    <ul>
+      <li>
+<em>Pipes</em>: One-way stream between processes, used for parent-child communication</li>
+      <li>
+<em>Named pipes</em>: Like pipes but can be accessed by unrelated processes</li>
+      <li>
+<em>Message queues</em>: Send/receive messages using a queue, used for asynchronous messaging</li>
+      <li>
+<em>Shared memory</em>: Multiple processes use the same memory region, best for high-speed data sharing
+        <ul>
+          <li>Requires synchronization (due to race conditions and data overwriting) and is difficult to debug</li>
+        </ul>
+      </li>
+      <li>
+<em>Socket</em>: Network-based communication through TCP/IP, best used for remote or cross-platform communication</li>
+      <li>
+<em>Signals</em>: Notifications between processes, used for interrupts, shutdowns, or alerts</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="networking">
+<a class="anchor" href="#networking" aria-hidden="true"><span class="octicon octicon-link"></span></a>Networking</h3>
+<ul>
+  <li>Data exchange over wireless connections</li>
+  <li>
+<strong>Host</strong>: Device connected to a network</li>
+  <li>
+<strong>Protocol</strong>: Rules for communication</li>
+  <li>
+<strong>Packet</strong>: A chunk of data sent across the network</li>
+  <li>
+<strong>IP Address</strong>: Unique identifier for a device</li>
+  <li>
+<strong>Port</strong>: An endpoint for specific services</li>
+  <li>
+<strong>Open Systems Interconnection (OSI) model</strong>: Breaks networking into 7 layers, giving each layer a role in data transmission
+    <ol>
+      <li>Physical
+        <ul>
+          <li>Transmits raw binary data over physical forms (eleectrical, optical, radio)</li>
+          <li>Defines hardware specifications for cables, connectors, etc.</li>
+          <li>Key characteristics include bandwidth, latency, attenuation, interference, propagation speed, cost, security, flexibility, distance limit</li>
+          <li>Includes ethernet cables and radio signals</li>
+        </ul>
+      </li>
+      <li>Data Link
+        <ul>
+          <li>Packages raw bits into frames for transmission and handles local delivery between devices</li>
+          <li>Manages MAC addressing, error detection, and access control ()</li>
+          <li>Includes ethernet and Wi-Fi</li>
+        </ul>
+      </li>
+      <li>Network
+        <ul>
+          <li>Handles logical addressing (IP address)</li>
+          <li>Determines best path for data to travel and enables <em>internetworking</em> (connecting networks together)</li>
+          <li>Breaks data into packets</li>
+          <li>Includes IP and routers</li>
+        </ul>
+      </li>
+      <li>Transport
+        <ul>
+          <li>Manages communication between devices and ensures complete, ordered, error-free delivery of data</li>
+          <li>Includes TCP (connection-oriented) and UDP (connectionless) services
+            <ul>
+              <li>TCP guarantees delivery, order, and error-checking and has flow control but is slower; used for web browsing, email, file transfer</li>
+              <li>UDP has no guarantees but is much faster; used for streaming, gaming, or VoIP (Voice over IP)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Session
+        <ul>
+          <li>Handles logical sessions between applications</li>
+          <li>Coordinates dialogue control and supports checkpointing and recovering in long-running data exchanges</li>
+          <li>Includes RPC, VoIP setup and teardown</li>
+        </ul>
+      </li>
+      <li>Presentation
+        <ul>
+          <li>Converts data into an understandable format for applications, encrypting and decrypting data</li>
+          <li>Optimizes bandwidth usage using compression and ensures data interoperability</li>
+          <li>Includes JSON formatting, JPEG/MP3 encoding</li>
+        </ul>
+      </li>
+      <li>Application
+        <ul>
+          <li>Provides network services directly to applications, enabling data exchange, browsing, messaging, file transfer</li>
+          <li>Defines protocols for different tasks</li>
+          <li>Includes HTTP, FTP, DNS</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>A <strong>socket</strong> enables communication between processes through writing code at Layer 7; the OS and network handles layers 1-6
+    <ul>
+      <li>Can choose either TCP or UDP</li>
+    </ul>
+  </li>
+  <li>
+<em>Client-server architecture</em>: A server listens for requests and sends data to its clients
+    <ul>
+      <li>Multi-client servers must use parallelism to handle clients, like threading or multiprocessing</li>
+    </ul>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/finm32500/cheatsheets/fall25/markdown/2025/11/14/finm32500-cheatsheets.html" hidden></a>
+</article>
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+    <a rel="me" href="" target="_blank" title="">
+      <span class="grey fa-brands fa- fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="" target="_blank" title="">
+      <span class="grey fa-brands fa- fa-lg"></span>
+    </a>
+  </li>
+  <li>
+    <a href="https://tonyhieu.github.io/college-notes/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

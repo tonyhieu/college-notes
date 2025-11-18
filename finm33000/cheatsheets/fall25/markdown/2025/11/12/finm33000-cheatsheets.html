@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Options | Anthony Vo’s College Notes</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Options" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="FINM 33000" />
+<meta property="og:description" content="FINM 33000" />
+<link rel="canonical" href="https://tonyhieu.github.io/college-notes/finm33000/cheatsheets/fall25/markdown/2025/11/12/finm33000-cheatsheets.html" />
+<meta property="og:url" content="https://tonyhieu.github.io/college-notes/finm33000/cheatsheets/fall25/markdown/2025/11/12/finm33000-cheatsheets.html" />
+<meta property="og:site_name" content="Anthony Vo’s College Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-11-12T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Options" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-11-12T00:00:00-06:00","datePublished":"2025-11-12T00:00:00-06:00","description":"FINM 33000","headline":"Options","mainEntityOfPage":{"@type":"WebPage","@id":"https://tonyhieu.github.io/college-notes/finm33000/cheatsheets/fall25/markdown/2025/11/12/finm33000-cheatsheets.html"},"url":"https://tonyhieu.github.io/college-notes/finm33000/cheatsheets/fall25/markdown/2025/11/12/finm33000-cheatsheets.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/college-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tonyhieu.github.io/college-notes/feed.xml" title="Anthony Vo's College Notes" /><link rel="shortcut icon" type="image/x-icon" href="/college-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/college-notes/">Anthony Vo&#39;s College Notes</a>
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon"></span>
+        </label>
+
+        <div class="nav-items">
+  <a class="nav-item" href="/college-notes/schedule/">Class Schedule</a>
+  <a class="nav-item" href="/college-notes/labs/">Labs</a>
+  <a class="nav-item" href="/college-notes/categories/">Tags</a>
+  <a class="nav-item" href="/college-notes/search/">Search</a>
+</div>
+
+      </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Options</h1><p class="page-description">FINM 33000</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2025-11-12T00:00:00-06:00" itemprop="datePublished">
+        Nov 12, 2025
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/college-notes/categories/#finm33000">finm33000</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#cheatsheets">cheatsheets</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#fall25">fall25</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/college-notes/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#midterm">Midterm</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#lecture-1">Lecture 1</a></li>
+<li class="toc-entry toc-h3"><a href="#lecture-2">Lecture 2</a></li>
+<li class="toc-entry toc-h3"><a href="#lecture-3">Lecture 3</a></li>
+<li class="toc-entry toc-h3"><a href="#lecture-4">Lecture 4</a></li>
+</ul>
+</li>
+</ul><h2 id="midterm">
+<a class="anchor" href="#midterm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Midterm</h2>
+
+<h3 id="lecture-1">
+<a class="anchor" href="#lecture-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lecture 1</h3>
+
+<ul>
+  <li>Assume frictionless market; no default/counterparty risk, no transaction costs, no slippage, shorting, etc.</li>
+  <li>A market is filled with some amount of assets with nonrandom time-0 times and random time-$T$ prices (aka payoffs)
+    <ul>
+      <li>
+<em>Zero-coupon or discount bond</em>: Each unit pays at time $T$ a fixed payoff, usually 1</li>
+      <li>
+<em>Stock</em>: Doesn’t pay dividends, each unit has a time-$t$ price $S_t\geq 0$</li>
+      <li>
+<em>Bank account or money market account</em>: Each unit has a time-$t$ price $\exp\left(\int_0^t r_udu\right)$; if $r$ is constant, then $B_t = e^{rt}$</li>
+    </ul>
+  </li>
+  <li>A portfolio $\Theta$ is a vector of nonrandom quantities that denotes the number of units of asset owned, where negative numbers are shorts and positive numbers are longs</li>
+  <li>An <strong>arbitrage</strong> is a way to profit from price inconsistencies
+    <ul>
+      <li>
+<strong>Type 1</strong>: $V_0 = 0$ and both $P(V_T \geq 0) = 1$ and $P(V_T&gt;0) &gt; 0$ (free and no risk of loss)</li>
+      <li>
+<strong>Type 2</strong>: $V_0 &lt; 0$ and $P(V_T\geq 0 ) = 1$ (get credit and guaranteed not to pay it back)</li>
+    </ul>
+  </li>
+  <li>
+<strong>Superreplication</strong>: A portfolio $\Theta^a$ superreplicates $\Theta^b$ if $P(V_T^a\geq V_T^b) = 1$. Then, $V_0^a\geq V_0^b$, otherwise arbitrage exists
+    <ul>
+      <li>
+<strong>Subreplication</strong> is same except with $P(V_T^a\leq V_T^b) = 1$; <strong>replication</strong> mean that if $P(V_T^a= V_T^b) = 1$, then $V_0^a = V_0^b$</li>
+      <li>Also known as <em>law of one price</em>
+</li>
+    </ul>
+  </li>
+  <li>For a discount bond, the time-0 price should be $Z_0 = \frac{1}{B_T}$, or $Z_0=e^{-rT}$ if $r$ is constant</li>
+  <li>A <strong>forward contract</strong> is a contract with maturity date $T$ and a fixed delivery price $K$ where the holder MUST pay $K$ and receive $S_T$ at time $T$; payoff is $S_T-K$
+    <ul>
+      <li>The time-0 value of a forward contract is equal to $S_0-KZ_0$</li>
+    </ul>
+  </li>
+  <li>A linear/affine contract on a stock $S$ that pays $a+bS_T$ has a time-0 value $aZ_0 + bS_0$</li>
+  <li>A <strong>call option</strong> with strike $K$ and expiry $T$ on an underlying process $S$ has a payoff of $(S_T-K)^+$, as the holder is not obligated to exercise the option
+    <ul>
+      <li>The time-0 value $C_0$ satisfies $(S_0-KZ_0)^+\leq C_0\leq S_0$, as a call option dominates the forward contract and a zero payoff while being dominated by the stock</li>
+      <li>With two time-0 call options where $K_1 &lt; K_2$, the payoff spread is defined as $0\leq C_0(K_1)-C_0(K_2)\leq (K_2-K_1)Z_0$</li>
+    </ul>
+  </li>
+  <li>A <strong>put option</strong> with strike $K$ and expiry $T$ on asset $S$ gives the holder the right to pay $S_T$ to receive $K$; its payoff is $(K-S_T)^+$
+    <ul>
+      <li>The time-0 price of a put satisfies $(KZ_0-S_0)^+ \leq P_0 \leq KZ_0$</li>
+      <li>With two puts: $0 \leq P_0(K_2) - P_0(K_1)\leq (K_2-K_1)Z_0$</li>
+    </ul>
+  </li>
+  <li>
+<strong>Put-call parity</strong>: A call option has the time-0 value $C_0(K,T) = P_0(K,T) + S_0 - KZ_0(T)$</li>
+</ul>
+
+<h3 id="lecture-2">
+<a class="anchor" href="#lecture-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lecture 2</h3>
+
+<ul>
+  <li>
+<strong>Binomial model</strong>
+    <ul>
+      <li>There are two times: $0$ and $T$</li>
+      <li>There are two states ${\omega_u, \omega_d}$ at time $T$ with probability greater than 0</li>
+      <li>Each unit has time-$t$ value $B_t = e^{rt}$</li>
+      <li>The stock $S$ takes values $S_T(\omega_u)=s_u$ and $S_T(\omega_d)=s_d$
+        <ul>
+          <li>Also exists an option contract $C$ that has $C_T(\omega_u)=c_u$ and $C_T(\omega_d)=c_d$</li>
+        </ul>
+      </li>
+      <li>Nonrandom: $S_0$, $s_u$, $s_d$, $c_u$, $c_d$</li>
+    </ul>
+  </li>
+  <li>In this model, we can derive the option price $C_0$ using algebra: $C_0 = e^{-rT}(p_uc_u + p_dc_d)$
+    <ul>
+      <li>$p_u = \frac{S_0e^{rT}-s_d}{s_u-s_d}$, $p_d = 1-p_u$</li>
+      <li>Special cases: <em>up-contract</em> $U$ where $(c_u, c_d) = (1,0)$ (only pays when stock goes up) and <em>down-contract</em> $D$ where $(c_u, c_d) = (0,1)$</li>
+      <li>We can decompose the contract into $C_T=c_uU_T + c_dD_T$</li>
+      <li>Can think of the time-0 price as $C_0 = e^{-rT}\mathbb{E}(C_T)$, or $C_0/B_0 = \mathbb{E}(C_T/B_T)$</li>
+    </ul>
+  </li>
+  <li>
+<strong>First Fundamental Theorem of Asset Pricing</strong>: No arbitrage exists if and only if that there exists a probability measure $\mathbb{P}$, equivalent to $P$, such that the discounted prices are martingales with respect to $\mathbb{P}$
+    <ul>
+      <li>Equivalency: for any event $A$, $\mathbb{P}(A)=0 \iff P(A)=0$</li>
+      <li>Discounted price: price $X$ is divided by bank account price to give $X/B$</li>
+      <li>This means that you can determine the price of an asset by using the discounted expectation of time-$T$ payoffs, solving for an expression for the probability of each state occuring</li>
+    </ul>
+  </li>
+  <li>A market is <strong>complete</strong> if you can replicate any possible payoff
+    <ul>
+      <li>Mathematically, it is complete if a matrix of the vector payoffs spans the entire space</li>
+      <li>Solve by creating an augmented matrix to find the value of the probabilities using the equations $\mathbb{E}(X_T/B_T) = X_0/B_0$ for each asset and $\sum_i p_i = 1$</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="lecture-3">
+<a class="anchor" href="#lecture-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lecture 3</h3>
+
+<ul>
+  <li>When you allow intermediate trading, you can replicate more payoffs, and intermediate (multi-period) trading can be defined using stochastic processes
+    <ul>
+      <li>Random walk is most popular: $S_n = S_0 + X_1 + \ldots + X_n$</li>
+      <li>
+<em>Filtration</em>: $\mathcal{F}_t$ represents all the information revealed at or before time $t$</li>
+      <li>A stochastic process $Y$ is <em>adapted</em> to $\mathcal{F_t}$ if $Y_t$ is $\mathcal{F}_t$-measurable for each $t$</li>
+      <li>$M_t$ is a <em>martingale</em> with respect to the filtration if, for all $t$ and all $T$, $\mathbb{E}_tM_T = M_t$</li>
+      <li>A <em>stopping time</em> $\tau$ is a random time such that ${\tau \leq t} \in \mathcal{F}_t$ for all $t$
+        <ul>
+          <li>If $M$ is a martingale and $S\leq T$ are bounded stopping times then $\mathbb{E}_SM_T=M_S$</li>
+          <li>If $S,T$ are unbounded and finite, the optional stopping time theorem applies if $M$ is uniformly integrable</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>A trading strategy is a sequence $\Theta_t$ adapted to $\mathcal{F}_t$
+    <ul>
+      <li>A strategy is <em>self-financing</em> if $\Theta_{t-1}X_t = \Theta_tX_t$, where $X_t$ represents the prices in the market</li>
+    </ul>
+  </li>
+  <li>Arbitrage in a multi-period model uses the same conditions as the previous definition of arbitrage with the caveat that the strategy must be self-financing</li>
+</ul>
+
+<h3 id="lecture-4">
+<a class="anchor" href="#lecture-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lecture 4</h3>
+<ul>
+  <li>A <em>Brownian motion</em> is a stochastic process $W$ where $W_0 = 0$, $W$ has independent, normal increments ($W_t-W_s \sim N(0,t-s)$), and $W$ is continuous in $t$</li>
+  <li>An Ito process $X$ is defined as $dX_t = \mu_tdt + \sigma_tdW_t$
+    <ul>
+      <li>For each path of $\mu$, we define the Riemann integral $\int_0^T \mu_tdt$ and the Ito integral $\int_0^T \sigma_t dW_t$</li>
+      <li>This means that we can express $X$ as the sum of a constant, a Riemann integral, and an Ito integral: $X_t = X_0 + \int_0^T \mu_tdt + \int_0^T \sigma_t dW_t$</li>
+    </ul>
+  </li>
+  <li>The Ito integral is a martingale and its expectation is equal to 0</li>
+  <li>
+<strong>Geometric Brownian Motion</strong>: $dX_t = aX_tdt + bX_tdW_t$
+    <ul>
+      <li>Used to model stock prices since it tracks percentage returns</li>
+      <li>
+<em>Realized variance</em>: $\frac{1}{T}\sigma^{N-1}<em>{n=0}\left(\frac{\log\Delta S}{S</em>{t_n}}\right)^2$</li>
+    </ul>
+  </li>
+  <li>
+<strong>Ito’s rule</strong>: Given an Ito process $X$ and a sufficiently smooth function $f$, then $f(X_t)$ is an Ito process and $df(X_t) = \frac{\partial f}{\partial x}dX_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(dX_t)^2$
+    <ul>
+      <li>For a function with two parameters where $X_t$ and $Y_t$ are Ito processes: $df(X_t, Y_t) = \frac{\partial f}{\partial x}dX_t + \frac{\partial f}{\partial y}dY_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(dX_t)^2 + \frac{1}{2}\frac{\partial^2 f}{\partial y^2}(dY_t)^2 + \frac{\partial^2 f}{\partial x\partial y}(dX_t)(dY_t)$
+        <ul>
+          <li>Special case: $df(X_t, t) = \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial x}dX_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(dX_t)^2$$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/college-notes/finm33000/cheatsheets/fall25/markdown/2025/11/12/finm33000-cheatsheets.html" hidden></a>
+</article>
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/college-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+      </div>
+      <div class="footer-col">
+        <p>Site to document notes for various classes</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+    <a rel="me" href="" target="_blank" title="">
+      <span class="grey fa-brands fa- fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="" target="_blank" title="">
+      <span class="grey fa-brands fa- fa-lg"></span>
+    </a>
+  </li>
+  <li>
+    <a href="https://tonyhieu.github.io/college-notes/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>
