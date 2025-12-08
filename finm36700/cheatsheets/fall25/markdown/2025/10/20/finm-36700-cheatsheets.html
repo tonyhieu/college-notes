@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      20 min read
     
 </span></p>
 
@@ -150,6 +150,18 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h3"><a href="#linear-factor-pricing-models-lfpm">Linear Factor Pricing Models (LFPM)</a></li>
 <li class="toc-entry toc-h3"><a href="#ta-session">TA Session</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#final-case-studies">Final Case Studies</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#gmo">GMO</a></li>
+<li class="toc-entry toc-h3"><a href="#ltcm">LTCM</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#final-cheat-sheet">Final Cheat Sheet</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#forecasting-returns">Forecasting Returns</a></li>
+<li class="toc-entry toc-h3"><a href="#mutual-funds">Mutual Funds</a></li>
 </ul>
 </li>
 </ul><p>Course website can be found <a href="https://markhendricks.github.io/finm-portfolio/index.html">here</a>.</p>
@@ -278,6 +290,17 @@ window.onload = wrap_img;
       <li>$\text{IR}=\alpha/\sigma_\varepsilon$ trades excess mean vs. extra trackinng error</li>
     </ul>
   </li>
+</ul>
+
+<p><img width="627" height="197" alt="Image" src="https://github.com/user-attachments/assets/7bbf769b-f225-40d7-b032-8b1c14e1714f"></p>
+
+<ul>
+  <li>
+<strong>Hedging</strong>: Minimize basis risk between two or more instruments</li>
+  <li>
+<strong>Tracking</strong>: Include intercept, see how well the RHS can replicate the LHS</li>
+  <li>
+<strong>Replication</strong>: Exclude intercept to replicate as best you can the LHS</li>
 </ul>
 
 <h3 id="value-at-risk-var">
@@ -536,6 +559,213 @@ window.onload = wrap_img;
       <li>Use broad, liquid universes (industry indices are good to use)</li>
     </ul>
   </li>
+</ul>
+
+<h2 id="final-case-studies">
+<a class="anchor" href="#final-case-studies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Final Case Studies</h2>
+
+<h3 id="gmo">
+<a class="anchor" href="#gmo" aria-hidden="true"><span class="octicon octicon-link"></span></a>GMO</h3>
+
+<ul>
+  <li>Context: In 2012, GMO was going to update their 7-year forecast and required some analysis
+    <ul>
+      <li>Two main factors in analysis: estimate of <em>equity risk premium</em> and <em>expected return in the intermediate term</em>
+</li>
+      <li>Important to get forecast accurate</li>
+    </ul>
+  </li>
+  <li>From 2000-2011, stocks underperformed bonds (negative risk premium) which led to some worrying that the risk premium would cease to exist
+    <ul>
+      <li>GMO believed that the risk premium would continue to exist</li>
+    </ul>
+  </li>
+  <li>GMO’s original approach was to invest in unpopular value stocks, began to offer advice on asset allocation and to estimate expected returns
+    <ul>
+      <li>Had good track record; predicted 1990s crash, 2008 crash, and 2008 resurgence</li>
+      <li>Clients were mostly large institutional investors</li>
+      <li>Mutual Fund Product: GWMAX</li>
+      <li>Estimated long-run required return on stocks to predict fundamental value and exploited differences between market price and fundamentals
+        <ul>
+          <li>Main idea: Forecast intermediate-term returns and see if there are discrepancies between that and the long-run levels, using fine decompositions for every asset class to be as accurate as possible</li>
+          <li>7-year horizon was perfect for intermediate-term</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Features: Macro data (recession timing), GDP, inflation corporate profits</li>
+  <li>GMO also believed that investors suffered from cognitive biases, leading to distortions in price
+    <ul>
+      <li>Traders overreact to recent trends</li>
+    </ul>
+  </li>
+  <li>Kept track of price bubbles and could predict them well</li>
+  <li>Better at predicting long-run than short-run due to trader biases causing aberrations and unnecessary risk</li>
+  <li>GMO encouraged managers to be conservative most of the time and take big risks when they were confident in a forecast</li>
+  <li>Important to keep cash to capitalize on new opportunities</li>
+  <li>Asset allocation led to career risk; long-run investment often did not align with client goals, so many managers focus on short-term gains and adding new managers
+    <ul>
+      <li>Often led to contrarian positions where GMO was bearish while everyone else was bullish or vice versa</li>
+      <li>Correct predictions often led to clientele leaving before they came true</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ltcm">
+<a class="anchor" href="#ltcm" aria-hidden="true"><span class="octicon octicon-link"></span></a>LTCM</h3>
+
+<ul>
+  <li>LTCM used long-term trading strategies (6 months to 2+ years) and long-term financing to hold against short-term fluctuations
+    <ul>
+      <li>Often sold liquidity, buying illiquid assets and selling liquid ones</li>
+      <li>Many employees worked on building software and technologies for financial modeling</li>
+      <li>Investors were mostly financial institutions (e.g. banks) with few wealthy individuals, most were not American
+        <ul>
+          <li>International investors could take advantage of less tax</li>
+        </ul>
+      </li>
+      <li>Did not get exposed to the stock market, used strategies similar to a capital market intermediary</li>
+    </ul>
+  </li>
+  <li>Mainly used <em>convergence</em> and <em>relative value</em> strategies
+    <ul>
+      <li>Long and short instruments that are close substitutes with large price gaps</li>
+      <li>Convergence trades referred to trades where there was a guaranteed convergence between instruments (e.g. bonds); relative value trades had no guarantee of convergence</li>
+      <li>Preferred strategies that had little to no default risk</li>
+    </ul>
+  </li>
+  <li>Swap-spread trades were a key component
+    <ul>
+      <li>Couldn’t take on arbitrages that had too narrow of a spread due to the financing haircut</li>
+      <li>Potential to profit because of volatility; widening spread = sell early, narrowing spread = stay with the position</li>
+      <li>Made massive profit in 1997 when the swap spread was at a historic low</li>
+    </ul>
+  </li>
+  <li>Also performed:
+    <ul>
+      <li>Fixed-rate residential mortgages (thought mortgage investors weren’t sharp)</li>
+      <li>Japanese bond swap spreads</li>
+      <li>Yield-curve relative value trades (abusing the fact that interest rates for some years were higher than they should be)</li>
+      <li>Volatility sales (selling options and hedging the position to only be exposed to vega)</li>
+      <li>Risk arbitrage (sell shares of acquiring company, buy shares of acquired company in merger)</li>
+    </ul>
+  </li>
+  <li>All positions were self-financing, meaning that the firm had no equity and risk was measured by deviations between long and short
+    <ul>
+      <li>Used value-at-risk to determine potential rofits and losses</li>
+      <li>LTCM believed that downside risk lessened as the discrepancies grew larger</li>
+      <li>Analyzed risk over one-year and one-month horizons; long-run risk was determined by changes in fundamental value</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="final-cheat-sheet">
+<a class="anchor" href="#final-cheat-sheet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Final Cheat Sheet</h2>
+
+<h3 id="forecasting-returns">
+<a class="anchor" href="#forecasting-returns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Forecasting Returns</h3>
+
+<ul>
+  <li>The <strong>risk premium</strong> of an asset is the expected excess return $\mathbb{E}(\tilde{r}^i)$
+    <ul>
+      <li>Linear factor models explain how risk premia vary across assets, like the CAPM</li>
+      <li>These models do not condition on time and are stationary averages</li>
+    </ul>
+  </li>
+  <li>Some forms believe risk premia to vary over time (hence forecasting returns)
+    <ul>
+      <li>This can be expressed as the expectation of the next period’s premium given information in this period: $\mathbb{E}<em>t(\tilde{r}</em>{t+1}) = f(x_t)$</li>
+      <li>We will specify a linear function so the statistics and computation are easier</li>
+    </ul>
+  </li>
+  <li>A <strong>forecasting</strong> regression takes the form of $\tilde{r}<em>{t+1} = \alpha + \beta x_t + \epsilon</em>{t+1}$</li>
+  <li>The classic view (held by the CAPM and other similar models) states that $\beta = 0$ for any forecasting regression and that price growth is a random walk
+    <ul>
+      <li>We can test this by autoregressing returns: $\tilde{r}<em>{t+1} = \alpha + \beta \tilde{r}_t + \epsilon</em>{t+1}$</li>
+      <li>Empirical evidence shows that the regression coefficient is near 0, so the classic view of premia is true; this month’s returns do not predict next months and returns are random</li>
+    </ul>
+  </li>
+  <li>Instead of setting $x_t = \tilde{r}_t$, we can use other predictors in order to forecast returns as a time series</li>
+  <li>The <strong>dividend-yield</strong> $\text{DP}_t$ is a famous signal that refers to the dividend-price ratio $\frac{D_t}{P_t}$
+    <ul>
+      <li>Used as a measure of cashflow-to-value</li>
+    </ul>
+  </li>
+  <li>Stock returns can be expressed in terms of the dividend yield</li>
+</ul>
+
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><msub><mi>R</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><msub><mi>P</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>D</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><msub><mi>P</mi><mi>t</mi></msub></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mrow><mo fence="true">(</mo><mfrac><msub><mi>D</mi><mi>t</mi></msub><msub><mi>P</mi><mi>t</mi></msub></mfrac><mo fence="true">)</mo></mrow><mfrac><msub><mi>D</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>D</mi><mi>t</mi></msub></mfrac><mo>+</mo><mfrac><msub><mi>P</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>P</mi><mi>t</mi></msub></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><msub><mi mathvariant="double-struck">E</mi><mi>t</mi></msub><mo stretchy="false">[</mo><msub><mi>R</mi><mrow><mi>t</mi><mo separator="true">,</mo><mi>t</mi><mo>+</mo><mi>k</mi></mrow></msub><mo stretchy="false">]</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><msub><mtext>DP</mtext><mi>t</mi></msub><msub><mi mathvariant="double-struck">E</mi><mi>t</mi></msub><mrow><mo fence="true">[</mo><mfrac><msub><mi>D</mi><mrow><mi>t</mi><mo>+</mo><mi>k</mi></mrow></msub><msub><mi>D</mi><mi>t</mi></msub></mfrac><mo fence="true">]</mo></mrow><mo>+</mo><msub><mi mathvariant="double-struck">E</mi><mi>t</mi></msub><mrow><mo fence="true">[</mo><mfrac><msub><mi>P</mi><mrow><mi>t</mi><mo>+</mo><mi>k</mi></mrow></msub><msub><mi>P</mi><mi>t</mi></msub></mfrac><mo fence="true">]</mo></mrow></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+    R_{t+1} &amp;= \frac{P_{t+1} + D_{t+1}}{P_t}\\
+    &amp;= \left(\frac{D_t}{P_t}\right)\frac{D_{t+1}}{D_t} + \frac{P_{t+1}}{P_t}\\
+    \mathbb{E}_t[R_{t,t+k}] &amp;= \text{DP}_t \mathbb{E}_t \left[\frac{D_{t+k}}{D_t}\right] + \mathbb{E}_t \left[\frac{P_{t+k}}{P_t}\right]
+\end{align*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:7.8964em;vertical-align:-3.6982em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.1982em;"><span style="top:-6.2879em;"><span class="pstrut" style="height:3.45em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.7019em;"><span class="pstrut" style="height:3.45em;"></span><span class="mord"></span></span><span style="top:-1.0018em;"><span class="pstrut" style="height:3.45em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.6982em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.1982em;"><span style="top:-6.2879em;"><span class="pstrut" style="height:3.45em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.7019em;"><span class="pstrut" style="height:3.45em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-1.0018em;"><span class="pstrut" style="height:3.45em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord text"><span class="mord">DP</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathbb">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathbb">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.6982em;"><span></span></span></span></span></span></span></span></span></span></span></span>
+
+<ul>
+  <li>In the classic view, since expected returns are constant and price appreciation is a random walk, we can rewrite this as $\theta_r = \text{DP}<em>t\mathbb{E}_t\left[\frac{D</em>{t+k}}{D_t}\right] + \theta_p$
+    <ul>
+      <li>This means that an increase in the dividend yield is offset by a decrease in expected dividend growth</li>
+      <li>Testing this regression reveals that the classiv view is flawed; in a five-year horizon, the risk premium increases by 20 basis points for every one the dividend-yield increases by</li>
+    </ul>
+  </li>
+  <li>This result is only seen in long run regressions because of the persistent nature of $\text{DP}_t$</li>
+  <li>Other potential variables include cyclically-adjusted price-earnings ratios, macro-economic indicators (CPI), inflation and rates</li>
+  <li>There are some statistical concerns; the DP has high autocorrelation, and highly autocorrelated independent variables can lead to biased regressions</li>
+</ul>
+
+<h3 id="mutual-funds">
+<a class="anchor" href="#mutual-funds" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mutual Funds</h3>
+
+<ul>
+  <li>Lots of research has been done showing that, on average, mutual funds have negative excess returns (and even worse when considering fees)
+    <ul>
+      <li>However, mutual funds have shown momentum and highlighted the fact that “loser” funds will do very poorly, and fees and expenses are strongly related to poor performance</li>
+      <li>It is difficult to infer the mean return of any hedge fund due to high volatility and short lifespans</li>
+      <li>20% of hedge funds go bankrupt annually, and data from hedge funds therefore have survivor bias, backill bias, and incubator bias</li>
+    </ul>
+  </li>
+  <li>Reported returns from hedge funds might be stale due to the illiquid nature of many of their assets, so market movements might show up in reports months after they happen
+    <ul>
+      <li>Stale reports bias the market beta down and hide factor exposure</li>
+    </ul>
+  </li>
+  <li>Hedge funds often take tail risk (e.g. selling puts that are out of the money)
+    <ul>
+      <li>Estimations overestimate excess returns and underestimate risk, leading to this tail risk being especially scary</li>
+    </ul>
+  </li>
+  <li>Hedge fund facts
+    <ul>
+      <li>Legal entities; “investing partnerships”</li>
+      <li>Have relatively few regulations</li>
+      <li>Open only to institutions and large investors</li>
+      <li>Funds are illiquid meaning that investors cannot easily take out all of their money</li>
+      <li>Actively trade and charge fees</li>
+      <li>Four main types: relative value (arbitrage), event-driven, directional, global macro</li>
+    </ul>
+  </li>
+  <li>Faulty reasons to invest in hedge funds
+    <ul>
+      <li>Diversification: Managers extract a large fee, and you can’t be more diversified than holding the market portfolio</li>
+      <li>Enhanced return irrespective of market movements: Stale reports, highly leveraged positions, high risk</li>
+    </ul>
+  </li>
+  <li>Fees are based on assets under managements and investors are actively recruited
+    <ul>
+      <li>Some evidence shows that performance will persist between years and there is a momentum effect, but this evidence is not strong and is biased towards surviving funds</li>
+      <li>Most funds will charge a hefty fee on both assets under management and profits
+        <ul>
+          <li>This system leads to managers being encouraged to take high risks to extract a maximum fee</li>
+          <li>Skilled allocation should be rewarded, but basic, known strategies can lead to high returns, meaning that investors are essentially paying for a mutual fund</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Human behavior makes funds fragile; low asset value makes investors want to pull out, leading to bank-runs
+    <ul>
+      <li>Funds use lockups that restrict withdrawal, must be invested for a certain amount of time before withdrawing money</li>
+    </ul>
+  </li>
+  <li>Mutual funds are better because they are supposed to track factors and charge low fees while hedge funds are supposed to be creative (but aren’t) and charge high fees</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/finm36700/cheatsheets/fall25/markdown/2025/10/20/finm-36700-cheatsheets.html" hidden></a>
