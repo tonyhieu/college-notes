@@ -67,6 +67,12 @@ Course website can be found [here](https://markhendricks.github.io/finm-portfoli
 - A **tracking** portfolio tries to follow a target factor: $\tilde{r}_{i,t}=\alpha + \beta\tilde{r}_{j,t}+\varepsilon_t$, where $\varepsilon$ is the tracking error and $R^2$ gauges tracking quality
     - $\text{IR}=\alpha/\sigma_\varepsilon$ trades excess mean vs. extra trackinng error
 
+<img width="627" height="197" alt="Image" src="https://github.com/user-attachments/assets/7bbf769b-f225-40d7-b032-8b1c14e1714f" />
+
+- **Hedging**: Minimize basis risk between two or more instruments
+- **Tracking**: Include intercept, see how well the RHS can replicate the LHS
+- **Replication**: Exclude intercept to replicate as best you can the LHS
+
 ### Value at Risk (VaR)
 
 - **VaR** is a quantile of a distribution; formally defined as the $\tau$-day, $q$ quantile such that $\mathbb{P}\left(\Gamma_{t,t+\tau}\leq\Gamma_t^{\text{VaR}_{q,\tau}}\right)=q$
@@ -200,3 +206,121 @@ Course website can be found [here](https://markhendricks.github.io/finm-portfoli
 - Momentum strategy construction: Use both winners and losers, use many assets, try to limit transaction costs (less rebalancing, more assets)
     - Skip the most recent month to avoid short-term reversal effects
     - Use broad, liquid universes (industry indices are good to use)
+
+
+## Final Case Studies
+
+### GMO
+
+- Context: In 2012, GMO was going to update their 7-year forecast and required some analysis
+    - Two main factors in analysis: estimate of *equity risk premium* and *expected return in the intermediate term*
+    - Important to get forecast accurate
+- From 2000-2011, stocks underperformed bonds (negative risk premium) which led to some worrying that the risk premium would cease to exist
+    - GMO believed that the risk premium would continue to exist
+- GMO's original approach was to invest in unpopular value stocks, began to offer advice on asset allocation and to estimate expected returns
+    - Had good track record; predicted 1990s crash, 2008 crash, and 2008 resurgence
+    - Clients were mostly large institutional investors
+    - Mutual Fund Product: GWMAX
+    - Estimated long-run required return on stocks to predict fundamental value and exploited differences between market price and fundamentals
+        - Main idea: Forecast intermediate-term returns and see if there are discrepancies between that and the long-run levels, using fine decompositions for every asset class to be as accurate as possible
+        - 7-year horizon was perfect for intermediate-term
+- Features: Macro data (recession timing), GDP, inflation corporate profits
+- GMO also believed that investors suffered from cognitive biases, leading to distortions in price
+    - Traders overreact to recent trends
+- Kept track of price bubbles and could predict them well
+- Better at predicting long-run than short-run due to trader biases causing aberrations and unnecessary risk
+- GMO encouraged managers to be conservative most of the time and take big risks when they were confident in a forecast
+- Important to keep cash to capitalize on new opportunities
+- Asset allocation led to career risk; long-run investment often did not align with client goals, so many managers focus on short-term gains and adding new managers
+    - Often led to contrarian positions where GMO was bearish while everyone else was bullish or vice versa
+    - Correct predictions often led to clientele leaving before they came true
+
+### LTCM
+
+- LTCM used long-term trading strategies (6 months to 2+ years) and long-term financing to hold against short-term fluctuations
+    - Often sold liquidity, buying illiquid assets and selling liquid ones
+    - Many employees worked on building software and technologies for financial modeling
+    - Investors were mostly financial institutions (e.g. banks) with few wealthy individuals, most were not American
+        - International investors could take advantage of less tax
+    - Did not get exposed to the stock market, used strategies similar to a capital market intermediary
+- Mainly used *convergence* and *relative value* strategies
+    - Long and short instruments that are close substitutes with large price gaps
+    - Convergence trades referred to trades where there was a guaranteed convergence between instruments (e.g. bonds); relative value trades had no guarantee of convergence
+    - Preferred strategies that had little to no default risk
+- Swap-spread trades were a key component
+    - Couldn't take on arbitrages that had too narrow of a spread due to the financing haircut
+    - Potential to profit because of volatility; widening spread = sell early, narrowing spread = stay with the position
+    - Made massive profit in 1997 when the swap spread was at a historic low
+- Also performed:
+    - Fixed-rate residential mortgages (thought mortgage investors weren't sharp)
+    - Japanese bond swap spreads
+    - Yield-curve relative value trades (abusing the fact that interest rates for some years were higher than they should be)
+    - Volatility sales (selling options and hedging the position to only be exposed to vega)
+    - Risk arbitrage (sell shares of acquiring company, buy shares of acquired company in merger)
+- All positions were self-financing, meaning that the firm had no equity and risk was measured by deviations between long and short
+    - Used value-at-risk to determine potential rofits and losses
+    - LTCM believed that downside risk lessened as the discrepancies grew larger
+    - Analyzed risk over one-year and one-month horizons; long-run risk was determined by changes in fundamental value
+
+## Final Cheat Sheet
+
+### Forecasting Returns
+
+- The **risk premium** of an asset is the expected excess return $\mathbb{E}(\tilde{r}^i)$
+    - Linear factor models explain how risk premia vary across assets, like the CAPM
+    - These models do not condition on time and are stationary averages
+- Some forms believe risk premia to vary over time (hence forecasting returns)
+    - This can be expressed as the expectation of the next period's premium given information in this period: $\mathbb{E}_t(\tilde{r}_{t+1}) = f(x_t)$
+    - We will specify a linear function so the statistics and computation are easier
+- A **forecasting** regression takes the form of $\tilde{r}_{t+1} = \alpha + \beta x_t + \epsilon_{t+1}$
+- The classic view (held by the CAPM and other similar models) states that $\beta = 0$ for any forecasting regression and that price growth is a random walk
+    - We can test this by autoregressing returns: $\tilde{r}_{t+1} = \alpha + \beta \tilde{r}_t + \epsilon_{t+1}$
+    - Empirical evidence shows that the regression coefficient is near 0, so the classic view of premia is true; this month's returns do not predict next months and returns are random
+- Instead of setting $x_t = \tilde{r}_t$, we can use other predictors in order to forecast returns as a time series
+- The **dividend-yield** $\text{DP}_t$ is a famous signal that refers to the dividend-price ratio $\frac{D_t}{P_t}$
+    - Used as a measure of cashflow-to-value
+- Stock returns can be expressed in terms of the dividend yield
+
+$$
+\begin{align*}
+    R_{t+1} &= \frac{P_{t+1} + D_{t+1}}{P_t}\\
+    &= \left(\frac{D_t}{P_t}\right)\frac{D_{t+1}}{D_t} + \frac{P_{t+1}}{P_t}\\
+    \mathbb{E}_t[R_{t,t+k}] &= \text{DP}_t \mathbb{E}_t \left[\frac{D_{t+k}}{D_t}\right] + \mathbb{E}_t \left[\frac{P_{t+k}}{P_t}\right]
+\end{align*}
+$$
+
+- In the classic view, since expected returns are constant and price appreciation is a random walk, we can rewrite this as $\theta_r = \text{DP}_t\mathbb{E}_t\left[\frac{D_{t+k}}{D_t}\right] + \theta_p$
+    - This means that an increase in the dividend yield is offset by a decrease in expected dividend growth
+    - Testing this regression reveals that the classiv view is flawed; in a five-year horizon, the risk premium increases by 20 basis points for every one the dividend-yield increases by 
+- This result is only seen in long run regressions because of the persistent nature of $\text{DP}_t$
+- Other potential variables include cyclically-adjusted price-earnings ratios, macro-economic indicators (CPI), inflation and rates
+- There are some statistical concerns; the DP has high autocorrelation, and highly autocorrelated independent variables can lead to biased regressions
+
+### Mutual Funds
+
+- Lots of research has been done showing that, on average, mutual funds have negative excess returns (and even worse when considering fees)
+    - However, mutual funds have shown momentum and highlighted the fact that "loser" funds will do very poorly, and fees and expenses are strongly related to poor performance
+    - It is difficult to infer the mean return of any hedge fund due to high volatility and short lifespans
+    - 20% of hedge funds go bankrupt annually, and data from hedge funds therefore have survivor bias, backill bias, and incubator bias
+- Reported returns from hedge funds might be stale due to the illiquid nature of many of their assets, so market movements might show up in reports months after they happen
+    - Stale reports bias the market beta down and hide factor exposure
+- Hedge funds often take tail risk (e.g. selling puts that are out of the money)
+    - Estimations overestimate excess returns and underestimate risk, leading to this tail risk being especially scary
+- Hedge fund facts
+    - Legal entities; "investing partnerships"
+    - Have relatively few regulations
+    - Open only to institutions and large investors
+    - Funds are illiquid meaning that investors cannot easily take out all of their money
+    - Actively trade and charge fees
+    - Four main types: relative value (arbitrage), event-driven, directional, global macro
+- Faulty reasons to invest in hedge funds
+    - Diversification: Managers extract a large fee, and you can't be more diversified than holding the market portfolio
+    - Enhanced return irrespective of market movements: Stale reports, highly leveraged positions, high risk
+- Fees are based on assets under managements and investors are actively recruited
+    - Some evidence shows that performance will persist between years and there is a momentum effect, but this evidence is not strong and is biased towards surviving funds
+    - Most funds will charge a hefty fee on both assets under management and profits
+        - This system leads to managers being encouraged to take high risks to extract a maximum fee
+        - Skilled allocation should be rewarded, but basic, known strategies can lead to high returns, meaning that investors are essentially paying for a mutual fund
+- Human behavior makes funds fragile; low asset value makes investors want to pull out, leading to bank-runs
+    - Funds use lockups that restrict withdrawal, must be invested for a certain amount of time before withdrawing money
+- Mutual funds are better because they are supposed to track factors and charge low fees while hedge funds are supposed to be creative (but aren't) and charge high fees
