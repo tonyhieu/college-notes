@@ -67,7 +67,9 @@ Course website can be found [here](https://markhendricks.github.io/finm-portfoli
 - A **tracking** portfolio tries to follow a target factor: $\tilde{r}_{i,t}=\alpha + \beta\tilde{r}_{j,t}+\varepsilon_t$, where $\varepsilon$ is the tracking error and $R^2$ gauges tracking quality
     - $\text{IR}=\alpha/\sigma_\varepsilon$ trades excess mean vs. extra trackinng error
 
-<img width="627" height="197" alt="Image" src="https://github.com/user-attachments/assets/7bbf769b-f225-40d7-b032-8b1c14e1714f" />
+
+![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/54915685/523954513-7bbf769b-f225-40d7-b032-8b1c14e1714f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251208%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251208T223938Z&X-Amz-Expires=300&X-Amz-Signature=d50a388b537e86de7c03d20a3d1a1fa1dc96b462e49fac10add8b28ef125fed1&X-Amz-SignedHeaders=host)
+
 
 - **Hedging**: Minimize basis risk between two or more instruments
 - **Tracking**: Include intercept, see how well the RHS can replicate the LHS
