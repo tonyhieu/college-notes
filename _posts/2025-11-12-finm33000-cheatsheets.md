@@ -83,3 +83,37 @@ toc: true
 - **Ito's rule**: Given an Ito process $X$ and a sufficiently smooth function $f$, then $f(X_t)$ is an Ito process and $df(X_t) = \frac{\partial f}{\partial x}dX_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(dX_t)^2$
     - For a function with two parameters where $X_t$ and $Y_t$ are Ito processes: $df(X_t, Y_t) = \frac{\partial f}{\partial x}dX_t + \frac{\partial f}{\partial y}dY_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(dX_t)^2 + \frac{1}{2}\frac{\partial^2 f}{\partial y^2}(dY_t)^2 + \frac{\partial^2 f}{\partial x\partial y}(dX_t)(dY_t)$
         - Special case: $df(X_t, t) = \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial x}dX_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(dX_t)^2$$
+- Result: $\log S_t \sim N(log S_0 + (\mu-\sigma^2/2)t, \sigma^2t)$
+    - Explicit expression for $S_t$: $S_t = S_0e^{\mu-\sigma^2/2}t + \sigma W_t$
+
+### Lecture 5
+- A continuous time strategy is self-financing if $dV_t = \Theta_t \cdot dX_t \iff V_t = V_0 + \int_0^t \Theta_u \cdot dX_u$ 
+- Black-Scholes formula: $C(S,t) = S_tN(d_1) - Ke^{-r(T-t)}N(d_2)$, where $d_1=\frac{\ln(S/K)+(r+\sigma^2/2)(T-t)}{\sigma\sqrt{T-t}}, d_2 = d_1 - \sigma\sqrt{T-t}$
+- Greeks
+    - Delta: $\frac{\partial C}{\partial S} = N(d_1)$
+    - Gamma: $\frac{\partial^2 C}{\partial S^2} = \frac{N'(d_1)}{S_t\sigma\sqrt{T-t}}$
+    - Theta: $$\frac{\partial C}{\partial t}$
+- Call price is lower bounded by $S_t-Ke^{-r(T-t)}$
+- Call delta is between 0 and 1, larger around the strike value, gets steeper the lower $T-t$ is
+- Call gamma is higher around strike value, resembles dirac delta function as $T-t$ goes to 0; always positive
+- Call theta lowest around strike price; lower $T-t$ means smaller tails (OTM and ITM), always negative
+- $\Theta + rS\Delta + \frac{1}{2}\Gamma \sigma^2S^2 = rC$
+    - If $r=0$, then $\Theta = -\frac{1}{2}\Gamma\sigma^2S^2$
+
+### Lecture 6
+
+- *Girasnov's Theorem*: If $W$ is a Brownian motion under $P$, and if $\mathbb{P}$ is a probability measure on $\mathcal{F}^W_T$ that is equivalent to $P$, then there exists an adapted process $\lambda$ such that for all $t\in[0,T]$, $\tilde{W}_t = W_t + \int_0^t \lambda_s ds$ is a Brownian motion under $\mathbb{P}$
+- We can derive the Black-Scholes formula using risk-neutral probabilities via Girasnov's Theorem
+    - No arbitrage means that each tradeable asset $X$ has $X/B$ as a martingale, so $dX_t = rX_tdt$ for all $X$
+- Black-Scholes formula can be broken down into two parts
+    - Probability that the call option finishes in the money: $N(d_2)$, so $e^{-r(T-t)}N(d_2)$ is the time-$t$ price of a $K$-strike $T$-expiry binary call (cash-or-nothing)
+    - Share measure that the call expires in the money: $N(d_1)$, so $e^{-r(T-t)}F_tN(d_1)$ is the time-$t$ price of an asset-or-nothing call
+- Vega of a call is positive and is larger the further away from maturity the call option is
+- Interpretations about formula
+    - $N(d_2)$ is the risk neutral probability of $S_T>K$
+    - $e^{-r(T-t)}N(d_2)$ is the value of a $K$-strike binary call and is also $-\frac{\partial C}{\partial K}$
+    - $-Ke^{-r(T-t)}N(d_2)$ is the value of a vanilla-call replicator's $B$ holdings
+    - $N(d_1)$ is the share-measure probability of $S_T > K$; it is the time-$t$ price, in shares, of an asset that pays 1 share if $S_T>K$
+        - It is also the delta of a vanilla call
+    - $S_tN(d_1)$ is the value of an asset-or-nothing call that pays $S_T\mathbb{I}_{S_T>K}$ as well as the value of the vanilla-call replicator's share holdings
+    

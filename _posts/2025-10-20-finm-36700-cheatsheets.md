@@ -158,8 +158,8 @@ Course website can be found [here](https://markhendricks.github.io/finm-portfoli
 
 #### Testing CAPM
 
-- $E[\tilde{r}^i]=\beta^{i,m}E[\tilde{r}^m]$ implies that $\tilde{r}^i_t=\beta^{i,m}\tilde{r}^m_t + \varpesilon_t$, where $E[\varpesilon_t]=0$
-    - Test CAPM on an asset by running a time series regression: $\tilde{r}^i_t=\alpha^i_t+\beta^{i,m}\tilde{r}^m_t + \varpesilon_t^i$
+- $E[\tilde{r}^i]=\beta^{i,m}E[\tilde{r}^m]$ implies that $\tilde{r}^i_t=\beta^{i,m}\tilde{r}^m_t + \varepsilon_t$, where $E[\varepsilon_t]=0$
+    - Test CAPM on an asset by running a time series regression: $\tilde{r}^i_t=\alpha^i_t+\beta^{i,m}\tilde{r}^m_t + \varepsilon_t^i$
         - CAPM implies $\alpha^i = 0$
         - Can regress on multiple assets in order to determine multiple alphas, and a joint test should not be able to reject the fact that all alphas are 0
 - Historically, CAPM had good performance in tests but with some doubts
