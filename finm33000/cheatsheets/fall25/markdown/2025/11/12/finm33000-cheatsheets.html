@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      8 min read
     
 </span></p>
 
@@ -132,6 +132,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#lecture-2">Lecture 2</a></li>
 <li class="toc-entry toc-h3"><a href="#lecture-3">Lecture 3</a></li>
 <li class="toc-entry toc-h3"><a href="#lecture-4">Lecture 4</a></li>
+<li class="toc-entry toc-h3"><a href="#lecture-5">Lecture 5</a></li>
+<li class="toc-entry toc-h3"><a href="#lecture-6">Lecture 6</a></li>
 </ul>
 </li>
 </ul><h2 id="midterm">
@@ -291,7 +293,69 @@ window.onload = wrap_img;
       </li>
     </ul>
   </li>
+  <li>Result: $\log S_t \sim N(log S_0 + (\mu-\sigma^2/2)t, \sigma^2t)$
+    <ul>
+      <li>Explicit expression for $S_t$: $S_t = S_0e^{\mu-\sigma^2/2}t + \sigma W_t$</li>
+    </ul>
+  </li>
 </ul>
+
+<h3 id="lecture-5">
+<a class="anchor" href="#lecture-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lecture 5</h3>
+<ul>
+  <li>A continuous time strategy is self-financing if $dV_t = \Theta_t \cdot dX_t \iff V_t = V_0 + \int_0^t \Theta_u \cdot dX_u$</li>
+  <li>Black-Scholes formula: $C(S,t) = S_tN(d_1) - Ke^{-r(T-t)}N(d_2)$, where $d_1=\frac{\ln(S/K)+(r+\sigma^2/2)(T-t)}{\sigma\sqrt{T-t}}, d_2 = d_1 - \sigma\sqrt{T-t}$</li>
+  <li>Greeks
+    <ul>
+      <li>Delta: $\frac{\partial C}{\partial S} = N(d_1)$</li>
+      <li>Gamma: $\frac{\partial^2 C}{\partial S^2} = \frac{N’(d_1)}{S_t\sigma\sqrt{T-t}}$</li>
+      <li>Theta: $$\frac{\partial C}{\partial t}$</li>
+    </ul>
+  </li>
+  <li>Call price is lower bounded by $S_t-Ke^{-r(T-t)}$</li>
+  <li>Call delta is between 0 and 1, larger around the strike value, gets steeper the lower $T-t$ is</li>
+  <li>Call gamma is higher around strike value, resembles dirac delta function as $T-t$ goes to 0; always positive</li>
+  <li>Call theta lowest around strike price; lower $T-t$ means smaller tails (OTM and ITM), always negative</li>
+  <li>$\Theta + rS\Delta + \frac{1}{2}\Gamma \sigma^2S^2 = rC$
+    <ul>
+      <li>If $r=0$, then $\Theta = -\frac{1}{2}\Gamma\sigma^2S^2$</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="lecture-6">
+<a class="anchor" href="#lecture-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lecture 6</h3>
+
+<ul>
+  <li>
+<em>Girasnov’s Theorem</em>: If $W$ is a Brownian motion under $P$, and if $\mathbb{P}$ is a probability measure on $\mathcal{F}^W_T$ that is equivalent to $P$, then there exists an adapted process $\lambda$ such that for all $t\in[0,T]$, $\tilde{W}_t = W_t + \int_0^t \lambda_s ds$ is a Brownian motion under $\mathbb{P}$</li>
+  <li>We can derive the Black-Scholes formula using risk-neutral probabilities via Girasnov’s Theorem
+    <ul>
+      <li>No arbitrage means that each tradeable asset $X$ has $X/B$ as a martingale, so $dX_t = rX_tdt$ for all $X$</li>
+    </ul>
+  </li>
+  <li>Black-Scholes formula can be broken down into two parts
+    <ul>
+      <li>Probability that the call option finishes in the money: $N(d_2)$, so $e^{-r(T-t)}N(d_2)$ is the time-$t$ price of a $K$-strike $T$-expiry binary call (cash-or-nothing)</li>
+      <li>Share measure that the call expires in the money: $N(d_1)$, so $e^{-r(T-t)}F_tN(d_1)$ is the time-$t$ price of an asset-or-nothing call</li>
+    </ul>
+  </li>
+  <li>Vega of a call is positive and is larger the further away from maturity the call option is</li>
+  <li>Interpretations about formula
+    <ul>
+      <li>$N(d_2)$ is the risk neutral probability of $S_T&gt;K$</li>
+      <li>$e^{-r(T-t)}N(d_2)$ is the value of a $K$-strike binary call and is also $-\frac{\partial C}{\partial K}$</li>
+      <li>$-Ke^{-r(T-t)}N(d_2)$ is the value of a vanilla-call replicator’s $B$ holdings</li>
+      <li>$N(d_1)$ is the share-measure probability of $S_T &gt; K$; it is the time-$t$ price, in shares, of an asset that pays 1 share if $S_T&gt;K$
+        <ul>
+          <li>It is also the delta of a vanilla call</li>
+        </ul>
+      </li>
+      <li>$S_tN(d_1)$ is the value of an asset-or-nothing call that pays $S_T\mathbb{I}_{S_T&gt;K}$ as well as the value of the vanilla-call replicator’s share holdings</li>
+    </ul>
+  </li>
+</ul>
+
 
   </div><a class="u-url" href="/college-notes/finm33000/cheatsheets/fall25/markdown/2025/11/12/finm33000-cheatsheets.html" hidden></a>
 </article>

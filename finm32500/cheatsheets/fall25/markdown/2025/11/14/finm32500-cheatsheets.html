@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      9 min read
     
 </span></p>
 
@@ -137,6 +137,13 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#networking">Networking</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#trading-systems">Trading Systems</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#trading-strategy-engine">Trading Strategy Engine</a></li>
+<li class="toc-entry toc-h3"><a href="#backtesting">Backtesting</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#signal-generation">Signal Generation</a></li>
 </ul><h2 id="object-oriented-programming">
 <a class="anchor" href="#object-oriented-programming" aria-hidden="true"><span class="octicon octicon-link"></span></a>Object-Oriented Programming</h2>
 
@@ -355,9 +362,139 @@ window.onload = wrap_img;
   <li>
 <em>Client-server architecture</em>: A server listens for requests and sends data to its clients
     <ul>
-      <li>Multi-client servers must use parallelism to handle clients, like threading or multiprocessing</li>
+      <li>Multi-client servers must use parallelism to handle clients, like threading or multiprocessing
+        <ul>
+          <li>Concurrency alternatives to threading
+            <ul>
+              <li>Asynchronous input/output: Use the <code class="language-plaintext highlighter-rouge">asyncio</code> library to define asynchronous functions that wait until input or output is ready; code does other work while waiting</li>
+              <li>Select Loop: <code class="language-plaintext highlighter-rouge">select</code> module lets you watch multiple sockets and react only when one is ready</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Asyncio has the best performance and scalability at the cost of some complexity
+        <ul>
+          <li>Has advantages due to single threading, coroutines, no context switching, no locks, and efficient scheduling</li>
+          <li>Uses an eevent loop to manage couroutine, scheduling tasks based on output dependencies</li>
+          <li>Avoid when doing heavy CPU-bound work (computation), need simple logic, integrating with synchronous libraries, or want true parallelism</li>
+        </ul>
+      </li>
     </ul>
   </li>
+</ul>
+
+<h2 id="trading-systems">
+<a class="anchor" href="#trading-systems" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trading Systems</h2>
+<ul>
+  <li>Layers
+    <ul>
+      <li>Market Data Feed: Ingests data such as prices, quotes, and events
+        <ul>
+          <li>Responsible for session management, protocol handling, latency monitoring, error handling, and risk enforcement with respect to the source the data is coming from</li>
+          <li>An <strong>electronic trading protocol</strong> defines the rules for communication between trading system; includes protocols like FIX, OUCH, ITCH, FAST, and SBE</li>
+        </ul>
+      </li>
+      <li>Strategy Engine: Makes trading decision based on logic or models</li>
+      <li>Order Manager: Sends, tracks, and cancels orders
+        <ul>
+          <li>Handles lifecycle of every order; creation, validation, routing, state tracking, audit trail, and any modifications or cancellations</li>
+        </ul>
+      </li>
+      <li>Risk Controls: Enforces limits and complience (e.g. will this large trade affect the price greatly?)
+        <ul>
+          <li>Different check types; max order size, max position, price band, self-trade prevention (don’t match against your own orders), throttling, kill switch</li>
+        </ul>
+      </li>
+      <li>Connectivity: Interfaces with exchanges and brokers</li>
+    </ul>
+  </li>
+  <li>Each layer must have its own dedicated thread or process; can use concurrency and IPC to make most efficient
+    <ul>
+      <li>One reason why is to enforce modularity; if one part fails, it can be easily identified</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="trading-strategy-engine">
+<a class="anchor" href="#trading-strategy-engine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trading Strategy Engine</h3>
+
+<ul>
+  <li>The core decision-making model that turns data into signals and orders to execute</li>
+  <li>Responsibilities include signal processing, order generation, position tracking, risk awareness, and state management</li>
+  <li>Different strategies include market making, arbitrage, momentum, mean reversion, statistical arbitrage, news/event driven strategies, and machine learning</li>
+  <li>
+<strong>Feature engineering</strong> is the process of creating informational variables for use in strategies to help generate signals</li>
+</ul>
+
+<h3 id="backtesting">
+<a class="anchor" href="#backtesting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backtesting</h3>
+
+<ul>
+  <li>Required for engines to test their strategies and ensure that they work properly before use in the real world</li>
+  <li>Components
+    <ul>
+      <li>Historical dataset; similar to market data feed</li>
+      <li>Environment simulator</li>
+      <li>Decision engine (DAG); similar to strategy engine</li>
+      <li>Execution emulator; connects to order manager and simulates delay/transaction costs</li>
+      <li>Metrics and evaluation</li>
+    </ul>
+  </li>
+  <li>Data is an important aspect of backtesting; without reliable data, backtesting will fail
+    <ul>
+      <li>Data must be normalized and aligned to ensure proper simulation (resampling, forward-filling, time/concurrency alignment, z-score normalization)</li>
+      <li>Data integrity is important so that the engine isn’t being fed bad data (missing values, out-of-order timestamps, duplicate entries, corrupted fields, timezone drift)</li>
+      <li>Data can be accessed from databases as opposed to flat files (like CSVs)
+        <ul>
+          <li>SQLite3 is a database system built into Python that allows for easy SQL queries and that can be run locally</li>
+          <li>It is better to merge and calculate in the database using queries because it avoids unintended side effects, runs faster, and is more performant + reproducible</li>
+        </ul>
+      </li>
+      <li>Data can be enriched to add more features and context; add columns that include technical indicators, fundamentals, metrics, event flags, or sentiment scores</li>
+      <li>Data can be stored in a variety of ways; CSV and Parquet are of most importance, as both are flat files
+        <ul>
+          <li>CSV: human-readable but slow and large</li>
+          <li>Parquet: Unreadable to humans but more performant</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Backtesting uses many assupmtions that simplifies real world markets, so results should be taken with a grain of salt, as the real world has a higher degree of difficulty</li>
+</ul>
+
+<h2 id="signal-generation">
+<a class="anchor" href="#signal-generation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Signal Generation</h2>
+
+<ul>
+  <li>
+<strong>Technical indicators</strong> are formulas that detect trends, reversals, or momentum (MA, RSI, MACD&lt; VWAP&gt;)
+    <ul>
+      <li>Different indicators have different purposes; trend-following, momentum, volatility, volume-based, mean-reversion, cycle/timing</li>
+    </ul>
+  </li>
+  <li>
+<strong>Machine learning signals</strong> are signals created by models that recognize different patterns
+    <ul>
+      <li>Includes classification, regression, time-series, clustering, and deep learning</li>
+      <li>Feature engineering is important for ML models because they require robust features to function properly</li>
+    </ul>
+  </li>
+  <li>Labeling is used so that machine learning models can predict outcomes</li>
+  <li>
+<strong>Curse of Dimensionality</strong>: The volume of the feature space grows exponentially, so data coverage becomes more sparse, overfitting becomes easier, costs rise, and models are harder to interpret
+    <ul>
+      <li>To combat this curse, feature selection is used to get rid of or combine features</li>
+      <li>
+<strong>Regularization</strong>: Add a penalty term to avoid overfitting</li>
+      <li>
+<strong>Principal Component Analysis (PCA)</strong>: Turn a large set of features into a smaller set that explains most of the variance</li>
+    </ul>
+  </li>
+  <li>
+<strong>Linear models</strong> use a weighted sum and assume linear dependence between features and outcome; includes most regression models</li>
+  <li>
+<strong>Nonlinear models</strong> can better capture interactions between features and model different effects; includes tree models, neural networks, and classifiers like kNN</li>
+  <li>LLMs are able to analyze text and determine what the sentiment of that text is</li>
 </ul>
 
   </div><a class="u-url" href="/college-notes/finm32500/cheatsheets/fall25/markdown/2025/11/14/finm32500-cheatsheets.html" hidden></a>
